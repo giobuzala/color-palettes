@@ -3,11 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import replace from 'rollup-plugin-replace';
-import dotenv from 'dotenv';
-
 const production = !process.env.ROLLUP_WATCH;
-dotenv.config();
 
 export default {
 	input: 'src/main.js',
@@ -35,10 +31,6 @@ export default {
 		// https://github.com/rollup/rollup-plugin-commonjs
 		resolve({ browser: true }),
 		commonjs(),
-		replace({
-			delimiters: ['', ''],
-			__OPENAI_API_KEY__: JSON.stringify(process.env.OPENAI_API_KEY || '')
-		}),
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production

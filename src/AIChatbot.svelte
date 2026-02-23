@@ -3,10 +3,6 @@
 
     const dispatch = createEventDispatcher();
 
-    // Note: this key is bundled into the client build via Rollup `replace`.
-    // This is fine for local experiments, but do NOT ship a real API key to production.
-    const OPENAI_API_KEY = __OPENAI_API_KEY__;
-
     let isOpen = false;
     let message = '';
     let loading = false;
@@ -82,57 +78,35 @@ Rules:
         messages = [...messages, { role: 'user', content: prompt }];
         message = '';
 
-        if (!OPENAI_API_KEY.trim()) {
-            error = 'Missing OPENAI_API_KEY in your .env file.';
-            return;
-        }
-
         loading = true;
         try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            const response = await fetch('/api/chat', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${OPENAI_API_KEY.trim()}`
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    model: 'gpt-4o',
-                    temperature: 0.5,
-                    messages: [
-                        { role: 'system', content: buildSystemPrompt() },
-                        ...messages
-                            .filter(m => m.role === 'user' || m.role === 'assistant')
-                            .map(m => ({ role: m.role, content: m.content })),
-                        { role: 'user', content: prompt }
-                    ]
+                    messages: messages.filter(m => m.role === 'user' || m.role === 'assistant'),
+                    systemPrompt: buildSystemPrompt()
                 })
             });
 
-            if (!response.ok) {
-                const msg = await response.text();
-                throw new Error(`OpenAI error (${response.status}): ${msg}`);
-            }
+            const data = await response.json().catch(() => ({}));
+            const content = response.ok ? data.content : data.error || `Error (${response.status})`;
 
-            const data = await response.json();
-            const content =
-                data &&
-                data.choices &&
-                data.choices[0] &&
-                data.choices[0].message &&
-                data.choices[0].message.content
-                    ? data.choices[0].message.content
-                    : 'I could not generate a response.';
+            if (!response.ok) {
+                error = content;
+                return;
+            }
 
             const parsed = extractPaletteConfig(content);
             if (parsed) {
                 dispatch('applyPalette', parsed);
                 messages = [...messages, { role: 'assistant', content: describeAppliedConfig(parsed) }];
             } else {
-                messages = [...messages, { role: 'assistant', content }];
-                error = 'I could not parse palette JSON from the response.';
+                messages = [...messages, { role: 'assistant', content: content || 'I could not generate a response.' }];
+                error = content ? 'I could not parse palette JSON from the response.' : '';
             }
         } catch (e) {
-            error = e && e.message ? e.message : 'Request failed.';
+            error = (e && e.message) || 'Request failed.';
         } finally {
             loading = false;
         }

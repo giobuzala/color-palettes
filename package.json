@@ -6,7 +6,8 @@
         "lint": "prettier --check \"src/**/*.{js,html}\" && healthier \"src/**/*.{js,html}\"",
         "build": "rollup -c && node -e \"require('fs').copyFileSync('public/favicon.svg','docs/public/favicon.svg')\"",
         "autobuild": "rollup -c -w",
-        "dev": "run-p start:dev autobuild",
+        "dev": "run-p autobuild dev:server",
+        "dev:server": "node server.js",
         "start": "sirv docs --single",
         "start:dev": "sirv docs --single --dev"
     },
