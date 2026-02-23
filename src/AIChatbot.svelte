@@ -2,6 +2,9 @@
     import { createEventDispatcher } from 'svelte';
 
     const dispatch = createEventDispatcher();
+
+    // Note: this key is bundled into the client build via Rollup `replace`.
+    // This is fine for local experiments, but do NOT ship a real API key to production.
     const OPENAI_API_KEY = __OPENAI_API_KEY__;
 
     let isOpen = false;
@@ -143,16 +146,24 @@ Rules:
     }
 </script>
 
-<button class="chat-toggle btn btn-primary" on:click={() => (isOpen = !isOpen)}>
-    {isOpen ? 'Close AI' : 'Ask AI'}
+<button class="chat-toggle" on:click={() => (isOpen = !isOpen)} title="AI palette assistant">
+    <svg
+        class="chat-icon"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <span class="chat-label">{isOpen ? 'Close' : 'Ask AI'}</span>
 </button>
 
 {#if isOpen}
-    <div class="chat-panel card">
-        <div class="chat-header card-header">
-            <strong>Palette Assistant</strong>
-        </div>
-
+    <div class="chat-panel">
         <div class="chat-messages">
             {#each messages as msg}
                 <div class="bubble {msg.role}">
@@ -168,13 +179,12 @@ Rules:
 
         <div class="chat-input">
             <textarea
-                class="form-control"
                 rows="2"
                 bind:value={message}
-                placeholder='Try: "calm diverging palette with 5 colors"'
+                placeholder='Try: "Calm diverging palette with 5 colors"'
                 on:keydown={onMessageKeydown} />
-            <button class="btn btn-primary" disabled={loading} on:click={sendMessage}>
-                {loading ? 'Sending...' : 'Send'}
+            <button class="send-btn" disabled={loading} on:click={sendMessage}>
+                {loading ? '...' : 'Send'}
             </button>
         </div>
     </div>
@@ -183,76 +193,143 @@ Rules:
 <style>
     .chat-toggle {
         position: fixed;
-        right: 20px;
-        bottom: 20px;
+        right: 24px;
+        bottom: 24px;
         z-index: 1000;
+        padding: 0 16px 0 12px;
+        height: 48px;
+        border-radius: 999px;
+        border: none;
+        background: #4b6cb7;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(75, 108, 183, 0.4);
+        font-size: 0.95rem;
+        font-weight: 600;
+        font-family: inherit;
+    }
+    .chat-toggle:hover {
+        background: #3d5a9e;
+    }
+    .chat-toggle .chat-icon {
+        flex-shrink: 0;
+    }
+    .chat-toggle .chat-label {
+        white-space: nowrap;
     }
 
     .chat-panel {
         position: fixed;
-        right: 20px;
-        bottom: 70px;
-        width: 360px;
+        right: 24px;
+        bottom: 84px;
+        width: 340px;
         max-width: calc(100vw - 32px);
-        height: 540px;
-        max-height: calc(100vh - 100px);
+        height: 480px;
+        max-height: calc(100vh - 110px);
         display: flex;
         flex-direction: column;
         z-index: 1000;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .chat-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.85);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
     }
 
     .chat-messages {
         flex: 1;
         overflow: auto;
-        padding: 12px;
-        background: #fafafa;
+        padding: 16px;
     }
 
     .bubble {
         margin-bottom: 10px;
-        padding: 8px 10px;
-        border-radius: 8px;
-        background: #f0f0f0;
+        padding: 10px 12px;
+        border-radius: 12px;
     }
 
     .bubble.user {
-        background: #d9ecff;
+        background: rgba(75, 108, 183, 0.1);
     }
 
     .bubble.assistant {
-        background: #f3f3f3;
+        background: rgba(0, 0, 0, 0.03);
     }
 
     .role {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
-        margin-bottom: 4px;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 3px;
     }
 
     .content {
         white-space: pre-wrap;
         font-size: 13px;
-        line-height: 1.4;
+        line-height: 1.45;
+        color: #374151;
     }
 
     .chat-error {
-        color: #b00020;
-        font-size: 13px;
-        padding: 8px 12px 0;
+        color: #dc2626;
+        font-size: 12px;
+        padding: 0 16px 4px;
     }
 
     .chat-input {
         display: flex;
-        flex-direction: column;
+        align-items: stretch;
         gap: 8px;
-        padding: 12px;
-        border-top: 1px solid #e5e5e5;
+        padding: 12px 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-input textarea {
+        flex: 1;
+        resize: none;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 8px 10px;
+        font-size: 13px;
+        font-family: inherit;
+        line-height: 1.4;
+        background: #fff;
+        margin: 0;
+    }
+    .chat-input textarea:focus {
+        outline: none;
+        border-color: #4b6cb7;
+    }
+
+    .send-btn {
+        padding: 0 14px;
+        border: none;
+        border-radius: 10px;
+        background: #4b6cb7;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        margin: 0;
+        min-width: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .send-btn:hover {
+        background: #3d5a9e;
+    }
+    .send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 </style>

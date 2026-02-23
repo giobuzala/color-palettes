@@ -1,9 +1,9 @@
 <script>
     import chroma from 'chroma-js';
-    import { colorBlindSim } from'./colorBlind';
+    import { colorBlindSim } from './colorBlind';
     import _range from 'lodash-es/range';
 
-    export let colors = ['red']
+    export let colors = ['red'];
     export let colors2 = [];
     export let numColors = 7;
     export let diverging = false;
@@ -15,33 +15,41 @@
 
     $: even = numColors % 2 === 0;
 
-    $: numColorsLeft = diverging ? Math.ceil(numColors/2) + (even?1:0) : numColors;
-    $: numColorsRight = diverging ? Math.ceil(numColors/2) + (even?1:0) : 0;
+    $: numColorsLeft = diverging ? Math.ceil(numColors / 2) + (even ? 1 : 0) : numColors;
+    $: numColorsRight = diverging ? Math.ceil(numColors / 2) + (even ? 1 : 0) : 0;
 
     $: genColors = colors.length !== 1 ? colors : autoColors(colors[0], numColorsLeft);
     $: genColors2 = colors2.length !== 1 ? colors2 : autoColors(colors2[0], numColorsRight, true);
 
-    $: stepsLeft = colors.length ? chroma.scale(bezier && colors.length>1 ? chroma.bezier(genColors) : genColors)
-        .correctLightness(correctLightness)
-        .colors(numColorsLeft) : [];
+    $: stepsLeft = colors.length
+        ? chroma
+              .scale(bezier && colors.length > 1 ? chroma.bezier(genColors) : genColors)
+              .correctLightness(correctLightness)
+              .colors(numColorsLeft)
+        : [];
 
-    $: stepsRight = diverging && colors2.length ? chroma.scale(bezier&& colors2.length>1 ? chroma.bezier(genColors2) : genColors2)
-        .correctLightness(correctLightness)
-        .colors(numColorsRight) : [];
+    $: stepsRight = diverging && colors2.length
+        ? chroma
+              .scale(bezier && colors2.length > 1 ? chroma.bezier(genColors2) : genColors2)
+              .correctLightness(correctLightness)
+              .colors(numColorsRight)
+        : [];
 
-    $: steps = (even && diverging ? stepsLeft.slice(0, stepsLeft.length-1) : stepsLeft).concat(stepsRight.slice(1));
+    $: steps = (even && diverging ? stepsLeft.slice(0, stepsLeft.length - 1) : stepsLeft).concat(
+        stepsRight.slice(1)
+    );
 
     function autoGradient(color, numColors) {
         const lab = chroma(color).lab();
-        const lRange = 100 * (0.95 - 1/numColors);
-        const lStep = lRange / (numColors-1);
-        let lStart = (100-lRange)*0.5;
-        const range = _range(lStart, lStart+numColors*lStep, lStep);
+        const lRange = 100 * (0.95 - 1 / numColors);
+        const lStep = lRange / (numColors - 1);
+        const lStart = (100 - lRange) * 0.5;
+        const range = _range(lStart, lStart + numColors * lStep, lStep);
         let offset = 0;
         if (!diverging) {
             offset = 9999;
-            for (let i=0; i < numColors; i++) {
-                let diff = lab[0] - range[i];
+            for (let i = 0; i < numColors; i++) {
+                const diff = lab[0] - range[i];
                 if (Math.abs(diff) < Math.abs(offset)) {
                     offset = diff;
                 }
@@ -50,33 +58,43 @@
         return range.map(l => chroma.lab([l + offset, lab[1], lab[2]]));
     }
 
-    function autoColors(color, numColors, reverse=false) {
+    function autoColors(color, numColors, reverse = false) {
         if (diverging) {
-            const colors = autoGradient(color, 3).concat(chroma('#f5f5f5'));
-            if (reverse) colors.reverse();
-            return colors;
-        } else {
-            return autoGradient(color, numColors);
+            const generated = autoGradient(color, 3).concat(chroma('#f5f5f5'));
+            if (reverse) generated.reverse();
+            return generated;
         }
+        return autoGradient(color, numColors);
     }
 </script>
 
 <style>
     .palette {
-        background: #eee;
-        padding: 10px;
+        background: #f3f4f6;
+        padding: 6px;
         display: flex;
-        height: 100px;
+        height: 112px;
+        border-radius: 10px;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
     }
     .step {
-       height: 100%;
-       display: block;
-       flex-grow: 1;
+        height: 100%;
+        display: block;
+        flex-grow: 1;
+    }
+    .step:first-child {
+        border-radius: 6px 0 0 6px;
+    }
+    .step:last-child {
+        border-radius: 0 6px 6px 0;
     }
 </style>
 
 <div class="palette">
     {#each steps as step}
-    <div class="step" style="background: {simulate === 'none' ? step : colorBlindSim(step, simulate)}"></div>
+        <div
+            class="step"
+            style="background: {simulate === 'none' ? step : colorBlindSim(step, simulate)}"></div>
     {/each}
 </div>

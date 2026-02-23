@@ -6,21 +6,25 @@
     let open = false;
     let dragging = false;
 
-    function toggleEditOpen() { open = true; }
-    function toggleEditClose() { open = false; }
+    function toggleEditOpen() {
+        open = true;
+    }
+    function toggleEditClose() {
+        open = false;
+    }
 
-    let colorName;
-
-    $: lch = value.lch()
-    $: lightness = range(-5,6)
-        .map(l => lch[0] + Math.pow(l/8,2)*80*(l<0?-1:1))
+    $: lch = value.lch();
+    $: lightness = range(-5, 6)
+        .map(l => lch[0] + Math.pow(l / 8, 2) * 80 * (l < 0 ? -1 : 1))
         .map(l => chroma.lch(l, lch[1], lch[2]));
-    $: saturation = range(-5,6)
-        .map(s => Math.max(0, lch[1] + Math.pow(s/5,2)*80*(s<0?-1:1)))
+    $: saturation = range(-5, 6)
+        .map(s => Math.max(0, lch[1] + Math.pow(s / 5, 2) * 80 * (s < 0 ? -1 : 1)))
         .map(s => chroma.lch(lch[0], s, lch[2]));
-    $: hue = range(-5,6)
-        .map(h => lch[2] + Math.pow(h/5,2)*80*(h<0?-1:1))
-        .map(h => chroma.lch(lch[0], lch[1], h < 0 ? h + 360 : h > 360 ? h - 360 : h));
+    $: hue = range(-5, 6)
+        .map(h => lch[2] + Math.pow(h / 5, 2) * 80 * (h < 0 ? -1 : 1))
+        .map(h =>
+            chroma.lch(lch[0], lch[1], h < 0 ? h + 360 : h > 360 ? h - 360 : h)
+        );
 </script>
 
 <style>
@@ -48,7 +52,7 @@
         margin-bottom: 3px;
     }
     span.lbl {
-        width: 8.333%
+        width: 8.333%;
     }
     span.color {
         display: inline-block;
@@ -71,14 +75,13 @@
     }
 </style>
 <span
-    on:dragstart
     on:dragstart="{(event) => dragging = true}"
-    on:dragend="{(event) => dragging = false, open = false}"
+    on:dragend="{(event) => ((dragging = false), (open = false))}"
     draggable="true"
     on:mouseenter={toggleEditOpen}
     on:mouseleave={toggleEditClose}
     on:click|stopPropagation="{() => false}"
-    class:inverted={value.lab()[0]<50}
+    class:inverted={value.lab()[0] < 50}
     class="badge shadow-sm"
     style="background: {value.hex()}">
     <span class="hex">{value.hex().substr(1)}</span>
@@ -88,7 +91,7 @@
             class="popover fade show bs-popover-bottom"
             role="tooltip" x-placement="bottom">
             <div class="arrow" style="left: 121px;"></div>
-            <h3 class="popover-header"></h3>
+            <div class="popover-header" aria-hidden="true"></div>
             <div class="popover-body">
                 <div class="color-row">
                     <span class="lbl">L</span>

@@ -1,6 +1,6 @@
 <script>
     import chroma from 'chroma-js';
-    import { beforeUpdate, onMount } from 'svelte';
+    import { beforeUpdate } from 'svelte';
     import Checkbox from './Checkbox.svelte';
     import InputColors from './InputColors.svelte';
     import PalettePreview from './PalettePreview.svelte';
@@ -11,13 +11,11 @@
     import ButtonGroup from './ButtonGroup.svelte';
     import AIChatbot from './AIChatbot.svelte';
 
-    export let name;
-
     let steps = [];
     let bezier = true;
     let correctLightness = true;
 
-    let colors = '00429d,96ffea,lightyellow'.split(/\s*,\s*/).map(c => chroma(c));
+    let colors = '00429d,96ffea,ffffe0'.split(/\s*,\s*/).map(c => chroma(c));
     let colors2 = 'ffffe0,ff005e,93003a'.split(/\s*,\s*/).map(c => chroma(c));
     let numColors = 9;
     let mode = 'sequential';
@@ -27,19 +25,20 @@
         readStateFromHash();
     }
 
+    // URL hash encodes the current palette state for easy sharing/bookmarking.
+    // Format: numColors|mode(s/d)|colors|colors2|correctLightness(0/1)|bezier(0/1)
     $: hash = [
         numColors,
-        mode.substr(0,1),
-        colors.map(c=>c.hex().substr(1)).join(','),
-        colors2.length ? colors2.map(c=>c.hex().substr(1)).join(',') : '',
-        correctLightness ? 1:0,
-        bezier?1:0
+        mode.substr(0, 1),
+        colors.map(c => c.hex().substr(1)).join(','),
+        colors2.length ? colors2.map(c => c.hex().substr(1)).join(',') : '',
+        correctLightness ? 1 : 0,
+        bezier ? 1 : 0
     ].join('|');
 
     const isMac = navigator.platform.toUpperCase().indexOf('MAC') > -1;
 
     let _hash = '';
-    let _mounted = false;
     let _mode = 'sequential';
 
     beforeUpdate(() => {
@@ -55,14 +54,6 @@
         }
     });
 
-    // onMount(() => {
-    //     if (window.location.hash) {
-    //         console.log('initial hash', window.location.hash);
-    //         readStateFromHash();
-    //     }
-    //     _mounted = true;
-    // })
-
     function readStateFromHash() {
         const parts = window.location.hash.substr(2).split('|');
         if (parts.length === 6) {
@@ -74,7 +65,7 @@
                 colors2 = parts[3] !== '' ? parts[3].split(',').map(c => c && chroma(c)) : [];
                 correctLightness = parts[4] === '1';
                 bezier = parts[5] === '1';
-            })
+            });
         } else {
             window.location.hash = '';
         }
@@ -141,9 +132,12 @@
 
 <style>
     .head {
-        margin: 1em 0 1em;
+        margin: 1.5em 0 1.8em;
     }
-    h1 {
+    .head p {
+        color: #6b7280;
+        font-size: 0.92rem;
+        margin-bottom: 0;
     }
     select.custom-select {
         display: inline-block;
@@ -152,34 +146,73 @@
         padding: 0.4em 1.7em 0.4em 0.4em;
         margin: 0px 0.7ex 5px;
     }
+    .step1-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    .step1-row .step1-field:first-child {
+        flex: 0 0 55%;
+    }
+    .step1-field {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    .step1-field .label-text {
+        color: #4b5563;
+        white-space: nowrap;
+    }
     input[type=number] {
-        width: 4em;
+        width: 3.2em;
         text-align: center;
-        margin: 0px 0.7ex 5px;
+        margin: 0;
+        border: 2px solid #d1d5db;
+        border-radius: 8px;
+        background: #fff;
+        font-weight: 700;
+        font-size: 0.98rem;
+        padding: 0.4em 0.5em;
+    }
+    input[type=number]:focus {
+        outline: none;
+        border-color: #4b6cb7;
     }
     .foot {
-        margin-bottom: 1em;
+        margin: 16px 0 0;
+        padding-bottom: 20px;
     }
-    :global(.fa-svelte) {
-        vertical-align: sub;
+    .foot hr {
+        border-color: #e5e7eb;
+        margin: 0 0 10px;
     }
-    kbd
-    {
-        -moz-border-radius:3px;
-        -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-        -webkit-border-radius:3px;
-        -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-        background-color:#f7f7f7;
-        border:1px solid #ccc;
-        border-radius:3px;
-        box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-        color:#333;
+    .foot p {
+        color: #4b5563;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    .foot a {
+        color: #374151;
+    }
+    .foot a:hover {
+        color: #111827;
+    }
+    kbd {
+        background-color:#f3f4f6;
+        border:1px solid #d1d5db;
+        border-radius:4px;
+        box-shadow:0 1px 0 rgba(0,0,0,0.08);
+        color:#374151;
         display:inline-block;
-        /*font-family:Arial,Helvetica,sans-serif;*/
         line-height:1.4;
         margin:0 .1em;
-        padding:.1em .6em;
-        text-shadow:0 1px 0 #fff;
+        padding:.1em .5em;
+        font-size: 0.85em;
+    }
+    :global(.custom-control-label) {
+        color: #4b5563;
+        font-size: 0.93rem;
     }
 </style>
 
@@ -188,16 +221,17 @@
 <div class="container">
     <div class="head">
         <h1>Chroma.js Color Palette Helper</h1>
-        <p>This <a href="https://github.com/gka/chroma.js" target="_blank">chroma.js</a>-powered tool is here to help us  <a target="_blank" href="http://vis4.net/blog/posts/mastering-multi-hued-color-scales/">mastering multi-hued, multi-stops color scales</a>.</p>
+        <p>This <a href="https://github.com/gka/chroma.js" target="_blank">chroma.js</a>-powered tool is here to help us master <a href="https://www.vis4.net/blog/mastering-multi-hued-color-scales/" target="_blank">multi-hued, multi-stops color scales</a>, with a little help from AI.</p>
     </div>
     <Card step="1" title="What kind of palette do you want to create?">
-        <div class="row">
-            <div class="col-md">
-                Palette type:
+        <div class="step1-row">
+            <div class="step1-field">
+                <span class="label-text">Palette type:</span>
                 <ButtonGroup options="{['sequential', 'diverging']}" bind:value={mode} />
             </div>
-            <div class="col-md">
-                Number of colors: <input type="number" min="2" bind:value={numColors} />
+            <div class="step1-field">
+                <span class="label-text">Number of colors:</span>
+                <input type="number" min="2" bind:value={numColors} />
             </div>
         </div>
     </Card>
@@ -244,8 +278,7 @@
     </Card>
     <div class="foot">
         <hr>
-        <p>Created by <a href="https://vis4.net/blog">Gregor Aisch</a> for the sake of better
-        use of colors in maps and data visualizations. Feel free to <a href="https://github.com/gka/palettes">fork on Github</a>.</p>
+        <p>Created by <a href="https://vis4.net/blog">Gregor Aisch</a> for the sake of better use of colors in maps and data visualizations, forked and extended by <a href="https://giobuzala.com/" target="_blank">Giorgi Buzaladze</a> with an added AI layer.</p>
     </div>
 </div>
 

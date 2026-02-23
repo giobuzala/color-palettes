@@ -1,60 +1,111 @@
 <script>
-    import Icon from 'fa-svelte';
-    import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
-    import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
-    import { colorBlindCheck } from'./colorBlind';
+    import { colorBlindCheck } from './colorBlind';
 
     $: result = colorBlindCheck(colors);
 
     export let colors = [];
     export let result = [];
-
     export let active = 'none';
 
     const types = ['none', 'deuteranopia', 'protanopia', 'tritanopia'];
 </script>
 
 <style>
-
 @media (min-width: 720px) {
     .colorblind-sim {
         text-align: right;
         position: absolute;
         right: 20px;
-        top: -46px;
+        top: -34px;
     }
     .res {
         text-align: right;
     }
 }
-.text-muted {
-    padding-right: 1em;
-    font-size: 0.85rem;
-    display: inline-block;
-    padding-top: 6px;
+
+.res {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
-.c1 {
-    margin-top: -15px;
+
+.sim-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sim-label {
+    color: #6b7280;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.seg-group {
+    display: inline-flex;
+    background: #f3f4f6;
+    border-radius: 999px;
+    padding: 3px;
+}
+.seg-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.26rem 0.6rem;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
+    line-height: 1.4;
+    user-select: none;
+}
+.seg-btn.active {
+    background: #fff;
+    color: #1f2937;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.seg-btn.danger.active {
+    background: #fff;
+    color: #b91c1c;
+}
+.seg-btn input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 </style>
 
-
 <div class="colorblind-sim">
     {#if result.length}
-    <p class="res text-danger"><Icon icon={faExclamationTriangle} /> This palette is not colorblind-safe.</p>
+        <p class="res text-danger">Not colorblind-safe</p>
     {:else}
-    <p class="res text-secondary"><Icon icon={faCheck} /> This palette is colorblind-safe.</p>
+        <p class="res text-secondary">Colorblind-safe</p>
     {/if}
-    <div class="c1">
-        <div class="text-muted">simulate:</div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <div class="sim-row">
+        <div class="sim-label">simulate</div>
+        <div class="seg-group" role="group" aria-label="Colorblind simulation">
             {#each types as type}
-            <label class="btn btn-sm btn-outline-secondary"
-                class:btn-outline-danger="{result.indexOf(type) > -1}"
-                class:active={active===type}>
-                <input bind:group={active} value="{type}" type="radio" name="options" id="option1" autocomplete="off" checked={active===type}>{type === 'none' ? 'normal' : type.substr(0,4)+'.'}
-            </label>
+                <label
+                    class="seg-btn"
+                    class:danger={result.indexOf(type) > -1}
+                    class:active={active === type}>
+                    <input
+                        bind:group={active}
+                        value={type}
+                        type="radio"
+                        name="cbSim"
+                        autocomplete="off"
+                        checked={active === type} />
+                    {type === 'none' ? 'normal' : type.substr(0, 4) + '.'}
+                </label>
             {/each}
         </div>
     </div>

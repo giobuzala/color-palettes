@@ -5,10 +5,6 @@
     export let diverging = false;
 </script>
 
-<style>
-
-</style>
-
 <div class="row">
     <div class="col-md">
         <ColorList bind:colors />

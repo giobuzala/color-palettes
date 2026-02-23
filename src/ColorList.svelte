@@ -31,7 +31,7 @@
     }
 
     function drop(event) {
-        const index = event.dataTransfer.getData('index');
+        const index = +event.dataTransfer.getData('index');
         const newIndex = findIndex(event.target);
         const col = colors.splice(index, 1, null)[0];
         colors.splice(newIndex, 0, col);
@@ -40,7 +40,7 @@
 
     function findIndex(el) {
         const siblings = el.parentNode.children;
-        for (let i=0; i<siblings.length; i++) {
+        for (let i = 0; i < siblings.length; i++) {
             if (siblings[i] === el) return i;
         }
         return -1;
@@ -66,18 +66,22 @@
     }
 </style>
 
-<input class:hidden={!edit} bind:this={input} type="text" class="form-control" bind:value={colorString} on:blur={exitEditMode}>
-{#if !edit}
-<div
-    on:drop|preventDefault="{(event) => drop(event)}"
-    on:dragover|preventDefault="{(event) => dragover(event)}"
+<input
+    class:hidden={!edit}
+    bind:this={input}
+    type="text"
     class="form-control"
-    on:click={enterEditMode}>
-    {#each colors as color,i}
-    <Color
-        bind:value={color}
-        on:dragstart="{(event) => dragstart(event, i)}" />
-    {/each}
-    <span class="inv"></span>
-</div>
+    bind:value={colorString}
+    on:blur={exitEditMode} />
+{#if !edit}
+    <div
+        on:drop|preventDefault={drop}
+        on:dragover|preventDefault={dragover}
+        class="form-control"
+        on:click={enterEditMode}>
+        {#each colors as color, i}
+            <Color bind:value={color} on:dragstart={(event) => dragstart(event, i)} />
+        {/each}
+        <span class="inv"></span>
+    </div>
 {/if}

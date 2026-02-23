@@ -4,7 +4,6 @@
     import { line, curveStepAfter } from 'd3-shape';
     import chroma from 'chroma-js';
 
-    let div;
     let width;
     $: height = width * 0.7;
     export let title = '';
@@ -19,7 +18,8 @@
     export let steps = [];
     export let mode = 0;
 
-    $: values = steps.map(c => chroma(c).lch()[mode]).map(mode === 2 ? h=>h: d=>d);
+    // mode: 0=lightness, 1=chroma/saturation, 2=hue (from LCH)
+    $: values = steps.map(c => chroma(c).lch()[mode]);
     $: values2 = values.concat(values[values.length-1]);
 
     $: xScale = scaleLinear()
@@ -30,7 +30,7 @@
     let yDomain;
     $: {
         yDomain = extent(values);
-        let diff = Math.abs(yDomain[1] - yDomain[0]);
+        const diff = Math.abs(yDomain[1] - yDomain[0]);
         if (diff < minDomain) {
             yDomain[0] -= (minDomain-diff)*0.5;
             yDomain[1] += (minDomain-diff)*0.5;
