@@ -9,6 +9,7 @@
     import Card from './Card.svelte';
     import ColorBlindCheck from './ColorBlindCheck.svelte';
     import ButtonGroup from './ButtonGroup.svelte';
+    import AIChatbot from './AIChatbot.svelte';
 
     export let name;
 
@@ -83,6 +84,57 @@
         if (window.location.hash !== `#/${hash}`) {
             // deserialize hash
             readStateFromHash();
+        }
+    }
+
+    function normalizeHex(rawColor) {
+        if (typeof rawColor !== 'string') return null;
+        const trimmed = rawColor.trim();
+        if (!trimmed) return null;
+        return trimmed[0] === '#' ? trimmed : `#${trimmed}`;
+    }
+
+    function toChromaList(rawColors, fallback) {
+        if (!Array.isArray(rawColors) || !rawColors.length) return fallback;
+        const parsed = rawColors
+            .map(normalizeHex)
+            .filter(Boolean)
+            .map(color => {
+                try {
+                    return chroma(color);
+                } catch (e) {
+                    return null;
+                }
+            })
+            .filter(Boolean);
+        return parsed.length ? parsed : fallback;
+    }
+
+    function handleApplyPalette(event) {
+        const config = event && event.detail ? event.detail : {};
+
+        if (config.mode === 'sequential' || config.mode === 'diverging') {
+            mode = config.mode;
+        }
+
+        const parsedNumColors = Math.round(+config.numColors);
+        if (isFinite(parsedNumColors) && parsedNumColors >= 2) {
+            numColors = parsedNumColors;
+        }
+
+        if (typeof config.bezier === 'boolean') {
+            bezier = config.bezier;
+        }
+        if (typeof config.correctLightness === 'boolean') {
+            correctLightness = config.correctLightness;
+        }
+
+        colors = toChromaList(config.colors, colors);
+
+        if (mode === 'diverging') {
+            colors2 = toChromaList(config.colors2, colors2.length ? colors2 : colors.slice(0).reverse());
+        } else {
+            colors2 = [];
         }
     }
 </script>
@@ -196,3 +248,5 @@
         use of colors in maps and data visualizations. Feel free to <a href="https://github.com/gka/palettes">fork on Github</a>.</p>
     </div>
 </div>
+
+<AIChatbot on:applyPalette={handleApplyPalette} />
