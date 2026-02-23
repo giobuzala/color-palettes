@@ -4,7 +4,7 @@
     "scripts": {
         "format": "prettier \"src/**/*.js\" --write",
         "lint": "prettier --check \"src/**/*.{js,html}\" && healthier \"src/**/*.{js,html}\"",
-        "build": "rollup -c",
+        "build": "rollup -c && node -e \"require('fs').copyFileSync('public/favicon.svg','docs/public/favicon.svg')\"",
         "autobuild": "rollup -c -w",
         "dev": "run-p start:dev autobuild",
         "start": "sirv docs --single",
