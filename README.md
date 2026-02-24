@@ -1,7 +1,7 @@
 # [Color Den](https://colorden.vercel.app/)
 
 A Svelte color-scale builder for perceptually balanced, colorblind-aware palettes,
-forked from Gregor Aisch’s original tool and extended with an AI assistant.
+forked from Gregor Aisch’s original tool and extended with an AI assistant to guide idea generation and creative exploration.
 
 ## Fork notice
 
@@ -10,10 +10,13 @@ extended with an "Ask AI" flow.
 
 ## Overview
 
+Original app:
 - Build **sequential** and **diverging** palettes from custom color stops
 - Tune scales with **bezier interpolation** and **lightness correction**
 - Check and simulate colorblind variants (**deuteranopia/protanopia/tritanopia**)
 - Export generated palettes in multiple copy-friendly formats
+
+AI-enhanced app:
 - Use **Ask AI** to translate natural language into palette settings
 
 ## Access
