@@ -1,2 +1,11298 @@
-var app=function(){"use strict";function t(){}function e(t,e){for(const n in e)t[n]=e[n];return t}function n(t){return t()}function r(){return Object.create(null)}function o(t){t.forEach(n)}function i(t){return"function"==typeof t}function a(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function s(t,n,r){return t[1]?e({},e(n.$$scope.ctx,t[1](r?r(n):{}))):n.$$scope.ctx}function l(t,e){t.appendChild(e)}function c(t,e,n){t.insertBefore(e,n||null)}function u(t){t.parentNode.removeChild(t)}function f(t,e){for(let n=0;n<t.length;n+=1)t[n]&&t[n].d(e)}function h(t){return document.createElement(t)}function d(t){return document.createElementNS("http://www.w3.org/2000/svg",t)}function p(t){return document.createTextNode(t)}function g(){return p(" ")}function v(){return p("")}function b(t,e,n,r){return t.addEventListener(e,n,r),()=>t.removeEventListener(e,n,r)}function m(t){return function(e){return e.preventDefault(),t.call(this,e)}}function y(t,e,n){null==n?t.removeAttribute(e):t.setAttribute(e,n)}function w(t,e){e=""+e,t.data!==e&&(t.data=e)}function _(t,e,n){t.style.setProperty(e,n)}function x(t,e,n){t.classList[n?"add":"remove"](e)}let $;function M(t){$=t}function k(t){(function(){if(!$)throw new Error("Function called outside component initialization");return $})().$$.before_render.push(t)}function C(){const t=$;return(e,n)=>{const r=t.$$.callbacks[e];if(r){const o=function(t,e){const n=document.createEvent("CustomEvent");return n.initCustomEvent(t,!1,!1,e),n}(e,n);r.slice().forEach(e=>{e.call(t,o)})}}}const N=[],T=Promise.resolve();let S=!1;const j=[],L=[],z=[];function D(t){j.push(t)}function A(t){L.push(t)}function O(t){z.push(t)}function E(){const t=new Set;do{for(;N.length;){const t=N.shift();M(t),U(t.$$)}for(;j.length;)j.shift()();for(;L.length;){const e=L.pop();t.has(e)||(e(),t.add(e))}}while(N.length);for(;z.length;)z.pop()();S=!1}function U(t){t.fragment&&(t.update(t.dirty),o(t.before_render),t.fragment.p(t.dirty,t.ctx),t.dirty=null,t.after_render.forEach(A))}const F=new Set;let P;function q(){P={remaining:0,callbacks:[]}}function Y(){P.remaining||o(P.callbacks)}function R(t,e){t&&t.i&&(F.delete(t),t.i(e))}function I(t,e,n){if(t&&t.o){if(F.has(t))return;F.add(t),P.callbacks.push(()=>{F.delete(t),n&&(t.d(1),n())}),t.o(e)}}function H(t,e,n){-1!==t.$$.props.indexOf(e)&&(t.$$.bound[e]=n,n(t.$$.ctx[e]))}function B(t,e,r){const{fragment:a,on_mount:s,on_destroy:l,after_render:c}=t.$$;a.m(e,r),A(()=>{const e=s.map(n).filter(i);l?l.push(...e):o(e),t.$$.on_mount=[]}),c.forEach(A)}function G(t,e){t.$$.fragment&&(o(t.$$.on_destroy),e&&t.$$.fragment.d(1),t.$$.on_destroy=t.$$.fragment=null,t.$$.ctx={})}function Z(t,e){t.$$.dirty||(N.push(t),S||(S=!0,T.then(E)),t.$$.dirty=r()),t.$$.dirty[e]=!0}function W(e,n,i,a,s,l){const c=$;M(e);const u=n.props||{},f=e.$$={fragment:null,ctx:null,props:l,update:t,not_equal:s,bound:r(),on_mount:[],on_destroy:[],before_render:[],after_render:[],context:new Map(c?c.$$.context:[]),callbacks:r(),dirty:null};let h=!1;var d;f.ctx=i?i(e,u,(t,n)=>{f.ctx&&s(f.ctx[t],f.ctx[t]=n)&&(f.bound[t]&&f.bound[t](n),h&&Z(e,t))}):u,f.update(),h=!0,o(f.before_render),f.fragment=a(f.ctx),n.target&&(n.hydrate?f.fragment.l((d=n.target,Array.from(d.childNodes))):f.fragment.c(),n.intro&&R(e.$$.fragment),B(e,n.target,n.anchor),E()),M(c)}class V{$destroy(){G(this,1),this.$destroy=t}$on(t,e){const n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1)}}$set(){}}"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;var X,J=(function(t,e){t.exports=function(){for(var t=function(t,e,n){return void 0===e&&(e=0),void 0===n&&(n=1),t<e?e:t>n?n:t},e={},n=0,r=["Boolean","Number","String","Function","Array","Date","RegExp","Undefined","Null"];n<r.length;n+=1){var o=r[n];e["[object "+o+"]"]=o.toLowerCase()}var i=function(t){return e[Object.prototype.toString.call(t)]||"object"},a=Math.PI,s={clip_rgb:function(e){e._clipped=!1,e._unclipped=e.slice(0);for(var n=0;n<=3;n++)n<3?((e[n]<0||e[n]>255)&&(e._clipped=!0),e[n]=t(e[n],0,255)):3===n&&(e[n]=t(e[n],0,1));return e},limit:t,type:i,unpack:function(t,e){return void 0===e&&(e=null),t.length>=3?Array.prototype.slice.call(t):"object"==i(t[0])&&e?e.split("").filter(function(e){return void 0!==t[0][e]}).map(function(e){return t[0][e]}):t[0]},last:function(t){if(t.length<2)return null;var e=t.length-1;return"string"==i(t[e])?t[e].toLowerCase():null},PI:a,TWOPI:2*a,PITHIRD:a/3,DEG2RAD:a/180,RAD2DEG:180/a},l={format:{},autodetect:[]},c=s.last,u=s.clip_rgb,f=s.type,h=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if("object"===f(t[0])&&t[0].constructor&&t[0].constructor===this.constructor)return t[0];var n=c(t),r=!1;if(!n){r=!0,l.sorted||(l.autodetect=l.autodetect.sort(function(t,e){return e.p-t.p}),l.sorted=!0);for(var o=0,i=l.autodetect;o<i.length;o+=1){var a=i[o];if(n=a.test.apply(a,t))break}}if(!l.format[n])throw new Error("unknown format: "+t);var s=l.format[n].apply(null,r?t:t.slice(0,-1));this._rgb=u(s),3===this._rgb.length&&this._rgb.push(1)};h.prototype.toString=function(){return"function"==f(this.hex)?this.hex():"["+this._rgb.join(",")+"]"};var d=h,p=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(p.Color,[null].concat(t)))};p.Color=d,p.version="2.0.4";var g=p,v=s.unpack,b=Math.max,m=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=v(t,"rgb"),r=n[0],o=n[1],i=n[2],a=1-b(r/=255,b(o/=255,i/=255)),s=a<1?1/(1-a):0,l=(1-r-a)*s,c=(1-o-a)*s,u=(1-i-a)*s;return[l,c,u,a]},y=s.unpack,w=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=(t=y(t,"cmyk"))[0],r=t[1],o=t[2],i=t[3],a=t.length>4?t[4]:1;return 1===i?[0,0,0,a]:[n>=1?0:255*(1-n)*(1-i),r>=1?0:255*(1-r)*(1-i),o>=1?0:255*(1-o)*(1-i),a]},_=s.unpack,x=s.type;d.prototype.cmyk=function(){return m(this._rgb)},g.cmyk=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["cmyk"])))},l.format.cmyk=w,l.autodetect.push({p:2,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=_(t,"cmyk"),"array"===x(t)&&4===t.length)return"cmyk"}});var $=s.unpack,M=s.last,k=function(t){return Math.round(100*t)/100},C=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=$(t,"hsla"),r=M(t)||"lsa";return n[0]=k(n[0]||0),n[1]=k(100*n[1])+"%",n[2]=k(100*n[2])+"%","hsla"===r||n.length>3&&n[3]<1?(n[3]=n.length>3?n[3]:1,r="hsla"):n.length=3,r+"("+n.join(",")+")"},N=s.unpack,T=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=(t=N(t,"rgba"))[0],r=t[1],o=t[2];n/=255,r/=255,o/=255;var i,a,s=Math.min(n,r,o),l=Math.max(n,r,o),c=(l+s)/2;return l===s?(i=0,a=Number.NaN):i=c<.5?(l-s)/(l+s):(l-s)/(2-l-s),n==l?a=(r-o)/(l-s):r==l?a=2+(o-n)/(l-s):o==l&&(a=4+(n-r)/(l-s)),(a*=60)<0&&(a+=360),t.length>3&&void 0!==t[3]?[a,i,c,t[3]]:[a,i,c]},S=s.unpack,j=s.last,L=Math.round,z=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=S(t,"rgba"),r=j(t)||"rgb";return"hsl"==r.substr(0,3)?C(T(n),r):(n[0]=L(n[0]),n[1]=L(n[1]),n[2]=L(n[2]),("rgba"===r||n.length>3&&n[3]<1)&&(n[3]=n.length>3?n[3]:1,r="rgba"),r+"("+n.slice(0,"rgb"===r?3:4).join(",")+")")},D=s.unpack,A=Math.round,O=function(){for(var t,e=[],n=arguments.length;n--;)e[n]=arguments[n];var r,o,i,a=(e=D(e,"hsl"))[0],s=e[1],l=e[2];if(0===s)r=o=i=255*l;else{var c=[0,0,0],u=[0,0,0],f=l<.5?l*(1+s):l+s-l*s,h=2*l-f,d=a/360;c[0]=d+1/3,c[1]=d,c[2]=d-1/3;for(var p=0;p<3;p++)c[p]<0&&(c[p]+=1),c[p]>1&&(c[p]-=1),6*c[p]<1?u[p]=h+6*(f-h)*c[p]:2*c[p]<1?u[p]=f:3*c[p]<2?u[p]=h+(f-h)*(2/3-c[p])*6:u[p]=h;t=[A(255*u[0]),A(255*u[1]),A(255*u[2])],r=t[0],o=t[1],i=t[2]}return e.length>3?[r,o,i,e[3]]:[r,o,i,1]},E=/^rgb\(\s*(-?\d+),\s*(-?\d+)\s*,\s*(-?\d+)\s*\)$/,U=/^rgba\(\s*(-?\d+),\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*([01]|[01]?\.\d+)\)$/,F=/^rgb\(\s*(-?\d+(?:\.\d+)?)%,\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*\)$/,P=/^rgba\(\s*(-?\d+(?:\.\d+)?)%,\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/,q=/^hsl\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*\)$/,Y=/^hsla\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/,R=Math.round,I=function(t){var e;if(t=t.toLowerCase().trim(),l.format.named)try{return l.format.named(t)}catch(t){}if(e=t.match(E)){for(var n=e.slice(1,4),r=0;r<3;r++)n[r]=+n[r];return n[3]=1,n}if(e=t.match(U)){for(var o=e.slice(1,5),i=0;i<4;i++)o[i]=+o[i];return o}if(e=t.match(F)){for(var a=e.slice(1,4),s=0;s<3;s++)a[s]=R(2.55*a[s]);return a[3]=1,a}if(e=t.match(P)){for(var c=e.slice(1,5),u=0;u<3;u++)c[u]=R(2.55*c[u]);return c[3]=+c[3],c}if(e=t.match(q)){var f=e.slice(1,4);f[1]*=.01,f[2]*=.01;var h=O(f);return h[3]=1,h}if(e=t.match(Y)){var d=e.slice(1,4);d[1]*=.01,d[2]*=.01;var p=O(d);return p[3]=+e[4],p}};I.test=function(t){return E.test(t)||U.test(t)||F.test(t)||P.test(t)||q.test(t)||Y.test(t)};var H=I,B=s.type;d.prototype.css=function(t){return z(this._rgb,t)},g.css=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["css"])))},l.format.css=H,l.autodetect.push({p:5,test:function(t){for(var e=[],n=arguments.length-1;n-- >0;)e[n]=arguments[n+1];if(!e.length&&"string"===B(t)&&H.test(t))return"css"}});var G=s.unpack;l.format.gl=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=G(t,"rgba");return n[0]*=255,n[1]*=255,n[2]*=255,n},g.gl=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["gl"])))},d.prototype.gl=function(){var t=this._rgb;return[t[0]/255,t[1]/255,t[2]/255,t[3]]};var Z=s.unpack,W=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n,r=Z(t,"rgb"),o=r[0],i=r[1],a=r[2],s=Math.min(o,i,a),l=Math.max(o,i,a),c=l-s,u=100*c/255,f=s/(255-c)*100;return 0===c?n=Number.NaN:(o===l&&(n=(i-a)/c),i===l&&(n=2+(a-o)/c),a===l&&(n=4+(o-i)/c),(n*=60)<0&&(n+=360)),[n,u,f]},V=s.unpack,X=Math.floor,J=function(){for(var t,e,n,r,o,i,a=[],s=arguments.length;s--;)a[s]=arguments[s];var l,c,u,f=(a=V(a,"hcg"))[0],h=a[1],d=a[2];d*=255;var p=255*h;if(0===h)l=c=u=d;else{360===f&&(f=0),f>360&&(f-=360),f<0&&(f+=360);var g=X(f/=60),v=f-g,b=d*(1-h),m=b+p*(1-v),y=b+p*v,w=b+p;switch(g){case 0:l=(t=[w,y,b])[0],c=t[1],u=t[2];break;case 1:l=(e=[m,w,b])[0],c=e[1],u=e[2];break;case 2:l=(n=[b,w,y])[0],c=n[1],u=n[2];break;case 3:l=(r=[b,m,w])[0],c=r[1],u=r[2];break;case 4:l=(o=[y,b,w])[0],c=o[1],u=o[2];break;case 5:l=(i=[w,b,m])[0],c=i[1],u=i[2]}}return[l,c,u,a.length>3?a[3]:1]},Q=s.unpack,K=s.type;d.prototype.hcg=function(){return W(this._rgb)},g.hcg=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["hcg"])))},l.format.hcg=J,l.autodetect.push({p:1,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=Q(t,"hcg"),"array"===K(t)&&3===t.length)return"hcg"}});var tt=s.unpack,et=s.last,nt=Math.round,rt=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=tt(t,"rgba"),r=n[0],o=n[1],i=n[2],a=n[3],s=et(t)||"auto";void 0===a&&(a=1),"auto"===s&&(s=a<1?"rgba":"rgb"),r=nt(r),o=nt(o),i=nt(i);var l=r<<16|o<<8|i,c="000000"+l.toString(16);c=c.substr(c.length-6);var u="0"+nt(255*a).toString(16);switch(u=u.substr(u.length-2),s.toLowerCase()){case"rgba":return"#"+c+u;case"argb":return"#"+u+c;default:return"#"+c}},ot=/^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/,it=/^#?([A-Fa-f0-9]{8})$/,at=function(t){if(t.match(ot)){4!==t.length&&7!==t.length||(t=t.substr(1)),3===t.length&&(t=(t=t.split(""))[0]+t[0]+t[1]+t[1]+t[2]+t[2]);var e=parseInt(t,16),n=e>>16,r=e>>8&255,o=255&e;return[n,r,o,1]}if(t.match(it)){9===t.length&&(t=t.substr(1));var i=parseInt(t,16),a=i>>24&255,s=i>>16&255,l=i>>8&255,c=Math.round((255&i)/255*100)/100;return[a,s,l,c]}throw new Error("unknown hex color: "+t)},st=s.type;d.prototype.hex=function(t){return rt(this._rgb,t)},g.hex=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["hex"])))},l.format.hex=at,l.autodetect.push({p:4,test:function(t){for(var e=[],n=arguments.length-1;n-- >0;)e[n]=arguments[n+1];if(!e.length&&"string"===st(t)&&[3,4,6,7,8,9].includes(t.length))return"hex"}});var lt=s.unpack,ct=s.TWOPI,ut=Math.min,ft=Math.sqrt,ht=Math.acos,dt=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n,r=lt(t,"rgb"),o=r[0],i=r[1],a=r[2],s=ut(o/=255,i/=255,a/=255),l=(o+i+a)/3,c=l>0?1-s/l:0;return 0===c?n=NaN:(n=(o-i+(o-a))/2,n/=ft((o-i)*(o-i)+(o-a)*(i-a)),n=ht(n),a>i&&(n=ct-n),n/=ct),[360*n,c,l]},pt=s.unpack,gt=s.limit,vt=s.TWOPI,bt=s.PITHIRD,mt=Math.cos,yt=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n,r,o,i=(t=pt(t,"hsi"))[0],a=t[1],s=t[2];return isNaN(i)&&(i=0),isNaN(a)&&(a=0),i>360&&(i-=360),i<0&&(i+=360),(i/=360)<1/3?(o=(1-a)/3,n=(1+a*mt(vt*i)/mt(bt-vt*i))/3,r=1-(o+n)):i<2/3?(n=(1-a)/3,r=(1+a*mt(vt*(i-=1/3))/mt(bt-vt*i))/3,o=1-(n+r)):(r=(1-a)/3,o=(1+a*mt(vt*(i-=2/3))/mt(bt-vt*i))/3,n=1-(r+o)),n=gt(s*n*3),r=gt(s*r*3),o=gt(s*o*3),[255*n,255*r,255*o,t.length>3?t[3]:1]},wt=s.unpack,_t=s.type;d.prototype.hsi=function(){return dt(this._rgb)},g.hsi=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["hsi"])))},l.format.hsi=yt,l.autodetect.push({p:2,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=wt(t,"hsi"),"array"===_t(t)&&3===t.length)return"hsi"}});var xt=s.unpack,$t=s.type;d.prototype.hsl=function(){return T(this._rgb)},g.hsl=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["hsl"])))},l.format.hsl=O,l.autodetect.push({p:2,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=xt(t,"hsl"),"array"===$t(t)&&3===t.length)return"hsl"}});var Mt=s.unpack,kt=Math.min,Ct=Math.max,Nt=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n,r,o,i=(t=Mt(t,"rgb"))[0],a=t[1],s=t[2],l=kt(i,a,s),c=Ct(i,a,s),u=c-l;return o=c/255,0===c?(n=Number.NaN,r=0):(r=u/c,i===c&&(n=(a-s)/u),a===c&&(n=2+(s-i)/u),s===c&&(n=4+(i-a)/u),(n*=60)<0&&(n+=360)),[n,r,o]},Tt=s.unpack,St=Math.floor,jt=function(){for(var t,e,n,r,o,i,a=[],s=arguments.length;s--;)a[s]=arguments[s];var l,c,u,f=(a=Tt(a,"hsv"))[0],h=a[1],d=a[2];if(d*=255,0===h)l=c=u=d;else{360===f&&(f=0),f>360&&(f-=360),f<0&&(f+=360);var p=St(f/=60),g=f-p,v=d*(1-h),b=d*(1-h*g),m=d*(1-h*(1-g));switch(p){case 0:l=(t=[d,m,v])[0],c=t[1],u=t[2];break;case 1:l=(e=[b,d,v])[0],c=e[1],u=e[2];break;case 2:l=(n=[v,d,m])[0],c=n[1],u=n[2];break;case 3:l=(r=[v,b,d])[0],c=r[1],u=r[2];break;case 4:l=(o=[m,v,d])[0],c=o[1],u=o[2];break;case 5:l=(i=[d,v,b])[0],c=i[1],u=i[2]}}return[l,c,u,a.length>3?a[3]:1]},Lt=s.unpack,zt=s.type;d.prototype.hsv=function(){return Nt(this._rgb)},g.hsv=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["hsv"])))},l.format.hsv=jt,l.autodetect.push({p:2,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=Lt(t,"hsv"),"array"===zt(t)&&3===t.length)return"hsv"}});var Dt={Kn:18,Xn:.95047,Yn:1,Zn:1.08883,t0:.137931034,t1:.206896552,t2:.12841855,t3:.008856452},At=s.unpack,Ot=Math.pow,Et=function(t){return(t/=255)<=.04045?t/12.92:Ot((t+.055)/1.055,2.4)},Ut=function(t){return t>Dt.t3?Ot(t,1/3):t/Dt.t2+Dt.t0},Ft=function(t,e,n){t=Et(t),e=Et(e),n=Et(n);var r=Ut((.4124564*t+.3575761*e+.1804375*n)/Dt.Xn),o=Ut((.2126729*t+.7151522*e+.072175*n)/Dt.Yn),i=Ut((.0193339*t+.119192*e+.9503041*n)/Dt.Zn);return[r,o,i]},Pt=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=At(t,"rgb"),r=n[0],o=n[1],i=n[2],a=Ft(r,o,i),s=a[0],l=a[1],c=a[2],u=116*l-16;return[u<0?0:u,500*(s-l),200*(l-c)]},qt=s.unpack,Yt=Math.pow,Rt=function(t){return 255*(t<=.00304?12.92*t:1.055*Yt(t,1/2.4)-.055)},It=function(t){return t>Dt.t1?t*t*t:Dt.t2*(t-Dt.t0)},Ht=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n,r,o,i,a,s,l=(t=qt(t,"lab"))[0],c=t[1],u=t[2];return r=(l+16)/116,n=isNaN(c)?r:r+c/500,o=isNaN(u)?r:r-u/200,r=Dt.Yn*It(r),n=Dt.Xn*It(n),o=Dt.Zn*It(o),i=Rt(3.2404542*n-1.5371385*r-.4985314*o),a=Rt(-.969266*n+1.8760108*r+.041556*o),s=Rt(.0556434*n-.2040259*r+1.0572252*o),[i,a,s,t.length>3?t[3]:1]},Bt=s.unpack,Gt=s.type;d.prototype.lab=function(){return Pt(this._rgb)},g.lab=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["lab"])))},l.format.lab=Ht,l.autodetect.push({p:2,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=Bt(t,"lab"),"array"===Gt(t)&&3===t.length)return"lab"}});var Zt=s.unpack,Wt=s.RAD2DEG,Vt=Math.sqrt,Xt=Math.atan2,Jt=Math.round,Qt=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=Zt(t,"lab"),r=n[0],o=n[1],i=n[2],a=Vt(o*o+i*i),s=(Xt(i,o)*Wt+360)%360;return 0===Jt(1e4*a)&&(s=Number.NaN),[r,a,s]},Kt=s.unpack,te=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=Kt(t,"rgb"),r=n[0],o=n[1],i=n[2],a=Pt(r,o,i),s=a[0],l=a[1],c=a[2];return Qt(s,l,c)},ee=s.unpack,ne=s.DEG2RAD,re=Math.sin,oe=Math.cos,ie=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=ee(t,"lch"),r=n[0],o=n[1],i=n[2];return isNaN(i)&&(i=0),[r,oe(i*=ne)*o,re(i)*o]},ae=s.unpack,se=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=(t=ae(t,"lch"))[0],r=t[1],o=t[2],i=ie(n,r,o),a=i[0],s=i[1],l=i[2],c=Ht(a,s,l),u=c[0],f=c[1],h=c[2];return[u,f,h,t.length>3?t[3]:1]},le=s.unpack,ce=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=le(t,"hcl").reverse();return se.apply(void 0,n)},ue=s.unpack,fe=s.type;d.prototype.lch=function(){return te(this._rgb)},d.prototype.hcl=function(){return te(this._rgb).reverse()},g.lch=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["lch"])))},g.hcl=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["hcl"])))},l.format.lch=se,l.format.hcl=ce,["lch","hcl"].forEach(function(t){return l.autodetect.push({p:2,test:function(){for(var e=[],n=arguments.length;n--;)e[n]=arguments[n];if(e=ue(e,t),"array"===fe(e)&&3===e.length)return t}})});var he={aliceblue:"#f0f8ff",antiquewhite:"#faebd7",aqua:"#00ffff",aquamarine:"#7fffd4",azure:"#f0ffff",beige:"#f5f5dc",bisque:"#ffe4c4",black:"#000000",blanchedalmond:"#ffebcd",blue:"#0000ff",blueviolet:"#8a2be2",brown:"#a52a2a",burlywood:"#deb887",cadetblue:"#5f9ea0",chartreuse:"#7fff00",chocolate:"#d2691e",coral:"#ff7f50",cornflower:"#6495ed",cornflowerblue:"#6495ed",cornsilk:"#fff8dc",crimson:"#dc143c",cyan:"#00ffff",darkblue:"#00008b",darkcyan:"#008b8b",darkgoldenrod:"#b8860b",darkgray:"#a9a9a9",darkgreen:"#006400",darkgrey:"#a9a9a9",darkkhaki:"#bdb76b",darkmagenta:"#8b008b",darkolivegreen:"#556b2f",darkorange:"#ff8c00",darkorchid:"#9932cc",darkred:"#8b0000",darksalmon:"#e9967a",darkseagreen:"#8fbc8f",darkslateblue:"#483d8b",darkslategray:"#2f4f4f",darkslategrey:"#2f4f4f",darkturquoise:"#00ced1",darkviolet:"#9400d3",deeppink:"#ff1493",deepskyblue:"#00bfff",dimgray:"#696969",dimgrey:"#696969",dodgerblue:"#1e90ff",firebrick:"#b22222",floralwhite:"#fffaf0",forestgreen:"#228b22",fuchsia:"#ff00ff",gainsboro:"#dcdcdc",ghostwhite:"#f8f8ff",gold:"#ffd700",goldenrod:"#daa520",gray:"#808080",green:"#008000",greenyellow:"#adff2f",grey:"#808080",honeydew:"#f0fff0",hotpink:"#ff69b4",indianred:"#cd5c5c",indigo:"#4b0082",ivory:"#fffff0",khaki:"#f0e68c",laserlemon:"#ffff54",lavender:"#e6e6fa",lavenderblush:"#fff0f5",lawngreen:"#7cfc00",lemonchiffon:"#fffacd",lightblue:"#add8e6",lightcoral:"#f08080",lightcyan:"#e0ffff",lightgoldenrod:"#fafad2",lightgoldenrodyellow:"#fafad2",lightgray:"#d3d3d3",lightgreen:"#90ee90",lightgrey:"#d3d3d3",lightpink:"#ffb6c1",lightsalmon:"#ffa07a",lightseagreen:"#20b2aa",lightskyblue:"#87cefa",lightslategray:"#778899",lightslategrey:"#778899",lightsteelblue:"#b0c4de",lightyellow:"#ffffe0",lime:"#00ff00",limegreen:"#32cd32",linen:"#faf0e6",magenta:"#ff00ff",maroon:"#800000",maroon2:"#7f0000",maroon3:"#b03060",mediumaquamarine:"#66cdaa",mediumblue:"#0000cd",mediumorchid:"#ba55d3",mediumpurple:"#9370db",mediumseagreen:"#3cb371",mediumslateblue:"#7b68ee",mediumspringgreen:"#00fa9a",mediumturquoise:"#48d1cc",mediumvioletred:"#c71585",midnightblue:"#191970",mintcream:"#f5fffa",mistyrose:"#ffe4e1",moccasin:"#ffe4b5",navajowhite:"#ffdead",navy:"#000080",oldlace:"#fdf5e6",olive:"#808000",olivedrab:"#6b8e23",orange:"#ffa500",orangered:"#ff4500",orchid:"#da70d6",palegoldenrod:"#eee8aa",palegreen:"#98fb98",paleturquoise:"#afeeee",palevioletred:"#db7093",papayawhip:"#ffefd5",peachpuff:"#ffdab9",peru:"#cd853f",pink:"#ffc0cb",plum:"#dda0dd",powderblue:"#b0e0e6",purple:"#800080",purple2:"#7f007f",purple3:"#a020f0",rebeccapurple:"#663399",red:"#ff0000",rosybrown:"#bc8f8f",royalblue:"#4169e1",saddlebrown:"#8b4513",salmon:"#fa8072",sandybrown:"#f4a460",seagreen:"#2e8b57",seashell:"#fff5ee",sienna:"#a0522d",silver:"#c0c0c0",skyblue:"#87ceeb",slateblue:"#6a5acd",slategray:"#708090",slategrey:"#708090",snow:"#fffafa",springgreen:"#00ff7f",steelblue:"#4682b4",tan:"#d2b48c",teal:"#008080",thistle:"#d8bfd8",tomato:"#ff6347",turquoise:"#40e0d0",violet:"#ee82ee",wheat:"#f5deb3",white:"#ffffff",whitesmoke:"#f5f5f5",yellow:"#ffff00",yellowgreen:"#9acd32"},de=s.type;d.prototype.name=function(){for(var t=rt(this._rgb,"rgb"),e=0,n=Object.keys(he);e<n.length;e+=1){var r=n[e];if(he[r]===t)return r.toLowerCase()}return t},l.format.named=function(t){if(t=t.toLowerCase(),he[t])return at(he[t]);throw new Error("unknown color name: "+t)},l.autodetect.push({p:5,test:function(t){for(var e=[],n=arguments.length-1;n-- >0;)e[n]=arguments[n+1];if(!e.length&&"string"===de(t)&&he[t.toLowerCase()])return"named"}});var pe=s.unpack,ge=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=pe(t,"rgb"),r=n[0],o=n[1],i=n[2];return(r<<16)+(o<<8)+i},ve=s.type,be=function(t){if("number"==ve(t)&&t>=0&&t<=16777215){var e=t>>16,n=t>>8&255,r=255&t;return[e,n,r,1]}throw new Error("unknown num color: "+t)},me=s.type;d.prototype.num=function(){return ge(this._rgb)},g.num=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["num"])))},l.format.num=be,l.autodetect.push({p:5,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(1===t.length&&"number"===me(t[0])&&t[0]>=0&&t[0]<=16777215)return"num"}});var ye=s.unpack,we=s.type,_e=Math.round;d.prototype.rgb=function(t){return void 0===t&&(t=!0),!1===t?this._rgb.slice(0,3):this._rgb.slice(0,3).map(_e)},d.prototype.rgba=function(t){return void 0===t&&(t=!0),this._rgb.slice(0,4).map(function(e,n){return n<3?!1===t?e:_e(e):e})},g.rgb=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["rgb"])))},l.format.rgb=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];var n=ye(t,"rgba");return void 0===n[3]&&(n[3]=1),n},l.autodetect.push({p:3,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=ye(t,"rgba"),"array"===we(t)&&(3===t.length||4===t.length&&"number"==we(t[3])&&t[3]>=0&&t[3]<=1))return"rgb"}});var xe=Math.log,$e=function(t){var e,n,r,o=t/100;return o<66?(e=255,n=-155.25485562709179-.44596950469579133*(n=o-2)+104.49216199393888*xe(n),r=o<20?0:.8274096064007395*(r=o-10)-254.76935184120902+115.67994401066147*xe(r)):(e=351.97690566805693+.114206453784165*(e=o-55)-40.25366309332127*xe(e),n=325.4494125711974+.07943456536662342*(n=o-50)-28.0852963507957*xe(n),r=255),[e,n,r,1]},Me=s.unpack,ke=Math.round,Ce=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];for(var n,r=Me(t,"rgb"),o=r[0],i=r[2],a=1e3,s=4e4;s-a>.4;){var l=$e(n=.5*(s+a));l[2]/l[0]>=i/o?s=n:a=n}return ke(n)};d.prototype.temp=d.prototype.kelvin=d.prototype.temperature=function(){return Ce(this._rgb)},g.temp=g.kelvin=g.temperature=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];return new(Function.prototype.bind.apply(d,[null].concat(t,["temp"])))},l.format.temp=l.format.kelvin=l.format.temperature=$e;var Ne=s.type;d.prototype.alpha=function(t,e){return void 0===e&&(e=!1),void 0!==t&&"number"===Ne(t)?e?(this._rgb[3]=t,this):new d([this._rgb[0],this._rgb[1],this._rgb[2],t],"rgb"):this._rgb[3]},d.prototype.clipped=function(){return this._rgb._clipped||!1},d.prototype.darken=function(t){void 0===t&&(t=1);var e=this.lab();return e[0]-=Dt.Kn*t,new d(e,"lab").alpha(this.alpha(),!0)},d.prototype.brighten=function(t){return void 0===t&&(t=1),this.darken(-t)},d.prototype.darker=d.prototype.darken,d.prototype.brighter=d.prototype.brighten,d.prototype.get=function(t){var e=t.split("."),n=e[0],r=e[1],o=this[n]();if(r){var i=n.indexOf(r);if(i>-1)return o[i];throw new Error("unknown channel "+r+" in mode "+n)}return o};var Te=s.type,Se=Math.pow;d.prototype.luminance=function(t){if(void 0!==t&&"number"===Te(t)){if(0===t)return new d([0,0,0,this._rgb[3]],"rgb");if(1===t)return new d([255,255,255,this._rgb[3]],"rgb");var e=this.luminance(),n=20,r=function(e,o){var i=e.interpolate(o,.5,"rgb"),a=i.luminance();return Math.abs(t-a)<1e-7||!n--?i:a>t?r(e,i):r(i,o)},o=(e>t?r(new d([0,0,0]),this):r(this,new d([255,255,255]))).rgb();return new d(o.concat([this._rgb[3]]))}return je.apply(void 0,this._rgb.slice(0,3))};var je=function(t,e,n){return t=Le(t),e=Le(e),n=Le(n),.2126*t+.7152*e+.0722*n},Le=function(t){return(t/=255)<=.03928?t/12.92:Se((t+.055)/1.055,2.4)},ze={},De=s.type,Ae=function(t,e,n){void 0===n&&(n=.5);for(var r=[],o=arguments.length-3;o-- >0;)r[o]=arguments[o+3];var i=r[0]||"lrgb";if(ze[i]||r.length||(i=Object.keys(ze)[0]),!ze[i])throw new Error("interpolation mode "+i+" is not defined");return"object"!==De(t)&&(t=new d(t)),"object"!==De(e)&&(e=new d(e)),ze[i](t,e,n).alpha(t.alpha()+n*(e.alpha()-t.alpha()))};d.prototype.mix=d.prototype.interpolate=function(t,e){void 0===e&&(e=.5);for(var n=[],r=arguments.length-2;r-- >0;)n[r]=arguments[r+2];return Ae.apply(void 0,[this,t,e].concat(n))},d.prototype.premultiply=function(t){void 0===t&&(t=!1);var e=this._rgb,n=e[3];return t?(this._rgb=[e[0]*n,e[1]*n,e[2]*n,n],this):new d([e[0]*n,e[1]*n,e[2]*n,n],"rgb")},d.prototype.saturate=function(t){void 0===t&&(t=1);var e=this.lch();return e[1]+=Dt.Kn*t,e[1]<0&&(e[1]=0),new d(e,"lch").alpha(this.alpha(),!0)},d.prototype.desaturate=function(t){return void 0===t&&(t=1),this.saturate(-t)};var Oe=s.type;d.prototype.set=function(t,e,n){void 0===n&&(n=!1);var r=t.split("."),o=r[0],i=r[1],a=this[o]();if(i){var s=o.indexOf(i);if(s>-1){if("string"==Oe(e))switch(e.charAt(0)){case"+":case"-":a[s]+=+e;break;case"*":a[s]*=+e.substr(1);break;case"/":a[s]/=+e.substr(1);break;default:a[s]=+e}else{if("number"!==Oe(e))throw new Error("unsupported value for Color.set");a[s]=e}var l=new d(a,o);return n?(this._rgb=l._rgb,this):l}throw new Error("unknown channel "+i+" in mode "+o)}return a},ze.rgb=function(t,e,n){var r=t._rgb,o=e._rgb;return new d(r[0]+n*(o[0]-r[0]),r[1]+n*(o[1]-r[1]),r[2]+n*(o[2]-r[2]),"rgb")};var Ee=Math.sqrt,Ue=Math.pow;ze.lrgb=function(t,e,n){var r=t._rgb,o=r[0],i=r[1],a=r[2],s=e._rgb,l=s[0],c=s[1],u=s[2];return new d(Ee(Ue(o,2)*(1-n)+Ue(l,2)*n),Ee(Ue(i,2)*(1-n)+Ue(c,2)*n),Ee(Ue(a,2)*(1-n)+Ue(u,2)*n),"rgb")},ze.lab=function(t,e,n){var r=t.lab(),o=e.lab();return new d(r[0]+n*(o[0]-r[0]),r[1]+n*(o[1]-r[1]),r[2]+n*(o[2]-r[2]),"lab")};var Fe=function(t,e,n,r){var o,i,a,s,l,c,u,f,h,p,g,v;return"hsl"===r?(a=t.hsl(),s=e.hsl()):"hsv"===r?(a=t.hsv(),s=e.hsv()):"hcg"===r?(a=t.hcg(),s=e.hcg()):"hsi"===r?(a=t.hsi(),s=e.hsi()):"lch"!==r&&"hcl"!==r||(r="hcl",a=t.hcl(),s=e.hcl()),"h"===r.substr(0,1)&&(l=(o=a)[0],u=o[1],h=o[2],c=(i=s)[0],f=i[1],p=i[2]),isNaN(l)||isNaN(c)?isNaN(l)?isNaN(c)?v=Number.NaN:(v=c,1!=h&&0!=h||"hsv"==r||(g=f)):(v=l,1!=p&&0!=p||"hsv"==r||(g=u)):v=l+n*(c>l&&c-l>180?c-(l+360):c<l&&l-c>180?c+360-l:c-l),void 0===g&&(g=u+n*(f-u)),new d([v,g,h+n*(p-h)],r)},Pe=function(t,e,n){return Fe(t,e,n,"lch")};ze.lch=Pe,ze.hcl=Pe,ze.num=function(t,e,n){var r=t.num(),o=e.num();return new d(r+n*(o-r),"num")},ze.hcg=function(t,e,n){return Fe(t,e,n,"hcg")},ze.hsi=function(t,e,n){return Fe(t,e,n,"hsi")},ze.hsl=function(t,e,n){return Fe(t,e,n,"hsl")},ze.hsv=function(t,e,n){return Fe(t,e,n,"hsv")};var qe=s.clip_rgb,Ye=Math.pow,Re=Math.sqrt,Ie=Math.PI,He=Math.cos,Be=Math.sin,Ge=Math.atan2,Ze=function(t){for(var e=t.length,n=1/e,r=[0,0,0,0],o=0,i=t;o<i.length;o+=1){var a=i[o],s=a._rgb;r[0]+=Ye(s[0],2)*n,r[1]+=Ye(s[1],2)*n,r[2]+=Ye(s[2],2)*n,r[3]+=s[3]*n}return r[0]=Re(r[0]),r[1]=Re(r[1]),r[2]=Re(r[2]),r[3]>.9999999&&(r[3]=1),new d(qe(r))},We=s.type,Ve=Math.pow,Xe=function(t){var e="rgb",n=g("#ccc"),r=0,o=[0,1],i=[],a=[0,0],s=!1,l=[],c=!1,u=0,f=1,h=!1,d={},p=!0,v=1,b=function(t){if((t=t||["#fff","#000"])&&"string"===We(t)&&g.brewer&&g.brewer[t.toLowerCase()]&&(t=g.brewer[t.toLowerCase()]),"array"===We(t)){1===t.length&&(t=[t[0],t[0]]),t=t.slice(0);for(var e=0;e<t.length;e++)t[e]=g(t[e]);i.length=0;for(var n=0;n<t.length;n++)i.push(n/(t.length-1))}return w(),l=t},m=function(t){return t},y=function(t,r){var o,c;if(null==r&&(r=!1),isNaN(t)||null===t)return n;if(r)c=t;else if(s&&s.length>2){var h=function(t){if(null!=s){for(var e=s.length-1,n=0;n<e&&t>=s[n];)n++;return n-1}return 0}(t);c=h/(s.length-2)}else c=f!==u?(t-u)/(f-u):1;r||(c=m(c)),1!==v&&(c=Ve(c,v)),c=a[0]+c*(1-a[0]-a[1]),c=Math.min(1,Math.max(0,c));var b=Math.floor(1e4*c);if(p&&d[b])o=d[b];else{if("array"===We(l))for(var y=0;y<i.length;y++){var w=i[y];if(c<=w){o=l[y];break}if(c>=w&&y===i.length-1){o=l[y];break}if(c>w&&c<i[y+1]){c=(c-w)/(i[y+1]-w),o=g.interpolate(l[y],l[y+1],c,e);break}}else"function"===We(l)&&(o=l(c));p&&(d[b]=o)}return o},w=function(){return d={}};b(t);var _=function(t){var e=g(y(t));return c&&e[c]?e[c]():e};return _.classes=function(t){if(null!=t){if("array"===We(t))s=t,o=[t[0],t[t.length-1]];else{var e=g.analyze(o);s=0===t?[e.min,e.max]:g.limits(e,"e",t)}return _}return s},_.domain=function(t){if(!arguments.length)return o;u=t[0],f=t[t.length-1],i=[];var e=l.length;if(t.length===e&&u!==f)for(var n=0,r=Array.from(t);n<r.length;n+=1){var a=r[n];i.push((a-u)/(f-u))}else for(var s=0;s<e;s++)i.push(s/(e-1));return o=[u,f],_},_.mode=function(t){return arguments.length?(e=t,w(),_):e},_.range=function(t,e){return b(t),_},_.out=function(t){return c=t,_},_.spread=function(t){return arguments.length?(r=t,_):r},_.correctLightness=function(t){return null==t&&(t=!0),h=t,w(),m=h?function(t){for(var e=y(0,!0).lab()[0],n=y(1,!0).lab()[0],r=e>n,o=y(t,!0).lab()[0],i=e+(n-e)*t,a=o-i,s=0,l=1,c=20;Math.abs(a)>.01&&c-- >0;)r&&(a*=-1),a<0?(s=t,t+=.5*(l-t)):(l=t,t+=.5*(s-t)),o=y(t,!0).lab()[0],a=o-i;return t}:function(t){return t},_},_.padding=function(t){return null!=t?("number"===We(t)&&(t=[t,t]),a=t,_):a},_.colors=function(e,n){arguments.length<2&&(n="hex");var r=[];if(0===arguments.length)r=l.slice(0);else if(1===e)r=[_(.5)];else if(e>1){var i=o[0],a=o[1]-i;r=function(t,e,n){for(var r=[],o=t<e,i=n?o?e+1:e-1:e,a=t;o?a<i:a>i;o?a++:a--)r.push(a);return r}(0,e,!1).map(function(t){return _(i+t/(e-1)*a)})}else{t=[];var c=[];if(s&&s.length>2)for(var u=1,f=s.length,h=1<=f;h?u<f:u>f;h?u++:u--)c.push(.5*(s[u-1]+s[u]));else c=o;r=c.map(function(t){return _(t)})}return g[n]&&(r=r.map(function(t){return t[n]()})),r},_.cache=function(t){return null!=t?(p=t,_):p},_.gamma=function(t){return null!=t?(v=t,_):v},_.nodata=function(t){return null!=t?(n=g(t),_):n},_},Je=function(t){var e,n,r,o,i,a,s;if(2===(t=t.map(function(t){return new d(t)})).length)e=t.map(function(t){return t.lab()}),i=e[0],a=e[1],o=function(t){var e=[0,1,2].map(function(e){return i[e]+t*(a[e]-i[e])});return new d(e,"lab")};else if(3===t.length)n=t.map(function(t){return t.lab()}),i=n[0],a=n[1],s=n[2],o=function(t){var e=[0,1,2].map(function(e){return(1-t)*(1-t)*i[e]+2*(1-t)*t*a[e]+t*t*s[e]});return new d(e,"lab")};else if(4===t.length){var l;r=t.map(function(t){return t.lab()}),i=r[0],a=r[1],s=r[2],l=r[3],o=function(t){var e=[0,1,2].map(function(e){return(1-t)*(1-t)*(1-t)*i[e]+3*(1-t)*(1-t)*t*a[e]+3*(1-t)*t*t*s[e]+t*t*t*l[e]});return new d(e,"lab")}}else if(5===t.length){var c=Je(t.slice(0,3)),u=Je(t.slice(2,5));o=function(t){return t<.5?c(2*t):u(2*(t-.5))}}return o},Qe=function(t,e,n){if(!Qe[n])throw new Error("unknown blend mode "+n);return Qe[n](t,e)},Ke=function(t){return function(e,n){var r=g(n).rgb(),o=g(e).rgb();return g.rgb(t(r,o))}},tn=function(t){return function(e,n){var r=[];return r[0]=t(e[0],n[0]),r[1]=t(e[1],n[1]),r[2]=t(e[2],n[2]),r}};Qe.normal=Ke(tn(function(t){return t})),Qe.multiply=Ke(tn(function(t,e){return t*e/255})),Qe.screen=Ke(tn(function(t,e){return 255*(1-(1-t/255)*(1-e/255))})),Qe.overlay=Ke(tn(function(t,e){return e<128?2*t*e/255:255*(1-2*(1-t/255)*(1-e/255))})),Qe.darken=Ke(tn(function(t,e){return t>e?e:t})),Qe.lighten=Ke(tn(function(t,e){return t>e?t:e})),Qe.dodge=Ke(tn(function(t,e){return 255===t?255:(t=e/255*255/(1-t/255))>255?255:t})),Qe.burn=Ke(tn(function(t,e){return 255*(1-(1-e/255)/(t/255))}));for(var en=Qe,nn=s.type,rn=s.clip_rgb,on=s.TWOPI,an=Math.pow,sn=Math.sin,ln=Math.cos,cn=Math.floor,un=Math.random,fn=Math.log,hn=Math.pow,dn=Math.floor,pn=Math.abs,gn=function(t,e){void 0===e&&(e=null);var n={min:Number.MAX_VALUE,max:-1*Number.MAX_VALUE,sum:0,values:[],count:0};return"object"===i(t)&&(t=Object.values(t)),t.forEach(function(t){e&&"object"===i(t)&&(t=t[e]),null==t||isNaN(t)||(n.values.push(t),n.sum+=t,t<n.min&&(n.min=t),t>n.max&&(n.max=t),n.count+=1)}),n.domain=[n.min,n.max],n.limits=function(t,e){return vn(n,t,e)},n},vn=function(t,e,n){void 0===e&&(e="equal"),void 0===n&&(n=7),"array"==i(t)&&(t=gn(t));var r=t.min,o=t.max,a=t.values.sort(function(t,e){return t-e});if(1===n)return[r,o];var s=[];if("c"===e.substr(0,1)&&(s.push(r),s.push(o)),"e"===e.substr(0,1)){s.push(r);for(var l=1;l<n;l++)s.push(r+l/n*(o-r));s.push(o)}else if("l"===e.substr(0,1)){if(r<=0)throw new Error("Logarithmic scales are only possible for values > 0");var c=Math.LOG10E*fn(r),u=Math.LOG10E*fn(o);s.push(r);for(var f=1;f<n;f++)s.push(hn(10,c+f/n*(u-c)));s.push(o)}else if("q"===e.substr(0,1)){s.push(r);for(var h=1;h<n;h++){var d=(a.length-1)*h/n,p=dn(d);if(p===d)s.push(a[p]);else{var g=d-p;s.push(a[p]*(1-g)+a[p+1]*g)}}s.push(o)}else if("k"===e.substr(0,1)){var v,b=a.length,m=new Array(b),y=new Array(n),w=!0,_=0,x=null;(x=[]).push(r);for(var $=1;$<n;$++)x.push(r+$/n*(o-r));for(x.push(o);w;){for(var M=0;M<n;M++)y[M]=0;for(var k=0;k<b;k++)for(var C=a[k],N=Number.MAX_VALUE,T=void 0,S=0;S<n;S++){var j=pn(x[S]-C);j<N&&(N=j,T=S),y[T]++,m[k]=T}for(var L=new Array(n),z=0;z<n;z++)L[z]=null;for(var D=0;D<b;D++)v=m[D],null===L[v]?L[v]=a[D]:L[v]+=a[D];for(var A=0;A<n;A++)L[A]*=1/y[A];w=!1;for(var O=0;O<n;O++)if(L[O]!==x[O]){w=!0;break}x=L,++_>200&&(w=!1)}for(var E={},U=0;U<n;U++)E[U]=[];for(var F=0;F<b;F++)v=m[F],E[v].push(a[F]);for(var P=[],q=0;q<n;q++)P.push(E[q][0]),P.push(E[q][E[q].length-1]);P=P.sort(function(t,e){return t-e}),s.push(P[0]);for(var Y=1;Y<P.length;Y+=2){var R=P[Y];isNaN(R)||-1!==s.indexOf(R)||s.push(R)}}return s},bn={analyze:gn,limits:vn},mn=Math.sqrt,yn=Math.atan2,wn=Math.abs,_n=Math.cos,xn=Math.PI,$n={cool:function(){return Xe([g.hsl(180,1,.9),g.hsl(250,.7,.4)])},hot:function(){return Xe(["#000","#f00","#ff0","#fff"]).mode("rgb")}},Mn={OrRd:["#fff7ec","#fee8c8","#fdd49e","#fdbb84","#fc8d59","#ef6548","#d7301f","#b30000","#7f0000"],PuBu:["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#045a8d","#023858"],BuPu:["#f7fcfd","#e0ecf4","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#810f7c","#4d004b"],Oranges:["#fff5eb","#fee6ce","#fdd0a2","#fdae6b","#fd8d3c","#f16913","#d94801","#a63603","#7f2704"],BuGn:["#f7fcfd","#e5f5f9","#ccece6","#99d8c9","#66c2a4","#41ae76","#238b45","#006d2c","#00441b"],YlOrBr:["#ffffe5","#fff7bc","#fee391","#fec44f","#fe9929","#ec7014","#cc4c02","#993404","#662506"],YlGn:["#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"],Reds:["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15","#67000d"],RdPu:["#fff7f3","#fde0dd","#fcc5c0","#fa9fb5","#f768a1","#dd3497","#ae017e","#7a0177","#49006a"],Greens:["#f7fcf5","#e5f5e0","#c7e9c0","#a1d99b","#74c476","#41ab5d","#238b45","#006d2c","#00441b"],YlGnBu:["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"],Purples:["#fcfbfd","#efedf5","#dadaeb","#bcbddc","#9e9ac8","#807dba","#6a51a3","#54278f","#3f007d"],GnBu:["#f7fcf0","#e0f3db","#ccebc5","#a8ddb5","#7bccc4","#4eb3d3","#2b8cbe","#0868ac","#084081"],Greys:["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#252525","#000000"],YlOrRd:["#ffffcc","#ffeda0","#fed976","#feb24c","#fd8d3c","#fc4e2a","#e31a1c","#bd0026","#800026"],PuRd:["#f7f4f9","#e7e1ef","#d4b9da","#c994c7","#df65b0","#e7298a","#ce1256","#980043","#67001f"],Blues:["#f7fbff","#deebf7","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#08519c","#08306b"],PuBuGn:["#fff7fb","#ece2f0","#d0d1e6","#a6bddb","#67a9cf","#3690c0","#02818a","#016c59","#014636"],Viridis:["#440154","#482777","#3f4a8a","#31678e","#26838f","#1f9d8a","#6cce5a","#b6de2b","#fee825"],Spectral:["#9e0142","#d53e4f","#f46d43","#fdae61","#fee08b","#ffffbf","#e6f598","#abdda4","#66c2a5","#3288bd","#5e4fa2"],RdYlGn:["#a50026","#d73027","#f46d43","#fdae61","#fee08b","#ffffbf","#d9ef8b","#a6d96a","#66bd63","#1a9850","#006837"],RdBu:["#67001f","#b2182b","#d6604d","#f4a582","#fddbc7","#f7f7f7","#d1e5f0","#92c5de","#4393c3","#2166ac","#053061"],PiYG:["#8e0152","#c51b7d","#de77ae","#f1b6da","#fde0ef","#f7f7f7","#e6f5d0","#b8e186","#7fbc41","#4d9221","#276419"],PRGn:["#40004b","#762a83","#9970ab","#c2a5cf","#e7d4e8","#f7f7f7","#d9f0d3","#a6dba0","#5aae61","#1b7837","#00441b"],RdYlBu:["#a50026","#d73027","#f46d43","#fdae61","#fee090","#ffffbf","#e0f3f8","#abd9e9","#74add1","#4575b4","#313695"],BrBG:["#543005","#8c510a","#bf812d","#dfc27d","#f6e8c3","#f5f5f5","#c7eae5","#80cdc1","#35978f","#01665e","#003c30"],RdGy:["#67001f","#b2182b","#d6604d","#f4a582","#fddbc7","#ffffff","#e0e0e0","#bababa","#878787","#4d4d4d","#1a1a1a"],PuOr:["#7f3b08","#b35806","#e08214","#fdb863","#fee0b6","#f7f7f7","#d8daeb","#b2abd2","#8073ac","#542788","#2d004b"],Set2:["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"],Accent:["#7fc97f","#beaed4","#fdc086","#ffff99","#386cb0","#f0027f","#bf5b17","#666666"],Set1:["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#ffff33","#a65628","#f781bf","#999999"],Set3:["#8dd3c7","#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#d9d9d9","#bc80bd","#ccebc5","#ffed6f"],Dark2:["#1b9e77","#d95f02","#7570b3","#e7298a","#66a61e","#e6ab02","#a6761d","#666666"],Paired:["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"],Pastel2:["#b3e2cd","#fdcdac","#cbd5e8","#f4cae4","#e6f5c9","#fff2ae","#f1e2cc","#cccccc"],Pastel1:["#fbb4ae","#b3cde3","#ccebc5","#decbe4","#fed9a6","#ffffcc","#e5d8bd","#fddaec","#f2f2f2"]},kn=0,Cn=Object.keys(Mn);kn<Cn.length;kn+=1){var Nn=Cn[kn];Mn[Nn.toLowerCase()]=Mn[Nn]}var Tn=Mn;return g.average=function(t,e){void 0===e&&(e="lrgb");var n=t.length;if(t=t.map(function(t){return new d(t)}),"lrgb"===e)return Ze(t);for(var r=t.shift(),o=r.get(e),i=[],a=0,s=0,l=0;l<o.length;l++)if(o[l]=o[l]||0,i.push(isNaN(o[l])?0:1),"h"===e.charAt(l)&&!isNaN(o[l])){var c=o[l]/180*Ie;a+=He(c),s+=Be(c)}var u=r.alpha();t.forEach(function(t){var n=t.get(e);u+=t.alpha();for(var r=0;r<o.length;r++)if(!isNaN(n[r]))if(i[r]++,"h"===e.charAt(r)){var l=n[r]/180*Ie;a+=He(l),s+=Be(l)}else o[r]+=n[r]});for(var f=0;f<o.length;f++)if("h"===e.charAt(f)){for(var h=Ge(s/i[f],a/i[f])/Ie*180;h<0;)h+=360;for(;h>=360;)h-=360;o[f]=h}else o[f]=o[f]/i[f];return u/=n,new d(o,e).alpha(u>.99999?1:u,!0)},g.bezier=function(t){var e=Je(t);return e.scale=function(){return Xe(e)},e},g.blend=en,g.cubehelix=function(t,e,n,r,o){void 0===t&&(t=300),void 0===e&&(e=-1.5),void 0===n&&(n=1),void 0===r&&(r=1),void 0===o&&(o=[0,1]);var i,a=0;"array"===nn(o)?i=o[1]-o[0]:(i=0,o=[o,o]);var s=function(s){var l=on*((t+120)/360+e*s),c=an(o[0]+i*s,r),u=0!==a?n[0]+s*a:n,f=u*c*(1-c)/2,h=ln(l),d=sn(l),p=c+f*(-.14861*h+1.78277*d),v=c+f*(-.29227*h-.90649*d),b=c+f*(1.97294*h);return g(rn([255*p,255*v,255*b,1]))};return s.start=function(e){return null==e?t:(t=e,s)},s.rotations=function(t){return null==t?e:(e=t,s)},s.gamma=function(t){return null==t?r:(r=t,s)},s.hue=function(t){return null==t?n:("array"===nn(n=t)?0==(a=n[1]-n[0])&&(n=n[1]):a=0,s)},s.lightness=function(t){return null==t?o:("array"===nn(t)?(o=t,i=t[1]-t[0]):(o=[t,t],i=0),s)},s.scale=function(){return g.scale(s)},s.hue(n),s},g.mix=g.interpolate=Ae,g.random=function(){for(var t="#",e=0;e<6;e++)t+="0123456789abcdef".charAt(cn(16*un()));return new d(t,"hex")},g.scale=Xe,g.analyze=bn.analyze,g.contrast=function(t,e){t=new d(t),e=new d(e);var n=t.luminance(),r=e.luminance();return n>r?(n+.05)/(r+.05):(r+.05)/(n+.05)},g.deltaE=function(t,e,n,r){void 0===n&&(n=1),void 0===r&&(r=1),t=new d(t),e=new d(e);for(var o=Array.from(t.lab()),i=o[0],a=o[1],s=o[2],l=Array.from(e.lab()),c=l[0],u=l[1],f=l[2],h=mn(a*a+s*s),p=mn(u*u+f*f),g=i<16?.511:.040975*i/(1+.01765*i),v=.0638*h/(1+.0131*h)+.638,b=h<1e-6?0:180*yn(s,a)/xn;b<0;)b+=360;for(;b>=360;)b-=360;var m=b>=164&&b<=345?.56+wn(.2*_n(xn*(b+168)/180)):.36+wn(.4*_n(xn*(b+35)/180)),y=h*h*h*h,w=mn(y/(y+1900)),_=v*(w*m+1-w),x=h-p,$=a-u,M=s-f,k=(i-c)/(n*g),C=x/(r*v);return mn(k*k+C*C+($*$+M*M-x*x)/(_*_))},g.distance=function(t,e,n){void 0===n&&(n="lab"),t=new d(t),e=new d(e);var r=t.get(n),o=e.get(n),i=0;for(var a in r){var s=(r[a]||0)-(o[a]||0);i+=s*s}return Math.sqrt(i)},g.limits=bn.limits,g.valid=function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];try{return new(Function.prototype.bind.apply(d,[null].concat(t))),!0}catch(t){return!1}},g.scales=$n,g.colors=he,g.brewer=Tn,g}()}(X={exports:{}},X.exports),X.exports);function Q(e){var n,r,o,i,a,s;return{c(){n=h("div"),r=h("input"),o=g(),i=h("label"),a=p(e.label),y(r,"type","checkbox"),y(r,"class","custom-control-input"),y(r,"id",e.id),y(i,"class","custom-control-label"),y(i,"for",e.id),y(n,"class","custom-control custom-checkbox"),x(n,"custom-control-inline",e.inline),s=b(r,"change",e.input_change_handler)},m(t,s){c(t,n,s),l(n,r),r.checked=e.value,l(n,o),l(n,i),l(i,a)},p(t,e){t.value&&(r.checked=e.value),t.label&&w(a,e.label),t.inline&&x(n,"custom-control-inline",e.inline)},i:t,o:t,d(t){t&&u(n),s()}}}function K(t,e,n){let{value:r=!1,inline:o=!0,label:i=""}=e;const a=Math.round(1e7*Math.random()).toString(36);return t.$set=(t=>{"value"in t&&n("value",r=t.value),"inline"in t&&n("inline",o=t.inline),"label"in t&&n("label",i=t.label)}),{value:r,inline:o,label:i,id:a,input_change_handler:function(){r=this.checked,n("value",r)}}}class tt extends V{constructor(t){super(),W(this,t,K,Q,a,["value","inline","label"])}}var et=Math.ceil,nt=Math.max;var rt="object"==typeof global&&global&&global.Object===Object&&global,ot="object"==typeof self&&self&&self.Object===Object&&self,it=(rt||ot||Function("return this")()).Symbol,at=Object.prototype,st=at.hasOwnProperty,lt=at.toString,ct=it?it.toStringTag:void 0;var ut=Object.prototype.toString;var ft="[object Null]",ht="[object Undefined]",dt=it?it.toStringTag:void 0;function pt(t){return null==t?void 0===t?ht:ft:dt&&dt in Object(t)?function(t){var e=st.call(t,ct),n=t[ct];try{t[ct]=void 0;var r=!0}catch(t){}var o=lt.call(t);return r&&(e?t[ct]=n:delete t[ct]),o}(t):function(t){return ut.call(t)}(t)}function gt(t){var e=typeof t;return null!=t&&("object"==e||"function"==e)}var vt="[object AsyncFunction]",bt="[object Function]",mt="[object GeneratorFunction]",yt="[object Proxy]";var wt=9007199254740991;function _t(t){return null!=t&&function(t){return"number"==typeof t&&t>-1&&t%1==0&&t<=wt}(t.length)&&!function(t){if(!gt(t))return!1;var e=pt(t);return e==bt||e==mt||e==vt||e==yt}(t)}var xt=9007199254740991,$t=/^(?:0|[1-9]\d*)$/;function Mt(t,e,n){if(!gt(n))return!1;var r=typeof e;return!!("number"==r?_t(n)&&function(t,e){var n=typeof t;return!!(e=null==e?xt:e)&&("number"==n||"symbol"!=n&&$t.test(t))&&t>-1&&t%1==0&&t<e}(e,n.length):"string"==r&&e in n)&&function(t,e){return t===e||t!=t&&e!=e}(n[e],t)}var kt="[object Symbol]";var Ct=NaN,Nt=/^\s+|\s+$/g,Tt=/^[-+]0x[0-9a-f]+$/i,St=/^0b[01]+$/i,jt=/^0o[0-7]+$/i,Lt=parseInt;function zt(t){if("number"==typeof t)return t;if(function(t){return"symbol"==typeof t||function(t){return null!=t&&"object"==typeof t}(t)&&pt(t)==kt}(t))return Ct;if(gt(t)){var e="function"==typeof t.valueOf?t.valueOf():t;t=gt(e)?e+"":e}if("string"!=typeof t)return 0===t?t:+t;t=t.replace(Nt,"");var n=St.test(t);return n||jt.test(t)?Lt(t.slice(2),n?2:8):Tt.test(t)?Ct:+t}var Dt=1/0,At=1.7976931348623157e308;function Ot(t){return t?(t=zt(t))===Dt||t===-Dt?(t<0?-1:1)*At:t==t?t:0:0===t?t:0}var Et,Ut=function(t,e,n){return n&&"number"!=typeof n&&Mt(t,e,n)&&(e=n=void 0),t=Ot(t),void 0===e?(e=t,t=0):e=Ot(e),function(t,e,n,r){for(var o=-1,i=nt(et((e-t)/(n||1)),0),a=Array(i);i--;)a[r?i:++o]=t,t+=n;return a}(t,e,n=void 0===n?t<e?1:-1:Ot(n),Et)};function Ft(t,e,n){const r=Object.create(t);return r.c=e[n],r}function Pt(t,e,n){const r=Object.create(t);return r.c=e[n],r}function qt(t,e,n){const r=Object.create(t);return r.l=e[n],r}function Yt(t){for(var e,n,r,o,i,a,s,d,p,v,b,m,w,x,$,M,k,C,N=t.lightness,T=[],S=0;S<N.length;S+=1)T[S]=Rt(qt(t,N,S));var j=t.saturation,L=[];for(S=0;S<j.length;S+=1)L[S]=It(Pt(t,j,S));var z=t.hue,D=[];for(S=0;S<z.length;S+=1)D[S]=Ht(Ft(t,z,S));return{c(){e=h("div"),n=h("div"),r=h("div"),o=g(),i=h("div"),a=g(),s=h("div"),d=h("div"),(p=h("span")).textContent="L",v=g();for(var t=0;t<T.length;t+=1)T[t].c();b=g(),m=h("div"),(w=h("span")).textContent="S",x=g();for(t=0;t<L.length;t+=1)L[t].c();$=g(),M=h("div"),(k=h("span")).textContent="H",C=g();for(t=0;t<D.length;t+=1)D[t].c();y(r,"class","arrow"),_(r,"left","121px"),y(i,"class","popover-header svelte-sklnnk"),y(i,"aria-hidden","true"),y(p,"class","lbl svelte-sklnnk"),y(d,"class","color-row svelte-sklnnk"),y(w,"class","lbl svelte-sklnnk"),y(m,"class","color-row svelte-sklnnk"),y(k,"class","lbl svelte-sklnnk"),y(M,"class","color-row svelte-sklnnk"),y(s,"class","popover-body svelte-sklnnk"),y(n,"class","popover fade show bs-popover-bottom svelte-sklnnk"),y(n,"role","tooltip"),y(n,"x-placement","bottom"),_(e,"position","absolute"),_(e,"top","0"),_(e,"left","0"),_(e,"right","0"),_(e,"height","40px")},m(t,u){c(t,e,u),l(e,n),l(n,r),l(n,o),l(n,i),l(n,a),l(n,s),l(s,d),l(d,p),l(d,v);for(var f=0;f<T.length;f+=1)T[f].m(d,null);l(s,b),l(s,m),l(m,w),l(m,x);for(f=0;f<L.length;f+=1)L[f].m(m,null);l(s,$),l(s,M),l(M,k),l(M,C);for(f=0;f<D.length;f+=1)D[f].m(M,null)},p(t,e){if(t.lightness){N=e.lightness;for(var n=0;n<N.length;n+=1){const r=qt(e,N,n);T[n]?T[n].p(t,r):(T[n]=Rt(r),T[n].c(),T[n].m(d,null))}for(;n<T.length;n+=1)T[n].d(1);T.length=N.length}if(t.saturation){j=e.saturation;for(n=0;n<j.length;n+=1){const r=Pt(e,j,n);L[n]?L[n].p(t,r):(L[n]=It(r),L[n].c(),L[n].m(m,null))}for(;n<L.length;n+=1)L[n].d(1);L.length=j.length}if(t.hue){z=e.hue;for(n=0;n<z.length;n+=1){const r=Ft(e,z,n);D[n]?D[n].p(t,r):(D[n]=Ht(r),D[n].c(),D[n].m(M,null))}for(;n<D.length;n+=1)D[n].d(1);D.length=z.length}},d(t){t&&u(e),f(T,t),f(L,t),f(D,t)}}}function Rt(t){var e,n;function r(){return t.click_handler(t)}return{c(){y(e=h("span"),"class","color svelte-sklnnk"),_(e,"background",t.l.hex()),n=b(e,"click",r)},m(t,n){c(t,e,n)},p(n,r){t=r,n.lightness&&_(e,"background",t.l.hex())},d(t){t&&u(e),n()}}}function It(t){var e,n;function r(){return t.click_handler_1(t)}return{c(){y(e=h("span"),"class","color svelte-sklnnk"),_(e,"background",t.c.hex()),n=b(e,"click",r)},m(t,n){c(t,e,n)},p(n,r){t=r,n.saturation&&_(e,"background",t.c.hex())},d(t){t&&u(e),n()}}}function Ht(t){var e,n;function r(){return t.click_handler_2(t)}return{c(){y(e=h("span"),"class","color svelte-sklnnk"),_(e,"background",t.c.hex()),n=b(e,"click",r)},m(t,n){c(t,e,n)},p(n,r){t=r,n.hue&&_(e,"background",t.c.hex())},d(t){t&&u(e),n()}}}function Bt(e){var n,r,i,a,s,f=e.value.hex().substr(1),d=e.open&&!e.dragging&&Yt(e);return{c(){var t;n=h("span"),r=h("span"),i=p(f),a=g(),d&&d.c(),y(r,"class","hex svelte-sklnnk"),y(n,"draggable","true"),y(n,"class","badge shadow-sm svelte-sklnnk"),_(n,"background",e.value.hex()),x(n,"inverted",e.value.lab()[0]<50),s=[b(n,"dragstart",e.dragstart_handler),b(n,"dragend",e.dragend_handler),b(n,"mouseenter",e.toggleEditOpen),b(n,"mouseleave",e.toggleEditClose),b(n,"click",(t=Gt,function(e){return e.stopPropagation(),t.call(this,e)}))]},m(t,e){c(t,n,e),l(n,r),l(r,i),l(n,a),d&&d.m(n,null)},p(t,e){t.value&&f!==(f=e.value.hex().substr(1))&&w(i,f),e.open&&!e.dragging?d?d.p(t,e):((d=Yt(e)).c(),d.m(n,null)):d&&(d.d(1),d=null),t.value&&(_(n,"background",e.value.hex()),x(n,"inverted",e.value.lab()[0]<50))},i:t,o:t,d(t){t&&u(n),d&&d.d(),o(s)}}}function Gt(){return!1}function Zt(t,e,n){let r,o,i,a,{value:s=J("red")}=e,l=!1,c=!1;return t.$set=(t=>{"value"in t&&n("value",s=t.value)}),t.$$.update=((t={value:1,lch:1})=>{t.value&&n("lch",r=s.lch()),t.lch&&n("lightness",o=Ut(-5,6).map(t=>r[0]+80*Math.pow(t/8,2)*(t<0?-1:1)).map(t=>J.lch(t,r[1],r[2]))),t.lch&&n("saturation",i=Ut(-5,6).map(t=>Math.max(0,r[1]+80*Math.pow(t/5,2)*(t<0?-1:1))).map(t=>J.lch(r[0],t,r[2]))),t.lch&&n("hue",a=Ut(-5,6).map(t=>r[2]+80*Math.pow(t/5,2)*(t<0?-1:1)).map(t=>J.lch(r[0],r[1],t<0?t+360:t>360?t-360:t)))}),{value:s,open:l,dragging:c,toggleEditOpen:function(){n("open",l=!0)},toggleEditClose:function(){n("open",l=!1)},lightness:o,saturation:i,hue:a,click_handler:function({l:t}){const e=s=t;return n("value",s),e},click_handler_1:function({c:t}){const e=s=t;return n("value",s),e},click_handler_2:function({c:t}){const e=s=t;return n("value",s),e},dragstart_handler:function(t){const e=c=!0;return n("dragging",c),e},dragend_handler:function(t){const e=(c=!1,l=!1);return n("dragging",c),n("open",l),e}}}class Wt extends V{constructor(t){super(),W(this,t,Zt,Bt,a,["value"])}}function Vt(t,e,n){const r=Object.create(t);return r.color=e[n],r.each_value=e,r.i=n,r}function Xt(t){for(var e,n,r,i,a,s=t.colors,d=[],p=0;p<s.length;p+=1)d[p]=Jt(Vt(t,s,p));const v=t=>I(d[t],1,()=>{d[t]=null});return{c(){e=h("div");for(var o=0;o<d.length;o+=1)d[o].c();n=g(),y(r=h("span"),"class","inv svelte-r8qk73"),y(e,"class","form-control svelte-r8qk73"),a=[b(e,"drop",m(t.drop)),b(e,"dragover",m(Kt)),b(e,"click",t.enterEditMode)]},m(t,o){c(t,e,o);for(var a=0;a<d.length;a+=1)d[a].m(e,null);l(e,n),l(e,r),i=!0},p(t,r){if(t.colors){s=r.colors;for(var o=0;o<s.length;o+=1){const i=Vt(r,s,o);d[o]?(d[o].p(t,i),R(d[o],1)):(d[o]=Jt(i),d[o].c(),R(d[o],1),d[o].m(e,n))}for(q();o<d.length;o+=1)v(o);Y()}},i(t){if(!i){for(var e=0;e<s.length;e+=1)R(d[e]);i=!0}},o(t){d=d.filter(Boolean);for(let t=0;t<d.length;t+=1)I(d[t]);i=!1},d(t){t&&u(e),f(d,t),o(a)}}}function Jt(t){var e,n;function r(n){t.color_value_binding.call(null,n,t),e=!0,O(()=>e=!1)}let o={};void 0!==t.color&&(o.value=t.color);var i=new Wt({props:o});return D(()=>H(i,"value",r)),i.$on("dragstart",function(...e){return t.dragstart_handler(t,...e)}),{c(){i.$$.fragment.c()},m(t,e){B(i,t,e),n=!0},p(n,r){t=r;var o={};!e&&n.colors&&(o.value=t.color),i.$set(o)},i(t){n||(R(i.$$.fragment,t),n=!0)},o(t){I(i.$$.fragment,t),n=!1},d(t){G(i,t)}}}function Qt(t){var e,n,r,i,a,s=!t.edit&&Xt(t);return{c(){e=h("input"),n=g(),s&&s.c(),r=v(),y(e,"type","text"),y(e,"class","form-control svelte-r8qk73"),x(e,"hidden",!t.edit),a=[b(e,"input",t.input_1_input_handler),b(e,"blur",t.exitEditMode)]},m(o,a){c(o,e,a),e.value=t.colorString,D(()=>t.input_1_binding(e,null)),c(o,n,a),s&&s.m(o,a),c(o,r,a),i=!0},p(t,n){t.colorString&&e.value!==n.colorString&&(e.value=n.colorString),t.items&&(n.input_1_binding(null,e),n.input_1_binding(e,null)),t.edit&&x(e,"hidden",!n.edit),n.edit?s&&(q(),I(s,1,()=>{s=null}),Y()):s?(s.p(t,n),R(s,1)):((s=Xt(n)).c(),R(s,1),s.m(r.parentNode,r))},i(t){i||(R(s),i=!0)},o(t){I(s),i=!1},d(i){i&&u(e),t.input_1_binding(null,e),i&&u(n),s&&s.d(i),i&&u(r),o(a)}}}function Kt(t){t.dataTransfer.dropEffect="move"}function te(t,e,n){let r,{colors:o}=e,i=!1,a="";return t.$set=(t=>{"colors"in t&&n("colors",o=t.colors)}),{colors:o,edit:i,input:r,colorString:a,enterEditMode:function(){n("edit",i=!0),n("colorString",a=o.map(t=>t.name()).join(", ")),r.focus()},exitEditMode:function(){n("edit",i=!1),n("colors",o=a.split(/\s*[,|\s]\s*/).filter(t=>J.valid(t)).map(t=>J(t)))},drop:function(t){const e=+t.dataTransfer.getData("index"),r=function(t){const e=t.parentNode.children;for(let n=0;n<e.length;n++)if(e[n]===t)return n;return-1}(t.target),i=o.splice(e,1,null)[0];o.splice(r,0,i),n("colors",o=o.filter(t=>null!==t))},input_1_input_handler:function(){a=this.value,n("colorString",a)},input_1_binding:function(t,e){n("input",r=t)},color_value_binding:function(t,{color:e,each_value:r,i:i}){r[i]=t,n("colors",o)},dragstart_handler:function({i:t},e){return function(t,e){t.dataTransfer.setData("index",e)}(e,t)}}}class ee extends V{constructor(t){super(),W(this,t,te,Qt,a,["colors"])}}function ne(t){var e,n,r;function o(e){t.colorlist_colors_binding_1.call(null,e),n=!0,O(()=>n=!1)}let i={};void 0!==t.colors2&&(i.colors=t.colors2);var a=new ee({props:i});return D(()=>H(a,"colors",o)),{c(){e=h("div"),a.$$.fragment.c(),y(e,"class","col-md")},m(t,n){c(t,e,n),B(a,e,null),r=!0},p(t,e){var r={};!n&&t.colors2&&(r.colors=e.colors2),a.$set(r)},i(t){r||(R(a.$$.fragment,t),r=!0)},o(t){I(a.$$.fragment,t),r=!1},d(t){t&&u(e),G(a)}}}function re(t){var e,n,r,o,i;function a(e){t.colorlist_colors_binding.call(null,e),r=!0,O(()=>r=!1)}let s={};void 0!==t.colors&&(s.colors=t.colors);var f=new ee({props:s});D(()=>H(f,"colors",a));var d=t.diverging&&ne(t);return{c(){e=h("div"),n=h("div"),f.$$.fragment.c(),o=g(),d&&d.c(),y(n,"class","col-md"),y(e,"class","row")},m(t,r){c(t,e,r),l(e,n),B(f,n,null),l(e,o),d&&d.m(e,null),i=!0},p(t,n){var o={};!r&&t.colors&&(o.colors=n.colors),f.$set(o),n.diverging?d?(d.p(t,n),R(d,1)):((d=ne(n)).c(),R(d,1),d.m(e,null)):d&&(q(),I(d,1,()=>{d=null}),Y())},i(t){i||(R(f.$$.fragment,t),R(d),i=!0)},o(t){I(f.$$.fragment,t),I(d),i=!1},d(t){t&&u(e),G(f),d&&d.d()}}}function oe(t,e,n){let{colors:r=[],colors2:o=[],diverging:i=!1}=e;return t.$set=(t=>{"colors"in t&&n("colors",r=t.colors),"colors2"in t&&n("colors2",o=t.colors2),"diverging"in t&&n("diverging",i=t.diverging)}),{colors:r,colors2:o,diverging:i,colorlist_colors_binding:function(t){n("colors",r=t)},colorlist_colors_binding_1:function(t){n("colors2",o=t)}}}class ie extends V{constructor(t){super(),W(this,t,oe,re,a,["colors","colors2","diverging"])}}function ae(t,e){return blinder[e](J(t).hex())}function se(t,e){let n=0;const r=t.length;if(!r)return!0;for(let o=0;o<r;o++)for(let i=o+1;i<r;i++){const r=J(t[o]),a=J(t[i]),s=le(r,a);if(s<9)continue;const l=le(blinder[e](r.hex()),blinder[e](a.hex()));s/l>5&&l<9&&n++}return 0===n}function le(t,e){return.5*(J.deltaE(t,e)+J.deltaE(e,t))}function ce(t,e,n){const r=Object.create(t);return r.step=e[n],r}function ue(t){var e;return{c(){y(e=h("div"),"class","step svelte-25x2d4"),_(e,"background","none"===t.simulate?t.step:ae(t.step,t.simulate))},m(t,n){c(t,e,n)},p(t,n){(t.simulate||t.steps||t.colorBlindSim)&&_(e,"background","none"===n.simulate?n.step:ae(n.step,n.simulate))},d(t){t&&u(e)}}}function fe(e){for(var n,r=e.steps,o=[],i=0;i<r.length;i+=1)o[i]=ue(ce(e,r,i));return{c(){n=h("div");for(var t=0;t<o.length;t+=1)o[t].c();y(n,"class","palette svelte-25x2d4")},m(t,e){c(t,n,e);for(var r=0;r<o.length;r+=1)o[r].m(n,null)},p(t,e){if(t.simulate||t.steps||t.colorBlindSim){r=e.steps;for(var i=0;i<r.length;i+=1){const a=ce(e,r,i);o[i]?o[i].p(t,a):(o[i]=ue(a),o[i].c(),o[i].m(n,null))}for(;i<o.length;i+=1)o[i].d(1);o.length=r.length}},i:t,o:t,d(t){t&&u(n),f(o,t)}}}function he(t,e,n){let r,o,i,a,s,l,c,{colors:u=["red"],colors2:f=[],numColors:h=7,diverging:d=!1,bezier:p,correctLightness:g,simulate:v="none",steps:b}=e;function m(t,e){const n=J(t).lab(),r=100*(.95-1/e),o=r/(e-1),i=.5*(100-r),a=Ut(i,i+e*o,o);let s=0;if(!d){s=9999;for(let t=0;t<e;t++){const e=n[0]-a[t];Math.abs(e)<Math.abs(s)&&(s=e)}}return a.map(t=>J.lab([t+s,n[1],n[2]]))}function y(t,e,n=!1){if(d){const e=m(t,3).concat(J("#f5f5f5"));return n&&e.reverse(),e}return m(t,e)}return t.$set=(t=>{"colors"in t&&n("colors",u=t.colors),"colors2"in t&&n("colors2",f=t.colors2),"numColors"in t&&n("numColors",h=t.numColors),"diverging"in t&&n("diverging",d=t.diverging),"bezier"in t&&n("bezier",p=t.bezier),"correctLightness"in t&&n("correctLightness",g=t.correctLightness),"simulate"in t&&n("simulate",v=t.simulate),"steps"in t&&n("steps",b=t.steps)}),t.$$.update=((t={numColors:1,diverging:1,even:1,colors:1,numColorsLeft:1,colors2:1,numColorsRight:1,bezier:1,genColors:1,correctLightness:1,genColors2:1,stepsLeft:1,stepsRight:1})=>{t.numColors&&n("even",r=h%2==0),(t.diverging||t.numColors||t.even)&&n("numColorsLeft",o=d?Math.ceil(h/2)+(r?1:0):h),(t.diverging||t.numColors||t.even)&&n("numColorsRight",i=d?Math.ceil(h/2)+(r?1:0):0),(t.colors||t.numColorsLeft)&&n("genColors",a=1!==u.length?u:y(u[0],o)),(t.colors2||t.numColorsRight)&&n("genColors2",s=1!==f.length?f:y(f[0],i,!0)),(t.colors||t.bezier||t.genColors||t.correctLightness||t.numColorsLeft)&&n("stepsLeft",l=u.length?J.scale(p&&u.length>1?J.bezier(a):a).correctLightness(g).colors(o):[]),(t.diverging||t.colors2||t.bezier||t.genColors2||t.correctLightness||t.numColorsRight)&&n("stepsRight",c=d&&f.length?J.scale(p&&f.length>1?J.bezier(s):s).correctLightness(g).colors(i):[]),(t.even||t.diverging||t.stepsLeft||t.stepsRight)&&n("steps",b=(r&&d?l.slice(0,l.length-1):l).concat(c.slice(1)))}),{colors:u,colors2:f,numColors:h,diverging:d,bezier:p,correctLightness:g,simulate:v,steps:b}}class de extends V{constructor(t){super(),W(this,t,he,fe,a,["colors","colors2","numColors","diverging","bezier","correctLightness","simulate","steps"])}}function pe(e){var n,r,o,i,a,s,f,d,v,b,m,_,x,$,M,k,C,N,T,S,j,L,z,D,A,O,E,U,F,P=e.steps.join("', '"),q=e.steps.join("', '"),Y=e.steps.join("\n"),R=e.steps.map(ge).join(","),I=e.steps.length,H=e.steps.join("', '"),B=e.steps.slice(1).map(ve);return{c(){n=h("pre"),r=p(e.steps),o=g(),i=h("pre"),a=p("'"),s=p(P),f=p("'"),d=g(),v=h("pre"),b=p("['"),m=p(q),_=p("']"),x=g(),$=h("pre"),M=p(Y),k=g(),C=h("pre"),N=p("["),T=p(R),S=p("]"),j=g(),L=h("pre"),z=p("import { scaleThreshold } from 'd3-scale';\r\n\r\nfunction palette(min, max) {\r\n    const d = (max-min)/"),D=p(I),A=p(";\r\n    return = scaleThreshold()\r\n        .range(['"),O=p(H),E=p("'])\r\n        .domain(["),U=p(B),F=p("]);\r\n}"),y(n,"class","svelte-1rj5ek4"),y(i,"class","svelte-1rj5ek4"),y(v,"class","svelte-1rj5ek4"),y($,"class","svelte-1rj5ek4"),y(C,"class","svelte-1rj5ek4"),y(L,"class","svelte-1rj5ek4")},m(t,e){c(t,n,e),l(n,r),c(t,o,e),c(t,i,e),l(i,a),l(i,s),l(i,f),c(t,d,e),c(t,v,e),l(v,b),l(v,m),l(v,_),c(t,x,e),c(t,$,e),l($,M),c(t,k,e),c(t,C,e),l(C,N),l(C,T),l(C,S),c(t,j,e),c(t,L,e),l(L,z),l(L,D),l(L,A),l(L,O),l(L,E),l(L,U),l(L,F)},p(t,e){t.steps&&w(r,e.steps),t.steps&&P!==(P=e.steps.join("', '"))&&w(s,P),t.steps&&q!==(q=e.steps.join("', '"))&&w(m,q),t.steps&&Y!==(Y=e.steps.join("\n"))&&w(M,Y),t.steps&&R!==(R=e.steps.map(ge).join(","))&&w(T,R),t.steps&&I!==(I=e.steps.length)&&w(D,I),t.steps&&H!==(H=e.steps.join("', '"))&&w(O,H),t.steps&&B!==(B=e.steps.slice(1).map(ve))&&w(U,B)},i:t,o:t,d(t){t&&(u(n),u(o),u(i),u(d),u(v),u(x),u($),u(k),u(C),u(j),u(L))}}}function ge(t){return"0x"+t.substr(1)}function ve(t,e){return`min + d*${e+1}`}function be(t,e,n){let{steps:r=[]}=e;return t.$set=(t=>{"steps"in t&&n("steps",r=t.steps)}),{steps:r}}class me extends V{constructor(t){super(),W(this,t,be,pe,a,["steps"])}}function ye(t,e){return t<e?-1:t>e?1:t>=e?0:NaN}var we,_e,xe=(1===(we=ye).length&&(_e=we,we=function(t,e){return ye(_e(t),e)}),{left:function(t,e,n,r){for(null==n&&(n=0),null==r&&(r=t.length);n<r;){var o=n+r>>>1;we(t[o],e)<0?n=o+1:r=o}return n},right:function(t,e,n,r){for(null==n&&(n=0),null==r&&(r=t.length);n<r;){var o=n+r>>>1;we(t[o],e)>0?r=o:n=o+1}return n}}).right;var $e=Math.sqrt(50),Me=Math.sqrt(10),ke=Math.sqrt(2);function Ce(t,e,n){var r=(e-t)/Math.max(0,n),o=Math.floor(Math.log(r)/Math.LN10),i=r/Math.pow(10,o);return o>=0?(i>=$e?10:i>=Me?5:i>=ke?2:1)*Math.pow(10,o):-Math.pow(10,-o)/(i>=$e?10:i>=Me?5:i>=ke?2:1)}function Ne(t,e,n){t.prototype=e.prototype=n,n.constructor=t}function Te(t,e){var n=Object.create(t.prototype);for(var r in e)n[r]=e[r];return n}function Se(){}var je="\\s*([+-]?\\d+)\\s*",Le="\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",ze="\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",De=/^#([0-9a-f]{3})$/,Ae=/^#([0-9a-f]{6})$/,Oe=new RegExp("^rgb\\("+[je,je,je]+"\\)$"),Ee=new RegExp("^rgb\\("+[ze,ze,ze]+"\\)$"),Ue=new RegExp("^rgba\\("+[je,je,je,Le]+"\\)$"),Fe=new RegExp("^rgba\\("+[ze,ze,ze,Le]+"\\)$"),Pe=new RegExp("^hsl\\("+[Le,ze,ze]+"\\)$"),qe=new RegExp("^hsla\\("+[Le,ze,ze,Le]+"\\)$"),Ye={aliceblue:15792383,antiquewhite:16444375,aqua:65535,aquamarine:8388564,azure:15794175,beige:16119260,bisque:16770244,black:0,blanchedalmond:16772045,blue:255,blueviolet:9055202,brown:10824234,burlywood:14596231,cadetblue:6266528,chartreuse:8388352,chocolate:13789470,coral:16744272,cornflowerblue:6591981,cornsilk:16775388,crimson:14423100,cyan:65535,darkblue:139,darkcyan:35723,darkgoldenrod:12092939,darkgray:11119017,darkgreen:25600,darkgrey:11119017,darkkhaki:12433259,darkmagenta:9109643,darkolivegreen:5597999,darkorange:16747520,darkorchid:10040012,darkred:9109504,darksalmon:15308410,darkseagreen:9419919,darkslateblue:4734347,darkslategray:3100495,darkslategrey:3100495,darkturquoise:52945,darkviolet:9699539,deeppink:16716947,deepskyblue:49151,dimgray:6908265,dimgrey:6908265,dodgerblue:2003199,firebrick:11674146,floralwhite:16775920,forestgreen:2263842,fuchsia:16711935,gainsboro:14474460,ghostwhite:16316671,gold:16766720,goldenrod:14329120,gray:8421504,green:32768,greenyellow:11403055,grey:8421504,honeydew:15794160,hotpink:16738740,indianred:13458524,indigo:4915330,ivory:16777200,khaki:15787660,lavender:15132410,lavenderblush:16773365,lawngreen:8190976,lemonchiffon:16775885,lightblue:11393254,lightcoral:15761536,lightcyan:14745599,lightgoldenrodyellow:16448210,lightgray:13882323,lightgreen:9498256,lightgrey:13882323,lightpink:16758465,lightsalmon:16752762,lightseagreen:2142890,lightskyblue:8900346,lightslategray:7833753,lightslategrey:7833753,lightsteelblue:11584734,lightyellow:16777184,lime:65280,limegreen:3329330,linen:16445670,magenta:16711935,maroon:8388608,mediumaquamarine:6737322,mediumblue:205,mediumorchid:12211667,mediumpurple:9662683,mediumseagreen:3978097,mediumslateblue:8087790,mediumspringgreen:64154,mediumturquoise:4772300,mediumvioletred:13047173,midnightblue:1644912,mintcream:16121850,mistyrose:16770273,moccasin:16770229,navajowhite:16768685,navy:128,oldlace:16643558,olive:8421376,olivedrab:7048739,orange:16753920,orangered:16729344,orchid:14315734,palegoldenrod:15657130,palegreen:10025880,paleturquoise:11529966,palevioletred:14381203,papayawhip:16773077,peachpuff:16767673,peru:13468991,pink:16761035,plum:14524637,powderblue:11591910,purple:8388736,rebeccapurple:6697881,red:16711680,rosybrown:12357519,royalblue:4286945,saddlebrown:9127187,salmon:16416882,sandybrown:16032864,seagreen:3050327,seashell:16774638,sienna:10506797,silver:12632256,skyblue:8900331,slateblue:6970061,slategray:7372944,slategrey:7372944,snow:16775930,springgreen:65407,steelblue:4620980,tan:13808780,teal:32896,thistle:14204888,tomato:16737095,turquoise:4251856,violet:15631086,wheat:16113331,white:16777215,whitesmoke:16119285,yellow:16776960,yellowgreen:10145074};function Re(t){var e;return t=(t+"").trim().toLowerCase(),(e=De.exec(t))?new Ze((e=parseInt(e[1],16))>>8&15|e>>4&240,e>>4&15|240&e,(15&e)<<4|15&e,1):(e=Ae.exec(t))?Ie(parseInt(e[1],16)):(e=Oe.exec(t))?new Ze(e[1],e[2],e[3],1):(e=Ee.exec(t))?new Ze(255*e[1]/100,255*e[2]/100,255*e[3]/100,1):(e=Ue.exec(t))?He(e[1],e[2],e[3],e[4]):(e=Fe.exec(t))?He(255*e[1]/100,255*e[2]/100,255*e[3]/100,e[4]):(e=Pe.exec(t))?Ve(e[1],e[2]/100,e[3]/100,1):(e=qe.exec(t))?Ve(e[1],e[2]/100,e[3]/100,e[4]):Ye.hasOwnProperty(t)?Ie(Ye[t]):"transparent"===t?new Ze(NaN,NaN,NaN,0):null}function Ie(t){return new Ze(t>>16&255,t>>8&255,255&t,1)}function He(t,e,n,r){return r<=0&&(t=e=n=NaN),new Ze(t,e,n,r)}function Be(t){return t instanceof Se||(t=Re(t)),t?new Ze((t=t.rgb()).r,t.g,t.b,t.opacity):new Ze}function Ge(t,e,n,r){return 1===arguments.length?Be(t):new Ze(t,e,n,null==r?1:r)}function Ze(t,e,n,r){this.r=+t,this.g=+e,this.b=+n,this.opacity=+r}function We(t){return((t=Math.max(0,Math.min(255,Math.round(t)||0)))<16?"0":"")+t.toString(16)}function Ve(t,e,n,r){return r<=0?t=e=n=NaN:n<=0||n>=1?t=e=NaN:e<=0&&(t=NaN),new Xe(t,e,n,r)}function Xe(t,e,n,r){this.h=+t,this.s=+e,this.l=+n,this.opacity=+r}function Je(t,e,n){return 255*(t<60?e+(n-e)*t/60:t<180?n:t<240?e+(n-e)*(240-t)/60:e)}Ne(Se,Re,{displayable:function(){return this.rgb().displayable()},hex:function(){return this.rgb().hex()},toString:function(){return this.rgb()+""}}),Ne(Ze,Ge,Te(Se,{brighter:function(t){return t=null==t?1/.7:Math.pow(1/.7,t),new Ze(this.r*t,this.g*t,this.b*t,this.opacity)},darker:function(t){return t=null==t?.7:Math.pow(.7,t),new Ze(this.r*t,this.g*t,this.b*t,this.opacity)},rgb:function(){return this},displayable:function(){return 0<=this.r&&this.r<=255&&0<=this.g&&this.g<=255&&0<=this.b&&this.b<=255&&0<=this.opacity&&this.opacity<=1},hex:function(){return"#"+We(this.r)+We(this.g)+We(this.b)},toString:function(){var t=this.opacity;return(1===(t=isNaN(t)?1:Math.max(0,Math.min(1,t)))?"rgb(":"rgba(")+Math.max(0,Math.min(255,Math.round(this.r)||0))+", "+Math.max(0,Math.min(255,Math.round(this.g)||0))+", "+Math.max(0,Math.min(255,Math.round(this.b)||0))+(1===t?")":", "+t+")")}})),Ne(Xe,function(t,e,n,r){return 1===arguments.length?function(t){if(t instanceof Xe)return new Xe(t.h,t.s,t.l,t.opacity);if(t instanceof Se||(t=Re(t)),!t)return new Xe;if(t instanceof Xe)return t;var e=(t=t.rgb()).r/255,n=t.g/255,r=t.b/255,o=Math.min(e,n,r),i=Math.max(e,n,r),a=NaN,s=i-o,l=(i+o)/2;return s?(a=e===i?(n-r)/s+6*(n<r):n===i?(r-e)/s+2:(e-n)/s+4,s/=l<.5?i+o:2-i-o,a*=60):s=l>0&&l<1?0:a,new Xe(a,s,l,t.opacity)}(t):new Xe(t,e,n,null==r?1:r)},Te(Se,{brighter:function(t){return t=null==t?1/.7:Math.pow(1/.7,t),new Xe(this.h,this.s,this.l*t,this.opacity)},darker:function(t){return t=null==t?.7:Math.pow(.7,t),new Xe(this.h,this.s,this.l*t,this.opacity)},rgb:function(){var t=this.h%360+360*(this.h<0),e=isNaN(t)||isNaN(this.s)?0:this.s,n=this.l,r=n+(n<.5?n:1-n)*e,o=2*n-r;return new Ze(Je(t>=240?t-240:t+120,o,r),Je(t,o,r),Je(t<120?t+240:t-120,o,r),this.opacity)},displayable:function(){return(0<=this.s&&this.s<=1||isNaN(this.s))&&0<=this.l&&this.l<=1&&0<=this.opacity&&this.opacity<=1}}));var Qe=Math.PI/180,Ke=180/Math.PI,tn=.96422,en=1,nn=.82521,rn=4/29,on=6/29,an=3*on*on,sn=on*on*on;function ln(t){if(t instanceof cn)return new cn(t.l,t.a,t.b,t.opacity);if(t instanceof pn){if(isNaN(t.h))return new cn(t.l,0,0,t.opacity);var e=t.h*Qe;return new cn(t.l,Math.cos(e)*t.c,Math.sin(e)*t.c,t.opacity)}t instanceof Ze||(t=Be(t));var n,r,o=dn(t.r),i=dn(t.g),a=dn(t.b),s=un((.2225045*o+.7168786*i+.0606169*a)/en);return o===i&&i===a?n=r=s:(n=un((.4360747*o+.3850649*i+.1430804*a)/tn),r=un((.0139322*o+.0971045*i+.7141733*a)/nn)),new cn(116*s-16,500*(n-s),200*(s-r),t.opacity)}function cn(t,e,n,r){this.l=+t,this.a=+e,this.b=+n,this.opacity=+r}function un(t){return t>sn?Math.pow(t,1/3):t/an+rn}function fn(t){return t>on?t*t*t:an*(t-rn)}function hn(t){return 255*(t<=.0031308?12.92*t:1.055*Math.pow(t,1/2.4)-.055)}function dn(t){return(t/=255)<=.04045?t/12.92:Math.pow((t+.055)/1.055,2.4)}function pn(t,e,n,r){this.h=+t,this.c=+e,this.l=+n,this.opacity=+r}Ne(cn,function(t,e,n,r){return 1===arguments.length?ln(t):new cn(t,e,n,null==r?1:r)},Te(Se,{brighter:function(t){return new cn(this.l+18*(null==t?1:t),this.a,this.b,this.opacity)},darker:function(t){return new cn(this.l-18*(null==t?1:t),this.a,this.b,this.opacity)},rgb:function(){var t=(this.l+16)/116,e=isNaN(this.a)?t:t+this.a/500,n=isNaN(this.b)?t:t-this.b/200;return new Ze(hn(3.1338561*(e=tn*fn(e))-1.6168667*(t=en*fn(t))-.4906146*(n=nn*fn(n))),hn(-.9787684*e+1.9161415*t+.033454*n),hn(.0719453*e-.2289914*t+1.4052427*n),this.opacity)}})),Ne(pn,function(t,e,n,r){return 1===arguments.length?function(t){if(t instanceof pn)return new pn(t.h,t.c,t.l,t.opacity);if(t instanceof cn||(t=ln(t)),0===t.a&&0===t.b)return new pn(NaN,0,t.l,t.opacity);var e=Math.atan2(t.b,t.a)*Ke;return new pn(e<0?e+360:e,Math.sqrt(t.a*t.a+t.b*t.b),t.l,t.opacity)}(t):new pn(t,e,n,null==r?1:r)},Te(Se,{brighter:function(t){return new pn(this.h,this.c,this.l+18*(null==t?1:t),this.opacity)},darker:function(t){return new pn(this.h,this.c,this.l-18*(null==t?1:t),this.opacity)},rgb:function(){return ln(this).rgb()}}));var gn=-.14861,vn=1.78277,bn=-.29227,mn=-.90649,yn=1.97294,wn=yn*mn,_n=yn*vn,xn=vn*bn-mn*gn;function $n(t,e,n,r){this.h=+t,this.s=+e,this.l=+n,this.opacity=+r}function Mn(t){return function(){return t}}function kn(t){return 1==(t=+t)?Cn:function(e,n){return n-e?function(t,e,n){return t=Math.pow(t,n),e=Math.pow(e,n)-t,n=1/n,function(r){return Math.pow(t+r*e,n)}}(e,n,t):Mn(isNaN(e)?n:e)}}function Cn(t,e){var n=e-t;return n?function(t,e){return function(n){return t+n*e}}(t,n):Mn(isNaN(t)?e:t)}Ne($n,function(t,e,n,r){return 1===arguments.length?function(t){if(t instanceof $n)return new $n(t.h,t.s,t.l,t.opacity);t instanceof Ze||(t=Be(t));var e=t.r/255,n=t.g/255,r=t.b/255,o=(xn*r+wn*e-_n*n)/(xn+wn-_n),i=r-o,a=(yn*(n-o)-bn*i)/mn,s=Math.sqrt(a*a+i*i)/(yn*o*(1-o)),l=s?Math.atan2(a,i)*Ke-120:NaN;return new $n(l<0?l+360:l,s,o,t.opacity)}(t):new $n(t,e,n,null==r?1:r)},Te(Se,{brighter:function(t){return t=null==t?1/.7:Math.pow(1/.7,t),new $n(this.h,this.s,this.l*t,this.opacity)},darker:function(t){return t=null==t?.7:Math.pow(.7,t),new $n(this.h,this.s,this.l*t,this.opacity)},rgb:function(){var t=isNaN(this.h)?0:(this.h+120)*Qe,e=+this.l,n=isNaN(this.s)?0:this.s*e*(1-e),r=Math.cos(t),o=Math.sin(t);return new Ze(255*(e+n*(gn*r+vn*o)),255*(e+n*(bn*r+mn*o)),255*(e+n*(yn*r)),this.opacity)}}));var Nn=function t(e){var n=kn(e);function r(t,e){var r=n((t=Ge(t)).r,(e=Ge(e)).r),o=n(t.g,e.g),i=n(t.b,e.b),a=Cn(t.opacity,e.opacity);return function(e){return t.r=r(e),t.g=o(e),t.b=i(e),t.opacity=a(e),t+""}}return r.gamma=t,r}(1);function Tn(t,e){return e-=t=+t,function(n){return t+e*n}}var Sn=/[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g,jn=new RegExp(Sn.source,"g");function Ln(t,e){var n,r=typeof e;return null==e||"boolean"===r?Mn(e):("number"===r?Tn:"string"===r?(n=Re(e))?(e=n,Nn):function(t,e){var n,r,o,i=Sn.lastIndex=jn.lastIndex=0,a=-1,s=[],l=[];for(t+="",e+="";(n=Sn.exec(t))&&(r=jn.exec(e));)(o=r.index)>i&&(o=e.slice(i,o),s[a]?s[a]+=o:s[++a]=o),(n=n[0])===(r=r[0])?s[a]?s[a]+=r:s[++a]=r:(s[++a]=null,l.push({i:a,x:Tn(n,r)})),i=jn.lastIndex;return i<e.length&&(o=e.slice(i),s[a]?s[a]+=o:s[++a]=o),s.length<2?l[0]?function(t){return function(e){return t(e)+""}}(l[0].x):function(t){return function(){return t}}(e):(e=l.length,function(t){for(var n,r=0;r<e;++r)s[(n=l[r]).i]=n.x(t);return s.join("")})}:e instanceof Re?Nn:e instanceof Date?function(t,e){var n=new Date;return e-=t=+t,function(r){return n.setTime(t+e*r),n}}:Array.isArray(e)?function(t,e){var n,r=e?e.length:0,o=t?Math.min(r,t.length):0,i=new Array(o),a=new Array(r);for(n=0;n<o;++n)i[n]=Ln(t[n],e[n]);for(;n<r;++n)a[n]=e[n];return function(t){for(n=0;n<o;++n)a[n]=i[n](t);return a}}:"function"!=typeof e.valueOf&&"function"!=typeof e.toString||isNaN(e)?function(t,e){var n,r={},o={};for(n in null!==t&&"object"==typeof t||(t={}),null!==e&&"object"==typeof e||(e={}),e)n in t?r[n]=Ln(t[n],e[n]):o[n]=e[n];return function(t){for(n in r)o[n]=r[n](t);return o}}:Tn)(t,e)}function zn(t,e){return e-=t=+t,function(n){return Math.round(t+e*n)}}Math.PI,Math.SQRT2;function Dn(t){return+t}var An=[0,1];function On(t){return t}function En(t,e){return(e-=t=+t)?function(n){return(n-t)/e}:(n=isNaN(e)?NaN:.5,function(){return n});var n}function Un(t){var e,n=t[0],r=t[t.length-1];return n>r&&(e=n,n=r,r=e),function(t){return Math.max(n,Math.min(r,t))}}function Fn(t,e,n){var r=t[0],o=t[1],i=e[0],a=e[1];return o<r?(r=En(o,r),i=n(a,i)):(r=En(r,o),i=n(i,a)),function(t){return i(r(t))}}function Pn(t,e,n){var r=Math.min(t.length,e.length)-1,o=new Array(r),i=new Array(r),a=-1;for(t[r]<t[0]&&(t=t.slice().reverse(),e=e.slice().reverse());++a<r;)o[a]=En(t[a],t[a+1]),i[a]=n(e[a],e[a+1]);return function(e){var n=xe(t,e,1,r)-1;return i[n](o[n](e))}}function qn(t,e){return function(){var t,e,n,r,o,i,a=An,s=An,l=Ln,c=On;function u(){return r=Math.min(a.length,s.length)>2?Pn:Fn,o=i=null,f}function f(e){return isNaN(e=+e)?n:(o||(o=r(a.map(t),s,l)))(t(c(e)))}return f.invert=function(n){return c(e((i||(i=r(s,a.map(t),Tn)))(n)))},f.domain=function(t){return arguments.length?(a=Array.from(t,Dn),c===On||(c=Un(a)),u()):a.slice()},f.range=function(t){return arguments.length?(s=Array.from(t),u()):s.slice()},f.rangeRound=function(t){return s=Array.from(t),l=zn,u()},f.clamp=function(t){return arguments.length?(c=t?Un(a):On,f):c!==On},f.interpolate=function(t){return arguments.length?(l=t,u()):l},f.unknown=function(t){return arguments.length?(n=t,f):n},function(n,r){return t=n,e=r,u()}}()(t,e)}function Yn(t,e){if((n=(t=e?t.toExponential(e-1):t.toExponential()).indexOf("e"))<0)return null;var n,r=t.slice(0,n);return[r.length>1?r[0]+r.slice(2):r,+t.slice(n+1)]}function Rn(t){return(t=Yn(Math.abs(t)))?t[1]:NaN}var In,Hn=/^(?:(.)?([<>=^]))?([+\-( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?(~)?([a-z%])?$/i;function Bn(t){return new Gn(t)}function Gn(t){if(!(e=Hn.exec(t)))throw new Error("invalid format: "+t);var e;this.fill=e[1]||" ",this.align=e[2]||">",this.sign=e[3]||"-",this.symbol=e[4]||"",this.zero=!!e[5],this.width=e[6]&&+e[6],this.comma=!!e[7],this.precision=e[8]&&+e[8].slice(1),this.trim=!!e[9],this.type=e[10]||""}function Zn(t,e){var n=Yn(t,e);if(!n)return t+"";var r=n[0],o=n[1];return o<0?"0."+new Array(-o).join("0")+r:r.length>o+1?r.slice(0,o+1)+"."+r.slice(o+1):r+new Array(o-r.length+2).join("0")}Bn.prototype=Gn.prototype,Gn.prototype.toString=function(){return this.fill+this.align+this.sign+this.symbol+(this.zero?"0":"")+(null==this.width?"":Math.max(1,0|this.width))+(this.comma?",":"")+(null==this.precision?"":"."+Math.max(0,0|this.precision))+(this.trim?"~":"")+this.type};var Wn={"%":function(t,e){return(100*t).toFixed(e)},b:function(t){return Math.round(t).toString(2)},c:function(t){return t+""},d:function(t){return Math.round(t).toString(10)},e:function(t,e){return t.toExponential(e)},f:function(t,e){return t.toFixed(e)},g:function(t,e){return t.toPrecision(e)},o:function(t){return Math.round(t).toString(8)},p:function(t,e){return Zn(100*t,e)},r:Zn,s:function(t,e){var n=Yn(t,e);if(!n)return t+"";var r=n[0],o=n[1],i=o-(In=3*Math.max(-8,Math.min(8,Math.floor(o/3))))+1,a=r.length;return i===a?r:i>a?r+new Array(i-a+1).join("0"):i>0?r.slice(0,i)+"."+r.slice(i):"0."+new Array(1-i).join("0")+Yn(t,Math.max(0,e+i-1))[0]},X:function(t){return Math.round(t).toString(16).toUpperCase()},x:function(t){return Math.round(t).toString(16)}};function Vn(t){return t}var Xn,Jn,Qn,Kn=["y","z","a","f","p","n","µ","m","","k","M","G","T","P","E","Z","Y"];function tr(t){var e,n,r=t.grouping&&t.thousands?(e=t.grouping,n=t.thousands,function(t,r){for(var o=t.length,i=[],a=0,s=e[0],l=0;o>0&&s>0&&(l+s+1>r&&(s=Math.max(1,r-l)),i.push(t.substring(o-=s,o+s)),!((l+=s+1)>r));)s=e[a=(a+1)%e.length];return i.reverse().join(n)}):Vn,o=t.currency,i=t.decimal,a=t.numerals?function(t){return function(e){return e.replace(/[0-9]/g,function(e){return t[+e]})}}(t.numerals):Vn,s=t.percent||"%";function l(t){var e=(t=Bn(t)).fill,n=t.align,l=t.sign,c=t.symbol,u=t.zero,f=t.width,h=t.comma,d=t.precision,p=t.trim,g=t.type;"n"===g?(h=!0,g="g"):Wn[g]||(null==d&&(d=12),p=!0,g="g"),(u||"0"===e&&"="===n)&&(u=!0,e="0",n="=");var v="$"===c?o[0]:"#"===c&&/[boxX]/.test(g)?"0"+g.toLowerCase():"",b="$"===c?o[1]:/[%p]/.test(g)?s:"",m=Wn[g],y=/[defgprs%]/.test(g);function w(t){var o,s,c,w=v,_=b;if("c"===g)_=m(t)+_,t="";else{var x=(t=+t)<0;if(t=m(Math.abs(t),d),p&&(t=function(t){t:for(var e,n=t.length,r=1,o=-1;r<n;++r)switch(t[r]){case".":o=e=r;break;case"0":0===o&&(o=r),e=r;break;default:if(o>0){if(!+t[r])break t;o=0}}return o>0?t.slice(0,o)+t.slice(e+1):t}(t)),x&&0==+t&&(x=!1),w=(x?"("===l?l:"-":"-"===l||"("===l?"":l)+w,_=("s"===g?Kn[8+In/3]:"")+_+(x&&"("===l?")":""),y)for(o=-1,s=t.length;++o<s;)if(48>(c=t.charCodeAt(o))||c>57){_=(46===c?i+t.slice(o+1):t.slice(o))+_,t=t.slice(0,o);break}}h&&!u&&(t=r(t,1/0));var $=w.length+t.length+_.length,M=$<f?new Array(f-$+1).join(e):"";switch(h&&u&&(t=r(M+t,M.length?f-_.length:1/0),M=""),n){case"<":t=w+t+_+M;break;case"=":t=w+M+t+_;break;case"^":t=M.slice(0,$=M.length>>1)+w+t+_+M.slice($);break;default:t=M+w+t+_}return a(t)}return d=null==d?6:/[gprs]/.test(g)?Math.max(1,Math.min(21,d)):Math.max(0,Math.min(20,d)),w.toString=function(){return t+""},w}return{format:l,formatPrefix:function(t,e){var n=l(((t=Bn(t)).type="f",t)),r=3*Math.max(-8,Math.min(8,Math.floor(Rn(e)/3))),o=Math.pow(10,-r),i=Kn[8+r/3];return function(t){return n(o*t)+i}}}}function er(t,e,n,r){var o,i=function(t,e,n){var r=Math.abs(e-t)/Math.max(0,n),o=Math.pow(10,Math.floor(Math.log(r)/Math.LN10)),i=r/o;return i>=$e?o*=10:i>=Me?o*=5:i>=ke&&(o*=2),e<t?-o:o}(t,e,n);switch((r=Bn(null==r?",f":r)).type){case"s":var a=Math.max(Math.abs(t),Math.abs(e));return null!=r.precision||isNaN(o=function(t,e){return Math.max(0,3*Math.max(-8,Math.min(8,Math.floor(Rn(e)/3)))-Rn(Math.abs(t)))}(i,a))||(r.precision=o),Qn(r,a);case"":case"e":case"g":case"p":case"r":null!=r.precision||isNaN(o=function(t,e){return t=Math.abs(t),e=Math.abs(e)-t,Math.max(0,Rn(e)-Rn(t))+1}(i,Math.max(Math.abs(t),Math.abs(e))))||(r.precision=o-("e"===r.type));break;case"f":case"%":null!=r.precision||isNaN(o=function(t){return Math.max(0,-Rn(Math.abs(t)))}(i))||(r.precision=o-2*("%"===r.type))}return Jn(r)}function nr(t){var e=t.domain;return t.ticks=function(t){var n=e();return function(t,e,n){var r,o,i,a,s=-1;if(n=+n,(t=+t)==(e=+e)&&n>0)return[t];if((r=e<t)&&(o=t,t=e,e=o),0===(a=Ce(t,e,n))||!isFinite(a))return[];if(a>0)for(t=Math.ceil(t/a),e=Math.floor(e/a),i=new Array(o=Math.ceil(e-t+1));++s<o;)i[s]=(t+s)*a;else for(t=Math.floor(t*a),e=Math.ceil(e*a),i=new Array(o=Math.ceil(t-e+1));++s<o;)i[s]=(t-s)/a;return r&&i.reverse(),i}(n[0],n[n.length-1],null==t?10:t)},t.tickFormat=function(t,n){var r=e();return er(r[0],r[r.length-1],null==t?10:t,n)},t.nice=function(n){null==n&&(n=10);var r,o=e(),i=0,a=o.length-1,s=o[i],l=o[a];return l<s&&(r=s,s=l,l=r,r=i,i=a,a=r),(r=Ce(s,l,n))>0?r=Ce(s=Math.floor(s/r)*r,l=Math.ceil(l/r)*r,n):r<0&&(r=Ce(s=Math.ceil(s*r)/r,l=Math.floor(l*r)/r,n)),r>0?(o[i]=Math.floor(s/r)*r,o[a]=Math.ceil(l/r)*r,e(o)):r<0&&(o[i]=Math.ceil(s*r)/r,o[a]=Math.floor(l*r)/r,e(o)),t},t}function rr(){var t=qn(On,On);return t.copy=function(){return e=t,rr().domain(e.domain()).range(e.range()).interpolate(e.interpolate()).clamp(e.clamp()).unknown(e.unknown());var e},function(t,e){switch(arguments.length){case 0:break;case 1:this.range(t);break;default:this.range(e).domain(t)}return this}.apply(t,arguments),nr(t)}Xn=tr({decimal:".",thousands:",",grouping:[3],currency:["$",""]}),Jn=Xn.format,Qn=Xn.formatPrefix;var or=new Date,ir=new Date;function ar(t,e,n,r){function o(e){return t(e=new Date(+e)),e}return o.floor=o,o.ceil=function(n){return t(n=new Date(n-1)),e(n,1),t(n),n},o.round=function(t){var e=o(t),n=o.ceil(t);return t-e<n-t?e:n},o.offset=function(t,n){return e(t=new Date(+t),null==n?1:Math.floor(n)),t},o.range=function(n,r,i){var a,s=[];if(n=o.ceil(n),i=null==i?1:Math.floor(i),!(n<r&&i>0))return s;do{s.push(a=new Date(+n)),e(n,i),t(n)}while(a<n&&n<r);return s},o.filter=function(n){return ar(function(e){if(e>=e)for(;t(e),!n(e);)e.setTime(e-1)},function(t,r){if(t>=t)if(r<0)for(;++r<=0;)for(;e(t,-1),!n(t););else for(;--r>=0;)for(;e(t,1),!n(t););})},n&&(o.count=function(e,r){return or.setTime(+e),ir.setTime(+r),t(or),t(ir),Math.floor(n(or,ir))},o.every=function(t){return t=Math.floor(t),isFinite(t)&&t>0?t>1?o.filter(r?function(e){return r(e)%t==0}:function(e){return o.count(0,e)%t==0}):o:null}),o}var sr=ar(function(){},function(t,e){t.setTime(+t+e)},function(t,e){return e-t});sr.every=function(t){return t=Math.floor(t),isFinite(t)&&t>0?t>1?ar(function(e){e.setTime(Math.floor(e/t)*t)},function(e,n){e.setTime(+e+n*t)},function(e,n){return(n-e)/t}):sr:null};var lr=6e4,cr=6048e5,ur=(ar(function(t){t.setTime(t-t.getMilliseconds())},function(t,e){t.setTime(+t+1e3*e)},function(t,e){return(e-t)/1e3},function(t){return t.getUTCSeconds()}),ar(function(t){t.setTime(t-t.getMilliseconds()-1e3*t.getSeconds())},function(t,e){t.setTime(+t+e*lr)},function(t,e){return(e-t)/lr},function(t){return t.getMinutes()}),ar(function(t){t.setTime(t-t.getMilliseconds()-1e3*t.getSeconds()-t.getMinutes()*lr)},function(t,e){t.setTime(+t+36e5*e)},function(t,e){return(e-t)/36e5},function(t){return t.getHours()}),ar(function(t){t.setHours(0,0,0,0)},function(t,e){t.setDate(t.getDate()+e)},function(t,e){return(e-t-(e.getTimezoneOffset()-t.getTimezoneOffset())*lr)/864e5},function(t){return t.getDate()-1}));function fr(t){return ar(function(e){e.setDate(e.getDate()-(e.getDay()+7-t)%7),e.setHours(0,0,0,0)},function(t,e){t.setDate(t.getDate()+7*e)},function(t,e){return(e-t-(e.getTimezoneOffset()-t.getTimezoneOffset())*lr)/cr})}var hr=fr(0),dr=fr(1),pr=(fr(2),fr(3),fr(4)),gr=(fr(5),fr(6),ar(function(t){t.setDate(1),t.setHours(0,0,0,0)},function(t,e){t.setMonth(t.getMonth()+e)},function(t,e){return e.getMonth()-t.getMonth()+12*(e.getFullYear()-t.getFullYear())},function(t){return t.getMonth()}),ar(function(t){t.setMonth(0,1),t.setHours(0,0,0,0)},function(t,e){t.setFullYear(t.getFullYear()+e)},function(t,e){return e.getFullYear()-t.getFullYear()},function(t){return t.getFullYear()}));gr.every=function(t){return isFinite(t=Math.floor(t))&&t>0?ar(function(e){e.setFullYear(Math.floor(e.getFullYear()/t)*t),e.setMonth(0,1),e.setHours(0,0,0,0)},function(e,n){e.setFullYear(e.getFullYear()+n*t)}):null};ar(function(t){t.setUTCSeconds(0,0)},function(t,e){t.setTime(+t+e*lr)},function(t,e){return(e-t)/lr},function(t){return t.getUTCMinutes()}),ar(function(t){t.setUTCMinutes(0,0,0)},function(t,e){t.setTime(+t+36e5*e)},function(t,e){return(e-t)/36e5},function(t){return t.getUTCHours()});var vr=ar(function(t){t.setUTCHours(0,0,0,0)},function(t,e){t.setUTCDate(t.getUTCDate()+e)},function(t,e){return(e-t)/864e5},function(t){return t.getUTCDate()-1});function br(t){return ar(function(e){e.setUTCDate(e.getUTCDate()-(e.getUTCDay()+7-t)%7),e.setUTCHours(0,0,0,0)},function(t,e){t.setUTCDate(t.getUTCDate()+7*e)},function(t,e){return(e-t)/cr})}var mr=br(0),yr=br(1),wr=(br(2),br(3),br(4)),_r=(br(5),br(6),ar(function(t){t.setUTCDate(1),t.setUTCHours(0,0,0,0)},function(t,e){t.setUTCMonth(t.getUTCMonth()+e)},function(t,e){return e.getUTCMonth()-t.getUTCMonth()+12*(e.getUTCFullYear()-t.getUTCFullYear())},function(t){return t.getUTCMonth()}),ar(function(t){t.setUTCMonth(0,1),t.setUTCHours(0,0,0,0)},function(t,e){t.setUTCFullYear(t.getUTCFullYear()+e)},function(t,e){return e.getUTCFullYear()-t.getUTCFullYear()},function(t){return t.getUTCFullYear()}));function xr(t){if(0<=t.y&&t.y<100){var e=new Date(-1,t.m,t.d,t.H,t.M,t.S,t.L);return e.setFullYear(t.y),e}return new Date(t.y,t.m,t.d,t.H,t.M,t.S,t.L)}function $r(t){if(0<=t.y&&t.y<100){var e=new Date(Date.UTC(-1,t.m,t.d,t.H,t.M,t.S,t.L));return e.setUTCFullYear(t.y),e}return new Date(Date.UTC(t.y,t.m,t.d,t.H,t.M,t.S,t.L))}function Mr(t){return{y:t,m:0,d:1,H:0,M:0,S:0,L:0}}_r.every=function(t){return isFinite(t=Math.floor(t))&&t>0?ar(function(e){e.setUTCFullYear(Math.floor(e.getUTCFullYear()/t)*t),e.setUTCMonth(0,1),e.setUTCHours(0,0,0,0)},function(e,n){e.setUTCFullYear(e.getUTCFullYear()+n*t)}):null};var kr,Cr,Nr,Tr={"-":"",_:" ",0:"0"},Sr=/^\s*\d+/,jr=/^%/,Lr=/[\\^$*+?|[\]().{}]/g;function zr(t,e,n){var r=t<0?"-":"",o=(r?-t:t)+"",i=o.length;return r+(i<n?new Array(n-i+1).join(e)+o:o)}function Dr(t){return t.replace(Lr,"\\$&")}function Ar(t){return new RegExp("^(?:"+t.map(Dr).join("|")+")","i")}function Or(t){for(var e={},n=-1,r=t.length;++n<r;)e[t[n].toLowerCase()]=n;return e}function Er(t,e,n){var r=Sr.exec(e.slice(n,n+1));return r?(t.w=+r[0],n+r[0].length):-1}function Ur(t,e,n){var r=Sr.exec(e.slice(n,n+1));return r?(t.u=+r[0],n+r[0].length):-1}function Fr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.U=+r[0],n+r[0].length):-1}function Pr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.V=+r[0],n+r[0].length):-1}function qr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.W=+r[0],n+r[0].length):-1}function Yr(t,e,n){var r=Sr.exec(e.slice(n,n+4));return r?(t.y=+r[0],n+r[0].length):-1}function Rr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.y=+r[0]+(+r[0]>68?1900:2e3),n+r[0].length):-1}function Ir(t,e,n){var r=/^(Z)|([+-]\d\d)(?::?(\d\d))?/.exec(e.slice(n,n+6));return r?(t.Z=r[1]?0:-(r[2]+(r[3]||"00")),n+r[0].length):-1}function Hr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.m=r[0]-1,n+r[0].length):-1}function Br(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.d=+r[0],n+r[0].length):-1}function Gr(t,e,n){var r=Sr.exec(e.slice(n,n+3));return r?(t.m=0,t.d=+r[0],n+r[0].length):-1}function Zr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.H=+r[0],n+r[0].length):-1}function Wr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.M=+r[0],n+r[0].length):-1}function Vr(t,e,n){var r=Sr.exec(e.slice(n,n+2));return r?(t.S=+r[0],n+r[0].length):-1}function Xr(t,e,n){var r=Sr.exec(e.slice(n,n+3));return r?(t.L=+r[0],n+r[0].length):-1}function Jr(t,e,n){var r=Sr.exec(e.slice(n,n+6));return r?(t.L=Math.floor(r[0]/1e3),n+r[0].length):-1}function Qr(t,e,n){var r=jr.exec(e.slice(n,n+1));return r?n+r[0].length:-1}function Kr(t,e,n){var r=Sr.exec(e.slice(n));return r?(t.Q=+r[0],n+r[0].length):-1}function to(t,e,n){var r=Sr.exec(e.slice(n));return r?(t.Q=1e3*+r[0],n+r[0].length):-1}function eo(t,e){return zr(t.getDate(),e,2)}function no(t,e){return zr(t.getHours(),e,2)}function ro(t,e){return zr(t.getHours()%12||12,e,2)}function oo(t,e){return zr(1+ur.count(gr(t),t),e,3)}function io(t,e){return zr(t.getMilliseconds(),e,3)}function ao(t,e){return io(t,e)+"000"}function so(t,e){return zr(t.getMonth()+1,e,2)}function lo(t,e){return zr(t.getMinutes(),e,2)}function co(t,e){return zr(t.getSeconds(),e,2)}function uo(t){var e=t.getDay();return 0===e?7:e}function fo(t,e){return zr(hr.count(gr(t),t),e,2)}function ho(t,e){var n=t.getDay();return t=n>=4||0===n?pr(t):pr.ceil(t),zr(pr.count(gr(t),t)+(4===gr(t).getDay()),e,2)}function po(t){return t.getDay()}function go(t,e){return zr(dr.count(gr(t),t),e,2)}function vo(t,e){return zr(t.getFullYear()%100,e,2)}function bo(t,e){return zr(t.getFullYear()%1e4,e,4)}function mo(t){var e=t.getTimezoneOffset();return(e>0?"-":(e*=-1,"+"))+zr(e/60|0,"0",2)+zr(e%60,"0",2)}function yo(t,e){return zr(t.getUTCDate(),e,2)}function wo(t,e){return zr(t.getUTCHours(),e,2)}function _o(t,e){return zr(t.getUTCHours()%12||12,e,2)}function xo(t,e){return zr(1+vr.count(_r(t),t),e,3)}function $o(t,e){return zr(t.getUTCMilliseconds(),e,3)}function Mo(t,e){return $o(t,e)+"000"}function ko(t,e){return zr(t.getUTCMonth()+1,e,2)}function Co(t,e){return zr(t.getUTCMinutes(),e,2)}function No(t,e){return zr(t.getUTCSeconds(),e,2)}function To(t){var e=t.getUTCDay();return 0===e?7:e}function So(t,e){return zr(mr.count(_r(t),t),e,2)}function jo(t,e){var n=t.getUTCDay();return t=n>=4||0===n?wr(t):wr.ceil(t),zr(wr.count(_r(t),t)+(4===_r(t).getUTCDay()),e,2)}function Lo(t){return t.getUTCDay()}function zo(t,e){return zr(yr.count(_r(t),t),e,2)}function Do(t,e){return zr(t.getUTCFullYear()%100,e,2)}function Ao(t,e){return zr(t.getUTCFullYear()%1e4,e,4)}function Oo(){return"+0000"}function Eo(){return"%"}function Uo(t){return+t}function Fo(t){return Math.floor(+t/1e3)}!function(t){kr=function(t){var e=t.dateTime,n=t.date,r=t.time,o=t.periods,i=t.days,a=t.shortDays,s=t.months,l=t.shortMonths,c=Ar(o),u=Or(o),f=Ar(i),h=Or(i),d=Ar(a),p=Or(a),g=Ar(s),v=Or(s),b=Ar(l),m=Or(l),y={a:function(t){return a[t.getDay()]},A:function(t){return i[t.getDay()]},b:function(t){return l[t.getMonth()]},B:function(t){return s[t.getMonth()]},c:null,d:eo,e:eo,f:ao,H:no,I:ro,j:oo,L:io,m:so,M:lo,p:function(t){return o[+(t.getHours()>=12)]},Q:Uo,s:Fo,S:co,u:uo,U:fo,V:ho,w:po,W:go,x:null,X:null,y:vo,Y:bo,Z:mo,"%":Eo},w={a:function(t){return a[t.getUTCDay()]},A:function(t){return i[t.getUTCDay()]},b:function(t){return l[t.getUTCMonth()]},B:function(t){return s[t.getUTCMonth()]},c:null,d:yo,e:yo,f:Mo,H:wo,I:_o,j:xo,L:$o,m:ko,M:Co,p:function(t){return o[+(t.getUTCHours()>=12)]},Q:Uo,s:Fo,S:No,u:To,U:So,V:jo,w:Lo,W:zo,x:null,X:null,y:Do,Y:Ao,Z:Oo,"%":Eo},_={a:function(t,e,n){var r=d.exec(e.slice(n));return r?(t.w=p[r[0].toLowerCase()],n+r[0].length):-1},A:function(t,e,n){var r=f.exec(e.slice(n));return r?(t.w=h[r[0].toLowerCase()],n+r[0].length):-1},b:function(t,e,n){var r=b.exec(e.slice(n));return r?(t.m=m[r[0].toLowerCase()],n+r[0].length):-1},B:function(t,e,n){var r=g.exec(e.slice(n));return r?(t.m=v[r[0].toLowerCase()],n+r[0].length):-1},c:function(t,n,r){return M(t,e,n,r)},d:Br,e:Br,f:Jr,H:Zr,I:Zr,j:Gr,L:Xr,m:Hr,M:Wr,p:function(t,e,n){var r=c.exec(e.slice(n));return r?(t.p=u[r[0].toLowerCase()],n+r[0].length):-1},Q:Kr,s:to,S:Vr,u:Ur,U:Fr,V:Pr,w:Er,W:qr,x:function(t,e,r){return M(t,n,e,r)},X:function(t,e,n){return M(t,r,e,n)},y:Rr,Y:Yr,Z:Ir,"%":Qr};function x(t,e){return function(n){var r,o,i,a=[],s=-1,l=0,c=t.length;for(n instanceof Date||(n=new Date(+n));++s<c;)37===t.charCodeAt(s)&&(a.push(t.slice(l,s)),null!=(o=Tr[r=t.charAt(++s)])?r=t.charAt(++s):o="e"===r?" ":"0",(i=e[r])&&(r=i(n,o)),a.push(r),l=s+1);return a.push(t.slice(l,s)),a.join("")}}function $(t,e){return function(n){var r,o,i=Mr(1900);if(M(i,t,n+="",0)!=n.length)return null;if("Q"in i)return new Date(i.Q);if("p"in i&&(i.H=i.H%12+12*i.p),"V"in i){if(i.V<1||i.V>53)return null;"w"in i||(i.w=1),"Z"in i?(o=(r=$r(Mr(i.y))).getUTCDay(),r=o>4||0===o?yr.ceil(r):yr(r),r=vr.offset(r,7*(i.V-1)),i.y=r.getUTCFullYear(),i.m=r.getUTCMonth(),i.d=r.getUTCDate()+(i.w+6)%7):(o=(r=e(Mr(i.y))).getDay(),r=o>4||0===o?dr.ceil(r):dr(r),r=ur.offset(r,7*(i.V-1)),i.y=r.getFullYear(),i.m=r.getMonth(),i.d=r.getDate()+(i.w+6)%7)}else("W"in i||"U"in i)&&("w"in i||(i.w="u"in i?i.u%7:"W"in i?1:0),o="Z"in i?$r(Mr(i.y)).getUTCDay():e(Mr(i.y)).getDay(),i.m=0,i.d="W"in i?(i.w+6)%7+7*i.W-(o+5)%7:i.w+7*i.U-(o+6)%7);return"Z"in i?(i.H+=i.Z/100|0,i.M+=i.Z%100,$r(i)):e(i)}}function M(t,e,n,r){for(var o,i,a=0,s=e.length,l=n.length;a<s;){if(r>=l)return-1;if(37===(o=e.charCodeAt(a++))){if(o=e.charAt(a++),!(i=_[o in Tr?e.charAt(a++):o])||(r=i(t,n,r))<0)return-1}else if(o!=n.charCodeAt(r++))return-1}return r}return y.x=x(n,y),y.X=x(r,y),y.c=x(e,y),w.x=x(n,w),w.X=x(r,w),w.c=x(e,w),{format:function(t){var e=x(t+="",y);return e.toString=function(){return t},e},parse:function(t){var e=$(t+="",xr);return e.toString=function(){return t},e},utcFormat:function(t){var e=x(t+="",w);return e.toString=function(){return t},e},utcParse:function(t){var e=$(t,$r);return e.toString=function(){return t},e}}}(t),kr.format,kr.parse,Cr=kr.utcFormat,Nr=kr.utcParse}({dateTime:"%x, %X",date:"%-m/%-d/%Y",time:"%-I:%M:%S %p",periods:["AM","PM"],days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],shortDays:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],months:["January","February","March","April","May","June","July","August","September","October","November","December"],shortMonths:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]});Date.prototype.toISOString||Cr("%Y-%m-%dT%H:%M:%S.%LZ");+new Date("2000-01-01T00:00:00.000Z")||Nr("%Y-%m-%dT%H:%M:%S.%LZ");var Po=Math.PI,qo=2*Po,Yo=qo-1e-6;function Ro(){this._x0=this._y0=this._x1=this._y1=null,this._=""}function Io(){return new Ro}function Ho(t){return function(){return t}}Ro.prototype=Io.prototype={constructor:Ro,moveTo:function(t,e){this._+="M"+(this._x0=this._x1=+t)+","+(this._y0=this._y1=+e)},closePath:function(){null!==this._x1&&(this._x1=this._x0,this._y1=this._y0,this._+="Z")},lineTo:function(t,e){this._+="L"+(this._x1=+t)+","+(this._y1=+e)},quadraticCurveTo:function(t,e,n,r){this._+="Q"+ +t+","+ +e+","+(this._x1=+n)+","+(this._y1=+r)},bezierCurveTo:function(t,e,n,r,o,i){this._+="C"+ +t+","+ +e+","+ +n+","+ +r+","+(this._x1=+o)+","+(this._y1=+i)},arcTo:function(t,e,n,r,o){t=+t,e=+e,n=+n,r=+r,o=+o;var i=this._x1,a=this._y1,s=n-t,l=r-e,c=i-t,u=a-e,f=c*c+u*u;if(o<0)throw new Error("negative radius: "+o);if(null===this._x1)this._+="M"+(this._x1=t)+","+(this._y1=e);else if(f>1e-6)if(Math.abs(u*s-l*c)>1e-6&&o){var h=n-i,d=r-a,p=s*s+l*l,g=h*h+d*d,v=Math.sqrt(p),b=Math.sqrt(f),m=o*Math.tan((Po-Math.acos((p+f-g)/(2*v*b)))/2),y=m/b,w=m/v;Math.abs(y-1)>1e-6&&(this._+="L"+(t+y*c)+","+(e+y*u)),this._+="A"+o+","+o+",0,0,"+ +(u*h>c*d)+","+(this._x1=t+w*s)+","+(this._y1=e+w*l)}else this._+="L"+(this._x1=t)+","+(this._y1=e);else;},arc:function(t,e,n,r,o,i){t=+t,e=+e;var a=(n=+n)*Math.cos(r),s=n*Math.sin(r),l=t+a,c=e+s,u=1^i,f=i?r-o:o-r;if(n<0)throw new Error("negative radius: "+n);null===this._x1?this._+="M"+l+","+c:(Math.abs(this._x1-l)>1e-6||Math.abs(this._y1-c)>1e-6)&&(this._+="L"+l+","+c),n&&(f<0&&(f=f%qo+qo),f>Yo?this._+="A"+n+","+n+",0,1,"+u+","+(t-a)+","+(e-s)+"A"+n+","+n+",0,1,"+u+","+(this._x1=l)+","+(this._y1=c):f>1e-6&&(this._+="A"+n+","+n+",0,"+ +(f>=Po)+","+u+","+(this._x1=t+n*Math.cos(o))+","+(this._y1=e+n*Math.sin(o))))},rect:function(t,e,n,r){this._+="M"+(this._x0=this._x1=+t)+","+(this._y0=this._y1=+e)+"h"+ +n+"v"+ +r+"h"+-n+"Z"},toString:function(){return this._}};Math.PI;function Bo(t){this._context=t}function Go(t){return new Bo(t)}function Zo(t){return t[0]}function Wo(t){return t[1]}function Vo(){var t=Zo,e=Wo,n=Ho(!0),r=null,o=Go,i=null;function a(a){var s,l,c,u=a.length,f=!1;for(null==r&&(i=o(c=Io())),s=0;s<=u;++s)!(s<u&&n(l=a[s],s,a))===f&&((f=!f)?i.lineStart():i.lineEnd()),f&&i.point(+t(l,s,a),+e(l,s,a));if(c)return i=null,c+""||null}return a.x=function(e){return arguments.length?(t="function"==typeof e?e:Ho(+e),a):t},a.y=function(t){return arguments.length?(e="function"==typeof t?t:Ho(+t),a):e},a.defined=function(t){return arguments.length?(n="function"==typeof t?t:Ho(!!t),a):n},a.curve=function(t){return arguments.length?(o=t,null!=r&&(i=o(r)),a):o},a.context=function(t){return arguments.length?(null==t?r=i=null:i=o(r=t),a):r},a}function Xo(t){return t<0?-1:1}function Jo(t,e,n){var r=t._x1-t._x0,o=e-t._x1,i=(t._y1-t._y0)/(r||o<0&&-0),a=(n-t._y1)/(o||r<0&&-0),s=(i*o+a*r)/(r+o);return(Xo(i)+Xo(a))*Math.min(Math.abs(i),Math.abs(a),.5*Math.abs(s))||0}function Qo(t,e){var n=t._x1-t._x0;return n?(3*(t._y1-t._y0)/n-e)/2:e}function Ko(t,e,n){var r=t._x0,o=t._y0,i=t._x1,a=t._y1,s=(i-r)/3;t._context.bezierCurveTo(r+s,o+s*e,i-s,a-s*n,i,a)}function ti(t){this._context=t}function ei(t){this._context=t}function ni(t,e){this._context=t,this._t=e}function ri(t){return new ni(t,1)}function oi(t,e,n){const r=Object.create(t);return r.y=e[n],r}function ii(t){for(var e,n,r,o,i,a=t.yScale.ticks(6),s=[],l=0;l<a.length;l+=1)s[l]=ai(oi(t,a,l));return{c(){for(var a=0;a<s.length;a+=1)s[a].c();e=d("line"),i=d("path"),y(e,"class","direct svelte-1cvjt29"),y(e,"x1",t.padding.left),y(e,"x2",n=t.width-t.padding.right),y(e,"y1",r=t.yScale(t.values[0])),y(e,"y2",o=t.yScale(t.values[t.values.length-1])),y(i,"d",t.path),y(i,"class","svelte-1cvjt29")},m(t,n){for(var r=0;r<s.length;r+=1)s[r].m(t,n);c(t,e,n),c(t,i,n)},p(t,l){if(t.padding||t.width||t.yScale){a=l.yScale.ticks(6);for(var c=0;c<a.length;c+=1){const n=oi(l,a,c);s[c]?s[c].p(t,n):(s[c]=ai(n),s[c].c(),s[c].m(e.parentNode,e))}for(;c<s.length;c+=1)s[c].d(1);s.length=a.length}t.width&&n!==(n=l.width-l.padding.right)&&y(e,"x2",n),(t.yScale||t.values)&&r!==(r=l.yScale(l.values[0]))&&y(e,"y1",r),(t.yScale||t.values)&&o!==(o=l.yScale(l.values[l.values.length-1]))&&y(e,"y2",o),t.path&&y(i,"d",l.path)},d(t){f(s,t),t&&(u(e),u(i))}}}function ai(t){var e,n,r,o,i,a,s=t.y;return{c(){e=d("text"),n=p(s),o=d("line"),y(e,"x",t.padding.left-5),y(e,"y",r=t.yScale(t.y)),y(e,"class","svelte-1cvjt29"),y(o,"x1",t.padding.left),y(o,"x2",i=t.width-t.padding.right),y(o,"transform",a="translate(0,"+t.yScale(t.y)+")"),y(o,"class","svelte-1cvjt29")},m(t,r){c(t,e,r),l(e,n),c(t,o,r)},p(t,l){t.yScale&&s!==(s=l.y)&&w(n,s),t.yScale&&r!==(r=l.yScale(l.y))&&y(e,"y",r),t.width&&i!==(i=l.width-l.padding.right)&&y(o,"x2",i),t.yScale&&a!==(a="translate(0,"+l.yScale(l.y)+")")&&y(o,"transform",a)},d(t){t&&(u(e),u(o))}}}function si(e){var n,r,o,i,a,s,f,v=e.values.length&&ii(e);return{c(){n=h("div"),r=h("h4"),o=p(e.title),i=g(),a=d("svg"),v&&v.c(),y(r,"class","svelte-1cvjt29"),y(a,"height",s=e.height||50),y(a,"class","svelte-1cvjt29"),A(()=>e.div_resize_handler.call(n)),_(n,"margin-top","1em")},m(t,s){c(t,n,s),l(n,r),l(r,o),l(n,i),l(n,a),v&&v.m(a,null),f=function(t,e){"static"===getComputedStyle(t).position&&(t.style.position="relative");const n=document.createElement("object");let r;return n.setAttribute("style","display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;"),n.type="text/html",n.onload=(()=>{(r=n.contentDocument.defaultView).addEventListener("resize",e)}),/Trident/.test(navigator.userAgent)?(t.appendChild(n),n.data="about:blank"):(n.data="about:blank",t.appendChild(n)),{cancel:()=>{r&&r.removeEventListener&&r.removeEventListener("resize",e),t.removeChild(n)}}}(n,e.div_resize_handler.bind(n))},p(t,e){t.title&&w(o,e.title),e.values.length?v?v.p(t,e):((v=ii(e)).c(),v.m(a,null)):v&&(v.d(1),v=null),t.height&&s!==(s=e.height||50)&&y(a,"height",s)},i:t,o:t,d(t){t&&u(n),v&&v.d(),f.cancel()}}}function li(t,e,n){let r,{title:o=""}=e;const i={left:30,right:10,top:20,bottom:20};let a,s,l,c,u,f,h,d,p,{steps:g=[],mode:v=0}=e;return t.$set=(t=>{"title"in t&&n("title",o=t.title),"steps"in t&&n("steps",g=t.steps),"mode"in t&&n("mode",v=t.mode)}),t.$$.update=((t={width:1,steps:1,mode:1,values:1,yDomain:1,minDomain:1,height:1,xScale:1,yScale:1,lineGen:1,values2:1})=>{if(t.width&&n("height",s=.7*r),(t.steps||t.mode)&&n("values",l=g.map(t=>J(t).lch()[v])),t.values&&n("values2",c=l.length?l.concat(l[l.length-1]):[]),(t.steps||t.width)&&n("xScale",u=rr().domain([0,g.length]).range([i.left,r-i.right])),t.mode&&n("minDomain",f=1===v?80:50),t.values||t.yDomain||t.minDomain){n("yDomain",a=function(t,e){let n,r;if(void 0===e)for(const e of t)null!=e&&(void 0===n?e>=e&&(n=r=e):(n>e&&(n=e),r<e&&(r=e)));else{let o=-1;for(let i of t)null!=(i=e(i,++o,t))&&(void 0===n?i>=i&&(n=r=i):(n>i&&(n=i),r<i&&(r=i)))}return[n,r]}(l));const t=Math.abs(a[1]-a[0]);t<f&&(a[0]-=.5*(f-t),n("yDomain",a),n("values",l),n("minDomain",f),n("steps",g),n("mode",v),a[1]+=.5*(f-t),n("yDomain",a),n("values",l),n("minDomain",f),n("steps",g),n("mode",v),n("yDomain",a),n("values",l),n("minDomain",f),n("steps",g),n("mode",v))}(t.yDomain||t.height)&&n("yScale",h=rr().domain(a).nice().rangeRound([s-i.bottom,i.top])),(t.xScale||t.yScale)&&n("lineGen",d=Vo().x((t,e)=>u(e)).y(h).curve(ri)),(t.lineGen||t.values2)&&n("path",p=d(c))}),{width:r,title:o,padding:i,steps:g,mode:v,height:s,values:l,yScale:h,path:p,div_resize_handler:function(){r=this.clientWidth,n("width",r)}}}Bo.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._point=0},lineEnd:function(){(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,e){switch(t=+t,e=+e,this._point){case 0:this._point=1,this._line?this._context.lineTo(t,e):this._context.moveTo(t,e);break;case 1:this._point=2;default:this._context.lineTo(t,e)}}},ti.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._y0=this._y1=this._t0=NaN,this._point=0},lineEnd:function(){switch(this._point){case 2:this._context.lineTo(this._x1,this._y1);break;case 3:Ko(this,this._t0,Qo(this,this._t0))}(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,e){var n=NaN;if(e=+e,(t=+t)!==this._x1||e!==this._y1){switch(this._point){case 0:this._point=1,this._line?this._context.lineTo(t,e):this._context.moveTo(t,e);break;case 1:this._point=2;break;case 2:this._point=3,Ko(this,Qo(this,n=Jo(this,t,e)),n);break;default:Ko(this,this._t0,n=Jo(this,t,e))}this._x0=this._x1,this._x1=t,this._y0=this._y1,this._y1=e,this._t0=n}}},(function(t){this._context=new ei(t)}.prototype=Object.create(ti.prototype)).point=function(t,e){ti.prototype.point.call(this,e,t)},ei.prototype={moveTo:function(t,e){this._context.moveTo(e,t)},closePath:function(){this._context.closePath()},lineTo:function(t,e){this._context.lineTo(e,t)},bezierCurveTo:function(t,e,n,r,o,i){this._context.bezierCurveTo(e,t,r,n,i,o)}},ni.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x=this._y=NaN,this._point=0},lineEnd:function(){0<this._t&&this._t<1&&2===this._point&&this._context.lineTo(this._x,this._y),(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line>=0&&(this._t=1-this._t,this._line=1-this._line)},point:function(t,e){switch(t=+t,e=+e,this._point){case 0:this._point=1,this._line?this._context.lineTo(t,e):this._context.moveTo(t,e);break;case 1:this._point=2;default:if(this._t<=0)this._context.lineTo(this._x,e),this._context.lineTo(t,e);else{var n=this._x*(1-this._t)+t*this._t;this._context.lineTo(n,this._y),this._context.lineTo(n,e)}}this._x=t,this._y=e}};class ci extends V{constructor(t){super(),W(this,t,li,si,a,["title","steps","mode"])}}function ui(t){var e,n;return{c(){e=h("span"),n=p(t.step),y(e,"class","step svelte-vbai21")},m(t,r){c(t,e,r),l(e,n)},p(t,e){t.step&&w(n,e.step)},d(t){t&&u(e)}}}function fi(t){var n,r,o,i,a,f=t.step&&ui(t);const d=t.$$slots.default,v=function(t,e,n){if(t){const r=s(t,e,n);return t[0](r)}}(d,t,null);return{c(){n=h("div"),r=h("h5"),f&&f.c(),o=p(t.title),i=g(),v&&v.c(),y(r,"class","card-title svelte-vbai21"),y(n,"class","card svelte-vbai21")},l(t){v&&v.l(div_nodes)},m(t,e){c(t,n,e),l(n,r),f&&f.m(r,null),l(r,o),l(n,i),v&&v.m(n,null),a=!0},p(t,n){n.step?f?f.p(t,n):((f=ui(n)).c(),f.m(r,o)):f&&(f.d(1),f=null),a&&!t.title||w(o,n.title),v&&v.p&&t.$$scope&&v.p(function(t,n,r,o){return t[1]?e({},e(n.$$scope.changed||{},t[1](o?o(r):{}))):n.$$scope.changed||{}}(d,n,t,null),s(d,n,null))},i(t){a||(R(v,t),a=!0)},o(t){I(v,t),a=!1},d(t){t&&u(n),f&&f.d(),v&&v.d(t)}}}function hi(t,e,n){let{title:r="",step:o=""}=e,{$$slots:i={},$$scope:a}=e;return t.$set=(t=>{"title"in t&&n("title",r=t.title),"step"in t&&n("step",o=t.step),"$$scope"in t&&n("$$scope",a=t.$$scope)}),{title:r,step:o,$$slots:i,$$scope:a}}class di extends V{constructor(t){super(),W(this,t,hi,fi,a,["title","step"])}}function pi(t,e,n){const r=Object.create(t);return r.type=e[n],r}function gi(t){var e;return{c(){(e=h("p")).textContent="Colorblind-safe",y(e,"class","res text-secondary svelte-e1lu1")},m(t,n){c(t,e,n)},d(t){t&&u(e)}}}function vi(t){var e;return{c(){(e=h("p")).textContent="Not colorblind-safe",y(e,"class","res text-danger svelte-e1lu1")},m(t,n){c(t,e,n)},d(t){t&&u(e)}}}function bi(t){var e,n,r,o,i,a,s="none"===t.type?"normal":t.type.substr(0,4)+".";return{c(){e=h("label"),n=h("input"),r=g(),o=p(s),i=g(),t.$$binding_groups[0].push(n),n.__value=t.type,n.value=n.__value,y(n,"type","radio"),y(n,"name","cbSim"),y(n,"autocomplete","off"),y(n,"class","svelte-e1lu1"),y(e,"class","seg-btn svelte-e1lu1"),x(e,"danger",t.result.includes(t.type)),x(e,"active",t.active===t.type),a=b(n,"change",t.input_change_handler)},m(a,s){c(a,e,s),l(e,n),n.checked=n.__value===t.active,l(e,r),l(e,o),l(e,i)},p(t,r){t.active&&(n.checked=n.__value===r.active),n.value=n.__value,(t.result||t.types)&&x(e,"danger",r.result.includes(r.type)),(t.active||t.types)&&x(e,"active",r.active===r.type)},d(r){r&&u(e),t.$$binding_groups[0].splice(t.$$binding_groups[0].indexOf(n),1),a()}}}function mi(e){var n,r,o,i,a,s;function d(t){return t.result.length?vi:gi}for(var p=d(e),v=p(e),b=e.types,m=[],w=0;w<b.length;w+=1)m[w]=bi(pi(e,b,w));return{c(){n=h("div"),v.c(),r=g(),o=h("div"),(i=h("div")).textContent="simulate",a=g(),s=h("div");for(var t=0;t<m.length;t+=1)m[t].c();y(i,"class","sim-label svelte-e1lu1"),y(s,"class","seg-group svelte-e1lu1"),y(s,"role","group"),y(s,"aria-label","Colorblind simulation"),y(o,"class","sim-row svelte-e1lu1"),y(n,"class","colorblind-sim svelte-e1lu1")},m(t,e){c(t,n,e),v.m(n,null),l(n,r),l(n,o),l(o,i),l(o,a),l(o,s);for(var u=0;u<m.length;u+=1)m[u].m(s,null)},p(t,e){if(p!==(p=d(e))&&(v.d(1),(v=p(e))&&(v.c(),v.m(n,r))),t.result||t.types||t.active){b=e.types;for(var o=0;o<b.length;o+=1){const n=pi(e,b,o);m[o]?m[o].p(t,n):(m[o]=bi(n),m[o].c(),m[o].m(s,null))}for(;o<m.length;o+=1)m[o].d(1);m.length=b.length}},i:t,o:t,d(t){t&&u(n),v.d(),f(m,t)}}}function yi(t,e,n){let{colors:r=[],active:o="none"}=e;let i;return t.$set=(t=>{"colors"in t&&n("colors",r=t.colors),"active"in t&&n("active",o=t.active)}),t.$$.update=((t={colors:1})=>{t.colors&&n("result",i=function(t){const e=["deuteranopia","protanopia","tritanopia"],n=[];for(let r=0;r<e.length;r++)se(t,e[r])||n.push(e[r]);return n}(r))}),{colors:r,active:o,types:["none","deuteranopia","protanopia","tritanopia"],result:i,input_change_handler:function(){o=this.__value,n("active",o)},$$binding_groups:[[]]}}class wi extends V{constructor(t){super(),W(this,t,yi,mi,a,["colors","active"])}}function _i(t,e,n){const r=Object.create(t);return r.option=e[n],r}function xi(t){var e,n,r,o,i,a,s,f,d,v=t.option.title;return{c(){e=h("label"),n=h("input"),a=g(),s=p(v),f=g(),t.$$binding_groups[0].push(n),n.__value=r=t.option.value,n.value=n.__value,y(n,"type","radio"),y(n,"name",t.id),y(n,"id",o=`${t.id}-${t.option.value}`),y(n,"autocomplete","off"),n.checked=i=t.value===t.option.value,y(n,"class","svelte-u78p4u"),y(e,"class","seg-btn svelte-u78p4u"),x(e,"active",t.value===t.option.value),d=b(n,"change",t.input_change_handler)},m(r,o){c(r,e,o),l(e,n),n.checked=n.__value===t.value,l(e,a),l(e,s),l(e,f)},p(t,a){t.value&&(n.checked=n.__value===a.value),t.normalizedOptions&&r!==(r=a.option.value)&&(n.__value=r),n.value=n.__value,t.normalizedOptions&&o!==(o=`${a.id}-${a.option.value}`)&&y(n,"id",o),(t.value||t.normalizedOptions)&&i!==(i=a.value===a.option.value)&&(n.checked=i),t.normalizedOptions&&v!==(v=a.option.title)&&w(s,v),(t.value||t.normalizedOptions)&&x(e,"active",a.value===a.option.value)},d(r){r&&u(e),t.$$binding_groups[0].splice(t.$$binding_groups[0].indexOf(n),1),d()}}}function $i(e){for(var n,r=e.normalizedOptions,o=[],i=0;i<r.length;i+=1)o[i]=xi(_i(e,r,i));return{c(){n=h("div");for(var t=0;t<o.length;t+=1)o[t].c();y(n,"class","seg-group svelte-u78p4u")},m(t,e){c(t,n,e);for(var r=0;r<o.length;r+=1)o[r].m(n,null)},p(t,e){if(t.value||t.normalizedOptions||t.id){r=e.normalizedOptions;for(var i=0;i<r.length;i+=1){const a=_i(e,r,i);o[i]?o[i].p(t,a):(o[i]=xi(a),o[i].c(),o[i].m(n,null))}for(;i<o.length;i+=1)o[i].d(1);o.length=r.length}},i:t,o:t,d(t){t&&u(n),f(o,t)}}}function Mi(t,e,n){let{options:r=[],value:o}=e;const i=Math.round(1e7*Math.random()).toString(36);let a;return t.$set=(t=>{"options"in t&&n("options",r=t.options),"value"in t&&n("value",o=t.value)}),t.$$.update=((t={options:1})=>{t.options&&n("normalizedOptions",a=r.map(t=>"string"==typeof t?{value:t,title:t}:t))}),{options:r,value:o,id:i,normalizedOptions:a,input_change_handler:function(){o=this.__value,n("value",o)},$$binding_groups:[[]]}}class ki extends V{constructor(t){super(),W(this,t,Mi,$i,a,["options","value"])}}function Ci(t,e,n){const r=Object.create(t);return r.msg=e[n],r}function Ni(t){for(var e,n,r,i,a,s,d,v,m,_,x=t.loading?"...":"Send",$=t.messages,M=[],k=0;k<$.length;k+=1)M[k]=Ti(Ci(t,$,k));var C=t.error&&Si(t);return{c(){e=h("div"),n=h("div");for(var o=0;o<M.length;o+=1)M[o].c();r=g(),C&&C.c(),i=g(),a=h("div"),s=h("textarea"),d=g(),v=h("button"),m=p(x),y(n,"class","chat-messages svelte-1crxl0z"),y(s,"rows","2"),y(s,"placeholder",'Try: "Calm diverging palette with 5 colors"'),y(s,"class","svelte-1crxl0z"),y(v,"class","send-btn svelte-1crxl0z"),v.disabled=t.loading,y(a,"class","chat-input svelte-1crxl0z"),y(e,"class","chat-panel svelte-1crxl0z"),_=[b(s,"input",t.textarea_input_handler),b(s,"keydown",t.onMessageKeydown),b(v,"click",t.sendMessage)]},m(o,u){c(o,e,u),l(e,n);for(var f=0;f<M.length;f+=1)M[f].m(n,null);l(e,r),C&&C.m(e,null),l(e,i),l(e,a),l(a,s),s.value=t.message,l(a,d),l(a,v),l(v,m)},p(t,r){if(t.messages){$=r.messages;for(var o=0;o<$.length;o+=1){const e=Ci(r,$,o);M[o]?M[o].p(t,e):(M[o]=Ti(e),M[o].c(),M[o].m(n,null))}for(;o<M.length;o+=1)M[o].d(1);M.length=$.length}r.error?C?C.p(t,r):((C=Si(r)).c(),C.m(e,i)):C&&(C.d(1),C=null),t.message&&(s.value=r.message),t.loading&&x!==(x=r.loading?"...":"Send")&&w(m,x),t.loading&&(v.disabled=r.loading)},d(t){t&&u(e),f(M,t),C&&C.d(),o(_)}}}function Ti(t){var e,n,r,o,i,a,s,f="user"===t.msg.role?"You":"AI",d=t.msg.content;return{c(){e=h("div"),n=h("div"),r=p(f),o=g(),i=h("div"),a=p(d),y(n,"class","role svelte-1crxl0z"),y(i,"class","content svelte-1crxl0z"),y(e,"class",s="bubble "+t.msg.role+" svelte-1crxl0z")},m(t,s){c(t,e,s),l(e,n),l(n,r),l(e,o),l(e,i),l(i,a)},p(t,n){t.messages&&f!==(f="user"===n.msg.role?"You":"AI")&&w(r,f),t.messages&&d!==(d=n.msg.content)&&w(a,d),t.messages&&s!==(s="bubble "+n.msg.role+" svelte-1crxl0z")&&y(e,"class",s)},d(t){t&&u(e)}}}function Si(t){var e,n;return{c(){e=h("div"),n=p(t.error),y(e,"class","chat-error svelte-1crxl0z")},m(t,r){c(t,e,r),l(e,n)},p(t,e){t.error&&w(n,e.error)},d(t){t&&u(e)}}}function ji(e){var n,r,o,i,a,s,f,m,_,x=e.isOpen?"Close":"Ask AI",$=e.isOpen&&Ni(e);return{c(){n=h("button"),r=d("svg"),o=d("path"),i=g(),a=h("span"),s=p(x),f=g(),$&&$.c(),m=v(),y(o,"d","M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"),y(r,"class","chat-icon svelte-1crxl0z"),y(r,"width","20"),y(r,"height","20"),y(r,"viewBox","0 0 24 24"),y(r,"fill","none"),y(r,"stroke","currentColor"),y(r,"stroke-width","2"),y(r,"stroke-linecap","round"),y(r,"stroke-linejoin","round"),y(a,"class","chat-label svelte-1crxl0z"),y(n,"class","chat-toggle svelte-1crxl0z"),y(n,"title","AI palette assistant"),_=b(n,"click",e.click_handler)},m(t,e){c(t,n,e),l(n,r),l(r,o),l(n,i),l(n,a),l(a,s),c(t,f,e),$&&$.m(t,e),c(t,m,e)},p(t,e){t.isOpen&&x!==(x=e.isOpen?"Close":"Ask AI")&&w(s,x),e.isOpen?$?$.p(t,e):(($=Ni(e)).c(),$.m(m.parentNode,m)):$&&($.d(1),$=null)},i:t,o:t,d(t){t&&(u(n),u(f)),$&&$.d(t),t&&u(m),_()}}}function Li(t,e,n){const r=C();let o=!1,i="",a=!1,s="",l=[{role:"assistant",content:'Tell me the palette you want, for example: "Create a calm diverging palette with 5 colors."'}];async function c(){const t=i.trim();if(t&&!a){n("error",s=""),n("messages",l=[...l,{role:"user",content:t}]),n("message",i=""),n("loading",a=!0);try{const t='You are a color palette assistant for a chroma.js palette tool.\nYour job is to convert user requests into palette settings.\n\nReturn only a JSON object with this exact shape:\n{\n  "mode": "sequential" | "diverging",\n  "numColors": number,\n  "colors": ["#RRGGBB", ...],\n  "colors2": ["#RRGGBB", ...],\n  "bezier": boolean,\n  "correctLightness": boolean\n}\n\nRules:\n- numColors must be >= 2\n- mode must be either "sequential" or "diverging"\n- For sequential mode: colors2 should be []\n- For diverging mode: provide both colors and colors2 with at least 2 color stops each\n- Prefer valid 6-digit hex values in colors and colors2\n- Do not add markdown, code fences, or explanation text',o=l.filter(t=>"user"===t.role||"assistant"===t.role),i=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:o,systemPrompt:t})}),c=await i.json().catch(()=>({})),u=i.ok?c.content:c.error||`Error (${i.status})`;if(!i.ok)return void n("error",s=u);const f=function(t){const e=t.match(/```(?:json)?\s*([\s\S]*?)```/i);if(e&&e[1])try{return JSON.parse(e[1].trim())}catch(t){}const n=t.indexOf("{"),r=t.lastIndexOf("}");if(-1!==n&&-1!==r&&r>n)try{return JSON.parse(t.substring(n,r+1))}catch(t){return null}return null}(u);f?(r("applyPalette",f),n("messages",l=[...l,{role:"assistant",content:(e=f,`Applied ${"diverging"===e.mode?"diverging":"sequential"} palette with ${Math.max(2,Math.round(+e.numColors||0))} colors (bezier ${e.bezier?"on":"off"}, lightness correction ${e.correctLightness?"on":"off"}).`)}])):(n("messages",l=[...l,{role:"assistant",content:u||"I could not generate a response."}]),n("error",s=u?"I could not parse palette JSON from the response.":""))}catch(t){n("error",s=t&&t.message||"Request failed.")}finally{n("loading",a=!1)}var e}}return{isOpen:o,message:i,loading:a,error:s,messages:l,sendMessage:c,onMessageKeydown:function(t){"Enter"!==t.key||t.shiftKey||(t.preventDefault(),c())},click_handler:function(){const t=o=!o;return n("isOpen",o),t},textarea_input_handler:function(){i=this.value,n("message",i)}}}class zi extends V{constructor(t){super(),W(this,t,Li,ji,a,[])}}function Di(t){var e,n,r,o,i,a,s,f,d,p,v,m;function w(e){t.buttongroup_value_binding.call(null,e),i=!0,O(()=>i=!1)}let _={options:["sequential","diverging"]};void 0!==t.mode&&(_.value=t.mode);var x=new ki({props:_});return D(()=>H(x,"value",w)),{c(){e=h("div"),n=h("div"),(r=h("span")).textContent="Palette type:",o=g(),x.$$.fragment.c(),a=g(),s=h("div"),(f=h("span")).textContent="Number of colors:",d=g(),p=h("input"),y(r,"class","label-text svelte-3cc4nj"),y(n,"class","step1-field svelte-3cc4nj"),y(f,"class","label-text svelte-3cc4nj"),y(p,"type","number"),y(p,"min","2"),y(p,"class","svelte-3cc4nj"),y(s,"class","step1-field svelte-3cc4nj"),y(e,"class","step1-row svelte-3cc4nj"),m=b(p,"input",t.input_input_handler)},m(i,u){c(i,e,u),l(e,n),l(n,r),l(n,o),B(x,n,null),l(e,a),l(e,s),l(s,f),l(s,d),l(s,p),p.value=t.numColors,v=!0},p(t,e){var n={};!i&&t.mode&&(n.value=e.mode),x.$set(n),t.numColors&&(p.value=e.numColors)},i(t){v||(R(x.$$.fragment,t),v=!0)},o(t){I(x.$$.fragment,t),v=!1},d(t){t&&u(e),G(x),m()}}}function Ai(t){var e,n,r;function o(n){t.inputcolors_colors_binding.call(null,n),e=!0,O(()=>e=!1)}function i(e){t.inputcolors_colors2_binding.call(null,e),n=!0,O(()=>n=!1)}let a={diverging:"diverging"===t.mode};void 0!==t.colors&&(a.colors=t.colors),void 0!==t.colors2&&(a.colors2=t.colors2);var s=new ie({props:a});return D(()=>H(s,"colors",o)),D(()=>H(s,"colors2",i)),{c(){s.$$.fragment.c()},m(t,e){B(s,t,e),r=!0},p(t,r){var o={};t.mode&&(o.diverging="diverging"===r.mode),!e&&t.colors&&(o.colors=r.colors),!n&&t.colors2&&(o.colors2=r.colors2),s.$set(o)},i(t){r||(R(s.$$.fragment,t),r=!0)},o(t){I(s.$$.fragment,t),r=!1},d(t){G(s,t)}}}function Oi(t){var e,n,r,o,i,a,s,f,d,p,v,b,m,w,x,$,M,k,C,N,T,S,j,L;function z(e){t.checkbox0_value_binding.call(null,e),r=!0,O(()=>r=!1)}let A={label:"correct lightness"};void 0!==t.correctLightness&&(A.value=t.correctLightness);var E=new tt({props:A});function U(e){t.checkbox1_value_binding.call(null,e),i=!0,O(()=>i=!1)}D(()=>H(E,"value",z));let F={label:"bezier interpolation"};void 0!==t.bezier&&(F.value=t.bezier);var P=new tt({props:F});function q(e){t.colorblindcheck_colors_binding.call(null,e),f=!0,O(()=>f=!1)}function Y(e){t.colorblindcheck_active_binding.call(null,e),d=!0,O(()=>d=!1)}D(()=>H(P,"value",U));let Z={};void 0!==t.steps&&(Z.colors=t.steps),void 0!==t.simulate&&(Z.active=t.simulate);var W=new wi({props:Z});function V(e){t.palettepreview_steps_binding.call(null,e),v=!0,O(()=>v=!1)}function X(e){t.palettepreview_correctLightness_binding.call(null,e),b=!0,O(()=>b=!1)}function J(e){t.palettepreview_bezier_binding.call(null,e),m=!0,O(()=>m=!1)}function Q(e){t.palettepreview_colors_binding.call(null,e),w=!0,O(()=>w=!1)}function K(e){t.palettepreview_colors2_binding.call(null,e),x=!0,O(()=>x=!1)}function et(e){t.palettepreview_numColors_binding.call(null,e),$=!0,O(()=>$=!1)}D(()=>H(W,"colors",q)),D(()=>H(W,"active",Y));let nt={diverging:"diverging"===t.mode,simulate:t.simulate};void 0!==t.steps&&(nt.steps=t.steps),void 0!==t.correctLightness&&(nt.correctLightness=t.correctLightness),void 0!==t.bezier&&(nt.bezier=t.bezier),void 0!==t.colors&&(nt.colors=t.colors),void 0!==t.colors2&&(nt.colors2=t.colors2),void 0!==t.numColors&&(nt.numColors=t.numColors);var rt=new de({props:nt});D(()=>H(rt,"steps",V)),D(()=>H(rt,"correctLightness",X)),D(()=>H(rt,"bezier",J)),D(()=>H(rt,"colors",Q)),D(()=>H(rt,"colors2",K)),D(()=>H(rt,"numColors",et));var ot=new ci({props:{title:"lightness",steps:t.steps,mode:0}}),it=new ci({props:{title:"saturation",steps:t.steps,mode:1}}),at=new ci({props:{title:"hue",steps:t.steps,mode:2}});return{c(){e=h("div"),n=h("div"),E.$$.fragment.c(),o=g(),P.$$.fragment.c(),a=g(),s=h("div"),W.$$.fragment.c(),p=g(),rt.$$.fragment.c(),M=g(),k=h("div"),C=h("div"),ot.$$.fragment.c(),N=g(),T=h("div"),it.$$.fragment.c(),S=g(),j=h("div"),at.$$.fragment.c(),y(n,"class","col-md"),y(s,"class","col-md"),y(e,"class","row"),_(e,"margin-bottom","10px"),y(C,"class","col-md"),y(T,"class","col-md"),y(j,"class","col-md"),y(k,"class","row")},m(t,r){c(t,e,r),l(e,n),B(E,n,null),l(n,o),B(P,n,null),l(e,a),l(e,s),B(W,s,null),c(t,p,r),B(rt,t,r),c(t,M,r),c(t,k,r),l(k,C),B(ot,C,null),l(k,N),l(k,T),B(it,T,null),l(k,S),l(k,j),B(at,j,null),L=!0},p(t,e){var n={};!r&&t.correctLightness&&(n.value=e.correctLightness),E.$set(n);var o={};!i&&t.bezier&&(o.value=e.bezier),P.$set(o);var a={};!f&&t.steps&&(a.colors=e.steps),!d&&t.simulate&&(a.active=e.simulate),W.$set(a);var s={};t.mode&&(s.diverging="diverging"===e.mode),t.simulate&&(s.simulate=e.simulate),!v&&t.steps&&(s.steps=e.steps),!b&&t.correctLightness&&(s.correctLightness=e.correctLightness),!m&&t.bezier&&(s.bezier=e.bezier),!w&&t.colors&&(s.colors=e.colors),!x&&t.colors2&&(s.colors2=e.colors2),!$&&t.numColors&&(s.numColors=e.numColors),rt.$set(s);var l={};t.steps&&(l.steps=e.steps),ot.$set(l);var c={};t.steps&&(c.steps=e.steps),it.$set(c);var u={};t.steps&&(u.steps=e.steps),at.$set(u)},i(t){L||(R(E.$$.fragment,t),R(P.$$.fragment,t),R(W.$$.fragment,t),R(rt.$$.fragment,t),R(ot.$$.fragment,t),R(it.$$.fragment,t),R(at.$$.fragment,t),L=!0)},o(t){I(E.$$.fragment,t),I(P.$$.fragment,t),I(W.$$.fragment,t),I(rt.$$.fragment,t),I(ot.$$.fragment,t),I(it.$$.fragment,t),I(at.$$.fragment,t),L=!1},d(t){t&&u(e),G(E),G(P),G(W),t&&u(p),G(rt,t),t&&(u(M),u(k)),G(ot),G(it),G(at)}}}function Ei(t){var e,n,r,o,i,a,s,f,d,v,b,m,w,_=t.isMac?"cmd":"ctrl",x=new me({props:{steps:t.steps}});return{c(){e=h("p"),n=p("You can also save your palette for later by bookmarking "),r=h("a"),o=p("this page"),a=p(" using "),s=h("kbd"),f=p(_),d=p("+"),(v=h("kbd")).textContent="d",b=p("."),m=g(),x.$$.fragment.c(),y(r,"href",i="#/"+t.hash),y(s,"class","svelte-3cc4nj"),y(v,"class","svelte-3cc4nj")},m(t,i){c(t,e,i),l(e,n),l(e,r),l(r,o),l(e,a),l(e,s),l(s,f),l(e,d),l(e,v),l(e,b),c(t,m,i),B(x,t,i),w=!0},p(t,e){w&&!t.hash||i===(i="#/"+e.hash)||y(r,"href",i);var n={};t.steps&&(n.steps=e.steps),x.$set(n)},i(t){w||(R(x.$$.fragment,t),w=!0)},o(t){I(x.$$.fragment,t),w=!1},d(t){t&&(u(e),u(m)),G(x,t)}}}function Ui(t){var e,n,r,o,i,a,s,f,d,p,v,m=new di({props:{step:"1",title:"What kind of palette do you want to create?",$$slots:{default:[Di]},$$scope:{ctx:t}}}),w=new di({props:{step:"2",title:"Select and arrange input colors",$$slots:{default:[Ai]},$$scope:{ctx:t}}}),_=new di({props:{step:"3",title:"Check and configure the resulting palette",$$slots:{default:[Oi]},$$scope:{ctx:t}}}),x=new di({props:{step:"4",title:"Export the color codes in various formats",$$slots:{default:[Ei]},$$scope:{ctx:t}}}),$=new zi({});return $.$on("applyPalette",t.handleApplyPalette),{c(){e=h("div"),(n=h("div")).innerHTML='<h1>Chroma.js Color Palette Helper</h1> <p class="svelte-3cc4nj">This <a href="https://github.com/gka/chroma.js" target="_blank">chroma.js</a>-powered tool is here to help us master <a href="https://www.vis4.net/blog/mastering-multi-hued-color-scales/" target="_blank">multi-hued, multi-stops color scales</a>, with a little help from AI.</p>',r=g(),m.$$.fragment.c(),o=g(),w.$$.fragment.c(),i=g(),_.$$.fragment.c(),a=g(),x.$$.fragment.c(),s=g(),(f=h("div")).innerHTML='<hr class="svelte-3cc4nj"> <p class="svelte-3cc4nj">\n\t\t\t            Created by <a href="https://vis4.net/blog" class="svelte-3cc4nj">Gregor Aisch</a> for the sake of better use of colors\n\t\t\t            in maps and data visualizations, forked and extended by\n\t\t\t            <a href="https://giobuzala.com/" target="_blank" rel="noopener noreferrer" class="svelte-3cc4nj">Giorgi Buzaladze</a>\n\t\t\t            with an added AI layer.\n\t\t\t        </p>',d=g(),$.$$.fragment.c(),y(n,"class","head svelte-3cc4nj"),y(f,"class","foot svelte-3cc4nj"),y(e,"class","container"),v=b(window,"hashchange",t.hashChange)},m(t,u){c(t,e,u),l(e,n),l(e,r),B(m,e,null),l(e,o),B(w,e,null),l(e,i),B(_,e,null),l(e,a),B(x,e,null),l(e,s),l(e,f),c(t,d,u),B($,t,u),p=!0},p(t,e){var n={};(t.$$scope||t.numColors||t.mode)&&(n.$$scope={changed:t,ctx:e}),m.$set(n);var r={};(t.$$scope||t.mode||t.colors||t.colors2)&&(r.$$scope={changed:t,ctx:e}),w.$set(r);var o={};(t.$$scope||t.steps||t.mode||t.simulate||t.correctLightness||t.bezier||t.colors||t.colors2||t.numColors)&&(o.$$scope={changed:t,ctx:e}),_.$set(o);var i={};(t.$$scope||t.steps||t.hash)&&(i.$$scope={changed:t,ctx:e}),x.$set(i)},i(t){p||(R(m.$$.fragment,t),R(w.$$.fragment,t),R(_.$$.fragment,t),R(x.$$.fragment,t),R($.$$.fragment,t),p=!0)},o(t){I(m.$$.fragment,t),I(w.$$.fragment,t),I(_.$$.fragment,t),I(x.$$.fragment,t),I($.$$.fragment,t),p=!1},d(t){t&&u(e),G(m),G(w),G(_),G(x),t&&u(d),G($,t),v()}}}function Fi(t){if("string"!=typeof t)return null;const e=t.trim();return e?"#"===e[0]?e:`#${e}`:null}function Pi(t,e){if(!Array.isArray(t)||!t.length)return e;const n=t.map(Fi).filter(Boolean).map(t=>{try{return J(t)}catch(t){return null}}).filter(Boolean);return n.length?n:e}function qi(t,e,n){let r=[],o=!0,i=!0,a="00429d,96ffea,ffffe0".split(/\s*,\s*/).map(t=>J(t)),s="ffffe0,ff005e,93003a".split(/\s*,\s*/).map(t=>J(t)),l=9,c="sequential",u="none";window.location.hash&&g();const f=navigator.platform.toUpperCase().includes("MAC");let h,d="",p="sequential";function g(){const t=window.location.hash.substr(2).split("|");6===t.length?(n("numColors",l=+t[0]),n("mode",c="s"===t[1]?"sequential":"diverging"),p=c,n("colors",a=t[2].split(",").map(t=>t&&J(t))),n("colors2",s=""!==t[3]?t[3].split(",").map(t=>t&&J(t)):[]),n("correctLightness",i="1"===t[4]),n("bezier",o="1"===t[5])):window.location.hash=""}return k(()=>{h!==d&&(d=h,window.location.hash=`#/${h}`),c!==p&&("diverging"!==c||s.length||n("colors2",s=a.slice(0).reverse()),p=c)}),t.$$.update=((t={numColors:1,mode:1,colors:1,colors2:1,correctLightness:1,bezier:1})=>{(t.numColors||t.mode||t.colors||t.colors2||t.correctLightness||t.bezier)&&n("hash",h=[l,c.substr(0,1),a.map(t=>t.hex().substr(1)).join(","),s.length?s.map(t=>t.hex().substr(1)).join(","):"",i?1:0,o?1:0].join("|"))}),{steps:r,bezier:o,correctLightness:i,colors:a,colors2:s,numColors:l,mode:c,simulate:u,isMac:f,hashChange:function(){window.location.hash!==`#/${h}`&&g()},handleApplyPalette:function(t){const e=t&&t.detail?t.detail:{};"sequential"!==e.mode&&"diverging"!==e.mode||n("mode",c=e.mode);const r=Math.round(+e.numColors);isFinite(r)&&r>=2&&n("numColors",l=r),"boolean"==typeof e.bezier&&n("bezier",o=e.bezier),"boolean"==typeof e.correctLightness&&n("correctLightness",i=e.correctLightness),n("colors",a=Pi(e.colors,a)),n("colors2",s="diverging"===c?Pi(e.colors2,s.length?s:a.slice(0).reverse()):[])},hash:h,buttongroup_value_binding:function(t){n("mode",c=t)},input_input_handler:function(){var t;t=this.value,n("numColors",l=""===t?void 0:+t)},inputcolors_colors_binding:function(t){n("colors",a=t)},inputcolors_colors2_binding:function(t){n("colors2",s=t)},checkbox0_value_binding:function(t){n("correctLightness",i=t)},checkbox1_value_binding:function(t){n("bezier",o=t)},colorblindcheck_colors_binding:function(t){n("steps",r=t)},colorblindcheck_active_binding:function(t){n("simulate",u=t)},palettepreview_steps_binding:function(t){n("steps",r=t)},palettepreview_correctLightness_binding:function(t){n("correctLightness",i=t)},palettepreview_bezier_binding:function(t){n("bezier",o=t)},palettepreview_colors_binding:function(t){n("colors",a=t)},palettepreview_colors2_binding:function(t){n("colors2",s=t)},palettepreview_numColors_binding:function(t){n("numColors",l=t)}}}var Yi="@vercel/analytics",Ri="1.6.1",Ii=()=>{window.va||(window.va=function(...t){(window.vaq=window.vaq||[]).push(t)})};function Hi(){return"undefined"!=typeof window}function Bi(){try{const t=process.env.NODE_ENV;if("development"===t||"test"===t)return"development"}catch(t){}return"production"}function Gi(){return"development"===((Hi()?window.vam:Bi())||"production")}return function(t={debug:!0}){var e;if(!Hi())return;!function(t="auto"){window.vam="auto"!==t?t:Bi()}(t.mode),Ii(),t.beforeSend&&(null==(e=window.va)||e.call(window,"beforeSend",t.beforeSend));const n=function(t){return t.scriptSrc?t.scriptSrc:Gi()?"https://va.vercel-scripts.com/v1/script.debug.js":t.basePath?`${t.basePath}/insights/script.js`:"/_vercel/insights/script.js"}(t);if(document.head.querySelector(`script[src*="${n}"]`))return;const r=document.createElement("script");r.src=n,r.defer=!0,r.dataset.sdkn=Yi+(t.framework?`/${t.framework}`:""),r.dataset.sdkv=Ri,t.disableAutoTrack&&(r.dataset.disableAutoTrack="1"),t.endpoint?r.dataset.endpoint=t.endpoint:t.basePath&&(r.dataset.endpoint=`${t.basePath}/insights`),t.dsn&&(r.dataset.dsn=t.dsn),r.onerror=(()=>{const t=Gi()?"Please check if any ad blockers are enabled and try again.":"Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.";console.log(`[Vercel Web Analytics] Failed to load script from ${n}. ${t}`)}),Gi()&&!1===t.debug&&(r.dataset.debug="false"),document.head.appendChild(r)}(),new class extends V{constructor(t){super(),W(this,t,qi,Ui,a,[])}}({target:document.body})}();
+
+(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function create_slot(definition, ctx, fn) {
+        if (definition) {
+            const slot_ctx = get_slot_context(definition, ctx, fn);
+            return definition[0](slot_ctx);
+        }
+    }
+    function get_slot_context(definition, ctx, fn) {
+        return definition[1]
+            ? assign({}, assign(ctx.$$scope.ctx, definition[1](fn ? fn(ctx) : {})))
+            : ctx.$$scope.ctx;
+    }
+    function get_slot_changes(definition, ctx, changed, fn) {
+        return definition[1]
+            ? assign({}, assign(ctx.$$scope.changed || {}, definition[1](fn ? fn(changed) : {})))
+            : ctx.$$scope.changed || {};
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function prevent_default(fn) {
+        return function (event) {
+            event.preventDefault();
+            // @ts-ignore
+            return fn.call(this, event);
+        };
+    }
+    function stop_propagation(fn) {
+        return function (event) {
+            event.stopPropagation();
+            // @ts-ignore
+            return fn.call(this, event);
+        };
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else
+            node.setAttribute(attribute, value);
+    }
+    function to_number(value) {
+        return value === '' ? undefined : +value;
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_data(text, data) {
+        data = '' + data;
+        if (text.data !== data)
+            text.data = data;
+    }
+    function set_style(node, key, value) {
+        node.style.setProperty(key, value);
+    }
+    function add_resize_listener(element, fn) {
+        if (getComputedStyle(element).position === 'static') {
+            element.style.position = 'relative';
+        }
+        const object = document.createElement('object');
+        object.setAttribute('style', 'display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;');
+        object.type = 'text/html';
+        let win;
+        object.onload = () => {
+            win = object.contentDocument.defaultView;
+            win.addEventListener('resize', fn);
+        };
+        if (/Trident/.test(navigator.userAgent)) {
+            element.appendChild(object);
+            object.data = 'about:blank';
+        }
+        else {
+            object.data = 'about:blank';
+            element.appendChild(object);
+        }
+        return {
+            cancel: () => {
+                win && win.removeEventListener && win.removeEventListener('resize', fn);
+                element.removeChild(object);
+            }
+        };
+    }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error(`Function called outside component initialization`);
+        return current_component;
+    }
+    function beforeUpdate(fn) {
+        get_current_component().$$.before_render.push(fn);
+    }
+    function createEventDispatcher() {
+        const component = current_component;
+        return (type, detail) => {
+            const callbacks = component.$$.callbacks[type];
+            if (callbacks) {
+                // TODO are there situations where events could be dispatched
+                // in a server (non-DOM) environment?
+                const event = custom_event(type, detail);
+                callbacks.slice().forEach(fn => {
+                    fn.call(component, event);
+                });
+            }
+        };
+    }
+
+    const dirty_components = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_binding_callback(fn) {
+        binding_callbacks.push(fn);
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    function flush() {
+        const seen_callbacks = new Set();
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (dirty_components.length) {
+                const component = dirty_components.shift();
+                set_current_component(component);
+                update(component.$$);
+            }
+            while (binding_callbacks.length)
+                binding_callbacks.shift()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            while (render_callbacks.length) {
+                const callback = render_callbacks.pop();
+                if (!seen_callbacks.has(callback)) {
+                    callback();
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                }
+            }
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+    }
+    function update($$) {
+        if ($$.fragment) {
+            $$.update($$.dirty);
+            run_all($$.before_render);
+            $$.fragment.p($$.dirty, $$.ctx);
+            $$.dirty = null;
+            $$.after_render.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            remaining: 0,
+            callbacks: []
+        };
+    }
+    function check_outros() {
+        if (!outros.remaining) {
+            run_all(outros.callbacks);
+        }
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.callbacks.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+
+    function bind(component, name, callback) {
+        if (component.$$.props.indexOf(name) === -1)
+            return;
+        component.$$.bound[name] = callback;
+        callback(component.$$.ctx[name]);
+    }
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_render } = component.$$;
+        fragment.m(target, anchor);
+        // onMount happens after the initial afterUpdate. Because
+        // afterUpdate callbacks happen in reverse order (inner first)
+        // we schedule onMount callbacks before afterUpdate callbacks
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_render.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        if (component.$$.fragment) {
+            run_all(component.$$.on_destroy);
+            if (detaching)
+                component.$$.fragment.d(1);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            component.$$.on_destroy = component.$$.fragment = null;
+            component.$$.ctx = {};
+        }
+    }
+    function make_dirty(component, key) {
+        if (!component.$$.dirty) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty = blank_object();
+        }
+        component.$$.dirty[key] = true;
+    }
+    function init(component, options, instance, create_fragment, not_equal$$1, prop_names) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const props = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props: prop_names,
+            update: noop,
+            not_equal: not_equal$$1,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_render: [],
+            after_render: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty: null
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, props, (key, value) => {
+                if ($$.ctx && not_equal$$1($$.ctx[key], $$.ctx[key] = value)) {
+                    if ($$.bound[key])
+                        $$.bound[key](value);
+                    if (ready)
+                        make_dirty(component, key);
+                }
+            })
+            : props;
+        $$.update();
+        ready = true;
+        run_all($$.before_render);
+        $$.fragment = create_fragment($$.ctx);
+        if (options.target) {
+            if (options.hydrate) {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment.l(children(options.target));
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set() {
+            // overridden by instance, if it has props
+        }
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error(`'target' is a required option`);
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+            };
+        }
+    }
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function createCommonjsModule(fn, module) {
+    	return module = { exports: {} }, fn(module, module.exports), module.exports;
+    }
+
+    var chroma = createCommonjsModule(function (module, exports) {
+    /**
+     * chroma.js - JavaScript library for color conversions
+     *
+     * Copyright (c) 2011-2019, Gregor Aisch
+     * All rights reserved.
+     *
+     * Redistribution and use in source and binary forms, with or without
+     * modification, are permitted provided that the following conditions are met:
+     *
+     * 1. Redistributions of source code must retain the above copyright notice, this
+     * list of conditions and the following disclaimer.
+     *
+     * 2. Redistributions in binary form must reproduce the above copyright notice,
+     * this list of conditions and the following disclaimer in the documentation
+     * and/or other materials provided with the distribution.
+     *
+     * 3. The name Gregor Aisch may not be used to endorse or promote products
+     * derived from this software without specific prior written permission.
+     *
+     * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+     * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+     * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     * DISCLAIMED. IN NO EVENT SHALL GREGOR AISCH OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+     * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+     * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+     * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+     * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     *
+     * -------------------------------------------------------
+     *
+     * chroma.js includes colors from colorbrewer2.org, which are released under
+     * the following license:
+     *
+     * Copyright (c) 2002 Cynthia Brewer, Mark Harrower,
+     * and The Pennsylvania State University.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     * http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing,
+     * software distributed under the License is distributed on an
+     * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+     * either express or implied. See the License for the specific
+     * language governing permissions and limitations under the License.
+     *
+     * ------------------------------------------------------
+     *
+     * Named colors are taken from X11 Color Names.
+     * http://www.w3.org/TR/css3-color/#svg-color
+     *
+     * @preserve
+     */
+
+    (function (global, factory) {
+        module.exports = factory();
+    }(commonjsGlobal, (function () {
+        var limit = function (x, min, max) {
+            if ( min === void 0 ) min=0;
+            if ( max === void 0 ) max=1;
+
+            return x < min ? min : x > max ? max : x;
+        };
+
+        var clip_rgb = function (rgb) {
+            rgb._clipped = false;
+            rgb._unclipped = rgb.slice(0);
+            for (var i=0; i<=3; i++) {
+                if (i < 3) {
+                    if (rgb[i] < 0 || rgb[i] > 255) { rgb._clipped = true; }
+                    rgb[i] = limit(rgb[i], 0, 255);
+                } else if (i === 3) {
+                    rgb[i] = limit(rgb[i], 0, 1);
+                }
+            }
+            return rgb;
+        };
+
+        // ported from jQuery's $.type
+        var classToType = {};
+        for (var i = 0, list = ['Boolean', 'Number', 'String', 'Function', 'Array', 'Date', 'RegExp', 'Undefined', 'Null']; i < list.length; i += 1) {
+            var name = list[i];
+
+            classToType[("[object " + name + "]")] = name.toLowerCase();
+        }
+        var type = function(obj) {
+            return classToType[Object.prototype.toString.call(obj)] || "object";
+        };
+
+        var unpack = function (args, keyOrder) {
+            if ( keyOrder === void 0 ) keyOrder=null;
+
+        	// if called with more than 3 arguments, we return the arguments
+            if (args.length >= 3) { return Array.prototype.slice.call(args); }
+            // with less than 3 args we check if first arg is object
+            // and use the keyOrder string to extract and sort properties
+        	if (type(args[0]) == 'object' && keyOrder) {
+        		return keyOrder.split('')
+        			.filter(function (k) { return args[0][k] !== undefined; })
+        			.map(function (k) { return args[0][k]; });
+        	}
+        	// otherwise we just return the first argument
+        	// (which we suppose is an array of args)
+            return args[0];
+        };
+
+        var last = function (args) {
+            if (args.length < 2) { return null; }
+            var l = args.length-1;
+            if (type(args[l]) == 'string') { return args[l].toLowerCase(); }
+            return null;
+        };
+
+        var PI = Math.PI;
+
+        var utils = {
+        	clip_rgb: clip_rgb,
+        	limit: limit,
+        	type: type,
+        	unpack: unpack,
+        	last: last,
+        	PI: PI,
+        	TWOPI: PI*2,
+        	PITHIRD: PI/3,
+        	DEG2RAD: PI / 180,
+        	RAD2DEG: 180 / PI
+        };
+
+        var input = {
+        	format: {},
+        	autodetect: []
+        };
+
+        var last$1 = utils.last;
+        var clip_rgb$1 = utils.clip_rgb;
+        var type$1 = utils.type;
+
+
+        var Color = function Color() {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var me = this;
+            if (type$1(args[0]) === 'object' &&
+                args[0].constructor &&
+                args[0].constructor === this.constructor) {
+                // the argument is already a Color instance
+                return args[0];
+            }
+
+            // last argument could be the mode
+            var mode = last$1(args);
+            var autodetect = false;
+
+            if (!mode) {
+                autodetect = true;
+                if (!input.sorted) {
+                    input.autodetect = input.autodetect.sort(function (a,b) { return b.p - a.p; });
+                    input.sorted = true;
+                }
+                // auto-detect format
+                for (var i = 0, list = input.autodetect; i < list.length; i += 1) {
+                    var chk = list[i];
+
+                    mode = chk.test.apply(chk, args);
+                    if (mode) { break; }
+                }
+            }
+
+            if (input.format[mode]) {
+                var rgb = input.format[mode].apply(null, autodetect ? args : args.slice(0,-1));
+                me._rgb = clip_rgb$1(rgb);
+            } else {
+                throw new Error('unknown format: '+args);
+            }
+
+            // add alpha channel
+            if (me._rgb.length === 3) { me._rgb.push(1); }
+        };
+
+        Color.prototype.toString = function toString () {
+            if (type$1(this.hex) == 'function') { return this.hex(); }
+            return ("[" + (this._rgb.join(',')) + "]");
+        };
+
+        var Color_1 = Color;
+
+        var chroma = function () {
+        	var args = [], len = arguments.length;
+        	while ( len-- ) args[ len ] = arguments[ len ];
+
+        	return new (Function.prototype.bind.apply( chroma.Color, [ null ].concat( args) ));
+        };
+
+        chroma.Color = Color_1;
+        chroma.version = '2.0.4';
+
+        var chroma_1 = chroma;
+
+        var unpack$1 = utils.unpack;
+        var max = Math.max;
+
+        var rgb2cmyk = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$1(args, 'rgb');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            r = r / 255;
+            g = g / 255;
+            b = b / 255;
+            var k = 1 - max(r,max(g,b));
+            var f = k < 1 ? 1 / (1-k) : 0;
+            var c = (1-r-k) * f;
+            var m = (1-g-k) * f;
+            var y = (1-b-k) * f;
+            return [c,m,y,k];
+        };
+
+        var rgb2cmyk_1 = rgb2cmyk;
+
+        var unpack$2 = utils.unpack;
+
+        var cmyk2rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            args = unpack$2(args, 'cmyk');
+            var c = args[0];
+            var m = args[1];
+            var y = args[2];
+            var k = args[3];
+            var alpha = args.length > 4 ? args[4] : 1;
+            if (k === 1) { return [0,0,0,alpha]; }
+            return [
+                c >= 1 ? 0 : 255 * (1-c) * (1-k), // r
+                m >= 1 ? 0 : 255 * (1-m) * (1-k), // g
+                y >= 1 ? 0 : 255 * (1-y) * (1-k), // b
+                alpha
+            ];
+        };
+
+        var cmyk2rgb_1 = cmyk2rgb;
+
+        var unpack$3 = utils.unpack;
+        var type$2 = utils.type;
+
+
+
+        Color_1.prototype.cmyk = function() {
+            return rgb2cmyk_1(this._rgb);
+        };
+
+        chroma_1.cmyk = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['cmyk']) ));
+        };
+
+        input.format.cmyk = cmyk2rgb_1;
+
+        input.autodetect.push({
+            p: 2,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$3(args, 'cmyk');
+                if (type$2(args) === 'array' && args.length === 4) {
+                    return 'cmyk';
+                }
+            }
+        });
+
+        var unpack$4 = utils.unpack;
+        var last$2 = utils.last;
+        var rnd = function (a) { return Math.round(a*100)/100; };
+
+        /*
+         * supported arguments:
+         * - hsl2css(h,s,l)
+         * - hsl2css(h,s,l,a)
+         * - hsl2css([h,s,l], mode)
+         * - hsl2css([h,s,l,a], mode)
+         * - hsl2css({h,s,l,a}, mode)
+         */
+        var hsl2css = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var hsla = unpack$4(args, 'hsla');
+            var mode = last$2(args) || 'lsa';
+            hsla[0] = rnd(hsla[0] || 0);
+            hsla[1] = rnd(hsla[1]*100) + '%';
+            hsla[2] = rnd(hsla[2]*100) + '%';
+            if (mode === 'hsla' || (hsla.length > 3 && hsla[3]<1)) {
+                hsla[3] = hsla.length > 3 ? hsla[3] : 1;
+                mode = 'hsla';
+            } else {
+                hsla.length = 3;
+            }
+            return (mode + "(" + (hsla.join(',')) + ")");
+        };
+
+        var hsl2css_1 = hsl2css;
+
+        var unpack$5 = utils.unpack;
+
+        /*
+         * supported arguments:
+         * - rgb2hsl(r,g,b)
+         * - rgb2hsl(r,g,b,a)
+         * - rgb2hsl([r,g,b])
+         * - rgb2hsl([r,g,b,a])
+         * - rgb2hsl({r,g,b,a})
+         */
+        var rgb2hsl = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            args = unpack$5(args, 'rgba');
+            var r = args[0];
+            var g = args[1];
+            var b = args[2];
+
+            r /= 255;
+            g /= 255;
+            b /= 255;
+
+            var min = Math.min(r, g, b);
+            var max = Math.max(r, g, b);
+
+            var l = (max + min) / 2;
+            var s, h;
+
+            if (max === min){
+                s = 0;
+                h = Number.NaN;
+            } else {
+                s = l < 0.5 ? (max - min) / (max + min) : (max - min) / (2 - max - min);
+            }
+
+            if (r == max) { h = (g - b) / (max - min); }
+            else if (g == max) { h = 2 + (b - r) / (max - min); }
+            else if (b == max) { h = 4 + (r - g) / (max - min); }
+
+            h *= 60;
+            if (h < 0) { h += 360; }
+            if (args.length>3 && args[3]!==undefined) { return [h,s,l,args[3]]; }
+            return [h,s,l];
+        };
+
+        var rgb2hsl_1 = rgb2hsl;
+
+        var unpack$6 = utils.unpack;
+        var last$3 = utils.last;
+
+
+        var round = Math.round;
+
+        /*
+         * supported arguments:
+         * - rgb2css(r,g,b)
+         * - rgb2css(r,g,b,a)
+         * - rgb2css([r,g,b], mode)
+         * - rgb2css([r,g,b,a], mode)
+         * - rgb2css({r,g,b,a}, mode)
+         */
+        var rgb2css = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var rgba = unpack$6(args, 'rgba');
+            var mode = last$3(args) || 'rgb';
+            if (mode.substr(0,3) == 'hsl') {
+                return hsl2css_1(rgb2hsl_1(rgba), mode);
+            }
+            rgba[0] = round(rgba[0]);
+            rgba[1] = round(rgba[1]);
+            rgba[2] = round(rgba[2]);
+            if (mode === 'rgba' || (rgba.length > 3 && rgba[3]<1)) {
+                rgba[3] = rgba.length > 3 ? rgba[3] : 1;
+                mode = 'rgba';
+            }
+            return (mode + "(" + (rgba.slice(0,mode==='rgb'?3:4).join(',')) + ")");
+        };
+
+        var rgb2css_1 = rgb2css;
+
+        var unpack$7 = utils.unpack;
+        var round$1 = Math.round;
+
+        var hsl2rgb = function () {
+            var assign;
+
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+            args = unpack$7(args, 'hsl');
+            var h = args[0];
+            var s = args[1];
+            var l = args[2];
+            var r,g,b;
+            if (s === 0) {
+                r = g = b = l*255;
+            } else {
+                var t3 = [0,0,0];
+                var c = [0,0,0];
+                var t2 = l < 0.5 ? l * (1+s) : l+s-l*s;
+                var t1 = 2 * l - t2;
+                var h_ = h / 360;
+                t3[0] = h_ + 1/3;
+                t3[1] = h_;
+                t3[2] = h_ - 1/3;
+                for (var i=0; i<3; i++) {
+                    if (t3[i] < 0) { t3[i] += 1; }
+                    if (t3[i] > 1) { t3[i] -= 1; }
+                    if (6 * t3[i] < 1)
+                        { c[i] = t1 + (t2 - t1) * 6 * t3[i]; }
+                    else if (2 * t3[i] < 1)
+                        { c[i] = t2; }
+                    else if (3 * t3[i] < 2)
+                        { c[i] = t1 + (t2 - t1) * ((2 / 3) - t3[i]) * 6; }
+                    else
+                        { c[i] = t1; }
+                }
+                (assign = [round$1(c[0]*255),round$1(c[1]*255),round$1(c[2]*255)], r = assign[0], g = assign[1], b = assign[2]);
+            }
+            if (args.length > 3) {
+                // keep alpha channel
+                return [r,g,b,args[3]];
+            }
+            return [r,g,b,1];
+        };
+
+        var hsl2rgb_1 = hsl2rgb;
+
+        var RE_RGB = /^rgb\(\s*(-?\d+),\s*(-?\d+)\s*,\s*(-?\d+)\s*\)$/;
+        var RE_RGBA = /^rgba\(\s*(-?\d+),\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*([01]|[01]?\.\d+)\)$/;
+        var RE_RGB_PCT = /^rgb\(\s*(-?\d+(?:\.\d+)?)%,\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*\)$/;
+        var RE_RGBA_PCT = /^rgba\(\s*(-?\d+(?:\.\d+)?)%,\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/;
+        var RE_HSL = /^hsl\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*\)$/;
+        var RE_HSLA = /^hsla\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/;
+
+        var round$2 = Math.round;
+
+        var css2rgb = function (css) {
+            css = css.toLowerCase().trim();
+            var m;
+
+            if (input.format.named) {
+                try {
+                    return input.format.named(css);
+                } catch (e) {
+                    // eslint-disable-next-line
+                }
+            }
+
+            // rgb(250,20,0)
+            if ((m = css.match(RE_RGB))) {
+                var rgb = m.slice(1,4);
+                for (var i=0; i<3; i++) {
+                    rgb[i] = +rgb[i];
+                }
+                rgb[3] = 1;  // default alpha
+                return rgb;
+            }
+
+            // rgba(250,20,0,0.4)
+            if ((m = css.match(RE_RGBA))) {
+                var rgb$1 = m.slice(1,5);
+                for (var i$1=0; i$1<4; i$1++) {
+                    rgb$1[i$1] = +rgb$1[i$1];
+                }
+                return rgb$1;
+            }
+
+            // rgb(100%,0%,0%)
+            if ((m = css.match(RE_RGB_PCT))) {
+                var rgb$2 = m.slice(1,4);
+                for (var i$2=0; i$2<3; i$2++) {
+                    rgb$2[i$2] = round$2(rgb$2[i$2] * 2.55);
+                }
+                rgb$2[3] = 1;  // default alpha
+                return rgb$2;
+            }
+
+            // rgba(100%,0%,0%,0.4)
+            if ((m = css.match(RE_RGBA_PCT))) {
+                var rgb$3 = m.slice(1,5);
+                for (var i$3=0; i$3<3; i$3++) {
+                    rgb$3[i$3] = round$2(rgb$3[i$3] * 2.55);
+                }
+                rgb$3[3] = +rgb$3[3];
+                return rgb$3;
+            }
+
+            // hsl(0,100%,50%)
+            if ((m = css.match(RE_HSL))) {
+                var hsl = m.slice(1,4);
+                hsl[1] *= 0.01;
+                hsl[2] *= 0.01;
+                var rgb$4 = hsl2rgb_1(hsl);
+                rgb$4[3] = 1;
+                return rgb$4;
+            }
+
+            // hsla(0,100%,50%,0.5)
+            if ((m = css.match(RE_HSLA))) {
+                var hsl$1 = m.slice(1,4);
+                hsl$1[1] *= 0.01;
+                hsl$1[2] *= 0.01;
+                var rgb$5 = hsl2rgb_1(hsl$1);
+                rgb$5[3] = +m[4];  // default alpha = 1
+                return rgb$5;
+            }
+        };
+
+        css2rgb.test = function (s) {
+            return RE_RGB.test(s) ||
+                RE_RGBA.test(s) ||
+                RE_RGB_PCT.test(s) ||
+                RE_RGBA_PCT.test(s) ||
+                RE_HSL.test(s) ||
+                RE_HSLA.test(s);
+        };
+
+        var css2rgb_1 = css2rgb;
+
+        var type$3 = utils.type;
+
+
+
+
+        Color_1.prototype.css = function(mode) {
+            return rgb2css_1(this._rgb, mode);
+        };
+
+        chroma_1.css = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['css']) ));
+        };
+
+        input.format.css = css2rgb_1;
+
+        input.autodetect.push({
+            p: 5,
+            test: function (h) {
+                var rest = [], len = arguments.length - 1;
+                while ( len-- > 0 ) rest[ len ] = arguments[ len + 1 ];
+
+                if (!rest.length && type$3(h) === 'string' && css2rgb_1.test(h)) {
+                    return 'css';
+                }
+            }
+        });
+
+        var unpack$8 = utils.unpack;
+
+        input.format.gl = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var rgb = unpack$8(args, 'rgba');
+            rgb[0] *= 255;
+            rgb[1] *= 255;
+            rgb[2] *= 255;
+            return rgb;
+        };
+
+        chroma_1.gl = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['gl']) ));
+        };
+
+        Color_1.prototype.gl = function() {
+            var rgb = this._rgb;
+            return [rgb[0]/255, rgb[1]/255, rgb[2]/255, rgb[3]];
+        };
+
+        var unpack$9 = utils.unpack;
+
+        var rgb2hcg = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$9(args, 'rgb');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            var min = Math.min(r, g, b);
+            var max = Math.max(r, g, b);
+            var delta = max - min;
+            var c = delta * 100 / 255;
+            var _g = min / (255 - delta) * 100;
+            var h;
+            if (delta === 0) {
+                h = Number.NaN;
+            } else {
+                if (r === max) { h = (g - b) / delta; }
+                if (g === max) { h = 2+(b - r) / delta; }
+                if (b === max) { h = 4+(r - g) / delta; }
+                h *= 60;
+                if (h < 0) { h += 360; }
+            }
+            return [h, c, _g];
+        };
+
+        var rgb2hcg_1 = rgb2hcg;
+
+        var unpack$a = utils.unpack;
+        var floor = Math.floor;
+
+        /*
+         * this is basically just HSV with some minor tweaks
+         *
+         * hue.. [0..360]
+         * chroma .. [0..1]
+         * grayness .. [0..1]
+         */
+
+        var hcg2rgb = function () {
+            var assign, assign$1, assign$2, assign$3, assign$4, assign$5;
+
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+            args = unpack$a(args, 'hcg');
+            var h = args[0];
+            var c = args[1];
+            var _g = args[2];
+            var r,g,b;
+            _g = _g * 255;
+            var _c = c * 255;
+            if (c === 0) {
+                r = g = b = _g;
+            } else {
+                if (h === 360) { h = 0; }
+                if (h > 360) { h -= 360; }
+                if (h < 0) { h += 360; }
+                h /= 60;
+                var i = floor(h);
+                var f = h - i;
+                var p = _g * (1 - c);
+                var q = p + _c * (1 - f);
+                var t = p + _c * f;
+                var v = p + _c;
+                switch (i) {
+                    case 0: (assign = [v, t, p], r = assign[0], g = assign[1], b = assign[2]); break
+                    case 1: (assign$1 = [q, v, p], r = assign$1[0], g = assign$1[1], b = assign$1[2]); break
+                    case 2: (assign$2 = [p, v, t], r = assign$2[0], g = assign$2[1], b = assign$2[2]); break
+                    case 3: (assign$3 = [p, q, v], r = assign$3[0], g = assign$3[1], b = assign$3[2]); break
+                    case 4: (assign$4 = [t, p, v], r = assign$4[0], g = assign$4[1], b = assign$4[2]); break
+                    case 5: (assign$5 = [v, p, q], r = assign$5[0], g = assign$5[1], b = assign$5[2]); break
+                }
+            }
+            return [r, g, b, args.length > 3 ? args[3] : 1];
+        };
+
+        var hcg2rgb_1 = hcg2rgb;
+
+        var unpack$b = utils.unpack;
+        var type$4 = utils.type;
+
+
+
+
+
+
+        Color_1.prototype.hcg = function() {
+            return rgb2hcg_1(this._rgb);
+        };
+
+        chroma_1.hcg = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['hcg']) ));
+        };
+
+        input.format.hcg = hcg2rgb_1;
+
+        input.autodetect.push({
+            p: 1,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$b(args, 'hcg');
+                if (type$4(args) === 'array' && args.length === 3) {
+                    return 'hcg';
+                }
+            }
+        });
+
+        var unpack$c = utils.unpack;
+        var last$4 = utils.last;
+        var round$3 = Math.round;
+
+        var rgb2hex = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$c(args, 'rgba');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            var a = ref[3];
+            var mode = last$4(args) || 'auto';
+            if (a === undefined) { a = 1; }
+            if (mode === 'auto') {
+                mode = a < 1 ? 'rgba' : 'rgb';
+            }
+            r = round$3(r);
+            g = round$3(g);
+            b = round$3(b);
+            var u = r << 16 | g << 8 | b;
+            var str = "000000" + u.toString(16); //#.toUpperCase();
+            str = str.substr(str.length - 6);
+            var hxa = '0' + round$3(a * 255).toString(16);
+            hxa = hxa.substr(hxa.length - 2);
+            switch (mode.toLowerCase()) {
+                case 'rgba': return ("#" + str + hxa);
+                case 'argb': return ("#" + hxa + str);
+                default: return ("#" + str);
+            }
+        };
+
+        var rgb2hex_1 = rgb2hex;
+
+        var RE_HEX = /^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+        var RE_HEXA = /^#?([A-Fa-f0-9]{8})$/;
+
+        var hex2rgb = function (hex) {
+            if (hex.match(RE_HEX)) {
+                // remove optional leading #
+                if (hex.length === 4 || hex.length === 7) {
+                    hex = hex.substr(1);
+                }
+                // expand short-notation to full six-digit
+                if (hex.length === 3) {
+                    hex = hex.split('');
+                    hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+                }
+                var u = parseInt(hex, 16);
+                var r = u >> 16;
+                var g = u >> 8 & 0xFF;
+                var b = u & 0xFF;
+                return [r,g,b,1];
+            }
+
+            // match rgba hex format, eg #FF000077
+            if (hex.match(RE_HEXA)) {
+                if (hex.length === 9) {
+                    // remove optional leading #
+                    hex = hex.substr(1);
+                }
+                var u$1 = parseInt(hex, 16);
+                var r$1 = u$1 >> 24 & 0xFF;
+                var g$1 = u$1 >> 16 & 0xFF;
+                var b$1 = u$1 >> 8 & 0xFF;
+                var a = Math.round((u$1 & 0xFF) / 0xFF * 100) / 100;
+                return [r$1,g$1,b$1,a];
+            }
+
+            // we used to check for css colors here
+            // if _input.css? and rgb = _input.css hex
+            //     return rgb
+
+            throw new Error(("unknown hex color: " + hex));
+        };
+
+        var hex2rgb_1 = hex2rgb;
+
+        var type$5 = utils.type;
+
+
+
+
+        Color_1.prototype.hex = function(mode) {
+            return rgb2hex_1(this._rgb, mode);
+        };
+
+        chroma_1.hex = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['hex']) ));
+        };
+
+        input.format.hex = hex2rgb_1;
+        input.autodetect.push({
+            p: 4,
+            test: function (h) {
+                var rest = [], len = arguments.length - 1;
+                while ( len-- > 0 ) rest[ len ] = arguments[ len + 1 ];
+
+                if (!rest.length && type$5(h) === 'string' && [3,4,6,7,8,9].includes(h.length)) {
+                    return 'hex';
+                }
+            }
+        });
+
+        var unpack$d = utils.unpack;
+        var TWOPI = utils.TWOPI;
+        var min = Math.min;
+        var sqrt = Math.sqrt;
+        var acos = Math.acos;
+
+        var rgb2hsi = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            /*
+            borrowed from here:
+            http://hummer.stanford.edu/museinfo/doc/examples/humdrum/keyscape2/rgb2hsi.cpp
+            */
+            var ref = unpack$d(args, 'rgb');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            r /= 255;
+            g /= 255;
+            b /= 255;
+            var h;
+            var min_ = min(r,g,b);
+            var i = (r+g+b) / 3;
+            var s = i > 0 ? 1 - min_/i : 0;
+            if (s === 0) {
+                h = NaN;
+            } else {
+                h = ((r-g)+(r-b)) / 2;
+                h /= sqrt((r-g)*(r-g) + (r-b)*(g-b));
+                h = acos(h);
+                if (b > g) {
+                    h = TWOPI - h;
+                }
+                h /= TWOPI;
+            }
+            return [h*360,s,i];
+        };
+
+        var rgb2hsi_1 = rgb2hsi;
+
+        var unpack$e = utils.unpack;
+        var limit$1 = utils.limit;
+        var TWOPI$1 = utils.TWOPI;
+        var PITHIRD = utils.PITHIRD;
+        var cos = Math.cos;
+
+        /*
+         * hue [0..360]
+         * saturation [0..1]
+         * intensity [0..1]
+         */
+        var hsi2rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            /*
+            borrowed from here:
+            http://hummer.stanford.edu/museinfo/doc/examples/humdrum/keyscape2/hsi2rgb.cpp
+            */
+            args = unpack$e(args, 'hsi');
+            var h = args[0];
+            var s = args[1];
+            var i = args[2];
+            var r,g,b;
+
+            if (isNaN(h)) { h = 0; }
+            if (isNaN(s)) { s = 0; }
+            // normalize hue
+            if (h > 360) { h -= 360; }
+            if (h < 0) { h += 360; }
+            h /= 360;
+            if (h < 1/3) {
+                b = (1-s)/3;
+                r = (1+s*cos(TWOPI$1*h)/cos(PITHIRD-TWOPI$1*h))/3;
+                g = 1 - (b+r);
+            } else if (h < 2/3) {
+                h -= 1/3;
+                r = (1-s)/3;
+                g = (1+s*cos(TWOPI$1*h)/cos(PITHIRD-TWOPI$1*h))/3;
+                b = 1 - (r+g);
+            } else {
+                h -= 2/3;
+                g = (1-s)/3;
+                b = (1+s*cos(TWOPI$1*h)/cos(PITHIRD-TWOPI$1*h))/3;
+                r = 1 - (g+b);
+            }
+            r = limit$1(i*r*3);
+            g = limit$1(i*g*3);
+            b = limit$1(i*b*3);
+            return [r*255, g*255, b*255, args.length > 3 ? args[3] : 1];
+        };
+
+        var hsi2rgb_1 = hsi2rgb;
+
+        var unpack$f = utils.unpack;
+        var type$6 = utils.type;
+
+
+
+
+
+
+        Color_1.prototype.hsi = function() {
+            return rgb2hsi_1(this._rgb);
+        };
+
+        chroma_1.hsi = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['hsi']) ));
+        };
+
+        input.format.hsi = hsi2rgb_1;
+
+        input.autodetect.push({
+            p: 2,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$f(args, 'hsi');
+                if (type$6(args) === 'array' && args.length === 3) {
+                    return 'hsi';
+                }
+            }
+        });
+
+        var unpack$g = utils.unpack;
+        var type$7 = utils.type;
+
+
+
+
+
+
+        Color_1.prototype.hsl = function() {
+            return rgb2hsl_1(this._rgb);
+        };
+
+        chroma_1.hsl = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['hsl']) ));
+        };
+
+        input.format.hsl = hsl2rgb_1;
+
+        input.autodetect.push({
+            p: 2,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$g(args, 'hsl');
+                if (type$7(args) === 'array' && args.length === 3) {
+                    return 'hsl';
+                }
+            }
+        });
+
+        var unpack$h = utils.unpack;
+        var min$1 = Math.min;
+        var max$1 = Math.max;
+
+        /*
+         * supported arguments:
+         * - rgb2hsv(r,g,b)
+         * - rgb2hsv([r,g,b])
+         * - rgb2hsv({r,g,b})
+         */
+        var rgb2hsl$1 = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            args = unpack$h(args, 'rgb');
+            var r = args[0];
+            var g = args[1];
+            var b = args[2];
+            var min_ = min$1(r, g, b);
+            var max_ = max$1(r, g, b);
+            var delta = max_ - min_;
+            var h,s,v;
+            v = max_ / 255.0;
+            if (max_ === 0) {
+                h = Number.NaN;
+                s = 0;
+            } else {
+                s = delta / max_;
+                if (r === max_) { h = (g - b) / delta; }
+                if (g === max_) { h = 2+(b - r) / delta; }
+                if (b === max_) { h = 4+(r - g) / delta; }
+                h *= 60;
+                if (h < 0) { h += 360; }
+            }
+            return [h, s, v]
+        };
+
+        var rgb2hsv = rgb2hsl$1;
+
+        var unpack$i = utils.unpack;
+        var floor$1 = Math.floor;
+
+        var hsv2rgb = function () {
+            var assign, assign$1, assign$2, assign$3, assign$4, assign$5;
+
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+            args = unpack$i(args, 'hsv');
+            var h = args[0];
+            var s = args[1];
+            var v = args[2];
+            var r,g,b;
+            v *= 255;
+            if (s === 0) {
+                r = g = b = v;
+            } else {
+                if (h === 360) { h = 0; }
+                if (h > 360) { h -= 360; }
+                if (h < 0) { h += 360; }
+                h /= 60;
+
+                var i = floor$1(h);
+                var f = h - i;
+                var p = v * (1 - s);
+                var q = v * (1 - s * f);
+                var t = v * (1 - s * (1 - f));
+
+                switch (i) {
+                    case 0: (assign = [v, t, p], r = assign[0], g = assign[1], b = assign[2]); break
+                    case 1: (assign$1 = [q, v, p], r = assign$1[0], g = assign$1[1], b = assign$1[2]); break
+                    case 2: (assign$2 = [p, v, t], r = assign$2[0], g = assign$2[1], b = assign$2[2]); break
+                    case 3: (assign$3 = [p, q, v], r = assign$3[0], g = assign$3[1], b = assign$3[2]); break
+                    case 4: (assign$4 = [t, p, v], r = assign$4[0], g = assign$4[1], b = assign$4[2]); break
+                    case 5: (assign$5 = [v, p, q], r = assign$5[0], g = assign$5[1], b = assign$5[2]); break
+                }
+            }
+            return [r,g,b,args.length > 3?args[3]:1];
+        };
+
+        var hsv2rgb_1 = hsv2rgb;
+
+        var unpack$j = utils.unpack;
+        var type$8 = utils.type;
+
+
+
+
+
+
+        Color_1.prototype.hsv = function() {
+            return rgb2hsv(this._rgb);
+        };
+
+        chroma_1.hsv = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['hsv']) ));
+        };
+
+        input.format.hsv = hsv2rgb_1;
+
+        input.autodetect.push({
+            p: 2,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$j(args, 'hsv');
+                if (type$8(args) === 'array' && args.length === 3) {
+                    return 'hsv';
+                }
+            }
+        });
+
+        var labConstants = {
+            // Corresponds roughly to RGB brighter/darker
+            Kn: 18,
+
+            // D65 standard referent
+            Xn: 0.950470,
+            Yn: 1,
+            Zn: 1.088830,
+
+            t0: 0.137931034,  // 4 / 29
+            t1: 0.206896552,  // 6 / 29
+            t2: 0.12841855,   // 3 * t1 * t1
+            t3: 0.008856452,  // t1 * t1 * t1
+        };
+
+        var unpack$k = utils.unpack;
+        var pow = Math.pow;
+
+        var rgb2lab = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$k(args, 'rgb');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            var ref$1 = rgb2xyz(r,g,b);
+            var x = ref$1[0];
+            var y = ref$1[1];
+            var z = ref$1[2];
+            var l = 116 * y - 16;
+            return [l < 0 ? 0 : l, 500 * (x - y), 200 * (y - z)];
+        };
+
+        var rgb_xyz = function (r) {
+            if ((r /= 255) <= 0.04045) { return r / 12.92; }
+            return pow((r + 0.055) / 1.055, 2.4);
+        };
+
+        var xyz_lab = function (t) {
+            if (t > labConstants.t3) { return pow(t, 1 / 3); }
+            return t / labConstants.t2 + labConstants.t0;
+        };
+
+        var rgb2xyz = function (r,g,b) {
+            r = rgb_xyz(r);
+            g = rgb_xyz(g);
+            b = rgb_xyz(b);
+            var x = xyz_lab((0.4124564 * r + 0.3575761 * g + 0.1804375 * b) / labConstants.Xn);
+            var y = xyz_lab((0.2126729 * r + 0.7151522 * g + 0.0721750 * b) / labConstants.Yn);
+            var z = xyz_lab((0.0193339 * r + 0.1191920 * g + 0.9503041 * b) / labConstants.Zn);
+            return [x,y,z];
+        };
+
+        var rgb2lab_1 = rgb2lab;
+
+        var unpack$l = utils.unpack;
+        var pow$1 = Math.pow;
+
+        /*
+         * L* [0..100]
+         * a [-100..100]
+         * b [-100..100]
+         */
+        var lab2rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            args = unpack$l(args, 'lab');
+            var l = args[0];
+            var a = args[1];
+            var b = args[2];
+            var x,y,z, r,g,b_;
+
+            y = (l + 16) / 116;
+            x = isNaN(a) ? y : y + a / 500;
+            z = isNaN(b) ? y : y - b / 200;
+
+            y = labConstants.Yn * lab_xyz(y);
+            x = labConstants.Xn * lab_xyz(x);
+            z = labConstants.Zn * lab_xyz(z);
+
+            r = xyz_rgb(3.2404542 * x - 1.5371385 * y - 0.4985314 * z);  // D65 -> sRGB
+            g = xyz_rgb(-0.9692660 * x + 1.8760108 * y + 0.0415560 * z);
+            b_ = xyz_rgb(0.0556434 * x - 0.2040259 * y + 1.0572252 * z);
+
+            return [r,g,b_,args.length > 3 ? args[3] : 1];
+        };
+
+        var xyz_rgb = function (r) {
+            return 255 * (r <= 0.00304 ? 12.92 * r : 1.055 * pow$1(r, 1 / 2.4) - 0.055)
+        };
+
+        var lab_xyz = function (t) {
+            return t > labConstants.t1 ? t * t * t : labConstants.t2 * (t - labConstants.t0)
+        };
+
+        var lab2rgb_1 = lab2rgb;
+
+        var unpack$m = utils.unpack;
+        var type$9 = utils.type;
+
+
+
+
+
+
+        Color_1.prototype.lab = function() {
+            return rgb2lab_1(this._rgb);
+        };
+
+        chroma_1.lab = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['lab']) ));
+        };
+
+        input.format.lab = lab2rgb_1;
+
+        input.autodetect.push({
+            p: 2,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$m(args, 'lab');
+                if (type$9(args) === 'array' && args.length === 3) {
+                    return 'lab';
+                }
+            }
+        });
+
+        var unpack$n = utils.unpack;
+        var RAD2DEG = utils.RAD2DEG;
+        var sqrt$1 = Math.sqrt;
+        var atan2 = Math.atan2;
+        var round$4 = Math.round;
+
+        var lab2lch = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$n(args, 'lab');
+            var l = ref[0];
+            var a = ref[1];
+            var b = ref[2];
+            var c = sqrt$1(a * a + b * b);
+            var h = (atan2(b, a) * RAD2DEG + 360) % 360;
+            if (round$4(c*10000) === 0) { h = Number.NaN; }
+            return [l, c, h];
+        };
+
+        var lab2lch_1 = lab2lch;
+
+        var unpack$o = utils.unpack;
+
+
+
+        var rgb2lch = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$o(args, 'rgb');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            var ref$1 = rgb2lab_1(r,g,b);
+            var l = ref$1[0];
+            var a = ref$1[1];
+            var b_ = ref$1[2];
+            return lab2lch_1(l,a,b_);
+        };
+
+        var rgb2lch_1 = rgb2lch;
+
+        var unpack$p = utils.unpack;
+        var DEG2RAD = utils.DEG2RAD;
+        var sin = Math.sin;
+        var cos$1 = Math.cos;
+
+        var lch2lab = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            /*
+            Convert from a qualitative parameter h and a quantitative parameter l to a 24-bit pixel.
+            These formulas were invented by David Dalrymple to obtain maximum contrast without going
+            out of gamut if the parameters are in the range 0-1.
+
+            A saturation multiplier was added by Gregor Aisch
+            */
+            var ref = unpack$p(args, 'lch');
+            var l = ref[0];
+            var c = ref[1];
+            var h = ref[2];
+            if (isNaN(h)) { h = 0; }
+            h = h * DEG2RAD;
+            return [l, cos$1(h) * c, sin(h) * c]
+        };
+
+        var lch2lab_1 = lch2lab;
+
+        var unpack$q = utils.unpack;
+
+
+
+        var lch2rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            args = unpack$q(args, 'lch');
+            var l = args[0];
+            var c = args[1];
+            var h = args[2];
+            var ref = lch2lab_1 (l,c,h);
+            var L = ref[0];
+            var a = ref[1];
+            var b_ = ref[2];
+            var ref$1 = lab2rgb_1 (L,a,b_);
+            var r = ref$1[0];
+            var g = ref$1[1];
+            var b = ref$1[2];
+            return [r, g, b, args.length > 3 ? args[3] : 1];
+        };
+
+        var lch2rgb_1 = lch2rgb;
+
+        var unpack$r = utils.unpack;
+
+
+        var hcl2rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var hcl = unpack$r(args, 'hcl').reverse();
+            return lch2rgb_1.apply(void 0, hcl);
+        };
+
+        var hcl2rgb_1 = hcl2rgb;
+
+        var unpack$s = utils.unpack;
+        var type$a = utils.type;
+
+
+
+
+
+
+        Color_1.prototype.lch = function() { return rgb2lch_1(this._rgb); };
+        Color_1.prototype.hcl = function() { return rgb2lch_1(this._rgb).reverse(); };
+
+        chroma_1.lch = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['lch']) ));
+        };
+        chroma_1.hcl = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['hcl']) ));
+        };
+
+        input.format.lch = lch2rgb_1;
+        input.format.hcl = hcl2rgb_1;
+
+        ['lch','hcl'].forEach(function (m) { return input.autodetect.push({
+            p: 2,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$s(args, m);
+                if (type$a(args) === 'array' && args.length === 3) {
+                    return m;
+                }
+            }
+        }); });
+
+        /**
+        	X11 color names
+
+        	http://www.w3.org/TR/css3-color/#svg-color
+        */
+
+        var w3cx11 = {
+            aliceblue: '#f0f8ff',
+            antiquewhite: '#faebd7',
+            aqua: '#00ffff',
+            aquamarine: '#7fffd4',
+            azure: '#f0ffff',
+            beige: '#f5f5dc',
+            bisque: '#ffe4c4',
+            black: '#000000',
+            blanchedalmond: '#ffebcd',
+            blue: '#0000ff',
+            blueviolet: '#8a2be2',
+            brown: '#a52a2a',
+            burlywood: '#deb887',
+            cadetblue: '#5f9ea0',
+            chartreuse: '#7fff00',
+            chocolate: '#d2691e',
+            coral: '#ff7f50',
+            cornflower: '#6495ed',
+            cornflowerblue: '#6495ed',
+            cornsilk: '#fff8dc',
+            crimson: '#dc143c',
+            cyan: '#00ffff',
+            darkblue: '#00008b',
+            darkcyan: '#008b8b',
+            darkgoldenrod: '#b8860b',
+            darkgray: '#a9a9a9',
+            darkgreen: '#006400',
+            darkgrey: '#a9a9a9',
+            darkkhaki: '#bdb76b',
+            darkmagenta: '#8b008b',
+            darkolivegreen: '#556b2f',
+            darkorange: '#ff8c00',
+            darkorchid: '#9932cc',
+            darkred: '#8b0000',
+            darksalmon: '#e9967a',
+            darkseagreen: '#8fbc8f',
+            darkslateblue: '#483d8b',
+            darkslategray: '#2f4f4f',
+            darkslategrey: '#2f4f4f',
+            darkturquoise: '#00ced1',
+            darkviolet: '#9400d3',
+            deeppink: '#ff1493',
+            deepskyblue: '#00bfff',
+            dimgray: '#696969',
+            dimgrey: '#696969',
+            dodgerblue: '#1e90ff',
+            firebrick: '#b22222',
+            floralwhite: '#fffaf0',
+            forestgreen: '#228b22',
+            fuchsia: '#ff00ff',
+            gainsboro: '#dcdcdc',
+            ghostwhite: '#f8f8ff',
+            gold: '#ffd700',
+            goldenrod: '#daa520',
+            gray: '#808080',
+            green: '#008000',
+            greenyellow: '#adff2f',
+            grey: '#808080',
+            honeydew: '#f0fff0',
+            hotpink: '#ff69b4',
+            indianred: '#cd5c5c',
+            indigo: '#4b0082',
+            ivory: '#fffff0',
+            khaki: '#f0e68c',
+            laserlemon: '#ffff54',
+            lavender: '#e6e6fa',
+            lavenderblush: '#fff0f5',
+            lawngreen: '#7cfc00',
+            lemonchiffon: '#fffacd',
+            lightblue: '#add8e6',
+            lightcoral: '#f08080',
+            lightcyan: '#e0ffff',
+            lightgoldenrod: '#fafad2',
+            lightgoldenrodyellow: '#fafad2',
+            lightgray: '#d3d3d3',
+            lightgreen: '#90ee90',
+            lightgrey: '#d3d3d3',
+            lightpink: '#ffb6c1',
+            lightsalmon: '#ffa07a',
+            lightseagreen: '#20b2aa',
+            lightskyblue: '#87cefa',
+            lightslategray: '#778899',
+            lightslategrey: '#778899',
+            lightsteelblue: '#b0c4de',
+            lightyellow: '#ffffe0',
+            lime: '#00ff00',
+            limegreen: '#32cd32',
+            linen: '#faf0e6',
+            magenta: '#ff00ff',
+            maroon: '#800000',
+            maroon2: '#7f0000',
+            maroon3: '#b03060',
+            mediumaquamarine: '#66cdaa',
+            mediumblue: '#0000cd',
+            mediumorchid: '#ba55d3',
+            mediumpurple: '#9370db',
+            mediumseagreen: '#3cb371',
+            mediumslateblue: '#7b68ee',
+            mediumspringgreen: '#00fa9a',
+            mediumturquoise: '#48d1cc',
+            mediumvioletred: '#c71585',
+            midnightblue: '#191970',
+            mintcream: '#f5fffa',
+            mistyrose: '#ffe4e1',
+            moccasin: '#ffe4b5',
+            navajowhite: '#ffdead',
+            navy: '#000080',
+            oldlace: '#fdf5e6',
+            olive: '#808000',
+            olivedrab: '#6b8e23',
+            orange: '#ffa500',
+            orangered: '#ff4500',
+            orchid: '#da70d6',
+            palegoldenrod: '#eee8aa',
+            palegreen: '#98fb98',
+            paleturquoise: '#afeeee',
+            palevioletred: '#db7093',
+            papayawhip: '#ffefd5',
+            peachpuff: '#ffdab9',
+            peru: '#cd853f',
+            pink: '#ffc0cb',
+            plum: '#dda0dd',
+            powderblue: '#b0e0e6',
+            purple: '#800080',
+            purple2: '#7f007f',
+            purple3: '#a020f0',
+            rebeccapurple: '#663399',
+            red: '#ff0000',
+            rosybrown: '#bc8f8f',
+            royalblue: '#4169e1',
+            saddlebrown: '#8b4513',
+            salmon: '#fa8072',
+            sandybrown: '#f4a460',
+            seagreen: '#2e8b57',
+            seashell: '#fff5ee',
+            sienna: '#a0522d',
+            silver: '#c0c0c0',
+            skyblue: '#87ceeb',
+            slateblue: '#6a5acd',
+            slategray: '#708090',
+            slategrey: '#708090',
+            snow: '#fffafa',
+            springgreen: '#00ff7f',
+            steelblue: '#4682b4',
+            tan: '#d2b48c',
+            teal: '#008080',
+            thistle: '#d8bfd8',
+            tomato: '#ff6347',
+            turquoise: '#40e0d0',
+            violet: '#ee82ee',
+            wheat: '#f5deb3',
+            white: '#ffffff',
+            whitesmoke: '#f5f5f5',
+            yellow: '#ffff00',
+            yellowgreen: '#9acd32'
+        };
+
+        var w3cx11_1 = w3cx11;
+
+        var type$b = utils.type;
+
+
+
+
+
+        Color_1.prototype.name = function() {
+            var hex = rgb2hex_1(this._rgb, 'rgb');
+            for (var i = 0, list = Object.keys(w3cx11_1); i < list.length; i += 1) {
+                var n = list[i];
+
+                if (w3cx11_1[n] === hex) { return n.toLowerCase(); }
+            }
+            return hex;
+        };
+
+        input.format.named = function (name) {
+            name = name.toLowerCase();
+            if (w3cx11_1[name]) { return hex2rgb_1(w3cx11_1[name]); }
+            throw new Error('unknown color name: '+name);
+        };
+
+        input.autodetect.push({
+            p: 5,
+            test: function (h) {
+                var rest = [], len = arguments.length - 1;
+                while ( len-- > 0 ) rest[ len ] = arguments[ len + 1 ];
+
+                if (!rest.length && type$b(h) === 'string' && w3cx11_1[h.toLowerCase()]) {
+                    return 'named';
+                }
+            }
+        });
+
+        var unpack$t = utils.unpack;
+
+        var rgb2num = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var ref = unpack$t(args, 'rgb');
+            var r = ref[0];
+            var g = ref[1];
+            var b = ref[2];
+            return (r << 16) + (g << 8) + b;
+        };
+
+        var rgb2num_1 = rgb2num;
+
+        var type$c = utils.type;
+
+        var num2rgb = function (num) {
+            if (type$c(num) == "number" && num >= 0 && num <= 0xFFFFFF) {
+                var r = num >> 16;
+                var g = (num >> 8) & 0xFF;
+                var b = num & 0xFF;
+                return [r,g,b,1];
+            }
+            throw new Error("unknown num color: "+num);
+        };
+
+        var num2rgb_1 = num2rgb;
+
+        var type$d = utils.type;
+
+
+
+        Color_1.prototype.num = function() {
+            return rgb2num_1(this._rgb);
+        };
+
+        chroma_1.num = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['num']) ));
+        };
+
+        input.format.num = num2rgb_1;
+
+        input.autodetect.push({
+            p: 5,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                if (args.length === 1 && type$d(args[0]) === 'number' && args[0] >= 0 && args[0] <= 0xFFFFFF) {
+                    return 'num';
+                }
+            }
+        });
+
+        var unpack$u = utils.unpack;
+        var type$e = utils.type;
+        var round$5 = Math.round;
+
+        Color_1.prototype.rgb = function(rnd) {
+            if ( rnd === void 0 ) rnd=true;
+
+            if (rnd === false) { return this._rgb.slice(0,3); }
+            return this._rgb.slice(0,3).map(round$5);
+        };
+
+        Color_1.prototype.rgba = function(rnd) {
+            if ( rnd === void 0 ) rnd=true;
+
+            return this._rgb.slice(0,4).map(function (v,i) {
+                return i<3 ? (rnd === false ? v : round$5(v)) : v;
+            });
+        };
+
+        chroma_1.rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['rgb']) ));
+        };
+
+        input.format.rgb = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var rgba = unpack$u(args, 'rgba');
+            if (rgba[3] === undefined) { rgba[3] = 1; }
+            return rgba;
+        };
+
+        input.autodetect.push({
+            p: 3,
+            test: function () {
+                var args = [], len = arguments.length;
+                while ( len-- ) args[ len ] = arguments[ len ];
+
+                args = unpack$u(args, 'rgba');
+                if (type$e(args) === 'array' && (args.length === 3 ||
+                    args.length === 4 && type$e(args[3]) == 'number' && args[3] >= 0 && args[3] <= 1)) {
+                    return 'rgb';
+                }
+            }
+        });
+
+        /*
+         * Based on implementation by Neil Bartlett
+         * https://github.com/neilbartlett/color-temperature
+         */
+
+        var log = Math.log;
+
+        var temperature2rgb = function (kelvin) {
+            var temp = kelvin / 100;
+            var r,g,b;
+            if (temp < 66) {
+                r = 255;
+                g = -155.25485562709179 - 0.44596950469579133 * (g = temp-2) + 104.49216199393888 * log(g);
+                b = temp < 20 ? 0 : -254.76935184120902 + 0.8274096064007395 * (b = temp-10) + 115.67994401066147 * log(b);
+            } else {
+                r = 351.97690566805693 + 0.114206453784165 * (r = temp-55) - 40.25366309332127 * log(r);
+                g = 325.4494125711974 + 0.07943456536662342 * (g = temp-50) - 28.0852963507957 * log(g);
+                b = 255;
+            }
+            return [r,g,b,1];
+        };
+
+        var temperature2rgb_1 = temperature2rgb;
+
+        /*
+         * Based on implementation by Neil Bartlett
+         * https://github.com/neilbartlett/color-temperature
+         **/
+
+
+        var unpack$v = utils.unpack;
+        var round$6 = Math.round;
+
+        var rgb2temperature = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            var rgb = unpack$v(args, 'rgb');
+            var r = rgb[0], b = rgb[2];
+            var minTemp = 1000;
+            var maxTemp = 40000;
+            var eps = 0.4;
+            var temp;
+            while (maxTemp - minTemp > eps) {
+                temp = (maxTemp + minTemp) * 0.5;
+                var rgb$1 = temperature2rgb_1(temp);
+                if ((rgb$1[2] / rgb$1[0]) >= (b / r)) {
+                    maxTemp = temp;
+                } else {
+                    minTemp = temp;
+                }
+            }
+            return round$6(temp);
+        };
+
+        var rgb2temperature_1 = rgb2temperature;
+
+        Color_1.prototype.temp =
+        Color_1.prototype.kelvin =
+        Color_1.prototype.temperature = function() {
+            return rgb2temperature_1(this._rgb);
+        };
+
+        chroma_1.temp =
+        chroma_1.kelvin =
+        chroma_1.temperature = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            return new (Function.prototype.bind.apply( Color_1, [ null ].concat( args, ['temp']) ));
+        };
+
+        input.format.temp =
+        input.format.kelvin =
+        input.format.temperature = temperature2rgb_1;
+
+        var type$f = utils.type;
+
+        Color_1.prototype.alpha = function(a, mutate) {
+            if ( mutate === void 0 ) mutate=false;
+
+            if (a !== undefined && type$f(a) === 'number') {
+                if (mutate) {
+                    this._rgb[3] = a;
+                    return this;
+                }
+                return new Color_1([this._rgb[0], this._rgb[1], this._rgb[2], a], 'rgb');
+            }
+            return this._rgb[3];
+        };
+
+        Color_1.prototype.clipped = function() {
+            return this._rgb._clipped || false;
+        };
+
+        Color_1.prototype.darken = function(amount) {
+        	if ( amount === void 0 ) amount=1;
+
+        	var me = this;
+        	var lab = me.lab();
+        	lab[0] -= labConstants.Kn * amount;
+        	return new Color_1(lab, 'lab').alpha(me.alpha(), true);
+        };
+
+        Color_1.prototype.brighten = function(amount) {
+        	if ( amount === void 0 ) amount=1;
+
+        	return this.darken(-amount);
+        };
+
+        Color_1.prototype.darker = Color_1.prototype.darken;
+        Color_1.prototype.brighter = Color_1.prototype.brighten;
+
+        Color_1.prototype.get = function(mc) {
+            var ref = mc.split('.');
+            var mode = ref[0];
+            var channel = ref[1];
+            var src = this[mode]();
+            if (channel) {
+                var i = mode.indexOf(channel);
+                if (i > -1) { return src[i]; }
+                throw new Error(("unknown channel " + channel + " in mode " + mode));
+            } else {
+                return src;
+            }
+        };
+
+        var type$g = utils.type;
+        var pow$2 = Math.pow;
+
+        var EPS = 1e-7;
+        var MAX_ITER = 20;
+
+        Color_1.prototype.luminance = function(lum) {
+            if (lum !== undefined && type$g(lum) === 'number') {
+                if (lum === 0) {
+                    // return pure black
+                    return new Color_1([0,0,0,this._rgb[3]], 'rgb');
+                }
+                if (lum === 1) {
+                    // return pure white
+                    return new Color_1([255,255,255,this._rgb[3]], 'rgb');
+                }
+                // compute new color using...
+                var cur_lum = this.luminance();
+                var mode = 'rgb';
+                var max_iter = MAX_ITER;
+
+                var test = function (low, high) {
+                    var mid = low.interpolate(high, 0.5, mode);
+                    var lm = mid.luminance();
+                    if (Math.abs(lum - lm) < EPS || !max_iter--) {
+                        // close enough
+                        return mid;
+                    }
+                    return lm > lum ? test(low, mid) : test(mid, high);
+                };
+
+                var rgb = (cur_lum > lum ? test(new Color_1([0,0,0]), this) : test(this, new Color_1([255,255,255]))).rgb();
+                return new Color_1(rgb.concat( [this._rgb[3]]));
+            }
+            return rgb2luminance.apply(void 0, (this._rgb).slice(0,3));
+        };
+
+
+        var rgb2luminance = function (r,g,b) {
+            // relative luminance
+            // see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+            r = luminance_x(r);
+            g = luminance_x(g);
+            b = luminance_x(b);
+            return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        };
+
+        var luminance_x = function (x) {
+            x /= 255;
+            return x <= 0.03928 ? x/12.92 : pow$2((x+0.055)/1.055, 2.4);
+        };
+
+        var interpolator = {};
+
+        var type$h = utils.type;
+
+
+        var mix = function (col1, col2, f) {
+            if ( f === void 0 ) f=0.5;
+            var rest = [], len = arguments.length - 3;
+            while ( len-- > 0 ) rest[ len ] = arguments[ len + 3 ];
+
+            var mode = rest[0] || 'lrgb';
+            if (!interpolator[mode] && !rest.length) {
+                // fall back to the first supported mode
+                mode = Object.keys(interpolator)[0];
+            }
+            if (!interpolator[mode]) {
+                throw new Error(("interpolation mode " + mode + " is not defined"));
+            }
+            if (type$h(col1) !== 'object') { col1 = new Color_1(col1); }
+            if (type$h(col2) !== 'object') { col2 = new Color_1(col2); }
+            return interpolator[mode](col1, col2, f)
+                .alpha(col1.alpha() + f * (col2.alpha() - col1.alpha()));
+        };
+
+        Color_1.prototype.mix =
+        Color_1.prototype.interpolate = function(col2, f) {
+        	if ( f === void 0 ) f=0.5;
+        	var rest = [], len = arguments.length - 2;
+        	while ( len-- > 0 ) rest[ len ] = arguments[ len + 2 ];
+
+        	return mix.apply(void 0, [ this, col2, f ].concat( rest ));
+        };
+
+        Color_1.prototype.premultiply = function(mutate) {
+        	if ( mutate === void 0 ) mutate=false;
+
+        	var rgb = this._rgb;
+        	var a = rgb[3];
+        	if (mutate) {
+        		this._rgb = [rgb[0]*a, rgb[1]*a, rgb[2]*a, a];
+        		return this;
+        	} else {
+        		return new Color_1([rgb[0]*a, rgb[1]*a, rgb[2]*a, a], 'rgb');
+        	}
+        };
+
+        Color_1.prototype.saturate = function(amount) {
+        	if ( amount === void 0 ) amount=1;
+
+        	var me = this;
+        	var lch = me.lch();
+        	lch[1] += labConstants.Kn * amount;
+        	if (lch[1] < 0) { lch[1] = 0; }
+        	return new Color_1(lch, 'lch').alpha(me.alpha(), true);
+        };
+
+        Color_1.prototype.desaturate = function(amount) {
+        	if ( amount === void 0 ) amount=1;
+
+        	return this.saturate(-amount);
+        };
+
+        var type$i = utils.type;
+
+        Color_1.prototype.set = function(mc, value, mutate) {
+            if ( mutate === void 0 ) mutate=false;
+
+            var ref = mc.split('.');
+            var mode = ref[0];
+            var channel = ref[1];
+            var src = this[mode]();
+            if (channel) {
+                var i = mode.indexOf(channel);
+                if (i > -1) {
+                    if (type$i(value) == 'string') {
+                        switch(value.charAt(0)) {
+                            case '+': src[i] += +value; break;
+                            case '-': src[i] += +value; break;
+                            case '*': src[i] *= +(value.substr(1)); break;
+                            case '/': src[i] /= +(value.substr(1)); break;
+                            default: src[i] = +value;
+                        }
+                    } else if (type$i(value) === 'number') {
+                        src[i] = value;
+                    } else {
+                        throw new Error("unsupported value for Color.set");
+                    }
+                    var out = new Color_1(src, mode);
+                    if (mutate) {
+                        this._rgb = out._rgb;
+                        return this;
+                    }
+                    return out;
+                }
+                throw new Error(("unknown channel " + channel + " in mode " + mode));
+            } else {
+                return src;
+            }
+        };
+
+        var rgb$1 = function (col1, col2, f) {
+            var xyz0 = col1._rgb;
+            var xyz1 = col2._rgb;
+            return new Color_1(
+                xyz0[0] + f * (xyz1[0]-xyz0[0]),
+                xyz0[1] + f * (xyz1[1]-xyz0[1]),
+                xyz0[2] + f * (xyz1[2]-xyz0[2]),
+                'rgb'
+            )
+        };
+
+        // register interpolator
+        interpolator.rgb = rgb$1;
+
+        var sqrt$2 = Math.sqrt;
+        var pow$3 = Math.pow;
+
+        var lrgb = function (col1, col2, f) {
+            var ref = col1._rgb;
+            var x1 = ref[0];
+            var y1 = ref[1];
+            var z1 = ref[2];
+            var ref$1 = col2._rgb;
+            var x2 = ref$1[0];
+            var y2 = ref$1[1];
+            var z2 = ref$1[2];
+            return new Color_1(
+                sqrt$2(pow$3(x1,2) * (1-f) + pow$3(x2,2) * f),
+                sqrt$2(pow$3(y1,2) * (1-f) + pow$3(y2,2) * f),
+                sqrt$2(pow$3(z1,2) * (1-f) + pow$3(z2,2) * f),
+                'rgb'
+            )
+        };
+
+        // register interpolator
+        interpolator.lrgb = lrgb;
+
+        var lab$1 = function (col1, col2, f) {
+            var xyz0 = col1.lab();
+            var xyz1 = col2.lab();
+            return new Color_1(
+                xyz0[0] + f * (xyz1[0]-xyz0[0]),
+                xyz0[1] + f * (xyz1[1]-xyz0[1]),
+                xyz0[2] + f * (xyz1[2]-xyz0[2]),
+                'lab'
+            )
+        };
+
+        // register interpolator
+        interpolator.lab = lab$1;
+
+        var _hsx = function (col1, col2, f, m) {
+            var assign, assign$1;
+
+            var xyz0, xyz1;
+            if (m === 'hsl') {
+                xyz0 = col1.hsl();
+                xyz1 = col2.hsl();
+            } else if (m === 'hsv') {
+                xyz0 = col1.hsv();
+                xyz1 = col2.hsv();
+            } else if (m === 'hcg') {
+                xyz0 = col1.hcg();
+                xyz1 = col2.hcg();
+            } else if (m === 'hsi') {
+                xyz0 = col1.hsi();
+                xyz1 = col2.hsi();
+            } else if (m === 'lch' || m === 'hcl') {
+                m = 'hcl';
+                xyz0 = col1.hcl();
+                xyz1 = col2.hcl();
+            }
+
+            var hue0, hue1, sat0, sat1, lbv0, lbv1;
+            if (m.substr(0, 1) === 'h') {
+                (assign = xyz0, hue0 = assign[0], sat0 = assign[1], lbv0 = assign[2]);
+                (assign$1 = xyz1, hue1 = assign$1[0], sat1 = assign$1[1], lbv1 = assign$1[2]);
+            }
+
+            var sat, hue, lbv, dh;
+
+            if (!isNaN(hue0) && !isNaN(hue1)) {
+                // both colors have hue
+                if (hue1 > hue0 && hue1 - hue0 > 180) {
+                    dh = hue1-(hue0+360);
+                } else if (hue1 < hue0 && hue0 - hue1 > 180) {
+                    dh = hue1+360-hue0;
+                } else{
+                    dh = hue1 - hue0;
+                }
+                hue = hue0 + f * dh;
+            } else if (!isNaN(hue0)) {
+                hue = hue0;
+                if ((lbv1 == 1 || lbv1 == 0) && m != 'hsv') { sat = sat0; }
+            } else if (!isNaN(hue1)) {
+                hue = hue1;
+                if ((lbv0 == 1 || lbv0 == 0) && m != 'hsv') { sat = sat1; }
+            } else {
+                hue = Number.NaN;
+            }
+
+            if (sat === undefined) { sat = sat0 + f * (sat1 - sat0); }
+            lbv = lbv0 + f * (lbv1-lbv0);
+            return new Color_1([hue, sat, lbv], m);
+        };
+
+        var lch$1 = function (col1, col2, f) {
+        	return _hsx(col1, col2, f, 'lch');
+        };
+
+        // register interpolator
+        interpolator.lch = lch$1;
+        interpolator.hcl = lch$1;
+
+        var num$1 = function (col1, col2, f) {
+            var c1 = col1.num();
+            var c2 = col2.num();
+            return new Color_1(c1 + f * (c2-c1), 'num')
+        };
+
+        // register interpolator
+        interpolator.num = num$1;
+
+        var hcg$1 = function (col1, col2, f) {
+        	return _hsx(col1, col2, f, 'hcg');
+        };
+
+        // register interpolator
+        interpolator.hcg = hcg$1;
+
+        var hsi$1 = function (col1, col2, f) {
+        	return _hsx(col1, col2, f, 'hsi');
+        };
+
+        // register interpolator
+        interpolator.hsi = hsi$1;
+
+        var hsl$1 = function (col1, col2, f) {
+        	return _hsx(col1, col2, f, 'hsl');
+        };
+
+        // register interpolator
+        interpolator.hsl = hsl$1;
+
+        var hsv$1 = function (col1, col2, f) {
+        	return _hsx(col1, col2, f, 'hsv');
+        };
+
+        // register interpolator
+        interpolator.hsv = hsv$1;
+
+        var clip_rgb$2 = utils.clip_rgb;
+        var pow$4 = Math.pow;
+        var sqrt$3 = Math.sqrt;
+        var PI$1 = Math.PI;
+        var cos$2 = Math.cos;
+        var sin$1 = Math.sin;
+        var atan2$1 = Math.atan2;
+
+        var average = function (colors, mode) {
+            if ( mode === void 0 ) mode='lrgb';
+
+            var l = colors.length;
+            // convert colors to Color objects
+            colors = colors.map(function (c) { return new Color_1(c); });
+            if (mode === 'lrgb') {
+                return _average_lrgb(colors)
+            }
+            var first = colors.shift();
+            var xyz = first.get(mode);
+            var cnt = [];
+            var dx = 0;
+            var dy = 0;
+            // initial color
+            for (var i=0; i<xyz.length; i++) {
+                xyz[i] = xyz[i] || 0;
+                cnt.push(isNaN(xyz[i]) ? 0 : 1);
+                if (mode.charAt(i) === 'h' && !isNaN(xyz[i])) {
+                    var A = xyz[i] / 180 * PI$1;
+                    dx += cos$2(A);
+                    dy += sin$1(A);
+                }
+            }
+
+            var alpha = first.alpha();
+            colors.forEach(function (c) {
+                var xyz2 = c.get(mode);
+                alpha += c.alpha();
+                for (var i=0; i<xyz.length; i++) {
+                    if (!isNaN(xyz2[i])) {
+                        cnt[i]++;
+                        if (mode.charAt(i) === 'h') {
+                            var A = xyz2[i] / 180 * PI$1;
+                            dx += cos$2(A);
+                            dy += sin$1(A);
+                        } else {
+                            xyz[i] += xyz2[i];
+                        }
+                    }
+                }
+            });
+
+            for (var i$1=0; i$1<xyz.length; i$1++) {
+                if (mode.charAt(i$1) === 'h') {
+                    var A$1 = atan2$1(dy / cnt[i$1], dx / cnt[i$1]) / PI$1 * 180;
+                    while (A$1 < 0) { A$1 += 360; }
+                    while (A$1 >= 360) { A$1 -= 360; }
+                    xyz[i$1] = A$1;
+                } else {
+                    xyz[i$1] = xyz[i$1]/cnt[i$1];
+                }
+            }
+            alpha /= l;
+            return (new Color_1(xyz, mode)).alpha(alpha > 0.99999 ? 1 : alpha, true);
+        };
+
+
+        var _average_lrgb = function (colors) {
+            var l = colors.length;
+            var f = 1/l;
+            var xyz = [0,0,0,0];
+            for (var i = 0, list = colors; i < list.length; i += 1) {
+                var col = list[i];
+
+                var rgb = col._rgb;
+                xyz[0] += pow$4(rgb[0],2) * f;
+                xyz[1] += pow$4(rgb[1],2) * f;
+                xyz[2] += pow$4(rgb[2],2) * f;
+                xyz[3] += rgb[3] * f;
+            }
+            xyz[0] = sqrt$3(xyz[0]);
+            xyz[1] = sqrt$3(xyz[1]);
+            xyz[2] = sqrt$3(xyz[2]);
+            if (xyz[3] > 0.9999999) { xyz[3] = 1; }
+            return new Color_1(clip_rgb$2(xyz));
+        };
+
+        // minimal multi-purpose interface
+
+        // @requires utils color analyze
+
+
+        var type$j = utils.type;
+
+        var pow$5 = Math.pow;
+
+        var scale = function(colors) {
+
+            // constructor
+            var _mode = 'rgb';
+            var _nacol = chroma_1('#ccc');
+            var _spread = 0;
+            // const _fixed = false;
+            var _domain = [0, 1];
+            var _pos = [];
+            var _padding = [0,0];
+            var _classes = false;
+            var _colors = [];
+            var _out = false;
+            var _min = 0;
+            var _max = 1;
+            var _correctLightness = false;
+            var _colorCache = {};
+            var _useCache = true;
+            var _gamma = 1;
+
+            // private methods
+
+            var setColors = function(colors) {
+                colors = colors || ['#fff', '#000'];
+                if (colors && type$j(colors) === 'string' && chroma_1.brewer &&
+                    chroma_1.brewer[colors.toLowerCase()]) {
+                    colors = chroma_1.brewer[colors.toLowerCase()];
+                }
+                if (type$j(colors) === 'array') {
+                    // handle single color
+                    if (colors.length === 1) {
+                        colors = [colors[0], colors[0]];
+                    }
+                    // make a copy of the colors
+                    colors = colors.slice(0);
+                    // convert to chroma classes
+                    for (var c=0; c<colors.length; c++) {
+                        colors[c] = chroma_1(colors[c]);
+                    }
+                    // auto-fill color position
+                    _pos.length = 0;
+                    for (var c$1=0; c$1<colors.length; c$1++) {
+                        _pos.push(c$1/(colors.length-1));
+                    }
+                }
+                resetCache();
+                return _colors = colors;
+            };
+
+            var getClass = function(value) {
+                if (_classes != null) {
+                    var n = _classes.length-1;
+                    var i = 0;
+                    while (i < n && value >= _classes[i]) {
+                        i++;
+                    }
+                    return i-1;
+                }
+                return 0;
+            };
+
+            var tmap = function (t) { return t; };
+
+            // const classifyValue = function(value) {
+            //     let val = value;
+            //     if (_classes.length > 2) {
+            //         const n = _classes.length-1;
+            //         const i = getClass(value);
+            //         const minc = _classes[0] + ((_classes[1]-_classes[0]) * (0 + (_spread * 0.5)));  // center of 1st class
+            //         const maxc = _classes[n-1] + ((_classes[n]-_classes[n-1]) * (1 - (_spread * 0.5)));  // center of last class
+            //         val = _min + ((((_classes[i] + ((_classes[i+1] - _classes[i]) * 0.5)) - minc) / (maxc-minc)) * (_max - _min));
+            //     }
+            //     return val;
+            // };
+
+            var getColor = function(val, bypassMap) {
+                var col, t;
+                if (bypassMap == null) { bypassMap = false; }
+                if (isNaN(val) || (val === null)) { return _nacol; }
+                if (!bypassMap) {
+                    if (_classes && (_classes.length > 2)) {
+                        // find the class
+                        var c = getClass(val);
+                        t = c / (_classes.length-2);
+                    } else if (_max !== _min) {
+                        // just interpolate between min/max
+                        t = (val - _min) / (_max - _min);
+                    } else {
+                        t = 1;
+                    }
+                } else {
+                    t = val;
+                }
+
+                if (!bypassMap) {
+                    t = tmap(t);  // lightness correction
+                }
+
+                if (_gamma !== 1) { t = pow$5(t, _gamma); }
+
+                t = _padding[0] + (t * (1 - _padding[0] - _padding[1]));
+
+                t = Math.min(1, Math.max(0, t));
+
+                var k = Math.floor(t * 10000);
+
+                if (_useCache && _colorCache[k]) {
+                    col = _colorCache[k];
+                } else {
+                    if (type$j(_colors) === 'array') {
+                        //for i in [0.._pos.length-1]
+                        for (var i=0; i<_pos.length; i++) {
+                            var p = _pos[i];
+                            if (t <= p) {
+                                col = _colors[i];
+                                break;
+                            }
+                            if ((t >= p) && (i === (_pos.length-1))) {
+                                col = _colors[i];
+                                break;
+                            }
+                            if (t > p && t < _pos[i+1]) {
+                                t = (t-p)/(_pos[i+1]-p);
+                                col = chroma_1.interpolate(_colors[i], _colors[i+1], t, _mode);
+                                break;
+                            }
+                        }
+                    } else if (type$j(_colors) === 'function') {
+                        col = _colors(t);
+                    }
+                    if (_useCache) { _colorCache[k] = col; }
+                }
+                return col;
+            };
+
+            var resetCache = function () { return _colorCache = {}; };
+
+            setColors(colors);
+
+            // public interface
+
+            var f = function(v) {
+                var c = chroma_1(getColor(v));
+                if (_out && c[_out]) { return c[_out](); } else { return c; }
+            };
+
+            f.classes = function(classes) {
+                if (classes != null) {
+                    if (type$j(classes) === 'array') {
+                        _classes = classes;
+                        _domain = [classes[0], classes[classes.length-1]];
+                    } else {
+                        var d = chroma_1.analyze(_domain);
+                        if (classes === 0) {
+                            _classes = [d.min, d.max];
+                        } else {
+                            _classes = chroma_1.limits(d, 'e', classes);
+                        }
+                    }
+                    return f;
+                }
+                return _classes;
+            };
+
+
+            f.domain = function(domain) {
+                if (!arguments.length) {
+                    return _domain;
+                }
+                _min = domain[0];
+                _max = domain[domain.length-1];
+                _pos = [];
+                var k = _colors.length;
+                if ((domain.length === k) && (_min !== _max)) {
+                    // update positions
+                    for (var i = 0, list = Array.from(domain); i < list.length; i += 1) {
+                        var d = list[i];
+
+                      _pos.push((d-_min) / (_max-_min));
+                    }
+                } else {
+                    for (var c=0; c<k; c++) {
+                        _pos.push(c/(k-1));
+                    }
+                }
+                _domain = [_min, _max];
+                return f;
+            };
+
+            f.mode = function(_m) {
+                if (!arguments.length) {
+                    return _mode;
+                }
+                _mode = _m;
+                resetCache();
+                return f;
+            };
+
+            f.range = function(colors, _pos) {
+                setColors(colors);
+                return f;
+            };
+
+            f.out = function(_o) {
+                _out = _o;
+                return f;
+            };
+
+            f.spread = function(val) {
+                if (!arguments.length) {
+                    return _spread;
+                }
+                _spread = val;
+                return f;
+            };
+
+            f.correctLightness = function(v) {
+                if (v == null) { v = true; }
+                _correctLightness = v;
+                resetCache();
+                if (_correctLightness) {
+                    tmap = function(t) {
+                        var L0 = getColor(0, true).lab()[0];
+                        var L1 = getColor(1, true).lab()[0];
+                        var pol = L0 > L1;
+                        var L_actual = getColor(t, true).lab()[0];
+                        var L_ideal = L0 + ((L1 - L0) * t);
+                        var L_diff = L_actual - L_ideal;
+                        var t0 = 0;
+                        var t1 = 1;
+                        var max_iter = 20;
+                        while ((Math.abs(L_diff) > 1e-2) && (max_iter-- > 0)) {
+                            (function() {
+                                if (pol) { L_diff *= -1; }
+                                if (L_diff < 0) {
+                                    t0 = t;
+                                    t += (t1 - t) * 0.5;
+                                } else {
+                                    t1 = t;
+                                    t += (t0 - t) * 0.5;
+                                }
+                                L_actual = getColor(t, true).lab()[0];
+                                return L_diff = L_actual - L_ideal;
+                            })();
+                        }
+                        return t;
+                    };
+                } else {
+                    tmap = function (t) { return t; };
+                }
+                return f;
+            };
+
+            f.padding = function(p) {
+                if (p != null) {
+                    if (type$j(p) === 'number') {
+                        p = [p,p];
+                    }
+                    _padding = p;
+                    return f;
+                } else {
+                    return _padding;
+                }
+            };
+
+            f.colors = function(numColors, out) {
+                // If no arguments are given, return the original colors that were provided
+                if (arguments.length < 2) { out = 'hex'; }
+                var result = [];
+
+                if (arguments.length === 0) {
+                    result = _colors.slice(0);
+
+                } else if (numColors === 1) {
+                    result = [f(0.5)];
+
+                } else if (numColors > 1) {
+                    var dm = _domain[0];
+                    var dd = _domain[1] - dm;
+                    result = __range__(0, numColors, false).map(function (i) { return f( dm + ((i/(numColors-1)) * dd) ); });
+
+                } else { // returns all colors based on the defined classes
+                    colors = [];
+                    var samples = [];
+                    if (_classes && (_classes.length > 2)) {
+                        for (var i = 1, end = _classes.length, asc = 1 <= end; asc ? i < end : i > end; asc ? i++ : i--) {
+                            samples.push((_classes[i-1]+_classes[i])*0.5);
+                        }
+                    } else {
+                        samples = _domain;
+                    }
+                    result = samples.map(function (v) { return f(v); });
+                }
+
+                if (chroma_1[out]) {
+                    result = result.map(function (c) { return c[out](); });
+                }
+                return result;
+            };
+
+            f.cache = function(c) {
+                if (c != null) {
+                    _useCache = c;
+                    return f;
+                } else {
+                    return _useCache;
+                }
+            };
+
+            f.gamma = function(g) {
+                if (g != null) {
+                    _gamma = g;
+                    return f;
+                } else {
+                    return _gamma;
+                }
+            };
+
+            f.nodata = function(d) {
+                if (d != null) {
+                    _nacol = chroma_1(d);
+                    return f;
+                } else {
+                    return _nacol;
+                }
+            };
+
+            return f;
+        };
+
+        function __range__(left, right, inclusive) {
+          var range = [];
+          var ascending = left < right;
+          var end = !inclusive ? right : ascending ? right + 1 : right - 1;
+          for (var i = left; ascending ? i < end : i > end; ascending ? i++ : i--) {
+            range.push(i);
+          }
+          return range;
+        }
+
+        //
+        // interpolates between a set of colors uzing a bezier spline
+        //
+
+        // @requires utils lab
+
+
+
+
+        var bezier = function(colors) {
+            var assign, assign$1, assign$2;
+
+            var I, lab0, lab1, lab2;
+            colors = colors.map(function (c) { return new Color_1(c); });
+            if (colors.length === 2) {
+                // linear interpolation
+                (assign = colors.map(function (c) { return c.lab(); }), lab0 = assign[0], lab1 = assign[1]);
+                I = function(t) {
+                    var lab = ([0, 1, 2].map(function (i) { return lab0[i] + (t * (lab1[i] - lab0[i])); }));
+                    return new Color_1(lab, 'lab');
+                };
+            } else if (colors.length === 3) {
+                // quadratic bezier interpolation
+                (assign$1 = colors.map(function (c) { return c.lab(); }), lab0 = assign$1[0], lab1 = assign$1[1], lab2 = assign$1[2]);
+                I = function(t) {
+                    var lab = ([0, 1, 2].map(function (i) { return ((1-t)*(1-t) * lab0[i]) + (2 * (1-t) * t * lab1[i]) + (t * t * lab2[i]); }));
+                    return new Color_1(lab, 'lab');
+                };
+            } else if (colors.length === 4) {
+                // cubic bezier interpolation
+                var lab3;
+                (assign$2 = colors.map(function (c) { return c.lab(); }), lab0 = assign$2[0], lab1 = assign$2[1], lab2 = assign$2[2], lab3 = assign$2[3]);
+                I = function(t) {
+                    var lab = ([0, 1, 2].map(function (i) { return ((1-t)*(1-t)*(1-t) * lab0[i]) + (3 * (1-t) * (1-t) * t * lab1[i]) + (3 * (1-t) * t * t * lab2[i]) + (t*t*t * lab3[i]); }));
+                    return new Color_1(lab, 'lab');
+                };
+            } else if (colors.length === 5) {
+                var I0 = bezier(colors.slice(0, 3));
+                var I1 = bezier(colors.slice(2, 5));
+                I = function(t) {
+                    if (t < 0.5) {
+                        return I0(t*2);
+                    } else {
+                        return I1((t-0.5)*2);
+                    }
+                };
+            }
+            return I;
+        };
+
+        var bezier_1 = function (colors) {
+            var f = bezier(colors);
+            f.scale = function () { return scale(f); };
+            return f;
+        };
+
+        /*
+         * interpolates between a set of colors uzing a bezier spline
+         * blend mode formulas taken from http://www.venture-ware.com/kevin/coding/lets-learn-math-photoshop-blend-modes/
+         */
+
+
+
+
+        var blend = function (bottom, top, mode) {
+            if (!blend[mode]) {
+                throw new Error('unknown blend mode ' + mode);
+            }
+            return blend[mode](bottom, top);
+        };
+
+        var blend_f = function (f) { return function (bottom,top) {
+                var c0 = chroma_1(top).rgb();
+                var c1 = chroma_1(bottom).rgb();
+                return chroma_1.rgb(f(c0, c1));
+            }; };
+
+        var each = function (f) { return function (c0, c1) {
+                var out = [];
+                out[0] = f(c0[0], c1[0]);
+                out[1] = f(c0[1], c1[1]);
+                out[2] = f(c0[2], c1[2]);
+                return out;
+            }; };
+
+        var normal = function (a) { return a; };
+        var multiply = function (a,b) { return a * b / 255; };
+        var darken$1 = function (a,b) { return a > b ? b : a; };
+        var lighten = function (a,b) { return a > b ? a : b; };
+        var screen = function (a,b) { return 255 * (1 - (1-a/255) * (1-b/255)); };
+        var overlay = function (a,b) { return b < 128 ? 2 * a * b / 255 : 255 * (1 - 2 * (1 - a / 255 ) * ( 1 - b / 255 )); };
+        var burn = function (a,b) { return 255 * (1 - (1 - b / 255) / (a/255)); };
+        var dodge = function (a,b) {
+            if (a === 255) { return 255; }
+            a = 255 * (b / 255) / (1 - a / 255);
+            return a > 255 ? 255 : a
+        };
+
+        // # add = (a,b) ->
+        // #     if (a + b > 255) then 255 else a + b
+
+        blend.normal = blend_f(each(normal));
+        blend.multiply = blend_f(each(multiply));
+        blend.screen = blend_f(each(screen));
+        blend.overlay = blend_f(each(overlay));
+        blend.darken = blend_f(each(darken$1));
+        blend.lighten = blend_f(each(lighten));
+        blend.dodge = blend_f(each(dodge));
+        blend.burn = blend_f(each(burn));
+        // blend.add = blend_f(each(add));
+
+        var blend_1 = blend;
+
+        // cubehelix interpolation
+        // based on D.A. Green "A colour scheme for the display of astronomical intensity images"
+        // http://astron-soc.in/bulletin/11June/289392011.pdf
+
+        var type$k = utils.type;
+        var clip_rgb$3 = utils.clip_rgb;
+        var TWOPI$2 = utils.TWOPI;
+        var pow$6 = Math.pow;
+        var sin$2 = Math.sin;
+        var cos$3 = Math.cos;
+
+
+        var cubehelix = function(start, rotations, hue, gamma, lightness) {
+            if ( start === void 0 ) start=300;
+            if ( rotations === void 0 ) rotations=-1.5;
+            if ( hue === void 0 ) hue=1;
+            if ( gamma === void 0 ) gamma=1;
+            if ( lightness === void 0 ) lightness=[0,1];
+
+            var dh = 0, dl;
+            if (type$k(lightness) === 'array') {
+                dl = lightness[1] - lightness[0];
+            } else {
+                dl = 0;
+                lightness = [lightness, lightness];
+            }
+
+            var f = function(fract) {
+                var a = TWOPI$2 * (((start+120)/360) + (rotations * fract));
+                var l = pow$6(lightness[0] + (dl * fract), gamma);
+                var h = dh !== 0 ? hue[0] + (fract * dh) : hue;
+                var amp = (h * l * (1-l)) / 2;
+                var cos_a = cos$3(a);
+                var sin_a = sin$2(a);
+                var r = l + (amp * ((-0.14861 * cos_a) + (1.78277* sin_a)));
+                var g = l + (amp * ((-0.29227 * cos_a) - (0.90649* sin_a)));
+                var b = l + (amp * (+1.97294 * cos_a));
+                return chroma_1(clip_rgb$3([r*255,g*255,b*255,1]));
+            };
+
+            f.start = function(s) {
+                if ((s == null)) { return start; }
+                start = s;
+                return f;
+            };
+
+            f.rotations = function(r) {
+                if ((r == null)) { return rotations; }
+                rotations = r;
+                return f;
+            };
+
+            f.gamma = function(g) {
+                if ((g == null)) { return gamma; }
+                gamma = g;
+                return f;
+            };
+
+            f.hue = function(h) {
+                if ((h == null)) { return hue; }
+                hue = h;
+                if (type$k(hue) === 'array') {
+                    dh = hue[1] - hue[0];
+                    if (dh === 0) { hue = hue[1]; }
+                } else {
+                    dh = 0;
+                }
+                return f;
+            };
+
+            f.lightness = function(h) {
+                if ((h == null)) { return lightness; }
+                if (type$k(h) === 'array') {
+                    lightness = h;
+                    dl = h[1] - h[0];
+                } else {
+                    lightness = [h,h];
+                    dl = 0;
+                }
+                return f;
+            };
+
+            f.scale = function () { return chroma_1.scale(f); };
+
+            f.hue(hue);
+
+            return f;
+        };
+
+        var digits = '0123456789abcdef';
+
+        var floor$2 = Math.floor;
+        var random = Math.random;
+
+        var random_1 = function () {
+            var code = '#';
+            for (var i=0; i<6; i++) {
+                code += digits.charAt(floor$2(random() * 16));
+            }
+            return new Color_1(code, 'hex');
+        };
+
+        var log$1 = Math.log;
+        var pow$7 = Math.pow;
+        var floor$3 = Math.floor;
+        var abs = Math.abs;
+
+
+        var analyze = function (data, key) {
+            if ( key === void 0 ) key=null;
+
+            var r = {
+                min: Number.MAX_VALUE,
+                max: Number.MAX_VALUE*-1,
+                sum: 0,
+                values: [],
+                count: 0
+            };
+            if (type(data) === 'object') {
+                data = Object.values(data);
+            }
+            data.forEach(function (val) {
+                if (key && type(val) === 'object') { val = val[key]; }
+                if (val !== undefined && val !== null && !isNaN(val)) {
+                    r.values.push(val);
+                    r.sum += val;
+                    if (val < r.min) { r.min = val; }
+                    if (val > r.max) { r.max = val; }
+                    r.count += 1;
+                }
+            });
+
+            r.domain = [r.min, r.max];
+
+            r.limits = function (mode, num) { return limits(r, mode, num); };
+
+            return r;
+        };
+
+
+        var limits = function (data, mode, num) {
+            if ( mode === void 0 ) mode='equal';
+            if ( num === void 0 ) num=7;
+
+            if (type(data) == 'array') {
+                data = analyze(data);
+            }
+            var min = data.min;
+            var max = data.max;
+            var values = data.values.sort(function (a,b) { return a-b; });
+
+            if (num === 1) { return [min,max]; }
+
+            var limits = [];
+
+            if (mode.substr(0,1) === 'c') { // continuous
+                limits.push(min);
+                limits.push(max);
+            }
+
+            if (mode.substr(0,1) === 'e') { // equal interval
+                limits.push(min);
+                for (var i=1; i<num; i++) {
+                    limits.push(min+((i/num)*(max-min)));
+                }
+                limits.push(max);
+            }
+
+            else if (mode.substr(0,1) === 'l') { // log scale
+                if (min <= 0) {
+                    throw new Error('Logarithmic scales are only possible for values > 0');
+                }
+                var min_log = Math.LOG10E * log$1(min);
+                var max_log = Math.LOG10E * log$1(max);
+                limits.push(min);
+                for (var i$1=1; i$1<num; i$1++) {
+                    limits.push(pow$7(10, min_log + ((i$1/num) * (max_log - min_log))));
+                }
+                limits.push(max);
+            }
+
+            else if (mode.substr(0,1) === 'q') { // quantile scale
+                limits.push(min);
+                for (var i$2=1; i$2<num; i$2++) {
+                    var p = ((values.length-1) * i$2)/num;
+                    var pb = floor$3(p);
+                    if (pb === p) {
+                        limits.push(values[pb]);
+                    } else { // p > pb
+                        var pr = p - pb;
+                        limits.push((values[pb]*(1-pr)) + (values[pb+1]*pr));
+                    }
+                }
+                limits.push(max);
+
+            }
+
+            else if (mode.substr(0,1) === 'k') { // k-means clustering
+                /*
+                implementation based on
+                http://code.google.com/p/figue/source/browse/trunk/figue.js#336
+                simplified for 1-d input values
+                */
+                var cluster;
+                var n = values.length;
+                var assignments = new Array(n);
+                var clusterSizes = new Array(num);
+                var repeat = true;
+                var nb_iters = 0;
+                var centroids = null;
+
+                // get seed values
+                centroids = [];
+                centroids.push(min);
+                for (var i$3=1; i$3<num; i$3++) {
+                    centroids.push(min + ((i$3/num) * (max-min)));
+                }
+                centroids.push(max);
+
+                while (repeat) {
+                    // assignment step
+                    for (var j=0; j<num; j++) {
+                        clusterSizes[j] = 0;
+                    }
+                    for (var i$4=0; i$4<n; i$4++) {
+                        var value = values[i$4];
+                        var mindist = Number.MAX_VALUE;
+                        var best = (void 0);
+                        for (var j$1=0; j$1<num; j$1++) {
+                            var dist = abs(centroids[j$1]-value);
+                            if (dist < mindist) {
+                                mindist = dist;
+                                best = j$1;
+                            }
+                            clusterSizes[best]++;
+                            assignments[i$4] = best;
+                        }
+                    }
+
+                    // update centroids step
+                    var newCentroids = new Array(num);
+                    for (var j$2=0; j$2<num; j$2++) {
+                        newCentroids[j$2] = null;
+                    }
+                    for (var i$5=0; i$5<n; i$5++) {
+                        cluster = assignments[i$5];
+                        if (newCentroids[cluster] === null) {
+                            newCentroids[cluster] = values[i$5];
+                        } else {
+                            newCentroids[cluster] += values[i$5];
+                        }
+                    }
+                    for (var j$3=0; j$3<num; j$3++) {
+                        newCentroids[j$3] *= 1/clusterSizes[j$3];
+                    }
+
+                    // check convergence
+                    repeat = false;
+                    for (var j$4=0; j$4<num; j$4++) {
+                        if (newCentroids[j$4] !== centroids[j$4]) {
+                            repeat = true;
+                            break;
+                        }
+                    }
+
+                    centroids = newCentroids;
+                    nb_iters++;
+
+                    if (nb_iters > 200) {
+                        repeat = false;
+                    }
+                }
+
+                // finished k-means clustering
+                // the next part is borrowed from gabrielflor.it
+                var kClusters = {};
+                for (var j$5=0; j$5<num; j$5++) {
+                    kClusters[j$5] = [];
+                }
+                for (var i$6=0; i$6<n; i$6++) {
+                    cluster = assignments[i$6];
+                    kClusters[cluster].push(values[i$6]);
+                }
+                var tmpKMeansBreaks = [];
+                for (var j$6=0; j$6<num; j$6++) {
+                    tmpKMeansBreaks.push(kClusters[j$6][0]);
+                    tmpKMeansBreaks.push(kClusters[j$6][kClusters[j$6].length-1]);
+                }
+                tmpKMeansBreaks = tmpKMeansBreaks.sort(function (a,b){ return a-b; });
+                limits.push(tmpKMeansBreaks[0]);
+                for (var i$7=1; i$7 < tmpKMeansBreaks.length; i$7+= 2) {
+                    var v = tmpKMeansBreaks[i$7];
+                    if (!isNaN(v) && (limits.indexOf(v) === -1)) {
+                        limits.push(v);
+                    }
+                }
+            }
+            return limits;
+        };
+
+        var analyze_1 = {analyze: analyze, limits: limits};
+
+        var contrast = function (a, b) {
+            // WCAG contrast ratio
+            // see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+            a = new Color_1(a);
+            b = new Color_1(b);
+            var l1 = a.luminance();
+            var l2 = b.luminance();
+            return l1 > l2 ? (l1 + 0.05) / (l2 + 0.05) : (l2 + 0.05) / (l1 + 0.05);
+        };
+
+        var sqrt$4 = Math.sqrt;
+        var atan2$2 = Math.atan2;
+        var abs$1 = Math.abs;
+        var cos$4 = Math.cos;
+        var PI$2 = Math.PI;
+
+        var deltaE = function(a, b, L, C) {
+            if ( L === void 0 ) L=1;
+            if ( C === void 0 ) C=1;
+
+            // Delta E (CMC)
+            // see http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CMC.html
+            a = new Color_1(a);
+            b = new Color_1(b);
+            var ref = Array.from(a.lab());
+            var L1 = ref[0];
+            var a1 = ref[1];
+            var b1 = ref[2];
+            var ref$1 = Array.from(b.lab());
+            var L2 = ref$1[0];
+            var a2 = ref$1[1];
+            var b2 = ref$1[2];
+            var c1 = sqrt$4((a1 * a1) + (b1 * b1));
+            var c2 = sqrt$4((a2 * a2) + (b2 * b2));
+            var sl = L1 < 16.0 ? 0.511 : (0.040975 * L1) / (1.0 + (0.01765 * L1));
+            var sc = ((0.0638 * c1) / (1.0 + (0.0131 * c1))) + 0.638;
+            var h1 = c1 < 0.000001 ? 0.0 : (atan2$2(b1, a1) * 180.0) / PI$2;
+            while (h1 < 0) { h1 += 360; }
+            while (h1 >= 360) { h1 -= 360; }
+            var t = (h1 >= 164.0) && (h1 <= 345.0) ? (0.56 + abs$1(0.2 * cos$4((PI$2 * (h1 + 168.0)) / 180.0))) : (0.36 + abs$1(0.4 * cos$4((PI$2 * (h1 + 35.0)) / 180.0)));
+            var c4 = c1 * c1 * c1 * c1;
+            var f = sqrt$4(c4 / (c4 + 1900.0));
+            var sh = sc * (((f * t) + 1.0) - f);
+            var delL = L1 - L2;
+            var delC = c1 - c2;
+            var delA = a1 - a2;
+            var delB = b1 - b2;
+            var dH2 = ((delA * delA) + (delB * delB)) - (delC * delC);
+            var v1 = delL / (L * sl);
+            var v2 = delC / (C * sc);
+            var v3 = sh;
+            return sqrt$4((v1 * v1) + (v2 * v2) + (dH2 / (v3 * v3)));
+        };
+
+        // simple Euclidean distance
+        var distance = function(a, b, mode) {
+            if ( mode === void 0 ) mode='lab';
+
+            // Delta E (CIE 1976)
+            // see http://www.brucelindbloom.com/index.html?Equations.html
+            a = new Color_1(a);
+            b = new Color_1(b);
+            var l1 = a.get(mode);
+            var l2 = b.get(mode);
+            var sum_sq = 0;
+            for (var i in l1) {
+                var d = (l1[i] || 0) - (l2[i] || 0);
+                sum_sq += d*d;
+            }
+            return Math.sqrt(sum_sq);
+        };
+
+        var valid = function () {
+            var args = [], len = arguments.length;
+            while ( len-- ) args[ len ] = arguments[ len ];
+
+            try {
+                new (Function.prototype.bind.apply( Color_1, [ null ].concat( args) ));
+                return true;
+            } catch (e) {
+                return false;
+            }
+        };
+
+        // some pre-defined color scales:
+
+
+
+
+        var scales = {
+        	cool: function cool() { return scale([chroma_1.hsl(180,1,.9), chroma_1.hsl(250,.7,.4)]) },
+        	hot: function hot() { return scale(['#000','#f00','#ff0','#fff']).mode('rgb') }
+        };
+
+        /**
+            ColorBrewer colors for chroma.js
+
+            Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and The
+            Pennsylvania State University.
+
+            Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at
+            http://www.apache.org/licenses/LICENSE-2.0
+
+            Unless required by applicable law or agreed to in writing, software distributed
+            under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+            CONDITIONS OF ANY KIND, either express or implied. See the License for the
+            specific language governing permissions and limitations under the License.
+        */
+
+        var colorbrewer = {
+            // sequential
+            OrRd: ['#fff7ec', '#fee8c8', '#fdd49e', '#fdbb84', '#fc8d59', '#ef6548', '#d7301f', '#b30000', '#7f0000'],
+            PuBu: ['#fff7fb', '#ece7f2', '#d0d1e6', '#a6bddb', '#74a9cf', '#3690c0', '#0570b0', '#045a8d', '#023858'],
+            BuPu: ['#f7fcfd', '#e0ecf4', '#bfd3e6', '#9ebcda', '#8c96c6', '#8c6bb1', '#88419d', '#810f7c', '#4d004b'],
+            Oranges: ['#fff5eb', '#fee6ce', '#fdd0a2', '#fdae6b', '#fd8d3c', '#f16913', '#d94801', '#a63603', '#7f2704'],
+            BuGn: ['#f7fcfd', '#e5f5f9', '#ccece6', '#99d8c9', '#66c2a4', '#41ae76', '#238b45', '#006d2c', '#00441b'],
+            YlOrBr: ['#ffffe5', '#fff7bc', '#fee391', '#fec44f', '#fe9929', '#ec7014', '#cc4c02', '#993404', '#662506'],
+            YlGn: ['#ffffe5', '#f7fcb9', '#d9f0a3', '#addd8e', '#78c679', '#41ab5d', '#238443', '#006837', '#004529'],
+            Reds: ['#fff5f0', '#fee0d2', '#fcbba1', '#fc9272', '#fb6a4a', '#ef3b2c', '#cb181d', '#a50f15', '#67000d'],
+            RdPu: ['#fff7f3', '#fde0dd', '#fcc5c0', '#fa9fb5', '#f768a1', '#dd3497', '#ae017e', '#7a0177', '#49006a'],
+            Greens: ['#f7fcf5', '#e5f5e0', '#c7e9c0', '#a1d99b', '#74c476', '#41ab5d', '#238b45', '#006d2c', '#00441b'],
+            YlGnBu: ['#ffffd9', '#edf8b1', '#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#253494', '#081d58'],
+            Purples: ['#fcfbfd', '#efedf5', '#dadaeb', '#bcbddc', '#9e9ac8', '#807dba', '#6a51a3', '#54278f', '#3f007d'],
+            GnBu: ['#f7fcf0', '#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac', '#084081'],
+            Greys: ['#ffffff', '#f0f0f0', '#d9d9d9', '#bdbdbd', '#969696', '#737373', '#525252', '#252525', '#000000'],
+            YlOrRd: ['#ffffcc', '#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', '#e31a1c', '#bd0026', '#800026'],
+            PuRd: ['#f7f4f9', '#e7e1ef', '#d4b9da', '#c994c7', '#df65b0', '#e7298a', '#ce1256', '#980043', '#67001f'],
+            Blues: ['#f7fbff', '#deebf7', '#c6dbef', '#9ecae1', '#6baed6', '#4292c6', '#2171b5', '#08519c', '#08306b'],
+            PuBuGn: ['#fff7fb', '#ece2f0', '#d0d1e6', '#a6bddb', '#67a9cf', '#3690c0', '#02818a', '#016c59', '#014636'],
+            Viridis: ['#440154', '#482777', '#3f4a8a', '#31678e', '#26838f', '#1f9d8a', '#6cce5a', '#b6de2b', '#fee825'],
+
+            // diverging
+
+            Spectral: ['#9e0142', '#d53e4f', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#e6f598', '#abdda4', '#66c2a5', '#3288bd', '#5e4fa2'],
+            RdYlGn: ['#a50026', '#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850', '#006837'],
+            RdBu: ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#f7f7f7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac', '#053061'],
+            PiYG: ['#8e0152', '#c51b7d', '#de77ae', '#f1b6da', '#fde0ef', '#f7f7f7', '#e6f5d0', '#b8e186', '#7fbc41', '#4d9221', '#276419'],
+            PRGn: ['#40004b', '#762a83', '#9970ab', '#c2a5cf', '#e7d4e8', '#f7f7f7', '#d9f0d3', '#a6dba0', '#5aae61', '#1b7837', '#00441b'],
+            RdYlBu: ['#a50026', '#d73027', '#f46d43', '#fdae61', '#fee090', '#ffffbf', '#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695'],
+            BrBG: ['#543005', '#8c510a', '#bf812d', '#dfc27d', '#f6e8c3', '#f5f5f5', '#c7eae5', '#80cdc1', '#35978f', '#01665e', '#003c30'],
+            RdGy: ['#67001f', '#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#ffffff', '#e0e0e0', '#bababa', '#878787', '#4d4d4d', '#1a1a1a'],
+            PuOr: ['#7f3b08', '#b35806', '#e08214', '#fdb863', '#fee0b6', '#f7f7f7', '#d8daeb', '#b2abd2', '#8073ac', '#542788', '#2d004b'],
+
+            // qualitative
+
+            Set2: ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3', '#a6d854', '#ffd92f', '#e5c494', '#b3b3b3'],
+            Accent: ['#7fc97f', '#beaed4', '#fdc086', '#ffff99', '#386cb0', '#f0027f', '#bf5b17', '#666666'],
+            Set1: ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf', '#999999'],
+            Set3: ['#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9', '#bc80bd', '#ccebc5', '#ffed6f'],
+            Dark2: ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', '#66a61e', '#e6ab02', '#a6761d', '#666666'],
+            Paired: ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f', '#ff7f00', '#cab2d6', '#6a3d9a', '#ffff99', '#b15928'],
+            Pastel2: ['#b3e2cd', '#fdcdac', '#cbd5e8', '#f4cae4', '#e6f5c9', '#fff2ae', '#f1e2cc', '#cccccc'],
+            Pastel1: ['#fbb4ae', '#b3cde3', '#ccebc5', '#decbe4', '#fed9a6', '#ffffcc', '#e5d8bd', '#fddaec', '#f2f2f2'],
+        };
+
+        // add lowercase aliases for case-insensitive matches
+        for (var i$1 = 0, list$1 = Object.keys(colorbrewer); i$1 < list$1.length; i$1 += 1) {
+            var key = list$1[i$1];
+
+            colorbrewer[key.toLowerCase()] = colorbrewer[key];
+        }
+
+        var colorbrewer_1 = colorbrewer;
+
+        // feel free to comment out anything to rollup
+        // a smaller chroma.js built
+
+        // io --> convert colors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // operators --> modify existing Colors
+
+
+
+
+
+
+
+
+
+
+        // interpolators
+
+
+
+
+
+
+
+
+
+
+        // generators -- > create new colors
+        chroma_1.average = average;
+        chroma_1.bezier = bezier_1;
+        chroma_1.blend = blend_1;
+        chroma_1.cubehelix = cubehelix;
+        chroma_1.mix = chroma_1.interpolate = mix;
+        chroma_1.random = random_1;
+        chroma_1.scale = scale;
+
+        // other utility methods
+        chroma_1.analyze = analyze_1.analyze;
+        chroma_1.contrast = contrast;
+        chroma_1.deltaE = deltaE;
+        chroma_1.distance = distance;
+        chroma_1.limits = analyze_1.limits;
+        chroma_1.valid = valid;
+
+        // scale
+        chroma_1.scales = scales;
+
+        // colors
+        chroma_1.colors = w3cx11_1;
+        chroma_1.brewer = colorbrewer_1;
+
+        var chroma_js = chroma_1;
+
+        return chroma_js;
+
+    })));
+    });
+
+    /* src\Checkbox.svelte generated by Svelte v3.5.3 */
+
+    const file = "src\\Checkbox.svelte";
+
+    function create_fragment(ctx) {
+    	var div, input, t0, label_1, t1, dispose;
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+    			input = element("input");
+    			t0 = space();
+    			label_1 = element("label");
+    			t1 = text(ctx.label);
+    			attr(input, "type", "checkbox");
+    			attr(input, "class", "custom-control-input");
+    			attr(input, "id", ctx.id);
+    			add_location(input, file, 9, 4, 304);
+    			attr(label_1, "class", "custom-control-label");
+    			attr(label_1, "for", ctx.id);
+    			add_location(label_1, file, 10, 4, 393);
+    			attr(div, "class", "custom-control custom-checkbox");
+    			attr(div, "title", ctx.title);
+    			toggle_class(div, "custom-control-inline", ctx.inline);
+    			add_location(div, file, 8, 0, 203);
+    			dispose = listen(input, "change", ctx.input_change_handler);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+    			append(div, input);
+
+    			input.checked = ctx.value;
+
+    			append(div, t0);
+    			append(div, label_1);
+    			append(label_1, t1);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.value) input.checked = ctx.value;
+
+    			if (changed.label) {
+    				set_data(t1, ctx.label);
+    			}
+
+    			if (changed.title) {
+    				attr(div, "title", ctx.title);
+    			}
+
+    			if (changed.inline) {
+    				toggle_class(div, "custom-control-inline", ctx.inline);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			dispose();
+    		}
+    	};
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { value = false, inline = true, label = '', title = '' } = $$props;
+        const id = Math.round(Math.random() * 1e7).toString(36);
+
+    	const writable_props = ['value', 'inline', 'label', 'title'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Checkbox> was created with unknown prop '${key}'`);
+    	});
+
+    	function input_change_handler() {
+    		value = this.checked;
+    		$$invalidate('value', value);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('value' in $$props) $$invalidate('value', value = $$props.value);
+    		if ('inline' in $$props) $$invalidate('inline', inline = $$props.inline);
+    		if ('label' in $$props) $$invalidate('label', label = $$props.label);
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    	};
+
+    	return {
+    		value,
+    		inline,
+    		label,
+    		title,
+    		id,
+    		input_change_handler
+    	};
+    }
+
+    class Checkbox extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, ["value", "inline", "label", "title"]);
+    	}
+
+    	get value() {
+    		throw new Error("<Checkbox>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set value(value) {
+    		throw new Error("<Checkbox>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get inline() {
+    		throw new Error("<Checkbox>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set inline(value) {
+    		throw new Error("<Checkbox>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get label() {
+    		throw new Error("<Checkbox>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set label(value) {
+    		throw new Error("<Checkbox>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<Checkbox>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Checkbox>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* Built-in method references for those with the same name as other `lodash` methods. */
+    var nativeCeil = Math.ceil,
+        nativeMax = Math.max;
+
+    /**
+     * The base implementation of `_.range` and `_.rangeRight` which doesn't
+     * coerce arguments.
+     *
+     * @private
+     * @param {number} start The start of the range.
+     * @param {number} end The end of the range.
+     * @param {number} step The value to increment or decrement by.
+     * @param {boolean} [fromRight] Specify iterating from right to left.
+     * @returns {Array} Returns the range of numbers.
+     */
+    function baseRange(start, end, step, fromRight) {
+      var index = -1,
+          length = nativeMax(nativeCeil((end - start) / (step || 1)), 0),
+          result = Array(length);
+
+      while (length--) {
+        result[fromRight ? length : ++index] = start;
+        start += step;
+      }
+      return result;
+    }
+
+    /**
+     * Performs a
+     * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+     * comparison between two values to determine if they are equivalent.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to compare.
+     * @param {*} other The other value to compare.
+     * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+     * @example
+     *
+     * var object = { 'a': 1 };
+     * var other = { 'a': 1 };
+     *
+     * _.eq(object, object);
+     * // => true
+     *
+     * _.eq(object, other);
+     * // => false
+     *
+     * _.eq('a', 'a');
+     * // => true
+     *
+     * _.eq('a', Object('a'));
+     * // => false
+     *
+     * _.eq(NaN, NaN);
+     * // => true
+     */
+    function eq(value, other) {
+      return value === other || (value !== value && other !== other);
+    }
+
+    /** Detect free variable `global` from Node.js. */
+    var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+    /** Detect free variable `self`. */
+    var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+    /** Used as a reference to the global object. */
+    var root = freeGlobal || freeSelf || Function('return this')();
+
+    /** Built-in value references. */
+    var Symbol = root.Symbol;
+
+    /** Used for built-in method references. */
+    var objectProto = Object.prototype;
+
+    /** Used to check objects for own properties. */
+    var hasOwnProperty = objectProto.hasOwnProperty;
+
+    /**
+     * Used to resolve the
+     * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+     * of values.
+     */
+    var nativeObjectToString = objectProto.toString;
+
+    /** Built-in value references. */
+    var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+    /**
+     * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+     *
+     * @private
+     * @param {*} value The value to query.
+     * @returns {string} Returns the raw `toStringTag`.
+     */
+    function getRawTag(value) {
+      var isOwn = hasOwnProperty.call(value, symToStringTag),
+          tag = value[symToStringTag];
+
+      try {
+        value[symToStringTag] = undefined;
+        var unmasked = true;
+      } catch (e) {}
+
+      var result = nativeObjectToString.call(value);
+      if (unmasked) {
+        if (isOwn) {
+          value[symToStringTag] = tag;
+        } else {
+          delete value[symToStringTag];
+        }
+      }
+      return result;
+    }
+
+    /** Used for built-in method references. */
+    var objectProto$1 = Object.prototype;
+
+    /**
+     * Used to resolve the
+     * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+     * of values.
+     */
+    var nativeObjectToString$1 = objectProto$1.toString;
+
+    /**
+     * Converts `value` to a string using `Object.prototype.toString`.
+     *
+     * @private
+     * @param {*} value The value to convert.
+     * @returns {string} Returns the converted string.
+     */
+    function objectToString(value) {
+      return nativeObjectToString$1.call(value);
+    }
+
+    /** `Object#toString` result references. */
+    var nullTag = '[object Null]',
+        undefinedTag = '[object Undefined]';
+
+    /** Built-in value references. */
+    var symToStringTag$1 = Symbol ? Symbol.toStringTag : undefined;
+
+    /**
+     * The base implementation of `getTag` without fallbacks for buggy environments.
+     *
+     * @private
+     * @param {*} value The value to query.
+     * @returns {string} Returns the `toStringTag`.
+     */
+    function baseGetTag(value) {
+      if (value == null) {
+        return value === undefined ? undefinedTag : nullTag;
+      }
+      return (symToStringTag$1 && symToStringTag$1 in Object(value))
+        ? getRawTag(value)
+        : objectToString(value);
+    }
+
+    /**
+     * Checks if `value` is the
+     * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+     * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+     *
+     * @static
+     * @memberOf _
+     * @since 0.1.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+     * @example
+     *
+     * _.isObject({});
+     * // => true
+     *
+     * _.isObject([1, 2, 3]);
+     * // => true
+     *
+     * _.isObject(_.noop);
+     * // => true
+     *
+     * _.isObject(null);
+     * // => false
+     */
+    function isObject(value) {
+      var type = typeof value;
+      return value != null && (type == 'object' || type == 'function');
+    }
+
+    /** `Object#toString` result references. */
+    var asyncTag = '[object AsyncFunction]',
+        funcTag = '[object Function]',
+        genTag = '[object GeneratorFunction]',
+        proxyTag = '[object Proxy]';
+
+    /**
+     * Checks if `value` is classified as a `Function` object.
+     *
+     * @static
+     * @memberOf _
+     * @since 0.1.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+     * @example
+     *
+     * _.isFunction(_);
+     * // => true
+     *
+     * _.isFunction(/abc/);
+     * // => false
+     */
+    function isFunction(value) {
+      if (!isObject(value)) {
+        return false;
+      }
+      // The use of `Object#toString` avoids issues with the `typeof` operator
+      // in Safari 9 which returns 'object' for typed arrays and other constructors.
+      var tag = baseGetTag(value);
+      return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+    }
+
+    /** Used as references for various `Number` constants. */
+    var MAX_SAFE_INTEGER = 9007199254740991;
+
+    /**
+     * Checks if `value` is a valid array-like length.
+     *
+     * **Note:** This method is loosely based on
+     * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+     * @example
+     *
+     * _.isLength(3);
+     * // => true
+     *
+     * _.isLength(Number.MIN_VALUE);
+     * // => false
+     *
+     * _.isLength(Infinity);
+     * // => false
+     *
+     * _.isLength('3');
+     * // => false
+     */
+    function isLength(value) {
+      return typeof value == 'number' &&
+        value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+    }
+
+    /**
+     * Checks if `value` is array-like. A value is considered array-like if it's
+     * not a function and has a `value.length` that's an integer greater than or
+     * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+     * @example
+     *
+     * _.isArrayLike([1, 2, 3]);
+     * // => true
+     *
+     * _.isArrayLike(document.body.children);
+     * // => true
+     *
+     * _.isArrayLike('abc');
+     * // => true
+     *
+     * _.isArrayLike(_.noop);
+     * // => false
+     */
+    function isArrayLike(value) {
+      return value != null && isLength(value.length) && !isFunction(value);
+    }
+
+    /** Used as references for various `Number` constants. */
+    var MAX_SAFE_INTEGER$1 = 9007199254740991;
+
+    /** Used to detect unsigned integer values. */
+    var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+    /**
+     * Checks if `value` is a valid array-like index.
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+     * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+     */
+    function isIndex(value, length) {
+      var type = typeof value;
+      length = length == null ? MAX_SAFE_INTEGER$1 : length;
+
+      return !!length &&
+        (type == 'number' ||
+          (type != 'symbol' && reIsUint.test(value))) &&
+            (value > -1 && value % 1 == 0 && value < length);
+    }
+
+    /**
+     * Checks if the given arguments are from an iteratee call.
+     *
+     * @private
+     * @param {*} value The potential iteratee value argument.
+     * @param {*} index The potential iteratee index or key argument.
+     * @param {*} object The potential iteratee object argument.
+     * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+     *  else `false`.
+     */
+    function isIterateeCall(value, index, object) {
+      if (!isObject(object)) {
+        return false;
+      }
+      var type = typeof index;
+      if (type == 'number'
+            ? (isArrayLike(object) && isIndex(index, object.length))
+            : (type == 'string' && index in object)
+          ) {
+        return eq(object[index], value);
+      }
+      return false;
+    }
+
+    /**
+     * Checks if `value` is object-like. A value is object-like if it's not `null`
+     * and has a `typeof` result of "object".
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+     * @example
+     *
+     * _.isObjectLike({});
+     * // => true
+     *
+     * _.isObjectLike([1, 2, 3]);
+     * // => true
+     *
+     * _.isObjectLike(_.noop);
+     * // => false
+     *
+     * _.isObjectLike(null);
+     * // => false
+     */
+    function isObjectLike(value) {
+      return value != null && typeof value == 'object';
+    }
+
+    /** `Object#toString` result references. */
+    var symbolTag = '[object Symbol]';
+
+    /**
+     * Checks if `value` is classified as a `Symbol` primitive or object.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+     * @example
+     *
+     * _.isSymbol(Symbol.iterator);
+     * // => true
+     *
+     * _.isSymbol('abc');
+     * // => false
+     */
+    function isSymbol(value) {
+      return typeof value == 'symbol' ||
+        (isObjectLike(value) && baseGetTag(value) == symbolTag);
+    }
+
+    /** Used as references for various `Number` constants. */
+    var NAN = 0 / 0;
+
+    /** Used to match leading and trailing whitespace. */
+    var reTrim = /^\s+|\s+$/g;
+
+    /** Used to detect bad signed hexadecimal string values. */
+    var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+    /** Used to detect binary string values. */
+    var reIsBinary = /^0b[01]+$/i;
+
+    /** Used to detect octal string values. */
+    var reIsOctal = /^0o[0-7]+$/i;
+
+    /** Built-in method references without a dependency on `root`. */
+    var freeParseInt = parseInt;
+
+    /**
+     * Converts `value` to a number.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to process.
+     * @returns {number} Returns the number.
+     * @example
+     *
+     * _.toNumber(3.2);
+     * // => 3.2
+     *
+     * _.toNumber(Number.MIN_VALUE);
+     * // => 5e-324
+     *
+     * _.toNumber(Infinity);
+     * // => Infinity
+     *
+     * _.toNumber('3.2');
+     * // => 3.2
+     */
+    function toNumber(value) {
+      if (typeof value == 'number') {
+        return value;
+      }
+      if (isSymbol(value)) {
+        return NAN;
+      }
+      if (isObject(value)) {
+        var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+        value = isObject(other) ? (other + '') : other;
+      }
+      if (typeof value != 'string') {
+        return value === 0 ? value : +value;
+      }
+      value = value.replace(reTrim, '');
+      var isBinary = reIsBinary.test(value);
+      return (isBinary || reIsOctal.test(value))
+        ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+        : (reIsBadHex.test(value) ? NAN : +value);
+    }
+
+    /** Used as references for various `Number` constants. */
+    var INFINITY = 1 / 0,
+        MAX_INTEGER = 1.7976931348623157e+308;
+
+    /**
+     * Converts `value` to a finite number.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.12.0
+     * @category Lang
+     * @param {*} value The value to convert.
+     * @returns {number} Returns the converted number.
+     * @example
+     *
+     * _.toFinite(3.2);
+     * // => 3.2
+     *
+     * _.toFinite(Number.MIN_VALUE);
+     * // => 5e-324
+     *
+     * _.toFinite(Infinity);
+     * // => 1.7976931348623157e+308
+     *
+     * _.toFinite('3.2');
+     * // => 3.2
+     */
+    function toFinite(value) {
+      if (!value) {
+        return value === 0 ? value : 0;
+      }
+      value = toNumber(value);
+      if (value === INFINITY || value === -INFINITY) {
+        var sign = (value < 0 ? -1 : 1);
+        return sign * MAX_INTEGER;
+      }
+      return value === value ? value : 0;
+    }
+
+    /**
+     * Creates a `_.range` or `_.rangeRight` function.
+     *
+     * @private
+     * @param {boolean} [fromRight] Specify iterating from right to left.
+     * @returns {Function} Returns the new range function.
+     */
+    function createRange(fromRight) {
+      return function(start, end, step) {
+        if (step && typeof step != 'number' && isIterateeCall(start, end, step)) {
+          end = step = undefined;
+        }
+        // Ensure the sign of `-0` is preserved.
+        start = toFinite(start);
+        if (end === undefined) {
+          end = start;
+          start = 0;
+        } else {
+          end = toFinite(end);
+        }
+        step = step === undefined ? (start < end ? 1 : -1) : toFinite(step);
+        return baseRange(start, end, step, fromRight);
+      };
+    }
+
+    /**
+     * Creates an array of numbers (positive and/or negative) progressing from
+     * `start` up to, but not including, `end`. A step of `-1` is used if a negative
+     * `start` is specified without an `end` or `step`. If `end` is not specified,
+     * it's set to `start` with `start` then set to `0`.
+     *
+     * **Note:** JavaScript follows the IEEE-754 standard for resolving
+     * floating-point values which can produce unexpected results.
+     *
+     * @static
+     * @since 0.1.0
+     * @memberOf _
+     * @category Util
+     * @param {number} [start=0] The start of the range.
+     * @param {number} end The end of the range.
+     * @param {number} [step=1] The value to increment or decrement by.
+     * @returns {Array} Returns the range of numbers.
+     * @see _.inRange, _.rangeRight
+     * @example
+     *
+     * _.range(4);
+     * // => [0, 1, 2, 3]
+     *
+     * _.range(-4);
+     * // => [0, -1, -2, -3]
+     *
+     * _.range(1, 5);
+     * // => [1, 2, 3, 4]
+     *
+     * _.range(0, 20, 5);
+     * // => [0, 5, 10, 15]
+     *
+     * _.range(0, -4, -1);
+     * // => [0, -1, -2, -3]
+     *
+     * _.range(1, 4, 0);
+     * // => [1, 1, 1]
+     *
+     * _.range(0);
+     * // => []
+     */
+    var range = createRange();
+
+    /* src\Color.svelte generated by Svelte v3.5.3 */
+
+    const file$1 = "src\\Color.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.c = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.c = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.l = list[i];
+    	return child_ctx;
+    }
+
+    // (87:4) {#if open && !dragging}
+    function create_if_block(ctx) {
+    	var div7, div6, div0, t0, div1, t1, div5, div2, span0, t3, t4, div3, span1, t6, t7, div4, span2, t9;
+
+    	var each_value_2 = ctx.lightness;
+
+    	var each_blocks_2 = [];
+
+    	for (var i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks_2[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	}
+
+    	var each_value_1 = ctx.saturation;
+
+    	var each_blocks_1 = [];
+
+    	for (var i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	var each_value = ctx.hue;
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	return {
+    		c: function create() {
+    			div7 = element("div");
+    			div6 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div1 = element("div");
+    			t1 = space();
+    			div5 = element("div");
+    			div2 = element("div");
+    			span0 = element("span");
+    			span0.textContent = "L";
+    			t3 = space();
+
+    			for (var i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].c();
+    			}
+
+    			t4 = space();
+    			div3 = element("div");
+    			span1 = element("span");
+    			span1.textContent = "S";
+    			t6 = space();
+
+    			for (var i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t7 = space();
+    			div4 = element("div");
+    			span2 = element("span");
+    			span2.textContent = "H";
+    			t9 = space();
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr(div0, "class", "arrow");
+    			set_style(div0, "left", "121px");
+    			add_location(div0, file$1, 92, 16, 2546);
+    			attr(div1, "class", "popover-header svelte-sklnnk");
+    			attr(div1, "aria-hidden", "true");
+    			add_location(div1, file$1, 93, 16, 2610);
+    			attr(span0, "class", "lbl svelte-sklnnk");
+    			add_location(span0, file$1, 96, 24, 2778);
+    			attr(div2, "class", "color-row svelte-sklnnk");
+    			add_location(div2, file$1, 95, 20, 2729);
+    			attr(span1, "class", "lbl svelte-sklnnk");
+    			add_location(span1, file$1, 102, 24, 3100);
+    			attr(div3, "class", "color-row svelte-sklnnk");
+    			add_location(div3, file$1, 101, 20, 3051);
+    			attr(span2, "class", "lbl svelte-sklnnk");
+    			add_location(span2, file$1, 108, 24, 3423);
+    			attr(div4, "class", "color-row svelte-sklnnk");
+    			add_location(div4, file$1, 107, 20, 3374);
+    			attr(div5, "class", "popover-body svelte-sklnnk");
+    			add_location(div5, file$1, 94, 16, 2681);
+    			attr(div6, "class", "popover fade show bs-popover-bottom svelte-sklnnk");
+    			attr(div6, "role", "tooltip");
+    			attr(div6, "x-placement", "bottom");
+    			add_location(div6, file$1, 88, 12, 2392);
+    			set_style(div7, "position", "absolute");
+    			set_style(div7, "top", "0");
+    			set_style(div7, "left", "0");
+    			set_style(div7, "right", "0");
+    			set_style(div7, "height", "40px");
+    			add_location(div7, file$1, 87, 8, 2305);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div7, anchor);
+    			append(div7, div6);
+    			append(div6, div0);
+    			append(div6, t0);
+    			append(div6, div1);
+    			append(div6, t1);
+    			append(div6, div5);
+    			append(div5, div2);
+    			append(div2, span0);
+    			append(div2, t3);
+
+    			for (var i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].m(div2, null);
+    			}
+
+    			append(div5, t4);
+    			append(div5, div3);
+    			append(div3, span1);
+    			append(div3, t6);
+
+    			for (var i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div3, null);
+    			}
+
+    			append(div5, t7);
+    			append(div5, div4);
+    			append(div4, span2);
+    			append(div4, t9);
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div4, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.lightness) {
+    				each_value_2 = ctx.lightness;
+
+    				for (var i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+    					if (each_blocks_2[i]) {
+    						each_blocks_2[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks_2[i] = create_each_block_2(child_ctx);
+    						each_blocks_2[i].c();
+    						each_blocks_2[i].m(div2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_2.length; i += 1) {
+    					each_blocks_2[i].d(1);
+    				}
+    				each_blocks_2.length = each_value_2.length;
+    			}
+
+    			if (changed.saturation) {
+    				each_value_1 = ctx.saturation;
+
+    				for (var i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div3, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (changed.hue) {
+    				each_value = ctx.hue;
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div4, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div7);
+    			}
+
+    			destroy_each(each_blocks_2, detaching);
+
+    			destroy_each(each_blocks_1, detaching);
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    }
+
+    // (98:24) {#each lightness as l}
+    function create_each_block_2(ctx) {
+    	var span, dispose;
+
+    	function click_handler() {
+    		return ctx.click_handler(ctx);
+    	}
+
+    	return {
+    		c: function create() {
+    			span = element("span");
+    			attr(span, "class", "color svelte-sklnnk");
+    			set_style(span, "background", ctx.l.hex());
+    			add_location(span, file$1, 98, 28, 2882);
+    			dispose = listen(span, "click", click_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, span, anchor);
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			if (changed.lightness) {
+    				set_style(span, "background", ctx.l.hex());
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(span);
+    			}
+
+    			dispose();
+    		}
+    	};
+    }
+
+    // (104:24) {#each saturation as c}
+    function create_each_block_1(ctx) {
+    	var span, dispose;
+
+    	function click_handler_1() {
+    		return ctx.click_handler_1(ctx);
+    	}
+
+    	return {
+    		c: function create() {
+    			span = element("span");
+    			attr(span, "class", "color svelte-sklnnk");
+    			set_style(span, "background", ctx.c.hex());
+    			add_location(span, file$1, 104, 28, 3205);
+    			dispose = listen(span, "click", click_handler_1);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, span, anchor);
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			if (changed.saturation) {
+    				set_style(span, "background", ctx.c.hex());
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(span);
+    			}
+
+    			dispose();
+    		}
+    	};
+    }
+
+    // (110:24) {#each hue as c}
+    function create_each_block(ctx) {
+    	var span, dispose;
+
+    	function click_handler_2() {
+    		return ctx.click_handler_2(ctx);
+    	}
+
+    	return {
+    		c: function create() {
+    			span = element("span");
+    			attr(span, "class", "color svelte-sklnnk");
+    			set_style(span, "background", ctx.c.hex());
+    			add_location(span, file$1, 110, 28, 3521);
+    			dispose = listen(span, "click", click_handler_2);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, span, anchor);
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			if (changed.hue) {
+    				set_style(span, "background", ctx.c.hex());
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(span);
+    			}
+
+    			dispose();
+    		}
+    	};
+    }
+
+    function create_fragment$1(ctx) {
+    	var span1, span0, t0_value = ctx.value.hex().substr(1), t0, t1, dispose;
+
+    	var if_block = (ctx.open && !ctx.dragging) && create_if_block(ctx);
+
+    	return {
+    		c: function create() {
+    			span1 = element("span");
+    			span0 = element("span");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			attr(span0, "class", "hex svelte-sklnnk");
+    			add_location(span0, file$1, 85, 4, 2218);
+    			attr(span1, "draggable", "true");
+    			attr(span1, "class", "badge shadow-sm svelte-sklnnk");
+    			set_style(span1, "background", ctx.value.hex());
+    			toggle_class(span1, "inverted", ctx.value.lab()[0] < 50);
+    			add_location(span1, file$1, 75, 0, 1838);
+
+    			dispose = [
+    				listen(span1, "dragstart", ctx.dragstart_handler),
+    				listen(span1, "dragend", ctx.dragend_handler),
+    				listen(span1, "mouseenter", ctx.toggleEditOpen),
+    				listen(span1, "mouseleave", ctx.toggleEditClose),
+    				listen(span1, "click", stop_propagation(click_handler_3))
+    			];
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, span1, anchor);
+    			append(span1, span0);
+    			append(span0, t0);
+    			append(span1, t1);
+    			if (if_block) if_block.m(span1, null);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.value) && t0_value !== (t0_value = ctx.value.hex().substr(1))) {
+    				set_data(t0, t0_value);
+    			}
+
+    			if (ctx.open && !ctx.dragging) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					if_block.m(span1, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (changed.value) {
+    				set_style(span1, "background", ctx.value.hex());
+    				toggle_class(span1, "inverted", ctx.value.lab()[0] < 50);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(span1);
+    			}
+
+    			if (if_block) if_block.d();
+    			run_all(dispose);
+    		}
+    	};
+    }
+
+    function click_handler_3() {
+    	return false;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	
+        let { value = chroma('red') } = $$props;
+
+        let open = false;
+        let dragging = false;
+
+        function toggleEditOpen() {
+            $$invalidate('open', open = true);
+        }
+        function toggleEditClose() {
+            $$invalidate('open', open = false);
+        }
+
+    	const writable_props = ['value'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Color> was created with unknown prop '${key}'`);
+    	});
+
+    	function click_handler({ l }) {
+    		const $$result = (value = l);
+    		$$invalidate('value', value);
+    		return $$result;
+    	}
+
+    	function click_handler_1({ c }) {
+    		const $$result = (value = c);
+    		$$invalidate('value', value);
+    		return $$result;
+    	}
+
+    	function click_handler_2({ c }) {
+    		const $$result = (value = c);
+    		$$invalidate('value', value);
+    		return $$result;
+    	}
+
+    	function dragstart_handler(event) {
+    		const $$result = dragging = true;
+    		$$invalidate('dragging', dragging);
+    		return $$result;
+    	}
+
+    	function dragend_handler(event) {
+    		const $$result = ((dragging = false), (open = false));
+    		$$invalidate('dragging', dragging); $$invalidate('open', open);
+    		return $$result;
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('value' in $$props) $$invalidate('value', value = $$props.value);
+    	};
+
+    	let lch, lightness, saturation, hue;
+
+    	$$self.$$.update = ($$dirty = { value: 1, lch: 1 }) => {
+    		if ($$dirty.value) { $$invalidate('lch', lch = value.lch()); }
+    		if ($$dirty.lch) { $$invalidate('lightness', lightness = range(-5, 6)
+                    .map(l => lch[0] + Math.pow(l / 8, 2) * 80 * (l < 0 ? -1 : 1))
+                    .map(l => chroma.lch(l, lch[1], lch[2]))); }
+    		if ($$dirty.lch) { $$invalidate('saturation', saturation = range(-5, 6)
+                    .map(s => Math.max(0, lch[1] + Math.pow(s / 5, 2) * 80 * (s < 0 ? -1 : 1)))
+                    .map(s => chroma.lch(lch[0], s, lch[2]))); }
+    		if ($$dirty.lch) { $$invalidate('hue', hue = range(-5, 6)
+                    .map(h => lch[2] + Math.pow(h / 5, 2) * 80 * (h < 0 ? -1 : 1))
+                    .map(h =>
+                        chroma.lch(lch[0], lch[1], h < 0 ? h + 360 : h > 360 ? h - 360 : h)
+                    )); }
+    	};
+
+    	return {
+    		value,
+    		open,
+    		dragging,
+    		toggleEditOpen,
+    		toggleEditClose,
+    		lightness,
+    		saturation,
+    		hue,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		dragstart_handler,
+    		dragend_handler
+    	};
+    }
+
+    class Color extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, ["value"]);
+    	}
+
+    	get value() {
+    		throw new Error("<Color>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set value(value) {
+    		throw new Error("<Color>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\ColorList.svelte generated by Svelte v3.5.3 */
+
+    const file$2 = "src\\ColorList.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.color = list[i];
+    	child_ctx.each_value = list;
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (76:0) {#if !edit}
+    function create_if_block$1(ctx) {
+    	var div, t, span, current, dispose;
+
+    	var each_value = ctx.colors;
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t = space();
+    			span = element("span");
+    			attr(span, "class", "inv svelte-r8qk73");
+    			add_location(span, file$2, 84, 8, 2098);
+    			attr(div, "class", "form-control svelte-r8qk73");
+    			add_location(div, file$2, 76, 4, 1792);
+
+    			dispose = [
+    				listen(div, "drop", prevent_default(ctx.drop)),
+    				listen(div, "dragover", prevent_default(dragover)),
+    				listen(div, "click", ctx.enterEditMode)
+    			];
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			append(div, t);
+    			append(div, span);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.colors) {
+    				each_value = ctx.colors;
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div, t);
+    					}
+    				}
+
+    				group_outros();
+    				for (; i < each_blocks.length; i += 1) out(i);
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (var i = 0; i < each_value.length; i += 1) transition_in(each_blocks[i]);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) transition_out(each_blocks[i]);
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			run_all(dispose);
+    		}
+    	};
+    }
+
+    // (82:8) {#each colors as color, i}
+    function create_each_block$1(ctx) {
+    	var updating_value, current;
+
+    	function color_value_binding(value) {
+    		ctx.color_value_binding.call(null, value, ctx);
+    		updating_value = true;
+    		add_flush_callback(() => updating_value = false);
+    	}
+
+    	function dragstart_handler(...args) {
+    		return ctx.dragstart_handler(ctx, ...args);
+    	}
+
+    	let color_props = {};
+    	if (ctx.color !== void 0) {
+    		color_props.value = ctx.color;
+    	}
+    	var color = new Color({ props: color_props, $$inline: true });
+
+    	add_binding_callback(() => bind(color, 'value', color_value_binding));
+    	color.$on("dragstart", dragstart_handler);
+
+    	return {
+    		c: function create() {
+    			color.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(color, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			var color_changes = {};
+    			if (!updating_value && changed.colors) {
+    				color_changes.value = ctx.color;
+    			}
+    			color.$set(color_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(color.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(color.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(color, detaching);
+    		}
+    	};
+    }
+
+    function create_fragment$2(ctx) {
+    	var input_1, t, if_block_anchor, current, dispose;
+
+    	var if_block = (!ctx.edit) && create_if_block$1(ctx);
+
+    	return {
+    		c: function create() {
+    			input_1 = element("input");
+    			t = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			attr(input_1, "type", "text");
+    			attr(input_1, "class", "form-control svelte-r8qk73");
+    			toggle_class(input_1, "hidden", !ctx.edit);
+    			add_location(input_1, file$2, 68, 0, 1614);
+
+    			dispose = [
+    				listen(input_1, "input", ctx.input_1_input_handler),
+    				listen(input_1, "blur", ctx.exitEditMode)
+    			];
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, input_1, anchor);
+
+    			input_1.value = ctx.colorString;
+
+    			add_binding_callback(() => ctx.input_1_binding(input_1, null));
+    			insert(target, t, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.colorString && (input_1.value !== ctx.colorString)) input_1.value = ctx.colorString;
+    			if (changed.items) {
+    				ctx.input_1_binding(null, input_1);
+    				ctx.input_1_binding(input_1, null);
+    			}
+
+    			if (changed.edit) {
+    				toggle_class(input_1, "hidden", !ctx.edit);
+    			}
+
+    			if (!ctx.edit) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(input_1);
+    			}
+
+    			ctx.input_1_binding(null, input_1);
+
+    			if (detaching) {
+    				detach(t);
+    			}
+
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach(if_block_anchor);
+    			}
+
+    			run_all(dispose);
+    		}
+    	};
+    }
+
+    function dragstart(event, index) {
+        event.dataTransfer.setData('index', index);
+    }
+
+    function dragover(event) {
+        event.dataTransfer.dropEffect = 'move';
+    }
+
+    function findIndex(el) {
+        const siblings = el.parentNode.children;
+        for (let i = 0; i < siblings.length; i++) {
+            if (siblings[i] === el) return i;
+        }
+        return -1;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	
+
+        let { colors } = $$props;
+        let edit = false;
+        let input;
+
+        let colorString = '';
+
+        function enterEditMode() {
+            $$invalidate('edit', edit = true);
+            $$invalidate('colorString', colorString = colors.map(c => c.name()).join(', '));
+            input.focus();
+        }
+
+        function exitEditMode() {
+            $$invalidate('edit', edit = false);
+            $$invalidate('colors', colors = colorString
+                .split(/\s*[,|\s]\s*/)
+                .filter(c => chroma.valid(c))
+                .map(c => chroma(c)));
+        }
+
+        function drop(event) {
+            const index = +event.dataTransfer.getData('index');
+            const newIndex = findIndex(event.target);
+            const col = colors.splice(index, 1, null)[0];
+            colors.splice(newIndex, 0, col);
+            $$invalidate('colors', colors = colors.filter(c => c !== null));
+        }
+
+    	const writable_props = ['colors'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<ColorList> was created with unknown prop '${key}'`);
+    	});
+
+    	function input_1_input_handler() {
+    		colorString = this.value;
+    		$$invalidate('colorString', colorString);
+    	}
+
+    	function input_1_binding($$node, check) {
+    		input = $$node;
+    		$$invalidate('input', input);
+    	}
+
+    	function color_value_binding(value, { color, each_value, i }) {
+    		each_value[i] = value;
+    		$$invalidate('colors', colors);
+    	}
+
+    	function dragstart_handler({ i }, event) {
+    		return dragstart(event, i);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('colors' in $$props) $$invalidate('colors', colors = $$props.colors);
+    	};
+
+    	return {
+    		colors,
+    		edit,
+    		input,
+    		colorString,
+    		enterEditMode,
+    		exitEditMode,
+    		drop,
+    		input_1_input_handler,
+    		input_1_binding,
+    		color_value_binding,
+    		dragstart_handler
+    	};
+    }
+
+    class ColorList extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, ["colors"]);
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.colors === undefined && !('colors' in props)) {
+    			console.warn("<ColorList> was created without expected prop 'colors'");
+    		}
+    	}
+
+    	get colors() {
+    		throw new Error("<ColorList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<ColorList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\InputColors.svelte generated by Svelte v3.5.3 */
+
+    const file$3 = "src\\InputColors.svelte";
+
+    // (12:4) {#if diverging}
+    function create_if_block$2(ctx) {
+    	var div, updating_colors, current;
+
+    	function colorlist_colors_binding_1(value) {
+    		ctx.colorlist_colors_binding_1.call(null, value);
+    		updating_colors = true;
+    		add_flush_callback(() => updating_colors = false);
+    	}
+
+    	let colorlist_props = {};
+    	if (ctx.colors2 !== void 0) {
+    		colorlist_props.colors = ctx.colors2;
+    	}
+    	var colorlist = new ColorList({ props: colorlist_props, $$inline: true });
+
+    	add_binding_callback(() => bind(colorlist, 'colors', colorlist_colors_binding_1));
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+    			colorlist.$$.fragment.c();
+    			attr(div, "class", "col-md");
+    			add_location(div, file$3, 12, 4, 283);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+    			mount_component(colorlist, div, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var colorlist_changes = {};
+    			if (!updating_colors && changed.colors2) {
+    				colorlist_changes.colors = ctx.colors2;
+    			}
+    			colorlist.$set(colorlist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(colorlist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(colorlist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			destroy_component(colorlist, );
+    		}
+    	};
+    }
+
+    function create_fragment$3(ctx) {
+    	var div1, div0, updating_colors, t, current;
+
+    	function colorlist_colors_binding(value) {
+    		ctx.colorlist_colors_binding.call(null, value);
+    		updating_colors = true;
+    		add_flush_callback(() => updating_colors = false);
+    	}
+
+    	let colorlist_props = {};
+    	if (ctx.colors !== void 0) {
+    		colorlist_props.colors = ctx.colors;
+    	}
+    	var colorlist = new ColorList({ props: colorlist_props, $$inline: true });
+
+    	add_binding_callback(() => bind(colorlist, 'colors', colorlist_colors_binding));
+
+    	var if_block = (ctx.diverging) && create_if_block$2(ctx);
+
+    	return {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			colorlist.$$.fragment.c();
+    			t = space();
+    			if (if_block) if_block.c();
+    			attr(div0, "class", "col-md");
+    			add_location(div0, file$3, 8, 4, 189);
+    			attr(div1, "class", "row");
+    			add_location(div1, file$3, 7, 0, 166);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div1, anchor);
+    			append(div1, div0);
+    			mount_component(colorlist, div0, null);
+    			append(div1, t);
+    			if (if_block) if_block.m(div1, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var colorlist_changes = {};
+    			if (!updating_colors && changed.colors) {
+    				colorlist_changes.colors = ctx.colors;
+    			}
+    			colorlist.$set(colorlist_changes);
+
+    			if (ctx.diverging) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    					transition_in(if_block, 1);
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div1, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(colorlist.$$.fragment, local);
+
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(colorlist.$$.fragment, local);
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div1);
+    			}
+
+    			destroy_component(colorlist, );
+
+    			if (if_block) if_block.d();
+    		}
+    	};
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { colors = [], colors2 = [], diverging = false } = $$props;
+
+    	const writable_props = ['colors', 'colors2', 'diverging'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<InputColors> was created with unknown prop '${key}'`);
+    	});
+
+    	function colorlist_colors_binding(value) {
+    		colors = value;
+    		$$invalidate('colors', colors);
+    	}
+
+    	function colorlist_colors_binding_1(value) {
+    		colors2 = value;
+    		$$invalidate('colors2', colors2);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('colors' in $$props) $$invalidate('colors', colors = $$props.colors);
+    		if ('colors2' in $$props) $$invalidate('colors2', colors2 = $$props.colors2);
+    		if ('diverging' in $$props) $$invalidate('diverging', diverging = $$props.diverging);
+    	};
+
+    	return {
+    		colors,
+    		colors2,
+    		diverging,
+    		colorlist_colors_binding,
+    		colorlist_colors_binding_1
+    	};
+    }
+
+    class InputColors extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, ["colors", "colors2", "diverging"]);
+    	}
+
+    	get colors() {
+    		throw new Error("<InputColors>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<InputColors>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors2() {
+    		throw new Error("<InputColors>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors2(value) {
+    		throw new Error("<InputColors>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get diverging() {
+    		throw new Error("<InputColors>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set diverging(value) {
+    		throw new Error("<InputColors>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* globals blinder */
+
+    function colorBlindCheck(colors) {
+        const types = ['deuteranopia', 'protanopia', 'tritanopia'];
+        const invalid = [];
+        for (let i = 0; i < types.length; i++) {
+            if (!checkType(colors, types[i])) invalid.push(types[i]);
+        }
+        return invalid;
+    }
+
+    function colorBlindSim(color, type) {
+        return blinder[type](chroma(color).hex());
+    }
+
+    function checkType(colors, type) {
+        let notok = 0;
+        const ratioThreshold = 5;
+        const smallestPerceivableDistance = 9;
+        const k = colors.length;
+        if (!k) {
+            return true;
+        }
+        // compute distances between colors
+        for (let a = 0; a < k; a++) {
+            for (let b = a + 1; b < k; b++) {
+                const colorA = chroma(colors[a]);
+                const colorB = chroma(colors[b]);
+                const distanceNorm = difference(colorA, colorB);
+                if (distanceNorm < smallestPerceivableDistance) continue;
+                const aSim = blinder[type](colorA.hex());
+                const bSim = blinder[type](colorB.hex());
+                const distanceSim = difference(aSim, bSim);
+                const isNotOk =
+                    distanceNorm / distanceSim > ratioThreshold &&
+                    distanceSim < smallestPerceivableDistance;
+                // count combinations that are problematic
+                if (isNotOk) notok++;
+            }
+        }
+        return notok === 0;
+    }
+
+    function difference(colorA, colorB) {
+        return 0.5 * (chroma.deltaE(colorA, colorB) + chroma.deltaE(colorB, colorA));
+    }
+
+    /* src\PalettePreview.svelte generated by Svelte v3.5.3 */
+
+    const file$4 = "src\\PalettePreview.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.step = list[i];
+    	return child_ctx;
+    }
+
+    // (95:4) {#each steps as step}
+    function create_each_block$2(ctx) {
+    	var div;
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+    			attr(div, "class", "step svelte-25x2d4");
+    			set_style(div, "background", (ctx.simulate === 'none' ? ctx.step : colorBlindSim(ctx.step, ctx.simulate)));
+    			add_location(div, file$4, 95, 8, 3038);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.simulate || changed.steps || changed.colorBlindSim) {
+    				set_style(div, "background", (ctx.simulate === 'none' ? ctx.step : colorBlindSim(ctx.step, ctx.simulate)));
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+    		}
+    	};
+    }
+
+    function create_fragment$4(ctx) {
+    	var div;
+
+    	var each_value = ctx.steps;
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr(div, "class", "palette svelte-25x2d4");
+    			add_location(div, file$4, 93, 0, 2980);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.simulate || changed.steps || changed.colorBlindSim) {
+    				each_value = ctx.steps;
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	
+
+        let { colors = ['red'], colors2 = [], numColors = 7, diverging = false, bezier, correctLightness, simulate = 'none', steps } = $$props;
+
+        function autoGradient(color, numColors) {
+            const lab = chroma(color).lab();
+            const lRange = 100 * (0.95 - 1 / numColors);
+            const lStep = lRange / (numColors - 1);
+            const lStart = (100 - lRange) * 0.5;
+            const range$1 = range(lStart, lStart + numColors * lStep, lStep);
+            let offset = 0;
+            if (!diverging) {
+                offset = 9999;
+                for (let i = 0; i < numColors; i++) {
+                    const diff = lab[0] - range$1[i];
+                    if (Math.abs(diff) < Math.abs(offset)) {
+                        offset = diff;
+                    }
+                }
+            }
+            return range$1.map(l => chroma.lab([l + offset, lab[1], lab[2]]));
+        }
+
+        function autoColors(color, numColors, reverse = false) {
+            if (diverging) {
+                const generated = autoGradient(color, 3).concat(chroma('#f5f5f5'));
+                if (reverse) generated.reverse();
+                return generated;
+            }
+            return autoGradient(color, numColors);
+        }
+
+    	const writable_props = ['colors', 'colors2', 'numColors', 'diverging', 'bezier', 'correctLightness', 'simulate', 'steps'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<PalettePreview> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('colors' in $$props) $$invalidate('colors', colors = $$props.colors);
+    		if ('colors2' in $$props) $$invalidate('colors2', colors2 = $$props.colors2);
+    		if ('numColors' in $$props) $$invalidate('numColors', numColors = $$props.numColors);
+    		if ('diverging' in $$props) $$invalidate('diverging', diverging = $$props.diverging);
+    		if ('bezier' in $$props) $$invalidate('bezier', bezier = $$props.bezier);
+    		if ('correctLightness' in $$props) $$invalidate('correctLightness', correctLightness = $$props.correctLightness);
+    		if ('simulate' in $$props) $$invalidate('simulate', simulate = $$props.simulate);
+    		if ('steps' in $$props) $$invalidate('steps', steps = $$props.steps);
+    	};
+
+    	let even, numColorsLeft, numColorsRight, genColors, genColors2, stepsLeft, stepsRight;
+
+    	$$self.$$.update = ($$dirty = { numColors: 1, diverging: 1, even: 1, colors: 1, numColorsLeft: 1, colors2: 1, numColorsRight: 1, bezier: 1, genColors: 1, correctLightness: 1, genColors2: 1, stepsLeft: 1, stepsRight: 1 }) => {
+    		if ($$dirty.numColors) { $$invalidate('even', even = numColors % 2 === 0); }
+    		if ($$dirty.diverging || $$dirty.numColors || $$dirty.even) { $$invalidate('numColorsLeft', numColorsLeft = diverging ? Math.ceil(numColors / 2) + (even ? 1 : 0) : numColors); }
+    		if ($$dirty.diverging || $$dirty.numColors || $$dirty.even) { $$invalidate('numColorsRight', numColorsRight = diverging ? Math.ceil(numColors / 2) + (even ? 1 : 0) : 0); }
+    		if ($$dirty.colors || $$dirty.numColorsLeft) { $$invalidate('genColors', genColors = colors.length !== 1 ? colors : autoColors(colors[0], numColorsLeft)); }
+    		if ($$dirty.colors2 || $$dirty.numColorsRight) { $$invalidate('genColors2', genColors2 = colors2.length !== 1 ? colors2 : autoColors(colors2[0], numColorsRight, true)); }
+    		if ($$dirty.colors || $$dirty.bezier || $$dirty.genColors || $$dirty.correctLightness || $$dirty.numColorsLeft) { $$invalidate('stepsLeft', stepsLeft = colors.length
+                    ? chroma
+                          .scale(bezier && colors.length > 1 ? chroma.bezier(genColors) : genColors)
+                          .correctLightness(correctLightness)
+                          .colors(numColorsLeft)
+                    : []); }
+    		if ($$dirty.diverging || $$dirty.colors2 || $$dirty.bezier || $$dirty.genColors2 || $$dirty.correctLightness || $$dirty.numColorsRight) { $$invalidate('stepsRight', stepsRight = diverging && colors2.length
+                    ? chroma
+                          .scale(bezier && colors2.length > 1 ? chroma.bezier(genColors2) : genColors2)
+                          .correctLightness(correctLightness)
+                          .colors(numColorsRight)
+                    : []); }
+    		if ($$dirty.even || $$dirty.diverging || $$dirty.stepsLeft || $$dirty.stepsRight) { $$invalidate('steps', steps = (even && diverging ? stepsLeft.slice(0, stepsLeft.length - 1) : stepsLeft).concat(
+                    stepsRight.slice(1)
+                )); }
+    	};
+
+    	return {
+    		colors,
+    		colors2,
+    		numColors,
+    		diverging,
+    		bezier,
+    		correctLightness,
+    		simulate,
+    		steps
+    	};
+    }
+
+    class PalettePreview extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, ["colors", "colors2", "numColors", "diverging", "bezier", "correctLightness", "simulate", "steps"]);
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.bezier === undefined && !('bezier' in props)) {
+    			console.warn("<PalettePreview> was created without expected prop 'bezier'");
+    		}
+    		if (ctx.correctLightness === undefined && !('correctLightness' in props)) {
+    			console.warn("<PalettePreview> was created without expected prop 'correctLightness'");
+    		}
+    		if (ctx.steps === undefined && !('steps' in props)) {
+    			console.warn("<PalettePreview> was created without expected prop 'steps'");
+    		}
+    	}
+
+    	get colors() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors2() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors2(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get numColors() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set numColors(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get diverging() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set diverging(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get bezier() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set bezier(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get correctLightness() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set correctLightness(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get simulate() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set simulate(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get steps() {
+    		throw new Error("<PalettePreview>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set steps(value) {
+    		throw new Error("<PalettePreview>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Export.svelte generated by Svelte v3.5.3 */
+
+    const file$5 = "src\\Export.svelte";
+
+    function create_fragment$5(ctx) {
+    	var pre0, t0, t1, pre1, t2, t3_value = ctx.steps.join(`', '`), t3, t4, t5, pre2, t6, t7_value = ctx.steps.join(`', '`), t7, t8, t9, pre3, t10_value = ctx.steps.join('\n'), t10, t11, pre4, t12, t13_value = ctx.steps.map(func).join(`,`), t13, t14, t15, pre5, t16, t17_value = ctx.steps.length, t17, t18, t19_value = ctx.steps.join(`', '`), t19, t20, t21_value = ctx.steps.slice(1).map(func_1), t21, t22;
+
+    	return {
+    		c: function create() {
+    			pre0 = element("pre");
+    			t0 = text(ctx.steps);
+    			t1 = space();
+    			pre1 = element("pre");
+    			t2 = text("'");
+    			t3 = text(t3_value);
+    			t4 = text("'");
+    			t5 = space();
+    			pre2 = element("pre");
+    			t6 = text("['");
+    			t7 = text(t7_value);
+    			t8 = text("']");
+    			t9 = space();
+    			pre3 = element("pre");
+    			t10 = text(t10_value);
+    			t11 = space();
+    			pre4 = element("pre");
+    			t12 = text("[");
+    			t13 = text(t13_value);
+    			t14 = text("]");
+    			t15 = space();
+    			pre5 = element("pre");
+    			t16 = text("import { scaleThreshold } from 'd3-scale';\r\n\r\nfunction palette(min, max) {\r\n    const d = (max-min)/");
+    			t17 = text(t17_value);
+    			t18 = text(";\r\n    return = scaleThreshold()\r\n        .range(['");
+    			t19 = text(t19_value);
+    			t20 = text("'])\r\n        .domain([");
+    			t21 = text(t21_value);
+    			t22 = text("]);\r\n}");
+    			attr(pre0, "class", "svelte-1rj5ek4");
+    			add_location(pre0, file$5, 12, 0, 172);
+    			attr(pre1, "class", "svelte-1rj5ek4");
+    			add_location(pre1, file$5, 13, 0, 192);
+    			attr(pre2, "class", "svelte-1rj5ek4");
+    			add_location(pre2, file$5, 14, 0, 227);
+    			attr(pre3, "class", "svelte-1rj5ek4");
+    			add_location(pre3, file$5, 15, 0, 264);
+    			attr(pre4, "class", "svelte-1rj5ek4");
+    			add_location(pre4, file$5, 16, 0, 295);
+    			attr(pre5, "class", "svelte-1rj5ek4");
+    			add_location(pre5, file$5, 17, 0, 354);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, pre0, anchor);
+    			append(pre0, t0);
+    			insert(target, t1, anchor);
+    			insert(target, pre1, anchor);
+    			append(pre1, t2);
+    			append(pre1, t3);
+    			append(pre1, t4);
+    			insert(target, t5, anchor);
+    			insert(target, pre2, anchor);
+    			append(pre2, t6);
+    			append(pre2, t7);
+    			append(pre2, t8);
+    			insert(target, t9, anchor);
+    			insert(target, pre3, anchor);
+    			append(pre3, t10);
+    			insert(target, t11, anchor);
+    			insert(target, pre4, anchor);
+    			append(pre4, t12);
+    			append(pre4, t13);
+    			append(pre4, t14);
+    			insert(target, t15, anchor);
+    			insert(target, pre5, anchor);
+    			append(pre5, t16);
+    			append(pre5, t17);
+    			append(pre5, t18);
+    			append(pre5, t19);
+    			append(pre5, t20);
+    			append(pre5, t21);
+    			append(pre5, t22);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.steps) {
+    				set_data(t0, ctx.steps);
+    			}
+
+    			if ((changed.steps) && t3_value !== (t3_value = ctx.steps.join(`', '`))) {
+    				set_data(t3, t3_value);
+    			}
+
+    			if ((changed.steps) && t7_value !== (t7_value = ctx.steps.join(`', '`))) {
+    				set_data(t7, t7_value);
+    			}
+
+    			if ((changed.steps) && t10_value !== (t10_value = ctx.steps.join('\n'))) {
+    				set_data(t10, t10_value);
+    			}
+
+    			if ((changed.steps) && t13_value !== (t13_value = ctx.steps.map(func).join(`,`))) {
+    				set_data(t13, t13_value);
+    			}
+
+    			if ((changed.steps) && t17_value !== (t17_value = ctx.steps.length)) {
+    				set_data(t17, t17_value);
+    			}
+
+    			if ((changed.steps) && t19_value !== (t19_value = ctx.steps.join(`', '`))) {
+    				set_data(t19, t19_value);
+    			}
+
+    			if ((changed.steps) && t21_value !== (t21_value = ctx.steps.slice(1).map(func_1))) {
+    				set_data(t21, t21_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(pre0);
+    				detach(t1);
+    				detach(pre1);
+    				detach(t5);
+    				detach(pre2);
+    				detach(t9);
+    				detach(pre3);
+    				detach(t11);
+    				detach(pre4);
+    				detach(t15);
+    				detach(pre5);
+    			}
+    		}
+    	};
+    }
+
+    function func(c) {
+    	return '0x'+c.substr(1);
+    }
+
+    function func_1(v,i) {
+    	return `min + d*${i+1}`;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { steps = [] } = $$props;
+
+    	const writable_props = ['steps'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Export> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('steps' in $$props) $$invalidate('steps', steps = $$props.steps);
+    	};
+
+    	return { steps };
+    }
+
+    class Export extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, ["steps"]);
+    	}
+
+    	get steps() {
+    		throw new Error("<Export>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set steps(value) {
+    		throw new Error("<Export>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function ascending(a, b) {
+      return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+    }
+
+    function bisector(compare) {
+      if (compare.length === 1) compare = ascendingComparator(compare);
+      return {
+        left: function(a, x, lo, hi) {
+          if (lo == null) lo = 0;
+          if (hi == null) hi = a.length;
+          while (lo < hi) {
+            var mid = lo + hi >>> 1;
+            if (compare(a[mid], x) < 0) lo = mid + 1;
+            else hi = mid;
+          }
+          return lo;
+        },
+        right: function(a, x, lo, hi) {
+          if (lo == null) lo = 0;
+          if (hi == null) hi = a.length;
+          while (lo < hi) {
+            var mid = lo + hi >>> 1;
+            if (compare(a[mid], x) > 0) hi = mid;
+            else lo = mid + 1;
+          }
+          return lo;
+        }
+      };
+    }
+
+    function ascendingComparator(f) {
+      return function(d, x) {
+        return ascending(f(d), x);
+      };
+    }
+
+    var ascendingBisect = bisector(ascending);
+    var bisectRight = ascendingBisect.right;
+
+    function extent(values, valueof) {
+      let min;
+      let max;
+      if (valueof === undefined) {
+        for (const value of values) {
+          if (value != null) {
+            if (min === undefined) {
+              if (value >= value) min = max = value;
+            } else {
+              if (min > value) min = value;
+              if (max < value) max = value;
+            }
+          }
+        }
+      } else {
+        let index = -1;
+        for (let value of values) {
+          if ((value = valueof(value, ++index, values)) != null) {
+            if (min === undefined) {
+              if (value >= value) min = max = value;
+            } else {
+              if (min > value) min = value;
+              if (max < value) max = value;
+            }
+          }
+        }
+      }
+      return [min, max];
+    }
+
+    var e10 = Math.sqrt(50),
+        e5 = Math.sqrt(10),
+        e2 = Math.sqrt(2);
+
+    function ticks(start, stop, count) {
+      var reverse,
+          i = -1,
+          n,
+          ticks,
+          step;
+
+      stop = +stop, start = +start, count = +count;
+      if (start === stop && count > 0) return [start];
+      if (reverse = stop < start) n = start, start = stop, stop = n;
+      if ((step = tickIncrement(start, stop, count)) === 0 || !isFinite(step)) return [];
+
+      if (step > 0) {
+        start = Math.ceil(start / step);
+        stop = Math.floor(stop / step);
+        ticks = new Array(n = Math.ceil(stop - start + 1));
+        while (++i < n) ticks[i] = (start + i) * step;
+      } else {
+        start = Math.floor(start * step);
+        stop = Math.ceil(stop * step);
+        ticks = new Array(n = Math.ceil(start - stop + 1));
+        while (++i < n) ticks[i] = (start - i) / step;
+      }
+
+      if (reverse) ticks.reverse();
+
+      return ticks;
+    }
+
+    function tickIncrement(start, stop, count) {
+      var step = (stop - start) / Math.max(0, count),
+          power = Math.floor(Math.log(step) / Math.LN10),
+          error = step / Math.pow(10, power);
+      return power >= 0
+          ? (error >= e10 ? 10 : error >= e5 ? 5 : error >= e2 ? 2 : 1) * Math.pow(10, power)
+          : -Math.pow(10, -power) / (error >= e10 ? 10 : error >= e5 ? 5 : error >= e2 ? 2 : 1);
+    }
+
+    function tickStep(start, stop, count) {
+      var step0 = Math.abs(stop - start) / Math.max(0, count),
+          step1 = Math.pow(10, Math.floor(Math.log(step0) / Math.LN10)),
+          error = step0 / step1;
+      if (error >= e10) step1 *= 10;
+      else if (error >= e5) step1 *= 5;
+      else if (error >= e2) step1 *= 2;
+      return stop < start ? -step1 : step1;
+    }
+
+    function initRange(domain, range) {
+      switch (arguments.length) {
+        case 0: break;
+        case 1: this.range(domain); break;
+        default: this.range(range).domain(domain); break;
+      }
+      return this;
+    }
+
+    function define(constructor, factory, prototype) {
+      constructor.prototype = factory.prototype = prototype;
+      prototype.constructor = constructor;
+    }
+
+    function extend(parent, definition) {
+      var prototype = Object.create(parent.prototype);
+      for (var key in definition) prototype[key] = definition[key];
+      return prototype;
+    }
+
+    function Color$1() {}
+
+    var darker = 0.7;
+    var brighter = 1 / darker;
+
+    var reI = "\\s*([+-]?\\d+)\\s*",
+        reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
+        reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
+        reHex3 = /^#([0-9a-f]{3})$/,
+        reHex6 = /^#([0-9a-f]{6})$/,
+        reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
+        reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
+        reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
+        reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
+        reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
+        reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
+
+    var named = {
+      aliceblue: 0xf0f8ff,
+      antiquewhite: 0xfaebd7,
+      aqua: 0x00ffff,
+      aquamarine: 0x7fffd4,
+      azure: 0xf0ffff,
+      beige: 0xf5f5dc,
+      bisque: 0xffe4c4,
+      black: 0x000000,
+      blanchedalmond: 0xffebcd,
+      blue: 0x0000ff,
+      blueviolet: 0x8a2be2,
+      brown: 0xa52a2a,
+      burlywood: 0xdeb887,
+      cadetblue: 0x5f9ea0,
+      chartreuse: 0x7fff00,
+      chocolate: 0xd2691e,
+      coral: 0xff7f50,
+      cornflowerblue: 0x6495ed,
+      cornsilk: 0xfff8dc,
+      crimson: 0xdc143c,
+      cyan: 0x00ffff,
+      darkblue: 0x00008b,
+      darkcyan: 0x008b8b,
+      darkgoldenrod: 0xb8860b,
+      darkgray: 0xa9a9a9,
+      darkgreen: 0x006400,
+      darkgrey: 0xa9a9a9,
+      darkkhaki: 0xbdb76b,
+      darkmagenta: 0x8b008b,
+      darkolivegreen: 0x556b2f,
+      darkorange: 0xff8c00,
+      darkorchid: 0x9932cc,
+      darkred: 0x8b0000,
+      darksalmon: 0xe9967a,
+      darkseagreen: 0x8fbc8f,
+      darkslateblue: 0x483d8b,
+      darkslategray: 0x2f4f4f,
+      darkslategrey: 0x2f4f4f,
+      darkturquoise: 0x00ced1,
+      darkviolet: 0x9400d3,
+      deeppink: 0xff1493,
+      deepskyblue: 0x00bfff,
+      dimgray: 0x696969,
+      dimgrey: 0x696969,
+      dodgerblue: 0x1e90ff,
+      firebrick: 0xb22222,
+      floralwhite: 0xfffaf0,
+      forestgreen: 0x228b22,
+      fuchsia: 0xff00ff,
+      gainsboro: 0xdcdcdc,
+      ghostwhite: 0xf8f8ff,
+      gold: 0xffd700,
+      goldenrod: 0xdaa520,
+      gray: 0x808080,
+      green: 0x008000,
+      greenyellow: 0xadff2f,
+      grey: 0x808080,
+      honeydew: 0xf0fff0,
+      hotpink: 0xff69b4,
+      indianred: 0xcd5c5c,
+      indigo: 0x4b0082,
+      ivory: 0xfffff0,
+      khaki: 0xf0e68c,
+      lavender: 0xe6e6fa,
+      lavenderblush: 0xfff0f5,
+      lawngreen: 0x7cfc00,
+      lemonchiffon: 0xfffacd,
+      lightblue: 0xadd8e6,
+      lightcoral: 0xf08080,
+      lightcyan: 0xe0ffff,
+      lightgoldenrodyellow: 0xfafad2,
+      lightgray: 0xd3d3d3,
+      lightgreen: 0x90ee90,
+      lightgrey: 0xd3d3d3,
+      lightpink: 0xffb6c1,
+      lightsalmon: 0xffa07a,
+      lightseagreen: 0x20b2aa,
+      lightskyblue: 0x87cefa,
+      lightslategray: 0x778899,
+      lightslategrey: 0x778899,
+      lightsteelblue: 0xb0c4de,
+      lightyellow: 0xffffe0,
+      lime: 0x00ff00,
+      limegreen: 0x32cd32,
+      linen: 0xfaf0e6,
+      magenta: 0xff00ff,
+      maroon: 0x800000,
+      mediumaquamarine: 0x66cdaa,
+      mediumblue: 0x0000cd,
+      mediumorchid: 0xba55d3,
+      mediumpurple: 0x9370db,
+      mediumseagreen: 0x3cb371,
+      mediumslateblue: 0x7b68ee,
+      mediumspringgreen: 0x00fa9a,
+      mediumturquoise: 0x48d1cc,
+      mediumvioletred: 0xc71585,
+      midnightblue: 0x191970,
+      mintcream: 0xf5fffa,
+      mistyrose: 0xffe4e1,
+      moccasin: 0xffe4b5,
+      navajowhite: 0xffdead,
+      navy: 0x000080,
+      oldlace: 0xfdf5e6,
+      olive: 0x808000,
+      olivedrab: 0x6b8e23,
+      orange: 0xffa500,
+      orangered: 0xff4500,
+      orchid: 0xda70d6,
+      palegoldenrod: 0xeee8aa,
+      palegreen: 0x98fb98,
+      paleturquoise: 0xafeeee,
+      palevioletred: 0xdb7093,
+      papayawhip: 0xffefd5,
+      peachpuff: 0xffdab9,
+      peru: 0xcd853f,
+      pink: 0xffc0cb,
+      plum: 0xdda0dd,
+      powderblue: 0xb0e0e6,
+      purple: 0x800080,
+      rebeccapurple: 0x663399,
+      red: 0xff0000,
+      rosybrown: 0xbc8f8f,
+      royalblue: 0x4169e1,
+      saddlebrown: 0x8b4513,
+      salmon: 0xfa8072,
+      sandybrown: 0xf4a460,
+      seagreen: 0x2e8b57,
+      seashell: 0xfff5ee,
+      sienna: 0xa0522d,
+      silver: 0xc0c0c0,
+      skyblue: 0x87ceeb,
+      slateblue: 0x6a5acd,
+      slategray: 0x708090,
+      slategrey: 0x708090,
+      snow: 0xfffafa,
+      springgreen: 0x00ff7f,
+      steelblue: 0x4682b4,
+      tan: 0xd2b48c,
+      teal: 0x008080,
+      thistle: 0xd8bfd8,
+      tomato: 0xff6347,
+      turquoise: 0x40e0d0,
+      violet: 0xee82ee,
+      wheat: 0xf5deb3,
+      white: 0xffffff,
+      whitesmoke: 0xf5f5f5,
+      yellow: 0xffff00,
+      yellowgreen: 0x9acd32
+    };
+
+    define(Color$1, color, {
+      displayable: function() {
+        return this.rgb().displayable();
+      },
+      hex: function() {
+        return this.rgb().hex();
+      },
+      toString: function() {
+        return this.rgb() + "";
+      }
+    });
+
+    function color(format) {
+      var m;
+      format = (format + "").trim().toLowerCase();
+      return (m = reHex3.exec(format)) ? (m = parseInt(m[1], 16), new Rgb((m >> 8 & 0xf) | (m >> 4 & 0x0f0), (m >> 4 & 0xf) | (m & 0xf0), ((m & 0xf) << 4) | (m & 0xf), 1)) // #f00
+          : (m = reHex6.exec(format)) ? rgbn(parseInt(m[1], 16)) // #ff0000
+          : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
+          : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
+          : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
+          : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
+          : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
+          : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
+          : named.hasOwnProperty(format) ? rgbn(named[format])
+          : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0)
+          : null;
+    }
+
+    function rgbn(n) {
+      return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
+    }
+
+    function rgba(r, g, b, a) {
+      if (a <= 0) r = g = b = NaN;
+      return new Rgb(r, g, b, a);
+    }
+
+    function rgbConvert(o) {
+      if (!(o instanceof Color$1)) o = color(o);
+      if (!o) return new Rgb;
+      o = o.rgb();
+      return new Rgb(o.r, o.g, o.b, o.opacity);
+    }
+
+    function rgb(r, g, b, opacity) {
+      return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+    }
+
+    function Rgb(r, g, b, opacity) {
+      this.r = +r;
+      this.g = +g;
+      this.b = +b;
+      this.opacity = +opacity;
+    }
+
+    define(Rgb, rgb, extend(Color$1, {
+      brighter: function(k) {
+        k = k == null ? brighter : Math.pow(brighter, k);
+        return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+      },
+      darker: function(k) {
+        k = k == null ? darker : Math.pow(darker, k);
+        return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+      },
+      rgb: function() {
+        return this;
+      },
+      displayable: function() {
+        return (0 <= this.r && this.r <= 255)
+            && (0 <= this.g && this.g <= 255)
+            && (0 <= this.b && this.b <= 255)
+            && (0 <= this.opacity && this.opacity <= 1);
+      },
+      hex: function() {
+        return "#" + hex(this.r) + hex(this.g) + hex(this.b);
+      },
+      toString: function() {
+        var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+        return (a === 1 ? "rgb(" : "rgba(")
+            + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", "
+            + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", "
+            + Math.max(0, Math.min(255, Math.round(this.b) || 0))
+            + (a === 1 ? ")" : ", " + a + ")");
+      }
+    }));
+
+    function hex(value) {
+      value = Math.max(0, Math.min(255, Math.round(value) || 0));
+      return (value < 16 ? "0" : "") + value.toString(16);
+    }
+
+    function hsla(h, s, l, a) {
+      if (a <= 0) h = s = l = NaN;
+      else if (l <= 0 || l >= 1) h = s = NaN;
+      else if (s <= 0) h = NaN;
+      return new Hsl(h, s, l, a);
+    }
+
+    function hslConvert(o) {
+      if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
+      if (!(o instanceof Color$1)) o = color(o);
+      if (!o) return new Hsl;
+      if (o instanceof Hsl) return o;
+      o = o.rgb();
+      var r = o.r / 255,
+          g = o.g / 255,
+          b = o.b / 255,
+          min = Math.min(r, g, b),
+          max = Math.max(r, g, b),
+          h = NaN,
+          s = max - min,
+          l = (max + min) / 2;
+      if (s) {
+        if (r === max) h = (g - b) / s + (g < b) * 6;
+        else if (g === max) h = (b - r) / s + 2;
+        else h = (r - g) / s + 4;
+        s /= l < 0.5 ? max + min : 2 - max - min;
+        h *= 60;
+      } else {
+        s = l > 0 && l < 1 ? 0 : h;
+      }
+      return new Hsl(h, s, l, o.opacity);
+    }
+
+    function hsl(h, s, l, opacity) {
+      return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
+    }
+
+    function Hsl(h, s, l, opacity) {
+      this.h = +h;
+      this.s = +s;
+      this.l = +l;
+      this.opacity = +opacity;
+    }
+
+    define(Hsl, hsl, extend(Color$1, {
+      brighter: function(k) {
+        k = k == null ? brighter : Math.pow(brighter, k);
+        return new Hsl(this.h, this.s, this.l * k, this.opacity);
+      },
+      darker: function(k) {
+        k = k == null ? darker : Math.pow(darker, k);
+        return new Hsl(this.h, this.s, this.l * k, this.opacity);
+      },
+      rgb: function() {
+        var h = this.h % 360 + (this.h < 0) * 360,
+            s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
+            l = this.l,
+            m2 = l + (l < 0.5 ? l : 1 - l) * s,
+            m1 = 2 * l - m2;
+        return new Rgb(
+          hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2),
+          hsl2rgb(h, m1, m2),
+          hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2),
+          this.opacity
+        );
+      },
+      displayable: function() {
+        return (0 <= this.s && this.s <= 1 || isNaN(this.s))
+            && (0 <= this.l && this.l <= 1)
+            && (0 <= this.opacity && this.opacity <= 1);
+      }
+    }));
+
+    /* From FvD 13.37, CSS Color Module Level 3 */
+    function hsl2rgb(h, m1, m2) {
+      return (h < 60 ? m1 + (m2 - m1) * h / 60
+          : h < 180 ? m2
+          : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60
+          : m1) * 255;
+    }
+
+    var deg2rad = Math.PI / 180;
+    var rad2deg = 180 / Math.PI;
+
+    // https://beta.observablehq.com/@mbostock/lab-and-rgb
+    var K = 18,
+        Xn = 0.96422,
+        Yn = 1,
+        Zn = 0.82521,
+        t0 = 4 / 29,
+        t1 = 6 / 29,
+        t2 = 3 * t1 * t1,
+        t3 = t1 * t1 * t1;
+
+    function labConvert(o) {
+      if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
+      if (o instanceof Hcl) {
+        if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
+        var h = o.h * deg2rad;
+        return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
+      }
+      if (!(o instanceof Rgb)) o = rgbConvert(o);
+      var r = rgb2lrgb(o.r),
+          g = rgb2lrgb(o.g),
+          b = rgb2lrgb(o.b),
+          y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn), x, z;
+      if (r === g && g === b) x = z = y; else {
+        x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
+        z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
+      }
+      return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
+    }
+
+    function lab(l, a, b, opacity) {
+      return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
+    }
+
+    function Lab(l, a, b, opacity) {
+      this.l = +l;
+      this.a = +a;
+      this.b = +b;
+      this.opacity = +opacity;
+    }
+
+    define(Lab, lab, extend(Color$1, {
+      brighter: function(k) {
+        return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+      },
+      darker: function(k) {
+        return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+      },
+      rgb: function() {
+        var y = (this.l + 16) / 116,
+            x = isNaN(this.a) ? y : y + this.a / 500,
+            z = isNaN(this.b) ? y : y - this.b / 200;
+        x = Xn * lab2xyz(x);
+        y = Yn * lab2xyz(y);
+        z = Zn * lab2xyz(z);
+        return new Rgb(
+          lrgb2rgb( 3.1338561 * x - 1.6168667 * y - 0.4906146 * z),
+          lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z),
+          lrgb2rgb( 0.0719453 * x - 0.2289914 * y + 1.4052427 * z),
+          this.opacity
+        );
+      }
+    }));
+
+    function xyz2lab(t) {
+      return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
+    }
+
+    function lab2xyz(t) {
+      return t > t1 ? t * t * t : t2 * (t - t0);
+    }
+
+    function lrgb2rgb(x) {
+      return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
+    }
+
+    function rgb2lrgb(x) {
+      return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+    }
+
+    function hclConvert(o) {
+      if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
+      if (!(o instanceof Lab)) o = labConvert(o);
+      if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0, o.l, o.opacity);
+      var h = Math.atan2(o.b, o.a) * rad2deg;
+      return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
+    }
+
+    function hcl(h, c, l, opacity) {
+      return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+    }
+
+    function Hcl(h, c, l, opacity) {
+      this.h = +h;
+      this.c = +c;
+      this.l = +l;
+      this.opacity = +opacity;
+    }
+
+    define(Hcl, hcl, extend(Color$1, {
+      brighter: function(k) {
+        return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
+      },
+      darker: function(k) {
+        return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
+      },
+      rgb: function() {
+        return labConvert(this).rgb();
+      }
+    }));
+
+    var A = -0.14861,
+        B = +1.78277,
+        C = -0.29227,
+        D = -0.90649,
+        E = +1.97294,
+        ED = E * D,
+        EB = E * B,
+        BC_DA = B * C - D * A;
+
+    function cubehelixConvert(o) {
+      if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
+      if (!(o instanceof Rgb)) o = rgbConvert(o);
+      var r = o.r / 255,
+          g = o.g / 255,
+          b = o.b / 255,
+          l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
+          bl = b - l,
+          k = (E * (g - l) - C * bl) / D,
+          s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)), // NaN if l=0 or l=1
+          h = s ? Math.atan2(k, bl) * rad2deg - 120 : NaN;
+      return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
+    }
+
+    function cubehelix(h, s, l, opacity) {
+      return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
+    }
+
+    function Cubehelix(h, s, l, opacity) {
+      this.h = +h;
+      this.s = +s;
+      this.l = +l;
+      this.opacity = +opacity;
+    }
+
+    define(Cubehelix, cubehelix, extend(Color$1, {
+      brighter: function(k) {
+        k = k == null ? brighter : Math.pow(brighter, k);
+        return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+      },
+      darker: function(k) {
+        k = k == null ? darker : Math.pow(darker, k);
+        return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+      },
+      rgb: function() {
+        var h = isNaN(this.h) ? 0 : (this.h + 120) * deg2rad,
+            l = +this.l,
+            a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
+            cosh = Math.cos(h),
+            sinh = Math.sin(h);
+        return new Rgb(
+          255 * (l + a * (A * cosh + B * sinh)),
+          255 * (l + a * (C * cosh + D * sinh)),
+          255 * (l + a * (E * cosh)),
+          this.opacity
+        );
+      }
+    }));
+
+    function constant(x) {
+      return function() {
+        return x;
+      };
+    }
+
+    function linear(a, d) {
+      return function(t) {
+        return a + t * d;
+      };
+    }
+
+    function exponential(a, b, y) {
+      return a = Math.pow(a, y), b = Math.pow(b, y) - a, y = 1 / y, function(t) {
+        return Math.pow(a + t * b, y);
+      };
+    }
+
+    function gamma(y) {
+      return (y = +y) === 1 ? nogamma : function(a, b) {
+        return b - a ? exponential(a, b, y) : constant(isNaN(a) ? b : a);
+      };
+    }
+
+    function nogamma(a, b) {
+      var d = b - a;
+      return d ? linear(a, d) : constant(isNaN(a) ? b : a);
+    }
+
+    var rgb$1 = (function rgbGamma(y) {
+      var color = gamma(y);
+
+      function rgb$1(start, end) {
+        var r = color((start = rgb(start)).r, (end = rgb(end)).r),
+            g = color(start.g, end.g),
+            b = color(start.b, end.b),
+            opacity = nogamma(start.opacity, end.opacity);
+        return function(t) {
+          start.r = r(t);
+          start.g = g(t);
+          start.b = b(t);
+          start.opacity = opacity(t);
+          return start + "";
+        };
+      }
+
+      rgb$1.gamma = rgbGamma;
+
+      return rgb$1;
+    })(1);
+
+    function array(a, b) {
+      var nb = b ? b.length : 0,
+          na = a ? Math.min(nb, a.length) : 0,
+          x = new Array(na),
+          c = new Array(nb),
+          i;
+
+      for (i = 0; i < na; ++i) x[i] = interpolateValue(a[i], b[i]);
+      for (; i < nb; ++i) c[i] = b[i];
+
+      return function(t) {
+        for (i = 0; i < na; ++i) c[i] = x[i](t);
+        return c;
+      };
+    }
+
+    function date(a, b) {
+      var d = new Date;
+      return a = +a, b -= a, function(t) {
+        return d.setTime(a + b * t), d;
+      };
+    }
+
+    function interpolateNumber(a, b) {
+      return a = +a, b -= a, function(t) {
+        return a + b * t;
+      };
+    }
+
+    function object(a, b) {
+      var i = {},
+          c = {},
+          k;
+
+      if (a === null || typeof a !== "object") a = {};
+      if (b === null || typeof b !== "object") b = {};
+
+      for (k in b) {
+        if (k in a) {
+          i[k] = interpolateValue(a[k], b[k]);
+        } else {
+          c[k] = b[k];
+        }
+      }
+
+      return function(t) {
+        for (k in i) c[k] = i[k](t);
+        return c;
+      };
+    }
+
+    var reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g,
+        reB = new RegExp(reA.source, "g");
+
+    function zero(b) {
+      return function() {
+        return b;
+      };
+    }
+
+    function one(b) {
+      return function(t) {
+        return b(t) + "";
+      };
+    }
+
+    function string(a, b) {
+      var bi = reA.lastIndex = reB.lastIndex = 0, // scan index for next number in b
+          am, // current match in a
+          bm, // current match in b
+          bs, // string preceding current number in b, if any
+          i = -1, // index in s
+          s = [], // string constants and placeholders
+          q = []; // number interpolators
+
+      // Coerce inputs to strings.
+      a = a + "", b = b + "";
+
+      // Interpolate pairs of numbers in a & b.
+      while ((am = reA.exec(a))
+          && (bm = reB.exec(b))) {
+        if ((bs = bm.index) > bi) { // a string precedes the next number in b
+          bs = b.slice(bi, bs);
+          if (s[i]) s[i] += bs; // coalesce with previous string
+          else s[++i] = bs;
+        }
+        if ((am = am[0]) === (bm = bm[0])) { // numbers in a & b match
+          if (s[i]) s[i] += bm; // coalesce with previous string
+          else s[++i] = bm;
+        } else { // interpolate non-matching numbers
+          s[++i] = null;
+          q.push({i: i, x: interpolateNumber(am, bm)});
+        }
+        bi = reB.lastIndex;
+      }
+
+      // Add remains of b.
+      if (bi < b.length) {
+        bs = b.slice(bi);
+        if (s[i]) s[i] += bs; // coalesce with previous string
+        else s[++i] = bs;
+      }
+
+      // Special optimization for only a single match.
+      // Otherwise, interpolate each of the numbers and rejoin the string.
+      return s.length < 2 ? (q[0]
+          ? one(q[0].x)
+          : zero(b))
+          : (b = q.length, function(t) {
+              for (var i = 0, o; i < b; ++i) s[(o = q[i]).i] = o.x(t);
+              return s.join("");
+            });
+    }
+
+    function interpolateValue(a, b) {
+      var t = typeof b, c;
+      return b == null || t === "boolean" ? constant(b)
+          : (t === "number" ? interpolateNumber
+          : t === "string" ? ((c = color(b)) ? (b = c, rgb$1) : string)
+          : b instanceof color ? rgb$1
+          : b instanceof Date ? date
+          : Array.isArray(b) ? array
+          : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object
+          : interpolateNumber)(a, b);
+    }
+
+    function interpolateRound(a, b) {
+      return a = +a, b -= a, function(t) {
+        return Math.round(a + b * t);
+      };
+    }
+
+    var degrees = 180 / Math.PI;
+
+    var rho = Math.SQRT2;
+
+    function constant$1(x) {
+      return function() {
+        return x;
+      };
+    }
+
+    function number(x) {
+      return +x;
+    }
+
+    var unit = [0, 1];
+
+    function identity(x) {
+      return x;
+    }
+
+    function normalize(a, b) {
+      return (b -= (a = +a))
+          ? function(x) { return (x - a) / b; }
+          : constant$1(isNaN(b) ? NaN : 0.5);
+    }
+
+    function clamper(domain) {
+      var a = domain[0], b = domain[domain.length - 1], t;
+      if (a > b) t = a, a = b, b = t;
+      return function(x) { return Math.max(a, Math.min(b, x)); };
+    }
+
+    // normalize(a, b)(x) takes a domain value x in [a,b] and returns the corresponding parameter t in [0,1].
+    // interpolate(a, b)(t) takes a parameter t in [0,1] and returns the corresponding range value x in [a,b].
+    function bimap(domain, range, interpolate) {
+      var d0 = domain[0], d1 = domain[1], r0 = range[0], r1 = range[1];
+      if (d1 < d0) d0 = normalize(d1, d0), r0 = interpolate(r1, r0);
+      else d0 = normalize(d0, d1), r0 = interpolate(r0, r1);
+      return function(x) { return r0(d0(x)); };
+    }
+
+    function polymap(domain, range, interpolate) {
+      var j = Math.min(domain.length, range.length) - 1,
+          d = new Array(j),
+          r = new Array(j),
+          i = -1;
+
+      // Reverse descending domains.
+      if (domain[j] < domain[0]) {
+        domain = domain.slice().reverse();
+        range = range.slice().reverse();
+      }
+
+      while (++i < j) {
+        d[i] = normalize(domain[i], domain[i + 1]);
+        r[i] = interpolate(range[i], range[i + 1]);
+      }
+
+      return function(x) {
+        var i = bisectRight(domain, x, 1, j) - 1;
+        return r[i](d[i](x));
+      };
+    }
+
+    function copy(source, target) {
+      return target
+          .domain(source.domain())
+          .range(source.range())
+          .interpolate(source.interpolate())
+          .clamp(source.clamp())
+          .unknown(source.unknown());
+    }
+
+    function transformer() {
+      var domain = unit,
+          range = unit,
+          interpolate = interpolateValue,
+          transform,
+          untransform,
+          unknown,
+          clamp = identity,
+          piecewise,
+          output,
+          input;
+
+      function rescale() {
+        piecewise = Math.min(domain.length, range.length) > 2 ? polymap : bimap;
+        output = input = null;
+        return scale;
+      }
+
+      function scale(x) {
+        return isNaN(x = +x) ? unknown : (output || (output = piecewise(domain.map(transform), range, interpolate)))(transform(clamp(x)));
+      }
+
+      scale.invert = function(y) {
+        return clamp(untransform((input || (input = piecewise(range, domain.map(transform), interpolateNumber)))(y)));
+      };
+
+      scale.domain = function(_) {
+        return arguments.length ? (domain = Array.from(_, number), clamp === identity || (clamp = clamper(domain)), rescale()) : domain.slice();
+      };
+
+      scale.range = function(_) {
+        return arguments.length ? (range = Array.from(_), rescale()) : range.slice();
+      };
+
+      scale.rangeRound = function(_) {
+        return range = Array.from(_), interpolate = interpolateRound, rescale();
+      };
+
+      scale.clamp = function(_) {
+        return arguments.length ? (clamp = _ ? clamper(domain) : identity, scale) : clamp !== identity;
+      };
+
+      scale.interpolate = function(_) {
+        return arguments.length ? (interpolate = _, rescale()) : interpolate;
+      };
+
+      scale.unknown = function(_) {
+        return arguments.length ? (unknown = _, scale) : unknown;
+      };
+
+      return function(t, u) {
+        transform = t, untransform = u;
+        return rescale();
+      };
+    }
+
+    function continuous(transform, untransform) {
+      return transformer()(transform, untransform);
+    }
+
+    // Computes the decimal coefficient and exponent of the specified number x with
+    // significant digits p, where x is positive and p is in [1, 21] or undefined.
+    // For example, formatDecimal(1.23) returns ["123", 0].
+    function formatDecimal(x, p) {
+      if ((i = (x = p ? x.toExponential(p - 1) : x.toExponential()).indexOf("e")) < 0) return null; // NaN, ±Infinity
+      var i, coefficient = x.slice(0, i);
+
+      // The string returned by toExponential either has the form \d\.\d+e[-+]\d+
+      // (e.g., 1.2e+3) or the form \de[-+]\d+ (e.g., 1e+3).
+      return [
+        coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient,
+        +x.slice(i + 1)
+      ];
+    }
+
+    function exponent(x) {
+      return x = formatDecimal(Math.abs(x)), x ? x[1] : NaN;
+    }
+
+    function formatGroup(grouping, thousands) {
+      return function(value, width) {
+        var i = value.length,
+            t = [],
+            j = 0,
+            g = grouping[0],
+            length = 0;
+
+        while (i > 0 && g > 0) {
+          if (length + g + 1 > width) g = Math.max(1, width - length);
+          t.push(value.substring(i -= g, i + g));
+          if ((length += g + 1) > width) break;
+          g = grouping[j = (j + 1) % grouping.length];
+        }
+
+        return t.reverse().join(thousands);
+      };
+    }
+
+    function formatNumerals(numerals) {
+      return function(value) {
+        return value.replace(/[0-9]/g, function(i) {
+          return numerals[+i];
+        });
+      };
+    }
+
+    // [[fill]align][sign][symbol][0][width][,][.precision][~][type]
+    var re = /^(?:(.)?([<>=^]))?([+\-( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?(~)?([a-z%])?$/i;
+
+    function formatSpecifier(specifier) {
+      return new FormatSpecifier(specifier);
+    }
+
+    formatSpecifier.prototype = FormatSpecifier.prototype; // instanceof
+
+    function FormatSpecifier(specifier) {
+      if (!(match = re.exec(specifier))) throw new Error("invalid format: " + specifier);
+      var match;
+      this.fill = match[1] || " ";
+      this.align = match[2] || ">";
+      this.sign = match[3] || "-";
+      this.symbol = match[4] || "";
+      this.zero = !!match[5];
+      this.width = match[6] && +match[6];
+      this.comma = !!match[7];
+      this.precision = match[8] && +match[8].slice(1);
+      this.trim = !!match[9];
+      this.type = match[10] || "";
+    }
+
+    FormatSpecifier.prototype.toString = function() {
+      return this.fill
+          + this.align
+          + this.sign
+          + this.symbol
+          + (this.zero ? "0" : "")
+          + (this.width == null ? "" : Math.max(1, this.width | 0))
+          + (this.comma ? "," : "")
+          + (this.precision == null ? "" : "." + Math.max(0, this.precision | 0))
+          + (this.trim ? "~" : "")
+          + this.type;
+    };
+
+    // Trims insignificant zeros, e.g., replaces 1.2000k with 1.2k.
+    function formatTrim(s) {
+      out: for (var n = s.length, i = 1, i0 = -1, i1; i < n; ++i) {
+        switch (s[i]) {
+          case ".": i0 = i1 = i; break;
+          case "0": if (i0 === 0) i0 = i; i1 = i; break;
+          default: if (i0 > 0) { if (!+s[i]) break out; i0 = 0; } break;
+        }
+      }
+      return i0 > 0 ? s.slice(0, i0) + s.slice(i1 + 1) : s;
+    }
+
+    var prefixExponent;
+
+    function formatPrefixAuto(x, p) {
+      var d = formatDecimal(x, p);
+      if (!d) return x + "";
+      var coefficient = d[0],
+          exponent = d[1],
+          i = exponent - (prefixExponent = Math.max(-8, Math.min(8, Math.floor(exponent / 3))) * 3) + 1,
+          n = coefficient.length;
+      return i === n ? coefficient
+          : i > n ? coefficient + new Array(i - n + 1).join("0")
+          : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i)
+          : "0." + new Array(1 - i).join("0") + formatDecimal(x, Math.max(0, p + i - 1))[0]; // less than 1y!
+    }
+
+    function formatRounded(x, p) {
+      var d = formatDecimal(x, p);
+      if (!d) return x + "";
+      var coefficient = d[0],
+          exponent = d[1];
+      return exponent < 0 ? "0." + new Array(-exponent).join("0") + coefficient
+          : coefficient.length > exponent + 1 ? coefficient.slice(0, exponent + 1) + "." + coefficient.slice(exponent + 1)
+          : coefficient + new Array(exponent - coefficient.length + 2).join("0");
+    }
+
+    var formatTypes = {
+      "%": function(x, p) { return (x * 100).toFixed(p); },
+      "b": function(x) { return Math.round(x).toString(2); },
+      "c": function(x) { return x + ""; },
+      "d": function(x) { return Math.round(x).toString(10); },
+      "e": function(x, p) { return x.toExponential(p); },
+      "f": function(x, p) { return x.toFixed(p); },
+      "g": function(x, p) { return x.toPrecision(p); },
+      "o": function(x) { return Math.round(x).toString(8); },
+      "p": function(x, p) { return formatRounded(x * 100, p); },
+      "r": formatRounded,
+      "s": formatPrefixAuto,
+      "X": function(x) { return Math.round(x).toString(16).toUpperCase(); },
+      "x": function(x) { return Math.round(x).toString(16); }
+    };
+
+    function identity$1(x) {
+      return x;
+    }
+
+    var prefixes = ["y","z","a","f","p","n","µ","m","","k","M","G","T","P","E","Z","Y"];
+
+    function formatLocale(locale) {
+      var group = locale.grouping && locale.thousands ? formatGroup(locale.grouping, locale.thousands) : identity$1,
+          currency = locale.currency,
+          decimal = locale.decimal,
+          numerals = locale.numerals ? formatNumerals(locale.numerals) : identity$1,
+          percent = locale.percent || "%";
+
+      function newFormat(specifier) {
+        specifier = formatSpecifier(specifier);
+
+        var fill = specifier.fill,
+            align = specifier.align,
+            sign = specifier.sign,
+            symbol = specifier.symbol,
+            zero = specifier.zero,
+            width = specifier.width,
+            comma = specifier.comma,
+            precision = specifier.precision,
+            trim = specifier.trim,
+            type = specifier.type;
+
+        // The "n" type is an alias for ",g".
+        if (type === "n") comma = true, type = "g";
+
+        // The "" type, and any invalid type, is an alias for ".12~g".
+        else if (!formatTypes[type]) precision == null && (precision = 12), trim = true, type = "g";
+
+        // If zero fill is specified, padding goes after sign and before digits.
+        if (zero || (fill === "0" && align === "=")) zero = true, fill = "0", align = "=";
+
+        // Compute the prefix and suffix.
+        // For SI-prefix, the suffix is lazily computed.
+        var prefix = symbol === "$" ? currency[0] : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "",
+            suffix = symbol === "$" ? currency[1] : /[%p]/.test(type) ? percent : "";
+
+        // What format function should we use?
+        // Is this an integer type?
+        // Can this type generate exponential notation?
+        var formatType = formatTypes[type],
+            maybeSuffix = /[defgprs%]/.test(type);
+
+        // Set the default precision if not specified,
+        // or clamp the specified precision to the supported range.
+        // For significant precision, it must be in [1, 21].
+        // For fixed precision, it must be in [0, 20].
+        precision = precision == null ? 6
+            : /[gprs]/.test(type) ? Math.max(1, Math.min(21, precision))
+            : Math.max(0, Math.min(20, precision));
+
+        function format(value) {
+          var valuePrefix = prefix,
+              valueSuffix = suffix,
+              i, n, c;
+
+          if (type === "c") {
+            valueSuffix = formatType(value) + valueSuffix;
+            value = "";
+          } else {
+            value = +value;
+
+            // Perform the initial formatting.
+            var valueNegative = value < 0;
+            value = formatType(Math.abs(value), precision);
+
+            // Trim insignificant zeros.
+            if (trim) value = formatTrim(value);
+
+            // If a negative value rounds to zero during formatting, treat as positive.
+            if (valueNegative && +value === 0) valueNegative = false;
+
+            // Compute the prefix and suffix.
+            valuePrefix = (valueNegative ? (sign === "(" ? sign : "-") : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
+            valueSuffix = (type === "s" ? prefixes[8 + prefixExponent / 3] : "") + valueSuffix + (valueNegative && sign === "(" ? ")" : "");
+
+            // Break the formatted value into the integer “value” part that can be
+            // grouped, and fractional or exponential “suffix” part that is not.
+            if (maybeSuffix) {
+              i = -1, n = value.length;
+              while (++i < n) {
+                if (c = value.charCodeAt(i), 48 > c || c > 57) {
+                  valueSuffix = (c === 46 ? decimal + value.slice(i + 1) : value.slice(i)) + valueSuffix;
+                  value = value.slice(0, i);
+                  break;
+                }
+              }
+            }
+          }
+
+          // If the fill character is not "0", grouping is applied before padding.
+          if (comma && !zero) value = group(value, Infinity);
+
+          // Compute the padding.
+          var length = valuePrefix.length + value.length + valueSuffix.length,
+              padding = length < width ? new Array(width - length + 1).join(fill) : "";
+
+          // If the fill character is "0", grouping is applied after padding.
+          if (comma && zero) value = group(padding + value, padding.length ? width - valueSuffix.length : Infinity), padding = "";
+
+          // Reconstruct the final output based on the desired alignment.
+          switch (align) {
+            case "<": value = valuePrefix + value + valueSuffix + padding; break;
+            case "=": value = valuePrefix + padding + value + valueSuffix; break;
+            case "^": value = padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length); break;
+            default: value = padding + valuePrefix + value + valueSuffix; break;
+          }
+
+          return numerals(value);
+        }
+
+        format.toString = function() {
+          return specifier + "";
+        };
+
+        return format;
+      }
+
+      function formatPrefix(specifier, value) {
+        var f = newFormat((specifier = formatSpecifier(specifier), specifier.type = "f", specifier)),
+            e = Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3,
+            k = Math.pow(10, -e),
+            prefix = prefixes[8 + e / 3];
+        return function(value) {
+          return f(k * value) + prefix;
+        };
+      }
+
+      return {
+        format: newFormat,
+        formatPrefix: formatPrefix
+      };
+    }
+
+    var locale;
+    var format;
+    var formatPrefix;
+
+    defaultLocale({
+      decimal: ".",
+      thousands: ",",
+      grouping: [3],
+      currency: ["$", ""]
+    });
+
+    function defaultLocale(definition) {
+      locale = formatLocale(definition);
+      format = locale.format;
+      formatPrefix = locale.formatPrefix;
+      return locale;
+    }
+
+    function precisionFixed(step) {
+      return Math.max(0, -exponent(Math.abs(step)));
+    }
+
+    function precisionPrefix(step, value) {
+      return Math.max(0, Math.max(-8, Math.min(8, Math.floor(exponent(value) / 3))) * 3 - exponent(Math.abs(step)));
+    }
+
+    function precisionRound(step, max) {
+      step = Math.abs(step), max = Math.abs(max) - step;
+      return Math.max(0, exponent(max) - exponent(step)) + 1;
+    }
+
+    function tickFormat(start, stop, count, specifier) {
+      var step = tickStep(start, stop, count),
+          precision;
+      specifier = formatSpecifier(specifier == null ? ",f" : specifier);
+      switch (specifier.type) {
+        case "s": {
+          var value = Math.max(Math.abs(start), Math.abs(stop));
+          if (specifier.precision == null && !isNaN(precision = precisionPrefix(step, value))) specifier.precision = precision;
+          return formatPrefix(specifier, value);
+        }
+        case "":
+        case "e":
+        case "g":
+        case "p":
+        case "r": {
+          if (specifier.precision == null && !isNaN(precision = precisionRound(step, Math.max(Math.abs(start), Math.abs(stop))))) specifier.precision = precision - (specifier.type === "e");
+          break;
+        }
+        case "f":
+        case "%": {
+          if (specifier.precision == null && !isNaN(precision = precisionFixed(step))) specifier.precision = precision - (specifier.type === "%") * 2;
+          break;
+        }
+      }
+      return format(specifier);
+    }
+
+    function linearish(scale) {
+      var domain = scale.domain;
+
+      scale.ticks = function(count) {
+        var d = domain();
+        return ticks(d[0], d[d.length - 1], count == null ? 10 : count);
+      };
+
+      scale.tickFormat = function(count, specifier) {
+        var d = domain();
+        return tickFormat(d[0], d[d.length - 1], count == null ? 10 : count, specifier);
+      };
+
+      scale.nice = function(count) {
+        if (count == null) count = 10;
+
+        var d = domain(),
+            i0 = 0,
+            i1 = d.length - 1,
+            start = d[i0],
+            stop = d[i1],
+            step;
+
+        if (stop < start) {
+          step = start, start = stop, stop = step;
+          step = i0, i0 = i1, i1 = step;
+        }
+
+        step = tickIncrement(start, stop, count);
+
+        if (step > 0) {
+          start = Math.floor(start / step) * step;
+          stop = Math.ceil(stop / step) * step;
+          step = tickIncrement(start, stop, count);
+        } else if (step < 0) {
+          start = Math.ceil(start * step) / step;
+          stop = Math.floor(stop * step) / step;
+          step = tickIncrement(start, stop, count);
+        }
+
+        if (step > 0) {
+          d[i0] = Math.floor(start / step) * step;
+          d[i1] = Math.ceil(stop / step) * step;
+          domain(d);
+        } else if (step < 0) {
+          d[i0] = Math.ceil(start * step) / step;
+          d[i1] = Math.floor(stop * step) / step;
+          domain(d);
+        }
+
+        return scale;
+      };
+
+      return scale;
+    }
+
+    function linear$1() {
+      var scale = continuous(identity, identity);
+
+      scale.copy = function() {
+        return copy(scale, linear$1());
+      };
+
+      initRange.apply(scale, arguments);
+
+      return linearish(scale);
+    }
+
+    var t0$1 = new Date,
+        t1$1 = new Date;
+
+    function newInterval(floori, offseti, count, field) {
+
+      function interval(date) {
+        return floori(date = new Date(+date)), date;
+      }
+
+      interval.floor = interval;
+
+      interval.ceil = function(date) {
+        return floori(date = new Date(date - 1)), offseti(date, 1), floori(date), date;
+      };
+
+      interval.round = function(date) {
+        var d0 = interval(date),
+            d1 = interval.ceil(date);
+        return date - d0 < d1 - date ? d0 : d1;
+      };
+
+      interval.offset = function(date, step) {
+        return offseti(date = new Date(+date), step == null ? 1 : Math.floor(step)), date;
+      };
+
+      interval.range = function(start, stop, step) {
+        var range = [], previous;
+        start = interval.ceil(start);
+        step = step == null ? 1 : Math.floor(step);
+        if (!(start < stop) || !(step > 0)) return range; // also handles Invalid Date
+        do range.push(previous = new Date(+start)), offseti(start, step), floori(start);
+        while (previous < start && start < stop);
+        return range;
+      };
+
+      interval.filter = function(test) {
+        return newInterval(function(date) {
+          if (date >= date) while (floori(date), !test(date)) date.setTime(date - 1);
+        }, function(date, step) {
+          if (date >= date) {
+            if (step < 0) while (++step <= 0) {
+              while (offseti(date, -1), !test(date)) {} // eslint-disable-line no-empty
+            } else while (--step >= 0) {
+              while (offseti(date, +1), !test(date)) {} // eslint-disable-line no-empty
+            }
+          }
+        });
+      };
+
+      if (count) {
+        interval.count = function(start, end) {
+          t0$1.setTime(+start), t1$1.setTime(+end);
+          floori(t0$1), floori(t1$1);
+          return Math.floor(count(t0$1, t1$1));
+        };
+
+        interval.every = function(step) {
+          step = Math.floor(step);
+          return !isFinite(step) || !(step > 0) ? null
+              : !(step > 1) ? interval
+              : interval.filter(field
+                  ? function(d) { return field(d) % step === 0; }
+                  : function(d) { return interval.count(0, d) % step === 0; });
+        };
+      }
+
+      return interval;
+    }
+
+    var millisecond = newInterval(function() {
+      // noop
+    }, function(date, step) {
+      date.setTime(+date + step);
+    }, function(start, end) {
+      return end - start;
+    });
+
+    // An optimized implementation for this simple case.
+    millisecond.every = function(k) {
+      k = Math.floor(k);
+      if (!isFinite(k) || !(k > 0)) return null;
+      if (!(k > 1)) return millisecond;
+      return newInterval(function(date) {
+        date.setTime(Math.floor(date / k) * k);
+      }, function(date, step) {
+        date.setTime(+date + step * k);
+      }, function(start, end) {
+        return (end - start) / k;
+      });
+    };
+
+    var durationSecond = 1e3;
+    var durationMinute = 6e4;
+    var durationHour = 36e5;
+    var durationDay = 864e5;
+    var durationWeek = 6048e5;
+
+    var second = newInterval(function(date) {
+      date.setTime(date - date.getMilliseconds());
+    }, function(date, step) {
+      date.setTime(+date + step * durationSecond);
+    }, function(start, end) {
+      return (end - start) / durationSecond;
+    }, function(date) {
+      return date.getUTCSeconds();
+    });
+
+    var minute = newInterval(function(date) {
+      date.setTime(date - date.getMilliseconds() - date.getSeconds() * durationSecond);
+    }, function(date, step) {
+      date.setTime(+date + step * durationMinute);
+    }, function(start, end) {
+      return (end - start) / durationMinute;
+    }, function(date) {
+      return date.getMinutes();
+    });
+
+    var hour = newInterval(function(date) {
+      date.setTime(date - date.getMilliseconds() - date.getSeconds() * durationSecond - date.getMinutes() * durationMinute);
+    }, function(date, step) {
+      date.setTime(+date + step * durationHour);
+    }, function(start, end) {
+      return (end - start) / durationHour;
+    }, function(date) {
+      return date.getHours();
+    });
+
+    var day = newInterval(function(date) {
+      date.setHours(0, 0, 0, 0);
+    }, function(date, step) {
+      date.setDate(date.getDate() + step);
+    }, function(start, end) {
+      return (end - start - (end.getTimezoneOffset() - start.getTimezoneOffset()) * durationMinute) / durationDay;
+    }, function(date) {
+      return date.getDate() - 1;
+    });
+
+    function weekday(i) {
+      return newInterval(function(date) {
+        date.setDate(date.getDate() - (date.getDay() + 7 - i) % 7);
+        date.setHours(0, 0, 0, 0);
+      }, function(date, step) {
+        date.setDate(date.getDate() + step * 7);
+      }, function(start, end) {
+        return (end - start - (end.getTimezoneOffset() - start.getTimezoneOffset()) * durationMinute) / durationWeek;
+      });
+    }
+
+    var sunday = weekday(0);
+    var monday = weekday(1);
+    var tuesday = weekday(2);
+    var wednesday = weekday(3);
+    var thursday = weekday(4);
+    var friday = weekday(5);
+    var saturday = weekday(6);
+
+    var month = newInterval(function(date) {
+      date.setDate(1);
+      date.setHours(0, 0, 0, 0);
+    }, function(date, step) {
+      date.setMonth(date.getMonth() + step);
+    }, function(start, end) {
+      return end.getMonth() - start.getMonth() + (end.getFullYear() - start.getFullYear()) * 12;
+    }, function(date) {
+      return date.getMonth();
+    });
+
+    var year = newInterval(function(date) {
+      date.setMonth(0, 1);
+      date.setHours(0, 0, 0, 0);
+    }, function(date, step) {
+      date.setFullYear(date.getFullYear() + step);
+    }, function(start, end) {
+      return end.getFullYear() - start.getFullYear();
+    }, function(date) {
+      return date.getFullYear();
+    });
+
+    // An optimized implementation for this simple case.
+    year.every = function(k) {
+      return !isFinite(k = Math.floor(k)) || !(k > 0) ? null : newInterval(function(date) {
+        date.setFullYear(Math.floor(date.getFullYear() / k) * k);
+        date.setMonth(0, 1);
+        date.setHours(0, 0, 0, 0);
+      }, function(date, step) {
+        date.setFullYear(date.getFullYear() + step * k);
+      });
+    };
+
+    var utcMinute = newInterval(function(date) {
+      date.setUTCSeconds(0, 0);
+    }, function(date, step) {
+      date.setTime(+date + step * durationMinute);
+    }, function(start, end) {
+      return (end - start) / durationMinute;
+    }, function(date) {
+      return date.getUTCMinutes();
+    });
+
+    var utcHour = newInterval(function(date) {
+      date.setUTCMinutes(0, 0, 0);
+    }, function(date, step) {
+      date.setTime(+date + step * durationHour);
+    }, function(start, end) {
+      return (end - start) / durationHour;
+    }, function(date) {
+      return date.getUTCHours();
+    });
+
+    var utcDay = newInterval(function(date) {
+      date.setUTCHours(0, 0, 0, 0);
+    }, function(date, step) {
+      date.setUTCDate(date.getUTCDate() + step);
+    }, function(start, end) {
+      return (end - start) / durationDay;
+    }, function(date) {
+      return date.getUTCDate() - 1;
+    });
+
+    function utcWeekday(i) {
+      return newInterval(function(date) {
+        date.setUTCDate(date.getUTCDate() - (date.getUTCDay() + 7 - i) % 7);
+        date.setUTCHours(0, 0, 0, 0);
+      }, function(date, step) {
+        date.setUTCDate(date.getUTCDate() + step * 7);
+      }, function(start, end) {
+        return (end - start) / durationWeek;
+      });
+    }
+
+    var utcSunday = utcWeekday(0);
+    var utcMonday = utcWeekday(1);
+    var utcTuesday = utcWeekday(2);
+    var utcWednesday = utcWeekday(3);
+    var utcThursday = utcWeekday(4);
+    var utcFriday = utcWeekday(5);
+    var utcSaturday = utcWeekday(6);
+
+    var utcMonth = newInterval(function(date) {
+      date.setUTCDate(1);
+      date.setUTCHours(0, 0, 0, 0);
+    }, function(date, step) {
+      date.setUTCMonth(date.getUTCMonth() + step);
+    }, function(start, end) {
+      return end.getUTCMonth() - start.getUTCMonth() + (end.getUTCFullYear() - start.getUTCFullYear()) * 12;
+    }, function(date) {
+      return date.getUTCMonth();
+    });
+
+    var utcYear = newInterval(function(date) {
+      date.setUTCMonth(0, 1);
+      date.setUTCHours(0, 0, 0, 0);
+    }, function(date, step) {
+      date.setUTCFullYear(date.getUTCFullYear() + step);
+    }, function(start, end) {
+      return end.getUTCFullYear() - start.getUTCFullYear();
+    }, function(date) {
+      return date.getUTCFullYear();
+    });
+
+    // An optimized implementation for this simple case.
+    utcYear.every = function(k) {
+      return !isFinite(k = Math.floor(k)) || !(k > 0) ? null : newInterval(function(date) {
+        date.setUTCFullYear(Math.floor(date.getUTCFullYear() / k) * k);
+        date.setUTCMonth(0, 1);
+        date.setUTCHours(0, 0, 0, 0);
+      }, function(date, step) {
+        date.setUTCFullYear(date.getUTCFullYear() + step * k);
+      });
+    };
+
+    function localDate(d) {
+      if (0 <= d.y && d.y < 100) {
+        var date = new Date(-1, d.m, d.d, d.H, d.M, d.S, d.L);
+        date.setFullYear(d.y);
+        return date;
+      }
+      return new Date(d.y, d.m, d.d, d.H, d.M, d.S, d.L);
+    }
+
+    function utcDate(d) {
+      if (0 <= d.y && d.y < 100) {
+        var date = new Date(Date.UTC(-1, d.m, d.d, d.H, d.M, d.S, d.L));
+        date.setUTCFullYear(d.y);
+        return date;
+      }
+      return new Date(Date.UTC(d.y, d.m, d.d, d.H, d.M, d.S, d.L));
+    }
+
+    function newYear(y) {
+      return {y: y, m: 0, d: 1, H: 0, M: 0, S: 0, L: 0};
+    }
+
+    function formatLocale$1(locale) {
+      var locale_dateTime = locale.dateTime,
+          locale_date = locale.date,
+          locale_time = locale.time,
+          locale_periods = locale.periods,
+          locale_weekdays = locale.days,
+          locale_shortWeekdays = locale.shortDays,
+          locale_months = locale.months,
+          locale_shortMonths = locale.shortMonths;
+
+      var periodRe = formatRe(locale_periods),
+          periodLookup = formatLookup(locale_periods),
+          weekdayRe = formatRe(locale_weekdays),
+          weekdayLookup = formatLookup(locale_weekdays),
+          shortWeekdayRe = formatRe(locale_shortWeekdays),
+          shortWeekdayLookup = formatLookup(locale_shortWeekdays),
+          monthRe = formatRe(locale_months),
+          monthLookup = formatLookup(locale_months),
+          shortMonthRe = formatRe(locale_shortMonths),
+          shortMonthLookup = formatLookup(locale_shortMonths);
+
+      var formats = {
+        "a": formatShortWeekday,
+        "A": formatWeekday,
+        "b": formatShortMonth,
+        "B": formatMonth,
+        "c": null,
+        "d": formatDayOfMonth,
+        "e": formatDayOfMonth,
+        "f": formatMicroseconds,
+        "H": formatHour24,
+        "I": formatHour12,
+        "j": formatDayOfYear,
+        "L": formatMilliseconds,
+        "m": formatMonthNumber,
+        "M": formatMinutes,
+        "p": formatPeriod,
+        "Q": formatUnixTimestamp,
+        "s": formatUnixTimestampSeconds,
+        "S": formatSeconds,
+        "u": formatWeekdayNumberMonday,
+        "U": formatWeekNumberSunday,
+        "V": formatWeekNumberISO,
+        "w": formatWeekdayNumberSunday,
+        "W": formatWeekNumberMonday,
+        "x": null,
+        "X": null,
+        "y": formatYear,
+        "Y": formatFullYear,
+        "Z": formatZone,
+        "%": formatLiteralPercent
+      };
+
+      var utcFormats = {
+        "a": formatUTCShortWeekday,
+        "A": formatUTCWeekday,
+        "b": formatUTCShortMonth,
+        "B": formatUTCMonth,
+        "c": null,
+        "d": formatUTCDayOfMonth,
+        "e": formatUTCDayOfMonth,
+        "f": formatUTCMicroseconds,
+        "H": formatUTCHour24,
+        "I": formatUTCHour12,
+        "j": formatUTCDayOfYear,
+        "L": formatUTCMilliseconds,
+        "m": formatUTCMonthNumber,
+        "M": formatUTCMinutes,
+        "p": formatUTCPeriod,
+        "Q": formatUnixTimestamp,
+        "s": formatUnixTimestampSeconds,
+        "S": formatUTCSeconds,
+        "u": formatUTCWeekdayNumberMonday,
+        "U": formatUTCWeekNumberSunday,
+        "V": formatUTCWeekNumberISO,
+        "w": formatUTCWeekdayNumberSunday,
+        "W": formatUTCWeekNumberMonday,
+        "x": null,
+        "X": null,
+        "y": formatUTCYear,
+        "Y": formatUTCFullYear,
+        "Z": formatUTCZone,
+        "%": formatLiteralPercent
+      };
+
+      var parses = {
+        "a": parseShortWeekday,
+        "A": parseWeekday,
+        "b": parseShortMonth,
+        "B": parseMonth,
+        "c": parseLocaleDateTime,
+        "d": parseDayOfMonth,
+        "e": parseDayOfMonth,
+        "f": parseMicroseconds,
+        "H": parseHour24,
+        "I": parseHour24,
+        "j": parseDayOfYear,
+        "L": parseMilliseconds,
+        "m": parseMonthNumber,
+        "M": parseMinutes,
+        "p": parsePeriod,
+        "Q": parseUnixTimestamp,
+        "s": parseUnixTimestampSeconds,
+        "S": parseSeconds,
+        "u": parseWeekdayNumberMonday,
+        "U": parseWeekNumberSunday,
+        "V": parseWeekNumberISO,
+        "w": parseWeekdayNumberSunday,
+        "W": parseWeekNumberMonday,
+        "x": parseLocaleDate,
+        "X": parseLocaleTime,
+        "y": parseYear,
+        "Y": parseFullYear,
+        "Z": parseZone,
+        "%": parseLiteralPercent
+      };
+
+      // These recursive directive definitions must be deferred.
+      formats.x = newFormat(locale_date, formats);
+      formats.X = newFormat(locale_time, formats);
+      formats.c = newFormat(locale_dateTime, formats);
+      utcFormats.x = newFormat(locale_date, utcFormats);
+      utcFormats.X = newFormat(locale_time, utcFormats);
+      utcFormats.c = newFormat(locale_dateTime, utcFormats);
+
+      function newFormat(specifier, formats) {
+        return function(date) {
+          var string = [],
+              i = -1,
+              j = 0,
+              n = specifier.length,
+              c,
+              pad,
+              format;
+
+          if (!(date instanceof Date)) date = new Date(+date);
+
+          while (++i < n) {
+            if (specifier.charCodeAt(i) === 37) {
+              string.push(specifier.slice(j, i));
+              if ((pad = pads[c = specifier.charAt(++i)]) != null) c = specifier.charAt(++i);
+              else pad = c === "e" ? " " : "0";
+              if (format = formats[c]) c = format(date, pad);
+              string.push(c);
+              j = i + 1;
+            }
+          }
+
+          string.push(specifier.slice(j, i));
+          return string.join("");
+        };
+      }
+
+      function newParse(specifier, newDate) {
+        return function(string) {
+          var d = newYear(1900),
+              i = parseSpecifier(d, specifier, string += "", 0),
+              week, day$1;
+          if (i != string.length) return null;
+
+          // If a UNIX timestamp is specified, return it.
+          if ("Q" in d) return new Date(d.Q);
+
+          // The am-pm flag is 0 for AM, and 1 for PM.
+          if ("p" in d) d.H = d.H % 12 + d.p * 12;
+
+          // Convert day-of-week and week-of-year to day-of-year.
+          if ("V" in d) {
+            if (d.V < 1 || d.V > 53) return null;
+            if (!("w" in d)) d.w = 1;
+            if ("Z" in d) {
+              week = utcDate(newYear(d.y)), day$1 = week.getUTCDay();
+              week = day$1 > 4 || day$1 === 0 ? utcMonday.ceil(week) : utcMonday(week);
+              week = utcDay.offset(week, (d.V - 1) * 7);
+              d.y = week.getUTCFullYear();
+              d.m = week.getUTCMonth();
+              d.d = week.getUTCDate() + (d.w + 6) % 7;
+            } else {
+              week = newDate(newYear(d.y)), day$1 = week.getDay();
+              week = day$1 > 4 || day$1 === 0 ? monday.ceil(week) : monday(week);
+              week = day.offset(week, (d.V - 1) * 7);
+              d.y = week.getFullYear();
+              d.m = week.getMonth();
+              d.d = week.getDate() + (d.w + 6) % 7;
+            }
+          } else if ("W" in d || "U" in d) {
+            if (!("w" in d)) d.w = "u" in d ? d.u % 7 : "W" in d ? 1 : 0;
+            day$1 = "Z" in d ? utcDate(newYear(d.y)).getUTCDay() : newDate(newYear(d.y)).getDay();
+            d.m = 0;
+            d.d = "W" in d ? (d.w + 6) % 7 + d.W * 7 - (day$1 + 5) % 7 : d.w + d.U * 7 - (day$1 + 6) % 7;
+          }
+
+          // If a time zone is specified, all fields are interpreted as UTC and then
+          // offset according to the specified time zone.
+          if ("Z" in d) {
+            d.H += d.Z / 100 | 0;
+            d.M += d.Z % 100;
+            return utcDate(d);
+          }
+
+          // Otherwise, all fields are in local time.
+          return newDate(d);
+        };
+      }
+
+      function parseSpecifier(d, specifier, string, j) {
+        var i = 0,
+            n = specifier.length,
+            m = string.length,
+            c,
+            parse;
+
+        while (i < n) {
+          if (j >= m) return -1;
+          c = specifier.charCodeAt(i++);
+          if (c === 37) {
+            c = specifier.charAt(i++);
+            parse = parses[c in pads ? specifier.charAt(i++) : c];
+            if (!parse || ((j = parse(d, string, j)) < 0)) return -1;
+          } else if (c != string.charCodeAt(j++)) {
+            return -1;
+          }
+        }
+
+        return j;
+      }
+
+      function parsePeriod(d, string, i) {
+        var n = periodRe.exec(string.slice(i));
+        return n ? (d.p = periodLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+      }
+
+      function parseShortWeekday(d, string, i) {
+        var n = shortWeekdayRe.exec(string.slice(i));
+        return n ? (d.w = shortWeekdayLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+      }
+
+      function parseWeekday(d, string, i) {
+        var n = weekdayRe.exec(string.slice(i));
+        return n ? (d.w = weekdayLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+      }
+
+      function parseShortMonth(d, string, i) {
+        var n = shortMonthRe.exec(string.slice(i));
+        return n ? (d.m = shortMonthLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+      }
+
+      function parseMonth(d, string, i) {
+        var n = monthRe.exec(string.slice(i));
+        return n ? (d.m = monthLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+      }
+
+      function parseLocaleDateTime(d, string, i) {
+        return parseSpecifier(d, locale_dateTime, string, i);
+      }
+
+      function parseLocaleDate(d, string, i) {
+        return parseSpecifier(d, locale_date, string, i);
+      }
+
+      function parseLocaleTime(d, string, i) {
+        return parseSpecifier(d, locale_time, string, i);
+      }
+
+      function formatShortWeekday(d) {
+        return locale_shortWeekdays[d.getDay()];
+      }
+
+      function formatWeekday(d) {
+        return locale_weekdays[d.getDay()];
+      }
+
+      function formatShortMonth(d) {
+        return locale_shortMonths[d.getMonth()];
+      }
+
+      function formatMonth(d) {
+        return locale_months[d.getMonth()];
+      }
+
+      function formatPeriod(d) {
+        return locale_periods[+(d.getHours() >= 12)];
+      }
+
+      function formatUTCShortWeekday(d) {
+        return locale_shortWeekdays[d.getUTCDay()];
+      }
+
+      function formatUTCWeekday(d) {
+        return locale_weekdays[d.getUTCDay()];
+      }
+
+      function formatUTCShortMonth(d) {
+        return locale_shortMonths[d.getUTCMonth()];
+      }
+
+      function formatUTCMonth(d) {
+        return locale_months[d.getUTCMonth()];
+      }
+
+      function formatUTCPeriod(d) {
+        return locale_periods[+(d.getUTCHours() >= 12)];
+      }
+
+      return {
+        format: function(specifier) {
+          var f = newFormat(specifier += "", formats);
+          f.toString = function() { return specifier; };
+          return f;
+        },
+        parse: function(specifier) {
+          var p = newParse(specifier += "", localDate);
+          p.toString = function() { return specifier; };
+          return p;
+        },
+        utcFormat: function(specifier) {
+          var f = newFormat(specifier += "", utcFormats);
+          f.toString = function() { return specifier; };
+          return f;
+        },
+        utcParse: function(specifier) {
+          var p = newParse(specifier, utcDate);
+          p.toString = function() { return specifier; };
+          return p;
+        }
+      };
+    }
+
+    var pads = {"-": "", "_": " ", "0": "0"},
+        numberRe = /^\s*\d+/, // note: ignores next directive
+        percentRe = /^%/,
+        requoteRe = /[\\^$*+?|[\]().{}]/g;
+
+    function pad(value, fill, width) {
+      var sign = value < 0 ? "-" : "",
+          string = (sign ? -value : value) + "",
+          length = string.length;
+      return sign + (length < width ? new Array(width - length + 1).join(fill) + string : string);
+    }
+
+    function requote(s) {
+      return s.replace(requoteRe, "\\$&");
+    }
+
+    function formatRe(names) {
+      return new RegExp("^(?:" + names.map(requote).join("|") + ")", "i");
+    }
+
+    function formatLookup(names) {
+      var map = {}, i = -1, n = names.length;
+      while (++i < n) map[names[i].toLowerCase()] = i;
+      return map;
+    }
+
+    function parseWeekdayNumberSunday(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 1));
+      return n ? (d.w = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseWeekdayNumberMonday(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 1));
+      return n ? (d.u = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseWeekNumberSunday(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.U = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseWeekNumberISO(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.V = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseWeekNumberMonday(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.W = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseFullYear(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 4));
+      return n ? (d.y = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseYear(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.y = +n[0] + (+n[0] > 68 ? 1900 : 2000), i + n[0].length) : -1;
+    }
+
+    function parseZone(d, string, i) {
+      var n = /^(Z)|([+-]\d\d)(?::?(\d\d))?/.exec(string.slice(i, i + 6));
+      return n ? (d.Z = n[1] ? 0 : -(n[2] + (n[3] || "00")), i + n[0].length) : -1;
+    }
+
+    function parseMonthNumber(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.m = n[0] - 1, i + n[0].length) : -1;
+    }
+
+    function parseDayOfMonth(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.d = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseDayOfYear(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 3));
+      return n ? (d.m = 0, d.d = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseHour24(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.H = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseMinutes(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.M = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseSeconds(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 2));
+      return n ? (d.S = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseMilliseconds(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 3));
+      return n ? (d.L = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseMicroseconds(d, string, i) {
+      var n = numberRe.exec(string.slice(i, i + 6));
+      return n ? (d.L = Math.floor(n[0] / 1000), i + n[0].length) : -1;
+    }
+
+    function parseLiteralPercent(d, string, i) {
+      var n = percentRe.exec(string.slice(i, i + 1));
+      return n ? i + n[0].length : -1;
+    }
+
+    function parseUnixTimestamp(d, string, i) {
+      var n = numberRe.exec(string.slice(i));
+      return n ? (d.Q = +n[0], i + n[0].length) : -1;
+    }
+
+    function parseUnixTimestampSeconds(d, string, i) {
+      var n = numberRe.exec(string.slice(i));
+      return n ? (d.Q = (+n[0]) * 1000, i + n[0].length) : -1;
+    }
+
+    function formatDayOfMonth(d, p) {
+      return pad(d.getDate(), p, 2);
+    }
+
+    function formatHour24(d, p) {
+      return pad(d.getHours(), p, 2);
+    }
+
+    function formatHour12(d, p) {
+      return pad(d.getHours() % 12 || 12, p, 2);
+    }
+
+    function formatDayOfYear(d, p) {
+      return pad(1 + day.count(year(d), d), p, 3);
+    }
+
+    function formatMilliseconds(d, p) {
+      return pad(d.getMilliseconds(), p, 3);
+    }
+
+    function formatMicroseconds(d, p) {
+      return formatMilliseconds(d, p) + "000";
+    }
+
+    function formatMonthNumber(d, p) {
+      return pad(d.getMonth() + 1, p, 2);
+    }
+
+    function formatMinutes(d, p) {
+      return pad(d.getMinutes(), p, 2);
+    }
+
+    function formatSeconds(d, p) {
+      return pad(d.getSeconds(), p, 2);
+    }
+
+    function formatWeekdayNumberMonday(d) {
+      var day = d.getDay();
+      return day === 0 ? 7 : day;
+    }
+
+    function formatWeekNumberSunday(d, p) {
+      return pad(sunday.count(year(d), d), p, 2);
+    }
+
+    function formatWeekNumberISO(d, p) {
+      var day = d.getDay();
+      d = (day >= 4 || day === 0) ? thursday(d) : thursday.ceil(d);
+      return pad(thursday.count(year(d), d) + (year(d).getDay() === 4), p, 2);
+    }
+
+    function formatWeekdayNumberSunday(d) {
+      return d.getDay();
+    }
+
+    function formatWeekNumberMonday(d, p) {
+      return pad(monday.count(year(d), d), p, 2);
+    }
+
+    function formatYear(d, p) {
+      return pad(d.getFullYear() % 100, p, 2);
+    }
+
+    function formatFullYear(d, p) {
+      return pad(d.getFullYear() % 10000, p, 4);
+    }
+
+    function formatZone(d) {
+      var z = d.getTimezoneOffset();
+      return (z > 0 ? "-" : (z *= -1, "+"))
+          + pad(z / 60 | 0, "0", 2)
+          + pad(z % 60, "0", 2);
+    }
+
+    function formatUTCDayOfMonth(d, p) {
+      return pad(d.getUTCDate(), p, 2);
+    }
+
+    function formatUTCHour24(d, p) {
+      return pad(d.getUTCHours(), p, 2);
+    }
+
+    function formatUTCHour12(d, p) {
+      return pad(d.getUTCHours() % 12 || 12, p, 2);
+    }
+
+    function formatUTCDayOfYear(d, p) {
+      return pad(1 + utcDay.count(utcYear(d), d), p, 3);
+    }
+
+    function formatUTCMilliseconds(d, p) {
+      return pad(d.getUTCMilliseconds(), p, 3);
+    }
+
+    function formatUTCMicroseconds(d, p) {
+      return formatUTCMilliseconds(d, p) + "000";
+    }
+
+    function formatUTCMonthNumber(d, p) {
+      return pad(d.getUTCMonth() + 1, p, 2);
+    }
+
+    function formatUTCMinutes(d, p) {
+      return pad(d.getUTCMinutes(), p, 2);
+    }
+
+    function formatUTCSeconds(d, p) {
+      return pad(d.getUTCSeconds(), p, 2);
+    }
+
+    function formatUTCWeekdayNumberMonday(d) {
+      var dow = d.getUTCDay();
+      return dow === 0 ? 7 : dow;
+    }
+
+    function formatUTCWeekNumberSunday(d, p) {
+      return pad(utcSunday.count(utcYear(d), d), p, 2);
+    }
+
+    function formatUTCWeekNumberISO(d, p) {
+      var day = d.getUTCDay();
+      d = (day >= 4 || day === 0) ? utcThursday(d) : utcThursday.ceil(d);
+      return pad(utcThursday.count(utcYear(d), d) + (utcYear(d).getUTCDay() === 4), p, 2);
+    }
+
+    function formatUTCWeekdayNumberSunday(d) {
+      return d.getUTCDay();
+    }
+
+    function formatUTCWeekNumberMonday(d, p) {
+      return pad(utcMonday.count(utcYear(d), d), p, 2);
+    }
+
+    function formatUTCYear(d, p) {
+      return pad(d.getUTCFullYear() % 100, p, 2);
+    }
+
+    function formatUTCFullYear(d, p) {
+      return pad(d.getUTCFullYear() % 10000, p, 4);
+    }
+
+    function formatUTCZone() {
+      return "+0000";
+    }
+
+    function formatLiteralPercent() {
+      return "%";
+    }
+
+    function formatUnixTimestamp(d) {
+      return +d;
+    }
+
+    function formatUnixTimestampSeconds(d) {
+      return Math.floor(+d / 1000);
+    }
+
+    var locale$1;
+    var timeFormat;
+    var timeParse;
+    var utcFormat;
+    var utcParse;
+
+    defaultLocale$1({
+      dateTime: "%x, %X",
+      date: "%-m/%-d/%Y",
+      time: "%-I:%M:%S %p",
+      periods: ["AM", "PM"],
+      days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      shortDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    });
+
+    function defaultLocale$1(definition) {
+      locale$1 = formatLocale$1(definition);
+      timeFormat = locale$1.format;
+      timeParse = locale$1.parse;
+      utcFormat = locale$1.utcFormat;
+      utcParse = locale$1.utcParse;
+      return locale$1;
+    }
+
+    var isoSpecifier = "%Y-%m-%dT%H:%M:%S.%LZ";
+
+    function formatIsoNative(date) {
+      return date.toISOString();
+    }
+
+    var formatIso = Date.prototype.toISOString
+        ? formatIsoNative
+        : utcFormat(isoSpecifier);
+
+    function parseIsoNative(string) {
+      var date = new Date(string);
+      return isNaN(date) ? null : date;
+    }
+
+    var parseIso = +new Date("2000-01-01T00:00:00.000Z")
+        ? parseIsoNative
+        : utcParse(isoSpecifier);
+
+    var pi = Math.PI,
+        tau = 2 * pi,
+        epsilon = 1e-6,
+        tauEpsilon = tau - epsilon;
+
+    function Path() {
+      this._x0 = this._y0 = // start of current subpath
+      this._x1 = this._y1 = null; // end of current subpath
+      this._ = "";
+    }
+
+    function path() {
+      return new Path;
+    }
+
+    Path.prototype = path.prototype = {
+      constructor: Path,
+      moveTo: function(x, y) {
+        this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y);
+      },
+      closePath: function() {
+        if (this._x1 !== null) {
+          this._x1 = this._x0, this._y1 = this._y0;
+          this._ += "Z";
+        }
+      },
+      lineTo: function(x, y) {
+        this._ += "L" + (this._x1 = +x) + "," + (this._y1 = +y);
+      },
+      quadraticCurveTo: function(x1, y1, x, y) {
+        this._ += "Q" + (+x1) + "," + (+y1) + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+      },
+      bezierCurveTo: function(x1, y1, x2, y2, x, y) {
+        this._ += "C" + (+x1) + "," + (+y1) + "," + (+x2) + "," + (+y2) + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+      },
+      arcTo: function(x1, y1, x2, y2, r) {
+        x1 = +x1, y1 = +y1, x2 = +x2, y2 = +y2, r = +r;
+        var x0 = this._x1,
+            y0 = this._y1,
+            x21 = x2 - x1,
+            y21 = y2 - y1,
+            x01 = x0 - x1,
+            y01 = y0 - y1,
+            l01_2 = x01 * x01 + y01 * y01;
+
+        // Is the radius negative? Error.
+        if (r < 0) throw new Error("negative radius: " + r);
+
+        // Is this path empty? Move to (x1,y1).
+        if (this._x1 === null) {
+          this._ += "M" + (this._x1 = x1) + "," + (this._y1 = y1);
+        }
+
+        // Or, is (x1,y1) coincident with (x0,y0)? Do nothing.
+        else if (!(l01_2 > epsilon));
+
+        // Or, are (x0,y0), (x1,y1) and (x2,y2) collinear?
+        // Equivalently, is (x1,y1) coincident with (x2,y2)?
+        // Or, is the radius zero? Line to (x1,y1).
+        else if (!(Math.abs(y01 * x21 - y21 * x01) > epsilon) || !r) {
+          this._ += "L" + (this._x1 = x1) + "," + (this._y1 = y1);
+        }
+
+        // Otherwise, draw an arc!
+        else {
+          var x20 = x2 - x0,
+              y20 = y2 - y0,
+              l21_2 = x21 * x21 + y21 * y21,
+              l20_2 = x20 * x20 + y20 * y20,
+              l21 = Math.sqrt(l21_2),
+              l01 = Math.sqrt(l01_2),
+              l = r * Math.tan((pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
+              t01 = l / l01,
+              t21 = l / l21;
+
+          // If the start tangent is not coincident with (x0,y0), line to.
+          if (Math.abs(t01 - 1) > epsilon) {
+            this._ += "L" + (x1 + t01 * x01) + "," + (y1 + t01 * y01);
+          }
+
+          this._ += "A" + r + "," + r + ",0,0," + (+(y01 * x20 > x01 * y20)) + "," + (this._x1 = x1 + t21 * x21) + "," + (this._y1 = y1 + t21 * y21);
+        }
+      },
+      arc: function(x, y, r, a0, a1, ccw) {
+        x = +x, y = +y, r = +r;
+        var dx = r * Math.cos(a0),
+            dy = r * Math.sin(a0),
+            x0 = x + dx,
+            y0 = y + dy,
+            cw = 1 ^ ccw,
+            da = ccw ? a0 - a1 : a1 - a0;
+
+        // Is the radius negative? Error.
+        if (r < 0) throw new Error("negative radius: " + r);
+
+        // Is this path empty? Move to (x0,y0).
+        if (this._x1 === null) {
+          this._ += "M" + x0 + "," + y0;
+        }
+
+        // Or, is (x0,y0) not coincident with the previous point? Line to (x0,y0).
+        else if (Math.abs(this._x1 - x0) > epsilon || Math.abs(this._y1 - y0) > epsilon) {
+          this._ += "L" + x0 + "," + y0;
+        }
+
+        // Is this arc empty? We’re done.
+        if (!r) return;
+
+        // Does the angle go the wrong way? Flip the direction.
+        if (da < 0) da = da % tau + tau;
+
+        // Is this a complete circle? Draw two arcs to complete the circle.
+        if (da > tauEpsilon) {
+          this._ += "A" + r + "," + r + ",0,1," + cw + "," + (x - dx) + "," + (y - dy) + "A" + r + "," + r + ",0,1," + cw + "," + (this._x1 = x0) + "," + (this._y1 = y0);
+        }
+
+        // Is this arc non-empty? Draw an arc!
+        else if (da > epsilon) {
+          this._ += "A" + r + "," + r + ",0," + (+(da >= pi)) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
+        }
+      },
+      rect: function(x, y, w, h) {
+        this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y) + "h" + (+w) + "v" + (+h) + "h" + (-w) + "Z";
+      },
+      toString: function() {
+        return this._;
+      }
+    };
+
+    function constant$2(x) {
+      return function constant() {
+        return x;
+      };
+    }
+
+    var pi$1 = Math.PI;
+
+    function Linear(context) {
+      this._context = context;
+    }
+
+    Linear.prototype = {
+      areaStart: function() {
+        this._line = 0;
+      },
+      areaEnd: function() {
+        this._line = NaN;
+      },
+      lineStart: function() {
+        this._point = 0;
+      },
+      lineEnd: function() {
+        if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+        this._line = 1 - this._line;
+      },
+      point: function(x, y) {
+        x = +x, y = +y;
+        switch (this._point) {
+          case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+          case 1: this._point = 2; // proceed
+          default: this._context.lineTo(x, y); break;
+        }
+      }
+    };
+
+    function curveLinear(context) {
+      return new Linear(context);
+    }
+
+    function x(p) {
+      return p[0];
+    }
+
+    function y(p) {
+      return p[1];
+    }
+
+    function line() {
+      var x$1 = x,
+          y$1 = y,
+          defined = constant$2(true),
+          context = null,
+          curve = curveLinear,
+          output = null;
+
+      function line(data) {
+        var i,
+            n = data.length,
+            d,
+            defined0 = false,
+            buffer;
+
+        if (context == null) output = curve(buffer = path());
+
+        for (i = 0; i <= n; ++i) {
+          if (!(i < n && defined(d = data[i], i, data)) === defined0) {
+            if (defined0 = !defined0) output.lineStart();
+            else output.lineEnd();
+          }
+          if (defined0) output.point(+x$1(d, i, data), +y$1(d, i, data));
+        }
+
+        if (buffer) return output = null, buffer + "" || null;
+      }
+
+      line.x = function(_) {
+        return arguments.length ? (x$1 = typeof _ === "function" ? _ : constant$2(+_), line) : x$1;
+      };
+
+      line.y = function(_) {
+        return arguments.length ? (y$1 = typeof _ === "function" ? _ : constant$2(+_), line) : y$1;
+      };
+
+      line.defined = function(_) {
+        return arguments.length ? (defined = typeof _ === "function" ? _ : constant$2(!!_), line) : defined;
+      };
+
+      line.curve = function(_) {
+        return arguments.length ? (curve = _, context != null && (output = curve(context)), line) : curve;
+      };
+
+      line.context = function(_) {
+        return arguments.length ? (_ == null ? context = output = null : output = curve(context = _), line) : context;
+      };
+
+      return line;
+    }
+
+    function sign(x) {
+      return x < 0 ? -1 : 1;
+    }
+
+    // Calculate the slopes of the tangents (Hermite-type interpolation) based on
+    // the following paper: Steffen, M. 1990. A Simple Method for Monotonic
+    // Interpolation in One Dimension. Astronomy and Astrophysics, Vol. 239, NO.
+    // NOV(II), P. 443, 1990.
+    function slope3(that, x2, y2) {
+      var h0 = that._x1 - that._x0,
+          h1 = x2 - that._x1,
+          s0 = (that._y1 - that._y0) / (h0 || h1 < 0 && -0),
+          s1 = (y2 - that._y1) / (h1 || h0 < 0 && -0),
+          p = (s0 * h1 + s1 * h0) / (h0 + h1);
+      return (sign(s0) + sign(s1)) * Math.min(Math.abs(s0), Math.abs(s1), 0.5 * Math.abs(p)) || 0;
+    }
+
+    // Calculate a one-sided slope.
+    function slope2(that, t) {
+      var h = that._x1 - that._x0;
+      return h ? (3 * (that._y1 - that._y0) / h - t) / 2 : t;
+    }
+
+    // According to https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Representations
+    // "you can express cubic Hermite interpolation in terms of cubic Bézier curves
+    // with respect to the four values p0, p0 + m0 / 3, p1 - m1 / 3, p1".
+    function point(that, t0, t1) {
+      var x0 = that._x0,
+          y0 = that._y0,
+          x1 = that._x1,
+          y1 = that._y1,
+          dx = (x1 - x0) / 3;
+      that._context.bezierCurveTo(x0 + dx, y0 + dx * t0, x1 - dx, y1 - dx * t1, x1, y1);
+    }
+
+    function MonotoneX(context) {
+      this._context = context;
+    }
+
+    MonotoneX.prototype = {
+      areaStart: function() {
+        this._line = 0;
+      },
+      areaEnd: function() {
+        this._line = NaN;
+      },
+      lineStart: function() {
+        this._x0 = this._x1 =
+        this._y0 = this._y1 =
+        this._t0 = NaN;
+        this._point = 0;
+      },
+      lineEnd: function() {
+        switch (this._point) {
+          case 2: this._context.lineTo(this._x1, this._y1); break;
+          case 3: point(this, this._t0, slope2(this, this._t0)); break;
+        }
+        if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+        this._line = 1 - this._line;
+      },
+      point: function(x, y) {
+        var t1 = NaN;
+
+        x = +x, y = +y;
+        if (x === this._x1 && y === this._y1) return; // Ignore coincident points.
+        switch (this._point) {
+          case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+          case 1: this._point = 2; break;
+          case 2: this._point = 3; point(this, slope2(this, t1 = slope3(this, x, y)), t1); break;
+          default: point(this, this._t0, t1 = slope3(this, x, y)); break;
+        }
+
+        this._x0 = this._x1, this._x1 = x;
+        this._y0 = this._y1, this._y1 = y;
+        this._t0 = t1;
+      }
+    };
+
+    function MonotoneY(context) {
+      this._context = new ReflectContext(context);
+    }
+
+    (MonotoneY.prototype = Object.create(MonotoneX.prototype)).point = function(x, y) {
+      MonotoneX.prototype.point.call(this, y, x);
+    };
+
+    function ReflectContext(context) {
+      this._context = context;
+    }
+
+    ReflectContext.prototype = {
+      moveTo: function(x, y) { this._context.moveTo(y, x); },
+      closePath: function() { this._context.closePath(); },
+      lineTo: function(x, y) { this._context.lineTo(y, x); },
+      bezierCurveTo: function(x1, y1, x2, y2, x, y) { this._context.bezierCurveTo(y1, x1, y2, x2, y, x); }
+    };
+
+    function Step(context, t) {
+      this._context = context;
+      this._t = t;
+    }
+
+    Step.prototype = {
+      areaStart: function() {
+        this._line = 0;
+      },
+      areaEnd: function() {
+        this._line = NaN;
+      },
+      lineStart: function() {
+        this._x = this._y = NaN;
+        this._point = 0;
+      },
+      lineEnd: function() {
+        if (0 < this._t && this._t < 1 && this._point === 2) this._context.lineTo(this._x, this._y);
+        if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+        if (this._line >= 0) this._t = 1 - this._t, this._line = 1 - this._line;
+      },
+      point: function(x, y) {
+        x = +x, y = +y;
+        switch (this._point) {
+          case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+          case 1: this._point = 2; // proceed
+          default: {
+            if (this._t <= 0) {
+              this._context.lineTo(this._x, y);
+              this._context.lineTo(x, y);
+            } else {
+              var x1 = this._x * (1 - this._t) + x * this._t;
+              this._context.lineTo(x1, this._y);
+              this._context.lineTo(x1, y);
+            }
+            break;
+          }
+        }
+        this._x = x, this._y = y;
+      }
+    };
+
+    function stepAfter(context) {
+      return new Step(context, 1);
+    }
+
+    /* src\StepChart.svelte generated by Svelte v3.5.3 */
+
+    const file$6 = "src\\StepChart.svelte";
+
+    function get_each_context$3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.y = list[i];
+    	return child_ctx;
+    }
+
+    // (84:8) {#if values.length}
+    function create_if_block$3(ctx) {
+    	var line_1, line_1_x__value, line_1_x__value_1, line_1_y__value, line_1_y__value_1, path_1;
+
+    	var each_value = ctx.yScale.ticks(6);
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
+
+    	return {
+    		c: function create() {
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			line_1 = svg_element("line");
+    			path_1 = svg_element("path");
+    			attr(line_1, "class", "direct svelte-1cvjt29");
+    			attr(line_1, "x1", line_1_x__value = ctx.padding.left);
+    			attr(line_1, "x2", line_1_x__value_1 = ctx.width - ctx.padding.right);
+    			attr(line_1, "y1", line_1_y__value = ctx.yScale(ctx.values[0]));
+    			attr(line_1, "y2", line_1_y__value_1 = ctx.yScale(ctx.values[ctx.values.length - 1]));
+    			add_location(line_1, file$6, 91, 12, 2331);
+    			attr(path_1, "d", ctx.path);
+    			attr(path_1, "class", "svelte-1cvjt29");
+    			add_location(path_1, file$6, 97, 12, 2560);
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert(target, line_1, anchor);
+    			insert(target, path_1, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.padding || changed.width || changed.yScale) {
+    				each_value = ctx.yScale.ticks(6);
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(line_1.parentNode, line_1);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if ((changed.width) && line_1_x__value_1 !== (line_1_x__value_1 = ctx.width - ctx.padding.right)) {
+    				attr(line_1, "x2", line_1_x__value_1);
+    			}
+
+    			if ((changed.yScale || changed.values) && line_1_y__value !== (line_1_y__value = ctx.yScale(ctx.values[0]))) {
+    				attr(line_1, "y1", line_1_y__value);
+    			}
+
+    			if ((changed.yScale || changed.values) && line_1_y__value_1 !== (line_1_y__value_1 = ctx.yScale(ctx.values[ctx.values.length - 1]))) {
+    				attr(line_1, "y2", line_1_y__value_1);
+    			}
+
+    			if (changed.path) {
+    				attr(path_1, "d", ctx.path);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach(line_1);
+    				detach(path_1);
+    			}
+    		}
+    	};
+    }
+
+    // (85:12) {#each yScale.ticks(6) as y}
+    function create_each_block$3(ctx) {
+    	var text_1, t_value = ctx.y, t, text_1_x_value, text_1_y_value, line_1, line_1_x__value, line_1_x__value_1, line_1_transform_value;
+
+    	return {
+    		c: function create() {
+    			text_1 = svg_element("text");
+    			t = text(t_value);
+    			line_1 = svg_element("line");
+    			attr(text_1, "x", text_1_x_value = ctx.padding.left - 5);
+    			attr(text_1, "y", text_1_y_value = ctx.yScale(ctx.y));
+    			attr(text_1, "class", "svelte-1cvjt29");
+    			add_location(text_1, file$6, 85, 16, 2070);
+    			attr(line_1, "x1", line_1_x__value = ctx.padding.left);
+    			attr(line_1, "x2", line_1_x__value_1 = ctx.width - ctx.padding.right);
+    			attr(line_1, "transform", line_1_transform_value = "translate(0," + ctx.yScale(ctx.y) + ")");
+    			attr(line_1, "class", "svelte-1cvjt29");
+    			add_location(line_1, file$6, 86, 16, 2143);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, text_1, anchor);
+    			append(text_1, t);
+    			insert(target, line_1, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.yScale) && t_value !== (t_value = ctx.y)) {
+    				set_data(t, t_value);
+    			}
+
+    			if ((changed.yScale) && text_1_y_value !== (text_1_y_value = ctx.yScale(ctx.y))) {
+    				attr(text_1, "y", text_1_y_value);
+    			}
+
+    			if ((changed.width) && line_1_x__value_1 !== (line_1_x__value_1 = ctx.width - ctx.padding.right)) {
+    				attr(line_1, "x2", line_1_x__value_1);
+    			}
+
+    			if ((changed.yScale) && line_1_transform_value !== (line_1_transform_value = "translate(0," + ctx.yScale(ctx.y) + ")")) {
+    				attr(line_1, "transform", line_1_transform_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(text_1);
+    				detach(line_1);
+    			}
+    		}
+    	};
+    }
+
+    function create_fragment$6(ctx) {
+    	var div, h4, t0, t1, svg, svg_height_value, div_resize_listener;
+
+    	var if_block = (ctx.values.length) && create_if_block$3(ctx);
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+    			h4 = element("h4");
+    			t0 = text(ctx.title);
+    			t1 = space();
+    			svg = svg_element("svg");
+    			if (if_block) if_block.c();
+    			attr(h4, "class", "svelte-1cvjt29");
+    			add_location(h4, file$6, 81, 4, 1932);
+    			attr(svg, "height", svg_height_value = ctx.height || 50);
+    			attr(svg, "class", "svelte-1cvjt29");
+    			add_location(svg, file$6, 82, 4, 1954);
+    			add_render_callback(() => ctx.div_resize_handler.call(div));
+    			set_style(div, "margin-top", "1em");
+    			add_location(div, file$6, 80, 0, 1872);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+    			append(div, h4);
+    			append(h4, t0);
+    			append(div, t1);
+    			append(div, svg);
+    			if (if_block) if_block.m(svg, null);
+    			div_resize_listener = add_resize_listener(div, ctx.div_resize_handler.bind(div));
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.title) {
+    				set_data(t0, ctx.title);
+    			}
+
+    			if (ctx.values.length) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					if_block.m(svg, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if ((changed.height) && svg_height_value !== (svg_height_value = ctx.height || 50)) {
+    				attr(svg, "height", svg_height_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			if (if_block) if_block.d();
+    			div_resize_listener.cancel();
+    		}
+    	};
+    }
+
+    function instance$6($$self, $$props, $$invalidate) {
+    	
+
+        let width;
+        let { title = '' } = $$props;
+
+        const padding = {
+            left: 30,
+            right: 10,
+            top: 20,
+            bottom: 20
+        };
+
+        let { steps = [], mode = 0 } = $$props;
+        let yDomain;
+
+    	const writable_props = ['title', 'steps', 'mode'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<StepChart> was created with unknown prop '${key}'`);
+    	});
+
+    	function div_resize_handler() {
+    		width = this.clientWidth;
+    		$$invalidate('width', width);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('steps' in $$props) $$invalidate('steps', steps = $$props.steps);
+    		if ('mode' in $$props) $$invalidate('mode', mode = $$props.mode);
+    	};
+
+    	let height, values, values2, xScale, minDomain, yScale, lineGen, path;
+
+    	$$self.$$.update = ($$dirty = { width: 1, steps: 1, mode: 1, values: 1, yDomain: 1, minDomain: 1, height: 1, xScale: 1, yScale: 1, lineGen: 1, values2: 1 }) => {
+    		if ($$dirty.width) { $$invalidate('height', height = width * 0.7); }
+    		if ($$dirty.steps || $$dirty.mode) { $$invalidate('values', values = steps.map(c => chroma(c).lch()[mode])); }
+    		if ($$dirty.values) { $$invalidate('values2', values2 = values.length ? values.concat(values[values.length - 1]) : []); }
+    		if ($$dirty.steps || $$dirty.width) { $$invalidate('xScale', xScale = linear$1()
+                    .domain([0, steps.length])
+                    .range([padding.left, width - padding.right])); }
+    		if ($$dirty.mode) { $$invalidate('minDomain', minDomain = mode === 1 ? 80 : 50); }
+    		if ($$dirty.values || $$dirty.yDomain || $$dirty.minDomain) { {
+                    $$invalidate('yDomain', yDomain = extent(values));
+                    const diff = Math.abs(yDomain[1] - yDomain[0]);
+                    if (diff < minDomain) {
+                        yDomain[0] -= (minDomain-diff)*0.5; $$invalidate('yDomain', yDomain), $$invalidate('values', values), $$invalidate('minDomain', minDomain), $$invalidate('steps', steps), $$invalidate('mode', mode);
+                        yDomain[1] += (minDomain-diff)*0.5; $$invalidate('yDomain', yDomain), $$invalidate('values', values), $$invalidate('minDomain', minDomain), $$invalidate('steps', steps), $$invalidate('mode', mode);
+                        $$invalidate('yDomain', yDomain), $$invalidate('values', values), $$invalidate('minDomain', minDomain), $$invalidate('steps', steps), $$invalidate('mode', mode);
+                    }
+                } }
+    		if ($$dirty.yDomain || $$dirty.height) { $$invalidate('yScale', yScale = linear$1()
+                    .domain(yDomain)
+                    .nice()
+                    .rangeRound([height - padding.bottom, padding.top])); }
+    		if ($$dirty.xScale || $$dirty.yScale) { $$invalidate('lineGen', lineGen = line()
+                    .x((v, i) => xScale(i))
+                    .y(yScale)
+                    .curve(stepAfter)); }
+    		if ($$dirty.lineGen || $$dirty.values2) { $$invalidate('path', path = lineGen(values2)); }
+    	};
+
+    	return {
+    		width,
+    		title,
+    		padding,
+    		steps,
+    		mode,
+    		height,
+    		values,
+    		yScale,
+    		path,
+    		div_resize_handler
+    	};
+    }
+
+    class StepChart extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, ["title", "steps", "mode"]);
+    	}
+
+    	get title() {
+    		throw new Error("<StepChart>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<StepChart>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get steps() {
+    		throw new Error("<StepChart>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set steps(value) {
+    		throw new Error("<StepChart>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get mode() {
+    		throw new Error("<StepChart>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set mode(value) {
+    		throw new Error("<StepChart>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Card.svelte generated by Svelte v3.5.3 */
+
+    const file$7 = "src\\Card.svelte";
+
+    // (78:27) {#if step}
+    function create_if_block$4(ctx) {
+    	var span, t, span_class_value;
+
+    	return {
+    		c: function create() {
+    			span = element("span");
+    			t = text(ctx.step);
+    			attr(span, "class", span_class_value = "step variant-" + ctx.stepVariant + " svelte-s4vw6e");
+    			add_location(span, file$7, 77, 37, 2056);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, span, anchor);
+    			append(span, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.step) {
+    				set_data(t, ctx.step);
+    			}
+
+    			if ((changed.stepVariant) && span_class_value !== (span_class_value = "step variant-" + ctx.stepVariant + " svelte-s4vw6e")) {
+    				attr(span, "class", span_class_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(span);
+    			}
+    		}
+    	};
+    }
+
+    function create_fragment$7(ctx) {
+    	var div, h5, t0, t1, current;
+
+    	var if_block = (ctx.step) && create_if_block$4(ctx);
+
+    	const default_slot_1 = ctx.$$slots.default;
+    	const default_slot = create_slot(default_slot_1, ctx, null);
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+    			h5 = element("h5");
+    			if (if_block) if_block.c();
+    			t0 = text(ctx.title);
+    			t1 = space();
+
+    			if (default_slot) default_slot.c();
+    			attr(h5, "class", "card-title svelte-s4vw6e");
+    			add_location(h5, file$7, 77, 4, 2023);
+
+    			attr(div, "class", "card svelte-s4vw6e");
+    			add_location(div, file$7, 76, 0, 1999);
+    		},
+
+    		l: function claim(nodes) {
+    			if (default_slot) default_slot.l(div_nodes);
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+    			append(div, h5);
+    			if (if_block) if_block.m(h5, null);
+    			append(h5, t0);
+    			append(div, t1);
+
+    			if (default_slot) {
+    				default_slot.m(div, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.step) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block$4(ctx);
+    					if_block.c();
+    					if_block.m(h5, t0);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (!current || changed.title) {
+    				set_data(t0, ctx.title);
+    			}
+
+    			if (default_slot && default_slot.p && changed.$$scope) {
+    				default_slot.p(get_slot_changes(default_slot_1, ctx, changed, null), get_slot_context(default_slot_1, ctx, null));
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(default_slot, local);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(default_slot, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			if (if_block) if_block.d();
+
+    			if (default_slot) default_slot.d(detaching);
+    		}
+    	};
+    }
+
+    function instance$7($$self, $$props, $$invalidate) {
+    	let { title = '', step = '', stepVariant = 'default' } = $$props;
+
+    	const writable_props = ['title', 'step', 'stepVariant'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Card> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+
+    	$$self.$set = $$props => {
+    		if ('title' in $$props) $$invalidate('title', title = $$props.title);
+    		if ('step' in $$props) $$invalidate('step', step = $$props.step);
+    		if ('stepVariant' in $$props) $$invalidate('stepVariant', stepVariant = $$props.stepVariant);
+    		if ('$$scope' in $$props) $$invalidate('$$scope', $$scope = $$props.$$scope);
+    	};
+
+    	return {
+    		title,
+    		step,
+    		stepVariant,
+    		$$slots,
+    		$$scope
+    	};
+    }
+
+    class Card extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, ["title", "step", "stepVariant"]);
+    	}
+
+    	get title() {
+    		throw new Error("<Card>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Card>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get step() {
+    		throw new Error("<Card>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set step(value) {
+    		throw new Error("<Card>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get stepVariant() {
+    		throw new Error("<Card>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set stepVariant(value) {
+    		throw new Error("<Card>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\ColorBlindCheck.svelte generated by Svelte v3.5.3 */
+
+    const file$8 = "src\\ColorBlindCheck.svelte";
+
+    function get_each_context$4(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.type = list[i];
+    	return child_ctx;
+    }
+
+    // (94:4) {:else}
+    function create_else_block(ctx) {
+    	var p;
+
+    	return {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Colorblind-safe";
+    			attr(p, "class", "res text-secondary svelte-e1lu1");
+    			add_location(p, file$8, 94, 8, 1872);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, p, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(p);
+    			}
+    		}
+    	};
+    }
+
+    // (92:4) {#if result.length}
+    function create_if_block$5(ctx) {
+    	var p;
+
+    	return {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Not colorblind-safe";
+    			attr(p, "class", "res text-danger svelte-e1lu1");
+    			add_location(p, file$8, 92, 8, 1799);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, p, anchor);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(p);
+    			}
+    		}
+    	};
+    }
+
+    // (100:12) {#each types as type}
+    function create_each_block$4(ctx) {
+    	var label, input, input_value_value, t0, t1_value = ctx.type === 'none' ? 'normal' : ctx.type.substr(0, 4) + '.', t1, t2, label_title_value, dispose;
+
+    	return {
+    		c: function create() {
+    			label = element("label");
+    			input = element("input");
+    			t0 = space();
+    			t1 = text(t1_value);
+    			t2 = space();
+    			ctx.$$binding_groups[0].push(input);
+    			input.__value = input_value_value = ctx.type;
+    			input.value = input.__value;
+    			attr(input, "type", "radio");
+    			attr(input, "name", "cbSim");
+    			attr(input, "autocomplete", "off");
+    			attr(input, "class", "svelte-e1lu1");
+    			add_location(input, file$8, 105, 20, 2362);
+    			attr(label, "class", "seg-btn svelte-e1lu1");
+    			attr(label, "title", label_title_value = ctx.typeTitles[ctx.type]);
+    			toggle_class(label, "danger", ctx.result.includes(ctx.type));
+    			toggle_class(label, "active", ctx.active === ctx.type);
+    			add_location(label, file$8, 100, 16, 2140);
+    			dispose = listen(input, "change", ctx.input_change_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, label, anchor);
+    			append(label, input);
+
+    			input.checked = input.__value === ctx.active;
+
+    			append(label, t0);
+    			append(label, t1);
+    			append(label, t2);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.active) input.checked = input.__value === ctx.active;
+    			input.value = input.__value;
+
+    			if ((changed.result || changed.types)) {
+    				toggle_class(label, "danger", ctx.result.includes(ctx.type));
+    			}
+
+    			if ((changed.active || changed.types)) {
+    				toggle_class(label, "active", ctx.active === ctx.type);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(label);
+    			}
+
+    			ctx.$$binding_groups[0].splice(ctx.$$binding_groups[0].indexOf(input), 1);
+    			dispose();
+    		}
+    	};
+    }
+
+    function create_fragment$8(ctx) {
+    	var div3, t0, div2, div0, t2, div1;
+
+    	function select_block_type(ctx) {
+    		if (ctx.result.length) return create_if_block$5;
+    		return create_else_block;
+    	}
+
+    	var current_block_type = select_block_type(ctx);
+    	var if_block = current_block_type(ctx);
+
+    	var each_value = ctx.types;
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+    	}
+
+    	return {
+    		c: function create() {
+    			div3 = element("div");
+    			if_block.c();
+    			t0 = space();
+    			div2 = element("div");
+    			div0 = element("div");
+    			div0.textContent = "simulate";
+    			t2 = space();
+    			div1 = element("div");
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr(div0, "class", "sim-label svelte-e1lu1");
+    			add_location(div0, file$8, 97, 8, 1969);
+    			attr(div1, "class", "seg-group svelte-e1lu1");
+    			attr(div1, "role", "group");
+    			attr(div1, "aria-label", "Colorblind simulation");
+    			add_location(div1, file$8, 98, 8, 2016);
+    			attr(div2, "class", "sim-row svelte-e1lu1");
+    			add_location(div2, file$8, 96, 4, 1938);
+    			attr(div3, "class", "colorblind-sim svelte-e1lu1");
+    			add_location(div3, file$8, 90, 0, 1736);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div3, anchor);
+    			if_block.m(div3, null);
+    			append(div3, t0);
+    			append(div3, div2);
+    			append(div2, div0);
+    			append(div2, t2);
+    			append(div2, div1);
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div1, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(div3, t0);
+    				}
+    			}
+
+    			if (changed.typeTitles || changed.types || changed.result || changed.active) {
+    				each_value = ctx.types;
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$4(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div3);
+    			}
+
+    			if_block.d();
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    }
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	
+
+        let { colors = [], active = 'none' } = $$props;
+
+        const types = ['none', 'deuteranopia', 'protanopia', 'tritanopia'];
+        const typeTitles = {
+            none: 'Normal vision',
+            deuteranopia: 'Deuteranopia',
+            protanopia: 'Protanopia',
+            tritanopia: 'Tritanopia'
+        };
+
+    	const writable_props = ['colors', 'active'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<ColorBlindCheck> was created with unknown prop '${key}'`);
+    	});
+
+    	const $$binding_groups = [[]];
+
+    	function input_change_handler() {
+    		active = this.__value;
+    		$$invalidate('active', active);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('colors' in $$props) $$invalidate('colors', colors = $$props.colors);
+    		if ('active' in $$props) $$invalidate('active', active = $$props.active);
+    	};
+
+    	let result;
+
+    	$$self.$$.update = ($$dirty = { colors: 1 }) => {
+    		if ($$dirty.colors) { $$invalidate('result', result = colorBlindCheck(colors)); }
+    	};
+
+    	return {
+    		colors,
+    		active,
+    		types,
+    		typeTitles,
+    		result,
+    		input_change_handler,
+    		$$binding_groups
+    	};
+    }
+
+    class ColorBlindCheck extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, ["colors", "active"]);
+    	}
+
+    	get colors() {
+    		throw new Error("<ColorBlindCheck>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<ColorBlindCheck>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get active() {
+    		throw new Error("<ColorBlindCheck>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set active(value) {
+    		throw new Error("<ColorBlindCheck>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\ButtonGroup.svelte generated by Svelte v3.5.3 */
+
+    const file$9 = "src\\ButtonGroup.svelte";
+
+    function get_each_context$5(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.option = list[i];
+    	return child_ctx;
+    }
+
+    // (45:4) {#each normalizedOptions as option}
+    function create_each_block$5(ctx) {
+    	var label, input, input_value_value, input_id_value, input_checked_value, t0, t1_value = ctx.option.title, t1, t2, dispose;
+
+    	return {
+    		c: function create() {
+    			label = element("label");
+    			input = element("input");
+    			t0 = space();
+    			t1 = text(t1_value);
+    			t2 = space();
+    			ctx.$$binding_groups[0].push(input);
+    			input.__value = input_value_value = ctx.option.value;
+    			input.value = input.__value;
+    			attr(input, "type", "radio");
+    			attr(input, "name", ctx.id);
+    			attr(input, "id", input_id_value = `${ctx.id}-${ctx.option.value}`);
+    			attr(input, "autocomplete", "off");
+    			input.checked = input_checked_value = ctx.value === ctx.option.value;
+    			attr(input, "class", "svelte-u78p4u");
+    			add_location(input, file$9, 46, 12, 1033);
+    			attr(label, "class", "seg-btn svelte-u78p4u");
+    			toggle_class(label, "active", ctx.value === ctx.option.value);
+    			add_location(label, file$9, 45, 8, 958);
+    			dispose = listen(input, "change", ctx.input_change_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, label, anchor);
+    			append(label, input);
+
+    			input.checked = input.__value === ctx.value;
+
+    			append(label, t0);
+    			append(label, t1);
+    			append(label, t2);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.value) input.checked = input.__value === ctx.value;
+
+    			if ((changed.normalizedOptions) && input_value_value !== (input_value_value = ctx.option.value)) {
+    				input.__value = input_value_value;
+    			}
+
+    			input.value = input.__value;
+
+    			if ((changed.normalizedOptions) && input_id_value !== (input_id_value = `${ctx.id}-${ctx.option.value}`)) {
+    				attr(input, "id", input_id_value);
+    			}
+
+    			if ((changed.value || changed.normalizedOptions) && input_checked_value !== (input_checked_value = ctx.value === ctx.option.value)) {
+    				input.checked = input_checked_value;
+    			}
+
+    			if ((changed.normalizedOptions) && t1_value !== (t1_value = ctx.option.title)) {
+    				set_data(t1, t1_value);
+    			}
+
+    			if ((changed.value || changed.normalizedOptions)) {
+    				toggle_class(label, "active", ctx.value === ctx.option.value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(label);
+    			}
+
+    			ctx.$$binding_groups[0].splice(ctx.$$binding_groups[0].indexOf(input), 1);
+    			dispose();
+    		}
+    	};
+    }
+
+    function create_fragment$9(ctx) {
+    	var div;
+
+    	var each_value = ctx.normalizedOptions;
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+    	}
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr(div, "class", "seg-group svelte-u78p4u");
+    			add_location(div, file$9, 43, 0, 884);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.value || changed.normalizedOptions || changed.id) {
+    				each_value = ctx.normalizedOptions;
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$5(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$5(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    }
+
+    function instance$9($$self, $$props, $$invalidate) {
+    	let { options = [], value } = $$props;
+
+        const id = Math.round(Math.random() * 1e7).toString(36);
+
+    	const writable_props = ['options', 'value'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<ButtonGroup> was created with unknown prop '${key}'`);
+    	});
+
+    	const $$binding_groups = [[]];
+
+    	function input_change_handler() {
+    		value = this.__value;
+    		$$invalidate('value', value);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('options' in $$props) $$invalidate('options', options = $$props.options);
+    		if ('value' in $$props) $$invalidate('value', value = $$props.value);
+    	};
+
+    	let normalizedOptions;
+
+    	$$self.$$.update = ($$dirty = { options: 1 }) => {
+    		if ($$dirty.options) { $$invalidate('normalizedOptions', normalizedOptions = options.map(option =>
+    		        typeof option === 'string' ? { value: option, title: option } : option
+    		    )); }
+    	};
+
+    	return {
+    		options,
+    		value,
+    		id,
+    		normalizedOptions,
+    		input_change_handler,
+    		$$binding_groups
+    	};
+    }
+
+    class ButtonGroup extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, ["options", "value"]);
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.value === undefined && !('value' in props)) {
+    			console.warn("<ButtonGroup> was created without expected prop 'value'");
+    		}
+    	}
+
+    	get options() {
+    		throw new Error("<ButtonGroup>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set options(value) {
+    		throw new Error("<ButtonGroup>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get value() {
+    		throw new Error("<ButtonGroup>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set value(value) {
+    		throw new Error("<ButtonGroup>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\AIChatbot.svelte generated by Svelte v3.5.3 */
+
+    const file$a = "src\\AIChatbot.svelte";
+
+    function get_each_context$6(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.msg = list[i];
+    	return child_ctx;
+    }
+
+    // (141:0) {#if isOpen}
+    function create_if_block$6(ctx) {
+    	var div2, div0, t0, t1, div1, textarea, t2, button, t3_value = ctx.loading ? '...' : 'Send', t3, dispose;
+
+    	var each_value = ctx.messages;
+
+    	var each_blocks = [];
+
+    	for (var i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    	}
+
+    	var if_block = (ctx.error) && create_if_block_1(ctx);
+
+    	return {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t0 = space();
+    			if (if_block) if_block.c();
+    			t1 = space();
+    			div1 = element("div");
+    			textarea = element("textarea");
+    			t2 = space();
+    			button = element("button");
+    			t3 = text(t3_value);
+    			attr(div0, "class", "chat-messages svelte-1crxl0z");
+    			add_location(div0, file$a, 142, 8, 4838);
+    			attr(textarea, "rows", "2");
+    			attr(textarea, "placeholder", "Try: \"Calm diverging palette with 5 colors\"");
+    			attr(textarea, "class", "svelte-1crxl0z");
+    			add_location(textarea, file$a, 156, 12, 5295);
+    			attr(button, "class", "send-btn svelte-1crxl0z");
+    			button.disabled = ctx.loading;
+    			add_location(button, file$a, 161, 12, 5507);
+    			attr(div1, "class", "chat-input svelte-1crxl0z");
+    			add_location(div1, file$a, 155, 8, 5257);
+    			attr(div2, "class", "chat-panel svelte-1crxl0z");
+    			add_location(div2, file$a, 141, 4, 4804);
+
+    			dispose = [
+    				listen(textarea, "input", ctx.textarea_input_handler),
+    				listen(textarea, "keydown", ctx.onMessageKeydown),
+    				listen(button, "click", ctx.sendMessage)
+    			];
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div2, anchor);
+    			append(div2, div0);
+
+    			for (var i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div0, null);
+    			}
+
+    			append(div2, t0);
+    			if (if_block) if_block.m(div2, null);
+    			append(div2, t1);
+    			append(div2, div1);
+    			append(div1, textarea);
+
+    			textarea.value = ctx.message;
+
+    			append(div1, t2);
+    			append(div1, button);
+    			append(button, t3);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.messages) {
+    				each_value = ctx.messages;
+
+    				for (var i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$6(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (ctx.error) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_1(ctx);
+    					if_block.c();
+    					if_block.m(div2, t1);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (changed.message) textarea.value = ctx.message;
+
+    			if ((changed.loading) && t3_value !== (t3_value = ctx.loading ? '...' : 'Send')) {
+    				set_data(t3, t3_value);
+    			}
+
+    			if (changed.loading) {
+    				button.disabled = ctx.loading;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div2);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (if_block) if_block.d();
+    			run_all(dispose);
+    		}
+    	};
+    }
+
+    // (144:12) {#each messages as msg}
+    function create_each_block$6(ctx) {
+    	var div2, div0, t0_value = ctx.msg.role === 'user' ? 'You' : 'AI', t0, t1, div1, t2_value = ctx.msg.content, t2, div2_class_value;
+
+    	return {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			div1 = element("div");
+    			t2 = text(t2_value);
+    			attr(div0, "class", "role svelte-1crxl0z");
+    			add_location(div0, file$a, 145, 20, 4973);
+    			attr(div1, "class", "content svelte-1crxl0z");
+    			add_location(div1, file$a, 146, 20, 5055);
+    			attr(div2, "class", div2_class_value = "bubble " + ctx.msg.role + " svelte-1crxl0z");
+    			add_location(div2, file$a, 144, 16, 4920);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div2, anchor);
+    			append(div2, div0);
+    			append(div0, t0);
+    			append(div2, t1);
+    			append(div2, div1);
+    			append(div1, t2);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.messages) && t0_value !== (t0_value = ctx.msg.role === 'user' ? 'You' : 'AI')) {
+    				set_data(t0, t0_value);
+    			}
+
+    			if ((changed.messages) && t2_value !== (t2_value = ctx.msg.content)) {
+    				set_data(t2, t2_value);
+    			}
+
+    			if ((changed.messages) && div2_class_value !== (div2_class_value = "bubble " + ctx.msg.role + " svelte-1crxl0z")) {
+    				attr(div2, "class", div2_class_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div2);
+    			}
+    		}
+    	};
+    }
+
+    // (152:8) {#if error}
+    function create_if_block_1(ctx) {
+    	var div, t;
+
+    	return {
+    		c: function create() {
+    			div = element("div");
+    			t = text(ctx.error);
+    			attr(div, "class", "chat-error svelte-1crxl0z");
+    			add_location(div, file$a, 152, 12, 5193);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div, anchor);
+    			append(div, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.error) {
+    				set_data(t, ctx.error);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div);
+    			}
+    		}
+    	};
+    }
+
+    function create_fragment$a(ctx) {
+    	var button, svg, path, t0, span, t1_value = ctx.isOpen ? 'Close' : 'Ask AI', t1, t2, if_block_anchor, dispose;
+
+    	var if_block = (ctx.isOpen) && create_if_block$6(ctx);
+
+    	return {
+    		c: function create() {
+    			button = element("button");
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			t0 = space();
+    			span = element("span");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			attr(path, "d", "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z");
+    			add_location(path, file$a, 135, 8, 4613);
+    			attr(svg, "class", "chat-icon svelte-1crxl0z");
+    			attr(svg, "width", "20");
+    			attr(svg, "height", "20");
+    			attr(svg, "viewBox", "0 0 24 24");
+    			attr(svg, "fill", "none");
+    			attr(svg, "stroke", "currentColor");
+    			attr(svg, "stroke-width", "2");
+    			attr(svg, "stroke-linecap", "round");
+    			attr(svg, "stroke-linejoin", "round");
+    			add_location(svg, file$a, 125, 4, 4358);
+    			attr(span, "class", "chat-label svelte-1crxl0z");
+    			add_location(span, file$a, 137, 4, 4710);
+    			attr(button, "class", "chat-toggle svelte-1crxl0z");
+    			attr(button, "title", "AI palette assistant");
+    			add_location(button, file$a, 124, 0, 4259);
+    			dispose = listen(button, "click", ctx.click_handler);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, button, anchor);
+    			append(button, svg);
+    			append(svg, path);
+    			append(button, t0);
+    			append(button, span);
+    			append(span, t1);
+    			insert(target, t2, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.isOpen) && t1_value !== (t1_value = ctx.isOpen ? 'Close' : 'Ask AI')) {
+    				set_data(t1, t1_value);
+    			}
+
+    			if (ctx.isOpen) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block$6(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(button);
+    				detach(t2);
+    			}
+
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach(if_block_anchor);
+    			}
+
+    			dispose();
+    		}
+    	};
+    }
+
+    function buildSystemPrompt() {
+          return `You are a color palette assistant for a chroma.js palette tool.
+Your job is to convert user requests into palette settings.
+
+Return only a JSON object with this exact shape:
+{
+  "mode": "sequential" | "diverging",
+  "numColors": number,
+  "colors": ["#RRGGBB", ...],
+  "colors2": ["#RRGGBB", ...],
+  "bezier": boolean,
+  "correctLightness": boolean
+}
+
+Rules:
+- numColors must be >= 2
+- mode must be either "sequential" or "diverging"
+- For sequential mode: colors2 should be []
+- For diverging mode: provide both colors and colors2 with at least 2 color stops each
+- Prefer valid 6-digit hex values in colors and colors2
+- Do not add markdown, code fences, or explanation text`;
+      }
+
+    function describeAppliedConfig(config) {
+          const modeLabel = config.mode === 'diverging' ? 'diverging' : 'sequential';
+          const count = Math.max(2, Math.round(+config.numColors || 0));
+          const bezierLabel = config.bezier ? 'on' : 'off';
+          const lightnessLabel = config.correctLightness ? 'on' : 'off';
+          return `Applied ${modeLabel} palette with ${count} colors (bezier ${bezierLabel}, lightness correction ${lightnessLabel}).`;
+      }
+
+    function extractPaletteConfig(text) {
+          const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
+          if (codeBlockMatch && codeBlockMatch[1]) {
+              try {
+                  return JSON.parse(codeBlockMatch[1].trim());
+              } catch (e) {
+                  // Fall through to looser parsing.
+              }
+          }
+
+          const start = text.indexOf('{');
+          const end = text.lastIndexOf('}');
+          if (start !== -1 && end !== -1 && end > start) {
+              try {
+                  return JSON.parse(text.substring(start, end + 1));
+              } catch (e) {
+                  return null;
+              }
+          }
+
+          return null;
+      }
+
+    function instance$a($$self, $$props, $$invalidate) {
+    	const dispatch = createEventDispatcher();
+
+        let isOpen = false;
+        let message = '';
+        let loading = false;
+        let error = '';
+
+        let messages = [
+            {
+                role: 'assistant',
+                content:
+                    'Tell me the palette you want, for example: "Create a calm diverging palette with 5 colors."'
+            }
+        ];
+
+        async function sendMessage() {
+            const prompt = message.trim();
+            if (!prompt || loading) return;
+
+            $$invalidate('error', error = '');
+            $$invalidate('messages', messages = [...messages, { role: 'user', content: prompt }]);
+            $$invalidate('message', message = '');
+
+            $$invalidate('loading', loading = true);
+            try {
+                const promptForModel = buildSystemPrompt();
+                const conversation = messages.filter(m => m.role === 'user' || m.role === 'assistant');
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        messages: conversation,
+                        systemPrompt: promptForModel
+                    })
+                });
+
+                const data = await response.json().catch(() => ({}));
+                const content = response.ok ? data.content : data.error || `Error (${response.status})`;
+
+                if (!response.ok) {
+                    $$invalidate('error', error = content);
+                    return;
+                }
+
+                const parsed = extractPaletteConfig(content);
+                if (parsed) {
+                    dispatch('applyPalette', parsed);
+                    $$invalidate('messages', messages = [...messages, { role: 'assistant', content: describeAppliedConfig(parsed) }]);
+                } else {
+                    $$invalidate('messages', messages = [...messages, { role: 'assistant', content: content || 'I could not generate a response.' }]);
+                    $$invalidate('error', error = content ? 'I could not parse palette JSON from the response.' : '');
+                }
+            } catch (e) {
+                $$invalidate('error', error = (e && e.message) || 'Request failed.');
+            } finally {
+                $$invalidate('loading', loading = false);
+            }
+        }
+
+        function onMessageKeydown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+    	function click_handler() {
+    		const $$result = (isOpen = !isOpen);
+    		$$invalidate('isOpen', isOpen);
+    		return $$result;
+    	}
+
+    	function textarea_input_handler() {
+    		message = this.value;
+    		$$invalidate('message', message);
+    	}
+
+    	return {
+    		isOpen,
+    		message,
+    		loading,
+    		error,
+    		messages,
+    		sendMessage,
+    		onMessageKeydown,
+    		click_handler,
+    		textarea_input_handler
+    	};
+    }
+
+    class AIChatbot extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, []);
+    	}
+    }
+
+    /* src\App.svelte generated by Svelte v3.5.3 */
+
+    const file$b = "src\\App.svelte";
+
+    // (217:4) <Card step="1" title="What kind of palette do you want to create?">
+    function create_default_slot_3(ctx) {
+    	var div2, div0, span0, t1, updating_value, t2, div1, span1, t4, input, current, dispose;
+
+    	function buttongroup_value_binding(value) {
+    		ctx.buttongroup_value_binding.call(null, value);
+    		updating_value = true;
+    		add_flush_callback(() => updating_value = false);
+    	}
+
+    	let buttongroup_props = { options: ['sequential', 'diverging'] };
+    	if (ctx.mode !== void 0) {
+    		buttongroup_props.value = ctx.mode;
+    	}
+    	var buttongroup = new ButtonGroup({ props: buttongroup_props, $$inline: true });
+
+    	add_binding_callback(() => bind(buttongroup, 'value', buttongroup_value_binding));
+
+    	return {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			span0 = element("span");
+    			span0.textContent = "Palette type:";
+    			t1 = space();
+    			buttongroup.$$.fragment.c();
+    			t2 = space();
+    			div1 = element("div");
+    			span1 = element("span");
+    			span1.textContent = "Number of colors:";
+    			t4 = space();
+    			input = element("input");
+    			attr(span0, "class", "label-text svelte-1bbt59u");
+    			add_location(span0, file$b, 219, 16, 6677);
+    			attr(div0, "class", "step1-field svelte-1bbt59u");
+    			add_location(div0, file$b, 218, 12, 6634);
+    			attr(span1, "class", "label-text svelte-1bbt59u");
+    			add_location(span1, file$b, 223, 16, 6888);
+    			attr(input, "type", "number");
+    			attr(input, "min", "2");
+    			attr(input, "class", "svelte-1bbt59u");
+    			add_location(input, file$b, 224, 16, 6955);
+    			attr(div1, "class", "step1-field svelte-1bbt59u");
+    			add_location(div1, file$b, 222, 12, 6845);
+    			attr(div2, "class", "step1-row svelte-1bbt59u");
+    			add_location(div2, file$b, 217, 8, 6597);
+    			dispose = listen(input, "input", ctx.input_input_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div2, anchor);
+    			append(div2, div0);
+    			append(div0, span0);
+    			append(div0, t1);
+    			mount_component(buttongroup, div0, null);
+    			append(div2, t2);
+    			append(div2, div1);
+    			append(div1, span1);
+    			append(div1, t4);
+    			append(div1, input);
+
+    			input.value = ctx.numColors;
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var buttongroup_changes = {};
+    			if (!updating_value && changed.mode) {
+    				buttongroup_changes.value = ctx.mode;
+    			}
+    			buttongroup.$set(buttongroup_changes);
+
+    			if (changed.numColors) input.value = ctx.numColors;
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(buttongroup.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(buttongroup.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div2);
+    			}
+
+    			destroy_component(buttongroup, );
+
+    			dispose();
+    		}
+    	};
+    }
+
+    // (230:4) <Card step="2" title="Select and arrange input colors">
+    function create_default_slot_2(ctx) {
+    	var updating_colors, updating_colors2, current;
+
+    	function inputcolors_colors_binding(value) {
+    		ctx.inputcolors_colors_binding.call(null, value);
+    		updating_colors = true;
+    		add_flush_callback(() => updating_colors = false);
+    	}
+
+    	function inputcolors_colors2_binding(value_1) {
+    		ctx.inputcolors_colors2_binding.call(null, value_1);
+    		updating_colors2 = true;
+    		add_flush_callback(() => updating_colors2 = false);
+    	}
+
+    	let inputcolors_props = { diverging: ctx.mode === 'diverging' };
+    	if (ctx.colors !== void 0) {
+    		inputcolors_props.colors = ctx.colors;
+    	}
+    	if (ctx.colors2 !== void 0) {
+    		inputcolors_props.colors2 = ctx.colors2;
+    	}
+    	var inputcolors = new InputColors({ props: inputcolors_props, $$inline: true });
+
+    	add_binding_callback(() => bind(inputcolors, 'colors', inputcolors_colors_binding));
+    	add_binding_callback(() => bind(inputcolors, 'colors2', inputcolors_colors2_binding));
+
+    	return {
+    		c: function create() {
+    			inputcolors.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(inputcolors, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var inputcolors_changes = {};
+    			if (changed.mode) inputcolors_changes.diverging = ctx.mode === 'diverging';
+    			if (!updating_colors && changed.colors) {
+    				inputcolors_changes.colors = ctx.colors;
+    			}
+    			if (!updating_colors2 && changed.colors2) {
+    				inputcolors_changes.colors2 = ctx.colors2;
+    			}
+    			inputcolors.$set(inputcolors_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(inputcolors.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(inputcolors.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(inputcolors, detaching);
+    		}
+    	};
+    }
+
+    // (234:4) <Card step="3" title="Check and configure the resulting palette">
+    function create_default_slot_1(ctx) {
+    	var div2, div0, updating_value, t0, updating_value_1, t1, div1, updating_colors, updating_active, t2, updating_steps, updating_correctLightness, updating_bezier, updating_colors_1, updating_colors2, updating_numColors, t3, div6, div3, t4, div4, t5, div5, current;
+
+    	function checkbox0_value_binding(value) {
+    		ctx.checkbox0_value_binding.call(null, value);
+    		updating_value = true;
+    		add_flush_callback(() => updating_value = false);
+    	}
+
+    	let checkbox0_props = {
+    		label: "correct lightness",
+    		title: "Adjust luminance so palette colors have perceptually even steps (avoids some appearing too dark or too light)."
+    	};
+    	if (ctx.correctLightness !== void 0) {
+    		checkbox0_props.value = ctx.correctLightness;
+    	}
+    	var checkbox0 = new Checkbox({ props: checkbox0_props, $$inline: true });
+
+    	add_binding_callback(() => bind(checkbox0, 'value', checkbox0_value_binding));
+
+    	function checkbox1_value_binding(value_1) {
+    		ctx.checkbox1_value_binding.call(null, value_1);
+    		updating_value_1 = true;
+    		add_flush_callback(() => updating_value_1 = false);
+    	}
+
+    	let checkbox1_props = {
+    		label: "bezier interpolation",
+    		title: "Interpolate along a Bézier curve in color space for smoother or more natural-looking gradients between colors."
+    	};
+    	if (ctx.bezier !== void 0) {
+    		checkbox1_props.value = ctx.bezier;
+    	}
+    	var checkbox1 = new Checkbox({ props: checkbox1_props, $$inline: true });
+
+    	add_binding_callback(() => bind(checkbox1, 'value', checkbox1_value_binding));
+
+    	function colorblindcheck_colors_binding(value_2) {
+    		ctx.colorblindcheck_colors_binding.call(null, value_2);
+    		updating_colors = true;
+    		add_flush_callback(() => updating_colors = false);
+    	}
+
+    	function colorblindcheck_active_binding(value_3) {
+    		ctx.colorblindcheck_active_binding.call(null, value_3);
+    		updating_active = true;
+    		add_flush_callback(() => updating_active = false);
+    	}
+
+    	let colorblindcheck_props = {};
+    	if (ctx.steps !== void 0) {
+    		colorblindcheck_props.colors = ctx.steps;
+    	}
+    	if (ctx.simulate !== void 0) {
+    		colorblindcheck_props.active = ctx.simulate;
+    	}
+    	var colorblindcheck = new ColorBlindCheck({
+    		props: colorblindcheck_props,
+    		$$inline: true
+    	});
+
+    	add_binding_callback(() => bind(colorblindcheck, 'colors', colorblindcheck_colors_binding));
+    	add_binding_callback(() => bind(colorblindcheck, 'active', colorblindcheck_active_binding));
+
+    	function palettepreview_steps_binding(value_4) {
+    		ctx.palettepreview_steps_binding.call(null, value_4);
+    		updating_steps = true;
+    		add_flush_callback(() => updating_steps = false);
+    	}
+
+    	function palettepreview_correctLightness_binding(value_5) {
+    		ctx.palettepreview_correctLightness_binding.call(null, value_5);
+    		updating_correctLightness = true;
+    		add_flush_callback(() => updating_correctLightness = false);
+    	}
+
+    	function palettepreview_bezier_binding(value_6) {
+    		ctx.palettepreview_bezier_binding.call(null, value_6);
+    		updating_bezier = true;
+    		add_flush_callback(() => updating_bezier = false);
+    	}
+
+    	function palettepreview_colors_binding(value_7) {
+    		ctx.palettepreview_colors_binding.call(null, value_7);
+    		updating_colors_1 = true;
+    		add_flush_callback(() => updating_colors_1 = false);
+    	}
+
+    	function palettepreview_colors2_binding(value_8) {
+    		ctx.palettepreview_colors2_binding.call(null, value_8);
+    		updating_colors2 = true;
+    		add_flush_callback(() => updating_colors2 = false);
+    	}
+
+    	function palettepreview_numColors_binding(value_9) {
+    		ctx.palettepreview_numColors_binding.call(null, value_9);
+    		updating_numColors = true;
+    		add_flush_callback(() => updating_numColors = false);
+    	}
+
+    	let palettepreview_props = {
+    		diverging: ctx.mode === 'diverging',
+    		simulate: ctx.simulate
+    	};
+    	if (ctx.steps !== void 0) {
+    		palettepreview_props.steps = ctx.steps;
+    	}
+    	if (ctx.correctLightness !== void 0) {
+    		palettepreview_props.correctLightness = ctx.correctLightness;
+    	}
+    	if (ctx.bezier !== void 0) {
+    		palettepreview_props.bezier = ctx.bezier;
+    	}
+    	if (ctx.colors !== void 0) {
+    		palettepreview_props.colors = ctx.colors;
+    	}
+    	if (ctx.colors2 !== void 0) {
+    		palettepreview_props.colors2 = ctx.colors2;
+    	}
+    	if (ctx.numColors !== void 0) {
+    		palettepreview_props.numColors = ctx.numColors;
+    	}
+    	var palettepreview = new PalettePreview({
+    		props: palettepreview_props,
+    		$$inline: true
+    	});
+
+    	add_binding_callback(() => bind(palettepreview, 'steps', palettepreview_steps_binding));
+    	add_binding_callback(() => bind(palettepreview, 'correctLightness', palettepreview_correctLightness_binding));
+    	add_binding_callback(() => bind(palettepreview, 'bezier', palettepreview_bezier_binding));
+    	add_binding_callback(() => bind(palettepreview, 'colors', palettepreview_colors_binding));
+    	add_binding_callback(() => bind(palettepreview, 'colors2', palettepreview_colors2_binding));
+    	add_binding_callback(() => bind(palettepreview, 'numColors', palettepreview_numColors_binding));
+
+    	var stepchart0 = new StepChart({
+    		props: {
+    		title: "lightness",
+    		steps: ctx.steps,
+    		mode: 0
+    	},
+    		$$inline: true
+    	});
+
+    	var stepchart1 = new StepChart({
+    		props: {
+    		title: "saturation",
+    		steps: ctx.steps,
+    		mode: 1
+    	},
+    		$$inline: true
+    	});
+
+    	var stepchart2 = new StepChart({
+    		props: {
+    		title: "hue",
+    		steps: ctx.steps,
+    		mode: 2
+    	},
+    		$$inline: true
+    	});
+
+    	return {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			checkbox0.$$.fragment.c();
+    			t0 = space();
+    			checkbox1.$$.fragment.c();
+    			t1 = space();
+    			div1 = element("div");
+    			colorblindcheck.$$.fragment.c();
+    			t2 = space();
+    			palettepreview.$$.fragment.c();
+    			t3 = space();
+    			div6 = element("div");
+    			div3 = element("div");
+    			stepchart0.$$.fragment.c();
+    			t4 = space();
+    			div4 = element("div");
+    			stepchart1.$$.fragment.c();
+    			t5 = space();
+    			div5 = element("div");
+    			stepchart2.$$.fragment.c();
+    			attr(div0, "class", "col-md");
+    			add_location(div0, file$b, 235, 12, 7359);
+    			attr(div1, "class", "col-md");
+    			add_location(div1, file$b, 239, 12, 7816);
+    			attr(div2, "class", "row");
+    			set_style(div2, "margin-bottom", "10px");
+    			add_location(div2, file$b, 234, 8, 7300);
+    			attr(div3, "class", "col-md");
+    			add_location(div3, file$b, 253, 12, 8263);
+    			attr(div4, "class", "col-md");
+    			add_location(div4, file$b, 256, 12, 8389);
+    			attr(div5, "class", "col-md");
+    			add_location(div5, file$b, 259, 12, 8516);
+    			attr(div6, "class", "row");
+    			add_location(div6, file$b, 252, 8, 8232);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div2, anchor);
+    			append(div2, div0);
+    			mount_component(checkbox0, div0, null);
+    			append(div0, t0);
+    			mount_component(checkbox1, div0, null);
+    			append(div2, t1);
+    			append(div2, div1);
+    			mount_component(colorblindcheck, div1, null);
+    			insert(target, t2, anchor);
+    			mount_component(palettepreview, target, anchor);
+    			insert(target, t3, anchor);
+    			insert(target, div6, anchor);
+    			append(div6, div3);
+    			mount_component(stepchart0, div3, null);
+    			append(div6, t4);
+    			append(div6, div4);
+    			mount_component(stepchart1, div4, null);
+    			append(div6, t5);
+    			append(div6, div5);
+    			mount_component(stepchart2, div5, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var checkbox0_changes = {};
+    			if (!updating_value && changed.correctLightness) {
+    				checkbox0_changes.value = ctx.correctLightness;
+    			}
+    			checkbox0.$set(checkbox0_changes);
+
+    			var checkbox1_changes = {};
+    			if (!updating_value_1 && changed.bezier) {
+    				checkbox1_changes.value = ctx.bezier;
+    			}
+    			checkbox1.$set(checkbox1_changes);
+
+    			var colorblindcheck_changes = {};
+    			if (!updating_colors && changed.steps) {
+    				colorblindcheck_changes.colors = ctx.steps;
+    			}
+    			if (!updating_active && changed.simulate) {
+    				colorblindcheck_changes.active = ctx.simulate;
+    			}
+    			colorblindcheck.$set(colorblindcheck_changes);
+
+    			var palettepreview_changes = {};
+    			if (changed.mode) palettepreview_changes.diverging = ctx.mode === 'diverging';
+    			if (changed.simulate) palettepreview_changes.simulate = ctx.simulate;
+    			if (!updating_steps && changed.steps) {
+    				palettepreview_changes.steps = ctx.steps;
+    			}
+    			if (!updating_correctLightness && changed.correctLightness) {
+    				palettepreview_changes.correctLightness = ctx.correctLightness;
+    			}
+    			if (!updating_bezier && changed.bezier) {
+    				palettepreview_changes.bezier = ctx.bezier;
+    			}
+    			if (!updating_colors_1 && changed.colors) {
+    				palettepreview_changes.colors = ctx.colors;
+    			}
+    			if (!updating_colors2 && changed.colors2) {
+    				palettepreview_changes.colors2 = ctx.colors2;
+    			}
+    			if (!updating_numColors && changed.numColors) {
+    				palettepreview_changes.numColors = ctx.numColors;
+    			}
+    			palettepreview.$set(palettepreview_changes);
+
+    			var stepchart0_changes = {};
+    			if (changed.steps) stepchart0_changes.steps = ctx.steps;
+    			stepchart0.$set(stepchart0_changes);
+
+    			var stepchart1_changes = {};
+    			if (changed.steps) stepchart1_changes.steps = ctx.steps;
+    			stepchart1.$set(stepchart1_changes);
+
+    			var stepchart2_changes = {};
+    			if (changed.steps) stepchart2_changes.steps = ctx.steps;
+    			stepchart2.$set(stepchart2_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(checkbox0.$$.fragment, local);
+
+    			transition_in(checkbox1.$$.fragment, local);
+
+    			transition_in(colorblindcheck.$$.fragment, local);
+
+    			transition_in(palettepreview.$$.fragment, local);
+
+    			transition_in(stepchart0.$$.fragment, local);
+
+    			transition_in(stepchart1.$$.fragment, local);
+
+    			transition_in(stepchart2.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(checkbox0.$$.fragment, local);
+    			transition_out(checkbox1.$$.fragment, local);
+    			transition_out(colorblindcheck.$$.fragment, local);
+    			transition_out(palettepreview.$$.fragment, local);
+    			transition_out(stepchart0.$$.fragment, local);
+    			transition_out(stepchart1.$$.fragment, local);
+    			transition_out(stepchart2.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div2);
+    			}
+
+    			destroy_component(checkbox0, );
+
+    			destroy_component(checkbox1, );
+
+    			destroy_component(colorblindcheck, );
+
+    			if (detaching) {
+    				detach(t2);
+    			}
+
+    			destroy_component(palettepreview, detaching);
+
+    			if (detaching) {
+    				detach(t3);
+    				detach(div6);
+    			}
+
+    			destroy_component(stepchart0, );
+
+    			destroy_component(stepchart1, );
+
+    			destroy_component(stepchart2, );
+    		}
+    	};
+    }
+
+    // (266:4) <Card step="4" title="Export the color codes in various formats">
+    function create_default_slot(ctx) {
+    	var p, t0, a, t1, a_href_value, t2, kbd0, t3_value = ctx.isMac ? 'cmd' : 'ctrl', t3, t4, kbd1, t6, t7, current;
+
+    	var export_1 = new Export({
+    		props: { steps: ctx.steps },
+    		$$inline: true
+    	});
+
+    	return {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("You can also save your palette for later by bookmarking ");
+    			a = element("a");
+    			t1 = text("this page");
+    			t2 = text(" using ");
+    			kbd0 = element("kbd");
+    			t3 = text(t3_value);
+    			t4 = text("+");
+    			kbd1 = element("kbd");
+    			kbd1.textContent = "d";
+    			t6 = text(".");
+    			t7 = space();
+    			export_1.$$.fragment.c();
+    			attr(a, "href", a_href_value = "#/" + ctx.hash);
+    			add_location(a, file$b, 266, 67, 8793);
+    			attr(kbd0, "class", "svelte-1bbt59u");
+    			add_location(kbd0, file$b, 266, 106, 8832);
+    			attr(kbd1, "class", "svelte-1bbt59u");
+    			add_location(kbd1, file$b, 266, 142, 8868);
+    			add_location(p, file$b, 266, 8, 8734);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, p, anchor);
+    			append(p, t0);
+    			append(p, a);
+    			append(a, t1);
+    			append(p, t2);
+    			append(p, kbd0);
+    			append(kbd0, t3);
+    			append(p, t4);
+    			append(p, kbd1);
+    			append(p, t6);
+    			insert(target, t7, anchor);
+    			mount_component(export_1, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.hash) && a_href_value !== (a_href_value = "#/" + ctx.hash)) {
+    				attr(a, "href", a_href_value);
+    			}
+
+    			var export_1_changes = {};
+    			if (changed.steps) export_1_changes.steps = ctx.steps;
+    			export_1.$set(export_1_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(export_1.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(export_1.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(p);
+    				detach(t7);
+    			}
+
+    			destroy_component(export_1, detaching);
+    		}
+    	};
+    }
+
+    function create_fragment$b(ctx) {
+    	var div2, div0, h1, t1, p0, t2, a0, t4, a1, t6, t7, t8, t9, t10, t11, div1, hr, t12, p1, t13, a2, t15, a3, t17, t18, current, dispose;
+
+    	var card0 = new Card({
+    		props: {
+    		step: "1",
+    		title: "What kind of palette do you want to create?",
+    		$$slots: { default: [create_default_slot_3] },
+    		$$scope: { ctx }
+    	},
+    		$$inline: true
+    	});
+
+    	var card1 = new Card({
+    		props: {
+    		step: "2",
+    		title: "Select and arrange input colors",
+    		$$slots: { default: [create_default_slot_2] },
+    		$$scope: { ctx }
+    	},
+    		$$inline: true
+    	});
+
+    	var card2 = new Card({
+    		props: {
+    		step: "3",
+    		title: "Check and configure the resulting palette",
+    		$$slots: { default: [create_default_slot_1] },
+    		$$scope: { ctx }
+    	},
+    		$$inline: true
+    	});
+
+    	var card3 = new Card({
+    		props: {
+    		step: "4",
+    		title: "Export the color codes in various formats",
+    		$$slots: { default: [create_default_slot] },
+    		$$scope: { ctx }
+    	},
+    		$$inline: true
+    	});
+
+    	var aichatbot = new AIChatbot({ $$inline: true });
+    	aichatbot.$on("applyPalette", ctx.handleApplyPalette);
+
+    	return {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Color Den: chroma.js Color Palette Copilot";
+    			t1 = space();
+    			p0 = element("p");
+    			t2 = text("This ");
+    			a0 = element("a");
+    			a0.textContent = "chroma.js";
+    			t4 = text("-powered tool is here to help us master ");
+    			a1 = element("a");
+    			a1.textContent = "multi-hued, multi-stops color scales";
+    			t6 = text(", with a little help from AI.");
+    			t7 = space();
+    			card0.$$.fragment.c();
+    			t8 = space();
+    			card1.$$.fragment.c();
+    			t9 = space();
+    			card2.$$.fragment.c();
+    			t10 = space();
+    			card3.$$.fragment.c();
+    			t11 = space();
+    			div1 = element("div");
+    			hr = element("hr");
+    			t12 = space();
+    			p1 = element("p");
+    			t13 = text("Created by ");
+    			a2 = element("a");
+    			a2.textContent = "Gregor Aisch";
+    			t15 = text(" for the sake of better use of colors\r\n            in maps and data visualizations, forked and extended by\r\n            ");
+    			a3 = element("a");
+    			a3.textContent = "Giorgi Buzaladze";
+    			t17 = text("\r\n            with an added AI layer.");
+    			t18 = space();
+    			aichatbot.$$.fragment.c();
+    			add_location(h1, file$b, 213, 8, 6161);
+    			attr(a0, "href", "https://github.com/gka/chroma.js");
+    			attr(a0, "target", "_blank");
+    			add_location(a0, file$b, 214, 16, 6230);
+    			attr(a1, "href", "https://www.vis4.net/blog/mastering-multi-hued-color-scales/");
+    			attr(a1, "target", "_blank");
+    			add_location(a1, file$b, 214, 128, 6342);
+    			attr(p0, "class", "svelte-1bbt59u");
+    			add_location(p0, file$b, 214, 8, 6222);
+    			attr(div0, "class", "head svelte-1bbt59u");
+    			add_location(div0, file$b, 212, 4, 6133);
+    			attr(hr, "class", "svelte-1bbt59u");
+    			add_location(hr, file$b, 270, 8, 8966);
+    			attr(a2, "href", "https://vis4.net/blog");
+    			attr(a2, "class", "svelte-1bbt59u");
+    			add_location(a2, file$b, 272, 23, 9008);
+    			attr(a3, "href", "https://giobuzala.com/");
+    			attr(a3, "target", "_blank");
+    			attr(a3, "rel", "noopener noreferrer");
+    			attr(a3, "class", "svelte-1bbt59u");
+    			add_location(a3, file$b, 274, 12, 9176);
+    			attr(p1, "class", "svelte-1bbt59u");
+    			add_location(p1, file$b, 271, 8, 8980);
+    			attr(div1, "class", "foot svelte-1bbt59u");
+    			add_location(div1, file$b, 269, 4, 8938);
+    			attr(div2, "class", "container");
+    			add_location(div2, file$b, 211, 0, 6104);
+    			dispose = listen(window, "hashchange", ctx.hashChange);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert(target, div2, anchor);
+    			append(div2, div0);
+    			append(div0, h1);
+    			append(div0, t1);
+    			append(div0, p0);
+    			append(p0, t2);
+    			append(p0, a0);
+    			append(p0, t4);
+    			append(p0, a1);
+    			append(p0, t6);
+    			append(div2, t7);
+    			mount_component(card0, div2, null);
+    			append(div2, t8);
+    			mount_component(card1, div2, null);
+    			append(div2, t9);
+    			mount_component(card2, div2, null);
+    			append(div2, t10);
+    			mount_component(card3, div2, null);
+    			append(div2, t11);
+    			append(div2, div1);
+    			append(div1, hr);
+    			append(div1, t12);
+    			append(div1, p1);
+    			append(p1, t13);
+    			append(p1, a2);
+    			append(p1, t15);
+    			append(p1, a3);
+    			append(p1, t17);
+    			insert(target, t18, anchor);
+    			mount_component(aichatbot, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var card0_changes = {};
+    			if (changed.$$scope || changed.numColors || changed.mode) card0_changes.$$scope = { changed, ctx };
+    			card0.$set(card0_changes);
+
+    			var card1_changes = {};
+    			if (changed.$$scope || changed.mode || changed.colors || changed.colors2) card1_changes.$$scope = { changed, ctx };
+    			card1.$set(card1_changes);
+
+    			var card2_changes = {};
+    			if (changed.$$scope || changed.steps || changed.mode || changed.simulate || changed.correctLightness || changed.bezier || changed.colors || changed.colors2 || changed.numColors) card2_changes.$$scope = { changed, ctx };
+    			card2.$set(card2_changes);
+
+    			var card3_changes = {};
+    			if (changed.$$scope || changed.steps || changed.hash) card3_changes.$$scope = { changed, ctx };
+    			card3.$set(card3_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(card0.$$.fragment, local);
+
+    			transition_in(card1.$$.fragment, local);
+
+    			transition_in(card2.$$.fragment, local);
+
+    			transition_in(card3.$$.fragment, local);
+
+    			transition_in(aichatbot.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(card0.$$.fragment, local);
+    			transition_out(card1.$$.fragment, local);
+    			transition_out(card2.$$.fragment, local);
+    			transition_out(card3.$$.fragment, local);
+    			transition_out(aichatbot.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach(div2);
+    			}
+
+    			destroy_component(card0, );
+
+    			destroy_component(card1, );
+
+    			destroy_component(card2, );
+
+    			destroy_component(card3, );
+
+    			if (detaching) {
+    				detach(t18);
+    			}
+
+    			destroy_component(aichatbot, detaching);
+
+    			dispose();
+    		}
+    	};
+    }
+
+    function normalizeHex(rawColor) {
+        if (typeof rawColor !== 'string') return null;
+        const trimmed = rawColor.trim();
+        if (!trimmed) return null;
+        return trimmed[0] === '#' ? trimmed : `#${trimmed}`;
+    }
+
+    function toChromaList(rawColors, fallback) {
+        if (!Array.isArray(rawColors) || !rawColors.length) return fallback;
+        const parsed = rawColors
+            .map(normalizeHex)
+            .filter(Boolean)
+            .map(color => {
+                try {
+                    return chroma(color);
+                } catch (e) {
+                    return null;
+                }
+            })
+            .filter(Boolean);
+        return parsed.length ? parsed : fallback;
+    }
+
+    function instance$b($$self, $$props, $$invalidate) {
+    	
+
+        let steps = [];
+        let bezier = true;
+        let correctLightness = true;
+
+        let colors = '00429d,96ffea,ffffe0'.split(/\s*,\s*/).map(c => chroma(c));
+        let colors2 = 'ffffe0,ff005e,93003a'.split(/\s*,\s*/).map(c => chroma(c));
+        let numColors = 9;
+        let mode = 'sequential';
+        let simulate = 'none';
+
+        if (window.location.hash) {
+            readStateFromHash();
+        }
+
+        const isMac = navigator.platform.toUpperCase().includes('MAC');
+
+        let _hash = '';
+        let _mode = 'sequential';
+
+        beforeUpdate(() => {
+            if (hash !== _hash) {
+                _hash = hash;
+                window.location.hash = `#/${hash}`;
+            }
+            if (mode !== _mode) {
+                if (mode === 'diverging' && !colors2.length) {
+                    $$invalidate('colors2', colors2 = colors.slice(0).reverse());
+                }
+                _mode = mode;
+            }
+        });
+
+        function readStateFromHash() {
+            const parts = window.location.hash.substr(2).split('|');
+            if (parts.length === 6) {
+                $$invalidate('numColors', numColors = +parts[0]);
+                $$invalidate('mode', mode = parts[1] === 's' ? 'sequential' : 'diverging');
+                _mode = mode;
+                $$invalidate('colors', colors = parts[2].split(',').map(c => c && chroma(c)));
+                $$invalidate('colors2', colors2 = parts[3] !== '' ? parts[3].split(',').map(c => c && chroma(c)) : []);
+                $$invalidate('correctLightness', correctLightness = parts[4] === '1');
+                $$invalidate('bezier', bezier = parts[5] === '1');
+            } else {
+                window.location.hash = '';
+            }
+        }
+
+        function hashChange() {
+            if (window.location.hash !== `#/${hash}`) {
+                // deserialize hash
+                readStateFromHash();
+            }
+        }
+
+        function handleApplyPalette(event) {
+            const config = event && event.detail ? event.detail : {};
+
+            if (config.mode === 'sequential' || config.mode === 'diverging') {
+                $$invalidate('mode', mode = config.mode);
+            }
+
+            const parsedNumColors = Math.round(+config.numColors);
+            if (isFinite(parsedNumColors) && parsedNumColors >= 2) {
+                $$invalidate('numColors', numColors = parsedNumColors);
+            }
+
+            if (typeof config.bezier === 'boolean') {
+                $$invalidate('bezier', bezier = config.bezier);
+            }
+            if (typeof config.correctLightness === 'boolean') {
+                $$invalidate('correctLightness', correctLightness = config.correctLightness);
+            }
+
+            $$invalidate('colors', colors = toChromaList(config.colors, colors));
+
+            if (mode === 'diverging') {
+                $$invalidate('colors2', colors2 = toChromaList(config.colors2, colors2.length ? colors2 : colors.slice(0).reverse()));
+            } else {
+                $$invalidate('colors2', colors2 = []);
+            }
+        }
+
+    	function buttongroup_value_binding(value) {
+    		mode = value;
+    		$$invalidate('mode', mode);
+    	}
+
+    	function input_input_handler() {
+    		numColors = to_number(this.value);
+    		$$invalidate('numColors', numColors);
+    	}
+
+    	function inputcolors_colors_binding(value) {
+    		colors = value;
+    		$$invalidate('colors', colors);
+    	}
+
+    	function inputcolors_colors2_binding(value_1) {
+    		colors2 = value_1;
+    		$$invalidate('colors2', colors2);
+    	}
+
+    	function checkbox0_value_binding(value) {
+    		correctLightness = value;
+    		$$invalidate('correctLightness', correctLightness);
+    	}
+
+    	function checkbox1_value_binding(value_1) {
+    		bezier = value_1;
+    		$$invalidate('bezier', bezier);
+    	}
+
+    	function colorblindcheck_colors_binding(value_2) {
+    		steps = value_2;
+    		$$invalidate('steps', steps);
+    	}
+
+    	function colorblindcheck_active_binding(value_3) {
+    		simulate = value_3;
+    		$$invalidate('simulate', simulate);
+    	}
+
+    	function palettepreview_steps_binding(value_4) {
+    		steps = value_4;
+    		$$invalidate('steps', steps);
+    	}
+
+    	function palettepreview_correctLightness_binding(value_5) {
+    		correctLightness = value_5;
+    		$$invalidate('correctLightness', correctLightness);
+    	}
+
+    	function palettepreview_bezier_binding(value_6) {
+    		bezier = value_6;
+    		$$invalidate('bezier', bezier);
+    	}
+
+    	function palettepreview_colors_binding(value_7) {
+    		colors = value_7;
+    		$$invalidate('colors', colors);
+    	}
+
+    	function palettepreview_colors2_binding(value_8) {
+    		colors2 = value_8;
+    		$$invalidate('colors2', colors2);
+    	}
+
+    	function palettepreview_numColors_binding(value_9) {
+    		numColors = value_9;
+    		$$invalidate('numColors', numColors);
+    	}
+
+    	let hash;
+
+    	$$self.$$.update = ($$dirty = { numColors: 1, mode: 1, colors: 1, colors2: 1, correctLightness: 1, bezier: 1 }) => {
+    		if ($$dirty.numColors || $$dirty.mode || $$dirty.colors || $$dirty.colors2 || $$dirty.correctLightness || $$dirty.bezier) { $$invalidate('hash', hash = [
+                    numColors,
+                    mode.substr(0, 1),
+                    colors.map(c => c.hex().substr(1)).join(','),
+                    colors2.length ? colors2.map(c => c.hex().substr(1)).join(',') : '',
+                    correctLightness ? 1 : 0,
+                    bezier ? 1 : 0
+                ].join('|')); }
+    	};
+
+    	return {
+    		steps,
+    		bezier,
+    		correctLightness,
+    		colors,
+    		colors2,
+    		numColors,
+    		mode,
+    		simulate,
+    		isMac,
+    		hashChange,
+    		handleApplyPalette,
+    		hash,
+    		buttongroup_value_binding,
+    		input_input_handler,
+    		inputcolors_colors_binding,
+    		inputcolors_colors2_binding,
+    		checkbox0_value_binding,
+    		checkbox1_value_binding,
+    		colorblindcheck_colors_binding,
+    		colorblindcheck_active_binding,
+    		palettepreview_steps_binding,
+    		palettepreview_correctLightness_binding,
+    		palettepreview_bezier_binding,
+    		palettepreview_colors_binding,
+    		palettepreview_colors2_binding,
+    		palettepreview_numColors_binding
+    	};
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, []);
+    	}
+    }
+
+    // package.json
+    var name = "@vercel/analytics";
+    var version = "1.6.1";
+
+    // src/queue.ts
+    var initQueue = () => {
+      if (window.va) return;
+      window.va = function a(...params) {
+        (window.vaq = window.vaq || []).push(params);
+      };
+    };
+
+    // src/utils.ts
+    function isBrowser() {
+      return typeof window !== "undefined";
+    }
+    function detectEnvironment() {
+      try {
+        const env = process.env.NODE_ENV;
+        if (env === "development" || env === "test") {
+          return "development";
+        }
+      } catch (e) {
+      }
+      return "production";
+    }
+    function setMode(mode = "auto") {
+      if (mode === "auto") {
+        window.vam = detectEnvironment();
+        return;
+      }
+      window.vam = mode;
+    }
+    function getMode() {
+      const mode = isBrowser() ? window.vam : detectEnvironment();
+      return mode || "production";
+    }
+    function isDevelopment() {
+      return getMode() === "development";
+    }
+    function getScriptSrc(props) {
+      if (props.scriptSrc) {
+        return props.scriptSrc;
+      }
+      if (isDevelopment()) {
+        return "https://va.vercel-scripts.com/v1/script.debug.js";
+      }
+      if (props.basePath) {
+        return `${props.basePath}/insights/script.js`;
+      }
+      return "/_vercel/insights/script.js";
+    }
+
+    // src/generic.ts
+    function inject(props = {
+      debug: true
+    }) {
+      var _a;
+      if (!isBrowser()) return;
+      setMode(props.mode);
+      initQueue();
+      if (props.beforeSend) {
+        (_a = window.va) == null ? void 0 : _a.call(window, "beforeSend", props.beforeSend);
+      }
+      const src = getScriptSrc(props);
+      if (document.head.querySelector(`script[src*="${src}"]`)) return;
+      const script = document.createElement("script");
+      script.src = src;
+      script.defer = true;
+      script.dataset.sdkn = name + (props.framework ? `/${props.framework}` : "");
+      script.dataset.sdkv = version;
+      if (props.disableAutoTrack) {
+        script.dataset.disableAutoTrack = "1";
+      }
+      if (props.endpoint) {
+        script.dataset.endpoint = props.endpoint;
+      } else if (props.basePath) {
+        script.dataset.endpoint = `${props.basePath}/insights`;
+      }
+      if (props.dsn) {
+        script.dataset.dsn = props.dsn;
+      }
+      script.onerror = () => {
+        const errorMessage = isDevelopment() ? "Please check if any ad blockers are enabled and try again." : "Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.";
+        console.log(
+          `[Vercel Web Analytics] Failed to load script from ${src}. ${errorMessage}`
+        );
+      };
+      if (isDevelopment() && props.debug === false) {
+        script.dataset.debug = "false";
+      }
+      document.head.appendChild(script);
+    }
+    //# sourceMappingURL=index.mjs.map
+
+    inject();
+
+    const app = new App({
+        target: document.body
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=bundle.js.map

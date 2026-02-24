@@ -1,4 +1,4 @@
-# [chroma.js palette ai copilot](https://colorden.vercel.app/)
+# [Color Den](https://colorden.vercel.app/)
 
 A Svelte color-scale builder for perceptually balanced, colorblind-aware palettes,
 forked from Gregor Aisch’s original tool and extended with an AI assistant.
@@ -46,9 +46,32 @@ npm run dev
 
 ## Project structure
 
-- `src/`: Svelte frontend components and palette logic
-- `src/colorBlind.js`: colorblind safety/simulation calculations
-- `api/chat.js`: serverless OpenAI proxy used in production (e.g. Vercel)
-- `server.js`: local Node dev server (serves `docs/` + `/api/chat`)
-- `docs/`: built static output served by `sirv` / deployment target
-- `docs/public/favicon.svg`: site favicon used by `docs/index.html`
+```text
+Color Palettes/
+├── src/
+│   ├── App.svelte                # Main app screen + top-level state
+│   ├── main.js                   # Svelte entrypoint
+│   ├── AIChatbot.svelte          # AI chatbot panel and prompt flow
+│   ├── ButtonGroup.svelte        # Segmented control UI
+│   ├── Card.svelte               # Step section shell/card
+│   ├── Checkbox.svelte           # Reusable checkbox control
+│   ├── Color.svelte              # Single color chip + picker popover
+│   ├── ColorBlindCheck.svelte    # Safety check + simulation selector
+│   ├── ColorList.svelte          # Editable/draggable list of colors
+│   ├── Export.svelte             # Palette export snippets
+│   ├── InputColors.svelte        # Sequential/diverging input columns
+│   ├── PalettePreview.svelte     # Generated palette preview
+│   ├── StepChart.svelte          # L/C/H charts
+│   └── colorBlind.js             # Colorblind simulation/safety logic
+├── api/
+│   └── chat.js                   # Production serverless OpenAI proxy
+├── docs/
+│   ├── index.html                # Static app host page
+│   ├── bundle.js                 # Built JS bundle
+│   ├── bundle.css                # Built CSS bundle
+│   └── public/favicon.svg        # Favicon used by index.html
+├── server.js                     # Local dev server + /api/chat
+├── rollup.config.js              # Build config
+├── package.json
+└── README.md
+```

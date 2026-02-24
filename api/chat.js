@@ -44,7 +44,7 @@ export default {
         }
 
         const payload = {
-            model: 'gpt-4o',
+            model: 'gpt-5',
             temperature: 0.5,
             messages: [
                 { role: 'system', content: systemPrompt },

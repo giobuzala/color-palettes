@@ -7,6 +7,12 @@
     export let active = 'none';
 
     const types = ['none', 'deuteranopia', 'protanopia', 'tritanopia'];
+    const typeTitles = {
+        none: 'Normal vision',
+        deuteranopia: 'Deuteranopia',
+        protanopia: 'Protanopia',
+        tritanopia: 'Tritanopia'
+    };
 </script>
 
 <style>
@@ -95,7 +101,8 @@
                 <label
                     class="seg-btn"
                     class:danger={result.includes(type)}
-                    class:active={active === type}>
+                    class:active={active === type}
+                    title={typeTitles[type]}>
                     <input
                         bind:group={active}
                         value={type}

@@ -184,10 +184,10 @@
         margin: 0;
     }
     .foot a {
-        color: #374151;
+        color: #3b6fc4;
     }
     .foot a:hover {
-        color: #111827;
+        color: #3b6fc4;
     }
     kbd {
         background-color: #f3f4f6;
@@ -211,7 +211,7 @@
 
 <div class="container">
     <div class="head">
-        <h1>Chroma.js Color Palette Helper</h1>
+        <h1>Color Den: chroma.js Color Palette Copilot</h1>
         <p>This <a href="https://github.com/gka/chroma.js" target="_blank">chroma.js</a>-powered tool is here to help us master <a href="https://www.vis4.net/blog/mastering-multi-hued-color-scales/" target="_blank">multi-hued, multi-stops color scales</a>, with a little help from AI.</p>
     </div>
     <Card step="1" title="What kind of palette do you want to create?">
@@ -234,8 +234,8 @@
     <Card step="3" title="Check and configure the resulting palette">
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md">
-                <Checkbox bind:value={correctLightness} label="correct lightness" />
-                <Checkbox bind:value={bezier} label="bezier interpolation" />
+                <Checkbox bind:value={correctLightness} label="correct lightness" title="Adjust luminance so palette colors have perceptually even steps (avoids some appearing too dark or too light)." />
+                <Checkbox bind:value={bezier} label="bezier interpolation" title="Interpolate along a Bézier curve in color space for smoother or more natural-looking gradients between colors." />
             </div>
             <div class="col-md">
                 <ColorBlindCheck bind:colors={steps} bind:active={simulate} />
