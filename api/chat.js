@@ -45,7 +45,7 @@ export default {
 
         const payload = {
             model: 'gpt-5',
-            temperature: 0.5,
+            temperature: 1,
             messages: [
                 { role: 'system', content: systemPrompt },
                 ...messages.filter(m => m.role === 'user' || m.role === 'assistant')
