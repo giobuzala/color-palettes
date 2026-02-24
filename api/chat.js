@@ -44,8 +44,12 @@ export default {
         }
 
         const payload = {
-            model: 'gpt-4o-mini',
-            temperature: 0.5,
+            model: 'gpt-4o',
+            temperature: 0.3,
+            top_p: 1,
+            presence_penalty: 0,
+            frequency_penalty: 0,
+            max_tokens: 600,
             messages: [
                 { role: 'system', content: systemPrompt },
                 ...messages.filter(m => m.role === 'user' || m.role === 'assistant')

@@ -212,7 +212,7 @@
 <div class="container">
     <div class="head">
         <h1>Color Den: chroma.js Color Palette Copilot</h1>
-        <p>This <a href="https://github.com/gka/chroma.js" target="_blank">chroma.js</a>-powered tool is here to help us master <a href="https://www.vis4.net/blog/mastering-multi-hued-color-scales/" target="_blank">multi-hued, multi-stops color scales</a>, with a little help from AI.</p>
+        <p>This <a href="https://github.com/gka/chroma.js" target="_blank">chroma.js</a>-powered tool is here to help us master <a href="https://www.vis4.net/blog/mastering-multi-hued-color-scales/" target="_blank">multi-hued, multi-stop color scales</a>, with a little help from AI.</p>
     </div>
     <Card step="1" title="What kind of palette do you want to create?">
         <div class="step1-row">

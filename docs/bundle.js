@@ -10185,19 +10185,19 @@ Rules:
     			t4 = space();
     			input = element("input");
     			attr(span0, "class", "label-text svelte-1bbt59u");
-    			add_location(span0, file$b, 219, 16, 6677);
+    			add_location(span0, file$b, 219, 16, 6676);
     			attr(div0, "class", "step1-field svelte-1bbt59u");
-    			add_location(div0, file$b, 218, 12, 6634);
+    			add_location(div0, file$b, 218, 12, 6633);
     			attr(span1, "class", "label-text svelte-1bbt59u");
-    			add_location(span1, file$b, 223, 16, 6888);
+    			add_location(span1, file$b, 223, 16, 6887);
     			attr(input, "type", "number");
     			attr(input, "min", "2");
     			attr(input, "class", "svelte-1bbt59u");
-    			add_location(input, file$b, 224, 16, 6955);
+    			add_location(input, file$b, 224, 16, 6954);
     			attr(div1, "class", "step1-field svelte-1bbt59u");
-    			add_location(div1, file$b, 222, 12, 6845);
+    			add_location(div1, file$b, 222, 12, 6844);
     			attr(div2, "class", "step1-row svelte-1bbt59u");
-    			add_location(div2, file$b, 217, 8, 6597);
+    			add_location(div2, file$b, 217, 8, 6596);
     			dispose = listen(input, "input", ctx.input_input_handler);
     		},
 
@@ -10505,20 +10505,20 @@ Rules:
     			div5 = element("div");
     			stepchart2.$$.fragment.c();
     			attr(div0, "class", "col-md");
-    			add_location(div0, file$b, 235, 12, 7359);
+    			add_location(div0, file$b, 235, 12, 7358);
     			attr(div1, "class", "col-md");
-    			add_location(div1, file$b, 239, 12, 7816);
+    			add_location(div1, file$b, 239, 12, 7815);
     			attr(div2, "class", "row");
     			set_style(div2, "margin-bottom", "10px");
-    			add_location(div2, file$b, 234, 8, 7300);
+    			add_location(div2, file$b, 234, 8, 7299);
     			attr(div3, "class", "col-md");
-    			add_location(div3, file$b, 253, 12, 8263);
+    			add_location(div3, file$b, 253, 12, 8262);
     			attr(div4, "class", "col-md");
-    			add_location(div4, file$b, 256, 12, 8389);
+    			add_location(div4, file$b, 256, 12, 8388);
     			attr(div5, "class", "col-md");
-    			add_location(div5, file$b, 259, 12, 8516);
+    			add_location(div5, file$b, 259, 12, 8515);
     			attr(div6, "class", "row");
-    			add_location(div6, file$b, 252, 8, 8232);
+    			add_location(div6, file$b, 252, 8, 8231);
     		},
 
     		m: function mount(target, anchor) {
@@ -10689,12 +10689,12 @@ Rules:
     			t7 = space();
     			export_1.$$.fragment.c();
     			attr(a, "href", a_href_value = "#/" + ctx.hash);
-    			add_location(a, file$b, 266, 67, 8793);
+    			add_location(a, file$b, 266, 67, 8792);
     			attr(kbd0, "class", "svelte-1bbt59u");
-    			add_location(kbd0, file$b, 266, 106, 8832);
+    			add_location(kbd0, file$b, 266, 106, 8831);
     			attr(kbd1, "class", "svelte-1bbt59u");
-    			add_location(kbd1, file$b, 266, 142, 8868);
-    			add_location(p, file$b, 266, 8, 8734);
+    			add_location(kbd1, file$b, 266, 142, 8867);
+    			add_location(p, file$b, 266, 8, 8733);
     		},
 
     		m: function mount(target, anchor) {
@@ -10805,7 +10805,7 @@ Rules:
     			a0.textContent = "chroma.js";
     			t4 = text("-powered tool is here to help us master ");
     			a1 = element("a");
-    			a1.textContent = "multi-hued, multi-stops color scales";
+    			a1.textContent = "multi-hued, multi-stop color scales";
     			t6 = text(", with a little help from AI.");
     			t7 = space();
     			card0.$$.fragment.c();
@@ -10841,19 +10841,19 @@ Rules:
     			attr(div0, "class", "head svelte-1bbt59u");
     			add_location(div0, file$b, 212, 4, 6133);
     			attr(hr, "class", "svelte-1bbt59u");
-    			add_location(hr, file$b, 270, 8, 8966);
+    			add_location(hr, file$b, 270, 8, 8965);
     			attr(a2, "href", "https://vis4.net/blog");
     			attr(a2, "class", "svelte-1bbt59u");
-    			add_location(a2, file$b, 272, 23, 9008);
+    			add_location(a2, file$b, 272, 23, 9007);
     			attr(a3, "href", "https://giobuzala.com/");
     			attr(a3, "target", "_blank");
     			attr(a3, "rel", "noopener noreferrer");
     			attr(a3, "class", "svelte-1bbt59u");
-    			add_location(a3, file$b, 274, 12, 9176);
+    			add_location(a3, file$b, 274, 12, 9175);
     			attr(p1, "class", "svelte-1bbt59u");
-    			add_location(p1, file$b, 271, 8, 8980);
+    			add_location(p1, file$b, 271, 8, 8979);
     			attr(div1, "class", "foot svelte-1bbt59u");
-    			add_location(div1, file$b, 269, 4, 8938);
+    			add_location(div1, file$b, 269, 4, 8937);
     			attr(div2, "class", "container");
     			add_location(div2, file$b, 211, 0, 6104);
     			dispose = listen(window, "hashchange", ctx.hashChange);
