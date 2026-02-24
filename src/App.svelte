@@ -73,11 +73,21 @@
         decoded = decoded.replace(/%7C/gi, '|');
         const parts = decoded.split('|');
         if (parts.length === 6) {
-            numColors = +parts[0];
-            mode = parts[1] === 's' ? 'sequential' : 'diverging';
-            _mode = mode;
-            colors = parts[2].split(',').map(c => c && chroma(c));
-            colors2 = parts[3] !== '' ? parts[3].split(',').map(c => c && chroma(c)) : [];
+            const parsedNumColors = Math.round(+parts[0]);
+            const parsedMode =
+                parts[1] === 's' ? 'sequential' : parts[1] === 'd' ? 'diverging' : null;
+            if (!isFinite(parsedNumColors) || parsedNumColors < 2 || !parsedMode) {
+                return;
+            }
+
+            const parsedColors = toChromaList(parts[2].split(','), colors);
+            const parsedColors2 = parts[3] !== '' ? toChromaList(parts[3].split(','), colors2) : [];
+
+            numColors = parsedNumColors;
+            mode = parsedMode;
+            _mode = parsedMode;
+            colors = parsedColors;
+            colors2 = parsedColors2;
             correctLightness = parts[4] === '1';
             bezier = parts[5] === '1';
         }
